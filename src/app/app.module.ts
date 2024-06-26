@@ -7,6 +7,10 @@ import { HomeComponent } from './components/home/home.component';
 import { SelectLevelComponent } from './components/select-level/select-level.component';
 import { QuestionsComponent } from './components/questions/questions.component';
 import { ResultComponent } from './components/result/result.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -18,7 +22,11 @@ import { ResultComponent } from './components/result/result.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    //Angular Material
+    MatIconModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

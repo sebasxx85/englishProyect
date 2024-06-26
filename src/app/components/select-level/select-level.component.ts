@@ -9,6 +9,6 @@ import { DataLevel1Service } from 'src/app/services/data-level1.service';
 export class SelectLevelComponent {
   private dataLevel1 = inject(DataLevel1Service);
 
-  
+
 
 }
