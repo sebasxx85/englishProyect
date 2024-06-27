@@ -22,6 +22,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
+    // recordar que si uso lazyload no poner componentes aca ni los standalone ni tradicionales
     AppComponent,
     HomeComponent,
     FooterComponent,
