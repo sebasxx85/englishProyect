@@ -1,8 +1,12 @@
+import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { DataLevel1Service } from 'src/app/services/data-level1.service';
 
 @Component({
   selector: 'app-select-level',
+  standalone: true,
+  imports: [CommonModule, RouterModule],
   templateUrl: './select-level.component.html',
   styleUrls: ['./select-level.component.scss']
 })
