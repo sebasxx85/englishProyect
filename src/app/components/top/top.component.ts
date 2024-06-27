@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./top.component.scss']
 })
 export class TopComponent {
+  title = 'TOP';
 
 }

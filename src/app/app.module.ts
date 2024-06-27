@@ -5,8 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FooterComponent } from './components/footer/footer.component';
-import { HeaderComponent } from './components/header/header.component';
 
 //Angular Material
 import { MatIconModule } from '@angular/material/icon';
@@ -17,6 +15,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import {MAT_FORM_FIELD_DEFAULT_OPTIONS, MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 import { MatNativeDateModule } from '@angular/material/core';
+import { SharedModule } from './Shared/shared.module';
 
 
 @NgModule({
@@ -24,13 +23,12 @@ import { MatNativeDateModule } from '@angular/material/core';
     // recordar que si uso lazyload no poner componentes aca ni los standalone ni tradicionales
     AppComponent,
     HomeComponent,
-    FooterComponent,
-    HeaderComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    SharedModule,
     //Angular Material
     MatIconModule,
     MatCardModule,
