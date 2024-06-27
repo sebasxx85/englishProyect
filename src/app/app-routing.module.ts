@@ -5,13 +5,20 @@ import { HomeComponent } from './components/home/home.component';
 //Si son componentes stanalone se carga el componente si son tradicionales el modulo si uso Lazy Load
 const routes: Routes = [
   // Ruta estática para el componente Home
-  { path: '', component: HomeComponent }, 
-  //Usando lazy load
-  { path: 'result', loadChildren: () => 
-    import('./components/result/result.component').then(m => m.ResultComponent) },
-  { path: 'select', loadChildren: () => 
-    import('./components/select-level/select-level.component').then(m => m.SelectLevelComponent) },
- 
+  { path: '', redirectTo: '/home', pathMatch: 'full' }, // Redirige la ruta raíz a /home
+  { path: 'home', component: HomeComponent },
+  //Usando lazy load stanalone
+  {path: 'result', loadChildren: () =>
+      import('./components/result/result.component').then(m => m.ResultComponent)
+  },
+  {path: 'select', loadChildren: () =>
+      import('./components/select-level/select-level.component').then(m => m.SelectLevelComponent)
+  },
+  //Usando lazy load tradicional
+  {path: 'top', loadChildren: () =>
+      import('./components/top/top.module').then(m => m.TopModule)
+  },
+
 ];
 
 @NgModule({

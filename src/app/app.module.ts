@@ -19,14 +19,13 @@ import {MatSelectModule} from '@angular/material/select';
 import { MatNativeDateModule } from '@angular/material/core';
 
 
-
 @NgModule({
   declarations: [
     // recordar que si uso lazyload no poner componentes aca ni los standalone ni tradicionales
     AppComponent,
     HomeComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
