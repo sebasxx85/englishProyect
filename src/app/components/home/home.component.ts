@@ -53,7 +53,6 @@ export class HomeComponent implements OnInit, OnDestroy {
       codSucursal: [''],
       idAmbulatorio: [''],
       fechaInicio: [this.today.toISOString().split('T')[0]],
-      fechaTermino: [''],
       codUnidadEnvio: [''],
       especialidad: [''],
       codTipoBiopsia: [''],
@@ -61,56 +60,16 @@ export class HomeComponent implements OnInit, OnDestroy {
     })
   }
 
-  buscarPuntaje(){}
-
-  // buscarTrazabilidad() {
-
-  //   const form = this.form.getRawValue();
-
-  //   this.loading = true;
-  //   this.rxp047CService.getTrazabilidadMuestrasByPaciente({
-  //     idAmbulatorio: form.idAmbulatorio ? form.idAmbulatorio : 0,
-  //     idAtencion: form.idAtencion ? form.idAtencion : 0,
-  //     tipoPaciente: form.tipoPaciente,
-  //     fechaInicio: moment(form.fechaInicio).format('DD/MM/YYYY'),
-  //     fechaTermino: moment(form.fechaTermino).format('DD/MM/YYYY'),
-  //     estadoProceso: 'REC',
-  //     codFamilia: form.especialidad ? form.especialidad : 0,
-  //     codTipobiopsia: form.codTipoBiopsia ? form.codTipoBiopsia : 0,
-  //     nroCarton: form.nroCarton ? form.nroCarton : 0,
-  //     codUnidadEnvio: form.codUnidadEnvio ? form.codUnidadEnvio : 0,
-
-  //     codDeriva: form.codDeriva ? form.codDeriva : 0,
-  //   }).pipe(
-  //     finalize(() => this.loading = false)
-  //   ).subscribe((data: any) => {
-  //     if (data.codRespuesta === 0) {
-
-  //       this.dataTable = data.muestras as any[];
-  //       this.form.patchValue(this.dataTable);
-  //     }
-  //   })
-  // }
-
-
-  // seleccioneUnidad(cod: number) {
-  //   this.form.get('codUnidadEnvio').setValue(cod);
-  // }
-
-  // onSelecteCodSucursal(event: Sucursal) {
-  //   this.form.get('codSucursal').setValue(event.codSucursal);
-  // }
-
+  buscarPuntaje(){
+    this.loading = true
+  }
 
   resetAll() {
-    this.form.reset({
-     // codSucursal: this.DEFAULT_COD_SUCURSAL,
-      tipoPaciente: 'T',
-    });
+    this.form.reset
     this.dataTable = [];
   }
 
-  ngOnDestroy(): void {
+  ngOnDestroy() {
     // this.destroy$.next();
     // this.destroy$.complete();
   }

@@ -1,35 +1,10 @@
 <app-header [title]="title"></app-header>
 
-<section>
-  <form action="index.php" method="post">
-  <div class="flex gap-2">
-    <mat-form-field
-      mat
-      appearance="outline"
-      floatLabel="always"
-      class="form-element form-input"
-      translate="no">
-      <mat-label>Ingrese una Fecha</mat-label>
-      <mat-date-range-input>
-        <input
-          matStartDate
-          placeholder="Fecha Inicio"
-          formControlName="fechaInicio"
-          translate="no" />
-        <input
-          matEndDate
-          placeholder="End date"
-          placeholder="Fecha Término"
-          translate="no" />
-      </mat-date-range-input>
-      <mat-hint>DD/MM/YYYY - DD/MM/YYYY</mat-hint>
-    </mat-form-field>
-  </div>
-
+<form>
   <mat-progress-bar
     *ngIf="loading" mode="indeterminate">
   </mat-progress-bar>
 </form>
-</section>
+
 
 <app-footer></app-footer>
