@@ -1,98 +1,35 @@
 <app-header [title]="title"></app-header>
-<section class="container flex flex-col main-div">
-  <mat-card >
-    <div class="flex gap-2">
-      <mat-form-field
-        mat
-        appearance="outline"
-        floatLabel="always"
-        class="form-element form-input"
-        translate="no">
-        <mat-label>Ingrese una Fecha</mat-label>
-        <mat-date-range-input>
-          <input
-            matStartDate
-            placeholder="Fecha Inicio"
-            formControlName="fechaInicio"
-            translate="no" />
-          <input
-            matEndDate
-            placeholder="End date"
-            placeholder="Fecha Término"
-            translate="no" />
-        </mat-date-range-input>
-        <mat-hint>DD/MM/YYYY - DD/MM/YYYY</mat-hint>
-        <mat-datepicker-toggle matSuffix [for]="picker"
-          translate="no"></mat-datepicker-toggle>
-        <mat-date-range-picker #picker translate="no"></mat-date-range-picker>
-      </mat-form-field>
-    </div>
 
-    <div class="flex gap-4">
-      <div class="mt-2 mr-2">
+<section>
+  <form action="index.php" method="post">
+  <div class="flex gap-2">
+    <mat-form-field
+      mat
+      appearance="outline"
+      floatLabel="always"
+      class="form-element form-input"
+      translate="no">
+      <mat-label>Ingrese una Fecha</mat-label>
+      <mat-date-range-input>
+        <input
+          matStartDate
+          placeholder="Fecha Inicio"
+          formControlName="fechaInicio"
+          translate="no" />
+        <input
+          matEndDate
+          placeholder="End date"
+          placeholder="Fecha Término"
+          translate="no" />
+      </mat-date-range-input>
+      <mat-hint>DD/MM/YYYY - DD/MM/YYYY</mat-hint>
+    </mat-form-field>
+  </div>
 
-      </div>
-    </div>
-
-    <div class="grid-filtros">
-      <mat-form-field appearance="outline" floatLabel="always"
-        class="form-element form-input">
-        <mat-label>Id Atención</mat-label>
-        <input matInput formControlName="idAtencion" />
-      </mat-form-field>
-
-      <mat-form-field appearance="outline" floatLabel="always"
-        class="form-element form-input">
-        <mat-label>Id Nómina</mat-label>
-        <input matInput formControlName="idNomina" />
-      </mat-form-field>
-
-      <mat-form-field appearance="outline" floatLabel="always"
-        class="form-element form-input">
-        <mat-label>Número Carton</mat-label>
-        <input matInput formControlName="nroCarton" />
-      </mat-form-field>
-
-      <mat-form-field appearance="outline" floatLabel="always"
-        class="form-element form-input">
-        <mat-label>Estado Proceso</mat-label>
-        <mat-select formControlName="estadoProceso">
-          <mat-option disabled [value]='0'>Seleccione Estado</mat-option>
-          <mat-option *ngFor="let item of estadoProceso"
-            [value]="item.value">{{item.label}}</mat-option>
-        </mat-select>
-      </mat-form-field>
-    </div>
-    <button class="primary" mat-button (click)="buscarPuntaje()">Buscar</button>
-  </mat-card>
-
-  <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
-
-  <mat-card class="mt-1">
-    <table mat-table [dataSource]="dataTable" class="mat-elevation-z8">
-      <ng-container matColumnDef="position">
-        <th mat-header-cell *matHeaderCellDef> No. </th>
-        <td mat-cell *matCellDef="let element"> {{element.position}} </td>
-      </ng-container>
-
-      <!-- Name Column -->
-      <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef> Name </th>
-        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-      </ng-container>
-    </table>
-
-    <section class="content-buttons mt-2">
-      <div class="float-left">
-        <button class="default-primary mr-1" mat-button
-          (click)="resetAll()">Limpiar Filtros</button>
-        <a mat-button routerLink="/programa"
-          class="primary"><mat-icon>logout</mat-icon> Salir</a>
-      </div>
-
-      <div class="float-right">
-      </div>
-    </section>
-  </mat-card>
+  <mat-progress-bar
+    *ngIf="loading" mode="indeterminate">
+  </mat-progress-bar>
+</form>
 </section>
+
 <app-footer></app-footer>

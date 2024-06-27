@@ -9,7 +9,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class HomeComponent implements OnInit, OnDestroy {
  
   
-  title = "Seleccion nivel ";
+  title = "My Practice Test";
   codPrograma = "Ingreso Plataforma";
   // sucursal = localStorage.getItem('Sucursal') || '';
   // DEFAULT_COD_SUCURSAL = JSON.parse(this.sucursal);
@@ -30,7 +30,6 @@ export class HomeComponent implements OnInit, OnDestroy {
   
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
 
-  
   constructor(private fb: FormBuilder,
   ) { }
 
