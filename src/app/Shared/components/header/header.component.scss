@@ -20,12 +20,21 @@ h1 {
   size: 12px;
 }
 
+h1:hover {
+  color: rgb(240, 240, 190); 
+  cursor: pointer; 
+}
+
 nav {
   text-align: center;
 }
 
 nav a {
-  color: #fff;
+  color: #ff0;
   text-decoration: none;
   margin: 0 10px;
+}
+
+nav a:hover {
+  color: rgb(240, 240, 190); 
 }
