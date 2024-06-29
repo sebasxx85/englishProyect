@@ -32,15 +32,16 @@ export class HomeComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.initForm();
 
-    // cualquier cambio el formulario se resetea la tabla
-    this.form.valueChanges.pipe(
-
-
-    ).subscribe({
-      next: data => {
-        this.dataTable = [];
+    this.form.get('time')?.valueChanges.subscribe(value => {
+      if (value == true) {
+        console.log('El valor de time es positivo', value);
+        //this.calcularTiempo(value)
+      } else if(value == false) {
+        console.log('El valor de time es negativo');
+  
       }
-    })
+    });
+
 
   }
 
@@ -55,8 +56,24 @@ export class HomeComponent implements OnInit, OnDestroy {
     })
   }
 
+  calcularTiempo(time: boolean, cantidad: number){
+
+      //let cantidadPreguntas = 5 //this.form.get('cantidad') || 0
+      let resultado = 0
+      const segundo = 30;
+
+      resultado = +cantidad * segundo
+      alert("tendras" + resultado + "para realizar el test")
+    
+    
+  }
+
   empezar(){
     this.loading = true
+    let time = this.form.get('time')?.value;
+    let cantidad = this.form.get('cantidad')?.value;
+    this.calcularTiempo(time, cantidad)
+    
   }
 
   resetAll() {
