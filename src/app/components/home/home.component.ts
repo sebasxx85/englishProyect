@@ -60,7 +60,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     })
   }
 
-  buscarPuntaje(){
+  empezar(){
     this.loading = true
   }
 

@@ -1,29 +1,37 @@
 
 <app-header></app-header>
-
-<form>
-  <div class="form-group">
-    <label for="cliente">Elige tu idioma</label>
-      <select name="idioma">
-        <option value="Ingles">Ingles</option>
-        <option value="Portugues">Portugues</option>
-      </select>
-  </div>
-  <div class="form-group">
-    <label for="nproyecto">Elige el nivel</label>
-       <select name="nivel">
-          <option value="Basico">Basico</option>
-          <option value="Intermedio">Intermedio</option>
+<body>
+<div class="card-container">
+  <mat-card class="custom-card">
+    <form>
+      <div class="form-group">
+        <label for="cliente" class="idioma">Elige tu idioma:</label>
+        <select name="idioma">
+          <option value="Ingles">Ingles</option>
+          <option value="Portugues">Portugues</option>
         </select>
-  </div>
-  <div class="form-group">
-    <label for="nproyecto">Elige la cantidad de preguntas</label>
-    <input type="number" name="cantidad" placeholder="0">
-  </div>
-  <button type="submit" class="btn btn-success btn-lg">Seguir</button>
-</form>
+      </div>
+      <div class="form-group">
+        <label for="nproyecto" class="level">Nivel:</label>
+        <select name="nivel">
+          <option value="Basico">Principiante</option>
+          <option value="Basico">Basico</option>
+          <option value="Intermedio">Intermedio-bajo</option>
+          <option value="Intermedio">Intermedio-alto</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="nproyecto" class="cantidad">Cantidad de preguntas:</label>
+        <input type="number" name="cantidad" class="cantidad" placeholder="0">
+      </div>
+    </form>
+    <div class="float-left">
+      <button class="default-primary boton" mat-flat-button 
+      (click)="empezar()">Empezar</button>
+   </div>
+   <mat-progress-bar *ngIf="loading" mode="indeterminate" class="progreso"></mat-progress-bar>
+  </mat-card>
+</div>
 
-
+</body>
 <app-footer></app-footer>
-
-

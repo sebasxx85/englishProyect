@@ -1,73 +1,64 @@
-.titulo {
-    margin-top: 30px;
-    margin-bottom: 30px;
-    font-size: 35px;
-}
-
-.observaciones {
-    margin-top: 7px;
-}
-
-.boton {
-    font-size: 20px;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    padding-left: 35px;
-    padding-right: 35px;
-}
-
-.opciones {
-    padding-top: 8px;
-}
 
 form {
-    border: solid grey;
+    border: solid rgb(25, 163, 212);
     padding: 7px;
-}
-
-.header{
-    display:flex;
-	margin-top: 10px;
-    margin-bottom: 30px;
-    
-}
-
-h1{
-    float: inline-start;
-    margin-left: 30px;
-    margin-right: 40px;
-}
-
-img {
-    float: inline-end;
-    margin-left: 10px;
-    margin-top: 50px;
-    margin-bottom: 10px;  
-}
-
-h3{
-    margin-left: 10px;
-    margin-bottom: 15px;
+    margin-bottom: 7px;
 }
 
 label{
-    font-size: 12px;
+    font-size: 14px;
+    margin-bottom: 27px;
+    margin-right: 7px;
 }
 
-.bodyTabla{
-    margin-top: 50px;
-    margin-left: 15px;
-    margin-right: 15px;
+input{
     margin-bottom: 15px;
 }
 
-.card-body{
-    margin-top: 50px;
-    margin-left: 15px;
-    margin-right: 15px;
+select {
+    margin-bottom: 7px;
 }
 
 
-.listaClientes{
-    margin-top: 20px !important;
-}
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centra verticalmente si el contenedor tiene una altura fija */
+    min-height: 90vh; /* Asegura que el contenedor ocupe al menos la altura completa de la ventana */
+  }
+  
+  .custom-card {
+    border: 4px solid rgb(25, 163, 212);
+    width: 33.33%; /* Un tercio del ancho de la pantalla */
+    margin-top: 30px; /* Ajusta este valor según tus necesidades */
+    padding: 1rem; /* Añade un poco de padding para que el contenido tenga espacio */
+    box-shadow: 8px 8px 8px rgba(0.0, 0.0, 0.7, 0.7); /* Añade sombra para mejor visibilidad */
+    min-height: 40vh;
+  }
+
+  .boton {
+    margin-top: 10px;
+    margin-bottom: 17px;
+    width: 100px
+  }
+
+
+  //Labels
+  .cantidad{
+    max-width: 22%;
+    margin-right: 16px;
+  }
+
+  .level{
+    margin-right: 120px;
+  }
+
+  .idioma{
+    margin-right: 90px;
+  }
+
+  .progreso {
+    max-width: 50%;
+    display: flex;
+    justify-content: center;
+  }
