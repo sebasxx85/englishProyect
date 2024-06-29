@@ -1,13 +1,32 @@
 
 footer {
-    height: 140px;
+    height: 177px;
     background-color: #000;
     color: #fff;
     padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 17px;
+    margin-bottom: 27px;
     margin-left: 7px;
     margin-right: 7px;
+    border: 2px solid rgba(0, 0, 0.7, 0.8); /* Borde ligero */
+    border-radius: 7px;
+  }
+
+  .titulo {
+    color: rgb(240, 240, 190); 
+    margin-left: 17px;
+    margin-top: 17px;
+    align-items:flex-start;
+    size: 10px;
+  }
+
+  .titulo:hover {
+    color: rgb(240, 240, 190); 
+  }
+
+  .titulo2 {
+    align-items: flex-end;
+    color: rgb(240, 240, 190); 
+    margin-left: 17px;
+    margin-top: 17px;
+    size: 3px;
   }

@@ -9,7 +9,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class HomeComponent implements OnInit, OnDestroy {
 
 
-  title = "Free English Test";
+  title = "Test de Inglés Gratis";
   codPrograma = "Ingreso Plataforma";
   // sucursal = localStorage.getItem('Sucursal') || '';
   // DEFAULT_COD_SUCURSAL = JSON.parse(this.sucursal);
