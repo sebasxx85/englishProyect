@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +9,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class HomeComponent implements OnInit, OnDestroy {
  
   
-  title = "My Practice Test";
+  title = "Free English Test";
   codPrograma = "Ingreso Plataforma";
   // sucursal = localStorage.getItem('Sucursal') || '';
   // DEFAULT_COD_SUCURSAL = JSON.parse(this.sucursal);
@@ -20,15 +20,11 @@ export class HomeComponent implements OnInit, OnDestroy {
   loading = false
   today = new Date();
 
-  estadoProceso = [
-    { label: 'Recepcionado', value: 'REC' },
-    { label: 'Finalizado', value: 'FIN' },
-    { label: 'En Proceso', value: 'EPR' },
-    { label: 'Anulado', value: 'ANU' },
+  idiomaSelect = [
+    { label: 'Ingles', value: 'ING' },
+    { label: 'Portugues', value: 'POR' },
   ] 
 
-  
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
 
   constructor(private fb: FormBuilder,
   ) { }
@@ -51,12 +47,10 @@ export class HomeComponent implements OnInit, OnDestroy {
   initForm() {
     this.form = this.fb.group({
       codSucursal: [''],
-      idAmbulatorio: [''],
       fechaInicio: [this.today.toISOString().split('T')[0]],
-      codUnidadEnvio: [''],
-      especialidad: [''],
-      codTipoBiopsia: [''],
-      codDeriva: [''],
+      idioma: ['Ingles'],
+      nivel: ['Principiante'],
+      cantidad: ['1'],
     })
   }
 
@@ -66,7 +60,6 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   resetAll() {
     this.form.reset
-    this.dataTable = [];
   }
 
   ngOnDestroy() {

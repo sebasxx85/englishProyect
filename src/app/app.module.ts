@@ -16,6 +16,7 @@ import {MAT_FORM_FIELD_DEFAULT_OPTIONS, MatFormFieldModule} from '@angular/mater
 import {MatSelectModule} from '@angular/material/select';
 import { MatNativeDateModule } from '@angular/material/core';
 import { SharedModule } from './Shared/shared.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { SharedModule } from './Shared/shared.module';
     MatDatepickerModule,
     MatFormFieldModule,
     MatSelectModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    ReactiveFormsModule
 
   ],
   providers: [
