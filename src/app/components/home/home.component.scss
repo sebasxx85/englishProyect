@@ -59,8 +59,12 @@ select {
 
   //Labels
   .cantidad{
+    max-width: 22.5%;
+    margin-right: 34px;
+  }
+
+  .cantidadinput{
     max-width: 21.5%;
-    margin-right: 35px;
   }
 
   .level{
@@ -71,8 +75,22 @@ select {
     margin-right: 117px;
   }
 
+  .timetag{
+    margin-right: 137px;
+  }
+
   .progreso {
     max-width: 50%;
     display: flex;
     justify-content: center;
   }
+
+  //radio button
+.form-group input[type="radio"] {
+  width: auto; /* Ajusta el tamaño según el contenido */
+  height: auto; /* Ajusta el tamaño según el contenido */
+  border: 2px solid #ffc107; /* Color de borde amarillo */
+  display: inline-flex;
+  margin-right: 5px;
+}
+

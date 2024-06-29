@@ -51,6 +51,7 @@ export class HomeComponent implements OnInit, OnDestroy {
       idioma: ['Ingles'],
       nivel: ['Principiante'],
       cantidad: ['1'],
+      time: ['true']
     })
   }
 

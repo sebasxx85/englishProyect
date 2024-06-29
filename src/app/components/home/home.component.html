@@ -1,38 +1,47 @@
 <app-header [title]="title"></app-header>
 
 <body>
-<div class="card-container">
-  <mat-card class="custom-card">
-    <form [formGroup]="form" (ngSubmit)="empezar()">
-      <div class="form-group">
-        <label for="cliente" class="idioma">Elige tu idioma:</label>
-        <select name="idioma" formControlName="idioma">
-          <option value="Ingles">Inglés</option>
-          <option value="Portugues">Portugués</option>
-        </select>
+  <div class="card-container">
+    <mat-card class="custom-card">
+      <form [formGroup]="form" (ngSubmit)="empezar()">
+        <div class="form-group">
+          <label for="cliente" class="idioma">Elige tu idioma:</label>
+          <select name="idioma" formControlName="idioma">
+            <option value="Ingles">Inglés</option>
+            <option value="Portugues">Portugués</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="nproyecto" class="level">Nivel:</label>
+          <select name="nivel" formControlName="nivel">
+            <option value="Principiante">Principiante</option>
+            <option value="Basico-bajo">Básico-Bajo</option>
+            <option value="Basico-alto">Básico-Alto</option>
+            <option value="Intermedio-bajo">Intermedio-Bajo</option>
+            <option value="Intermedio-alto">Intermedio-Alto</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="nproyecto" class="cantidad">Cantidad de preguntas:</label>
+          <input type="number" name="cantidad" class="cantidadinput"
+            formControlName="cantidad" placeholder="0">
+        </div>
+        <div class="form-group">
+          <label for="nproyecto" class="timetag">Tiempo:</label>
+          <input type="radio" name="time" value="true" formControlName="time">
+          <label for="time-si" class="time">Sí</label>
+          <input type="radio" name="time" value="false" formControlName="time">
+          <label for="time-no" class="time">No</label>
+        </div>
+      </form>
+      <div class="float-left">
+        <button mat-flat-button color="primary" class="boton"
+          (click)="empezar()">Empezar</button>
       </div>
-      <div class="form-group">
-        <label for="nproyecto" class="level">Nivel:</label>
-        <select name="nivel" formControlName="nivel">
-          <option value="Principiante">Principiante</option>
-          <option value="Basico-bajo">Básico-Bajo</option>
-          <option value="Basico-alto">Básico-Alto</option>
-          <option value="Intermedio-bajo">Intermedio-Bajo</option>
-          <option value="Intermedio-alto">Intermedio-Alto</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="nproyecto" class="cantidad">Cantidad de preguntas:</label>
-        <input type="number" name="cantidad" class="cantidad" formControlName="cantidad" placeholder="0">
-      </div>
-    </form>
-    <div class="float-left">
-      <button  mat-flat-button color="primary" class="boton"
-      (click)="empezar()">Empezar</button>
-   </div>
-   <mat-progress-bar *ngIf="loading" mode="indeterminate" class="progreso"></mat-progress-bar>
-  </mat-card>
-</div>
+      <mat-progress-bar *ngIf="loading" mode="indeterminate"
+        class="progreso"></mat-progress-bar>
+    </mat-card>
+  </div>
 
 </body>
 <app-footer></app-footer>
