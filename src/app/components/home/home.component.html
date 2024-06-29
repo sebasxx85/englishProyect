@@ -1,10 +1,28 @@
 
 <app-header></app-header>
+
 <form>
-  <mat-progress-bar
-    *ngIf="loading" mode="indeterminate">
-  </mat-progress-bar>
+  <div class="form-group">
+    <label for="cliente">Elige tu idioma</label>
+      <select name="idioma">
+        <option value="Ingles">Ingles</option>
+        <option value="Portugues">Portugues</option>
+      </select>
+  </div>
+  <div class="form-group">
+    <label for="nproyecto">Elige el nivel</label>
+       <select name="nivel">
+          <option value="Basico">Basico</option>
+          <option value="Intermedio">Intermedio</option>
+        </select>
+  </div>
+  <div class="form-group">
+    <label for="nproyecto">Elige la cantidad de preguntas</label>
+    <input type="number" name="cantidad" placeholder="0">
+  </div>
+  <button type="submit" class="btn btn-success btn-lg">Seguir</button>
 </form>
+
 
 <app-footer></app-footer>
 
