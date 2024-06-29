@@ -7,14 +7,14 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit, OnDestroy {
- 
-  
+
+
   title = "Free English Test";
   codPrograma = "Ingreso Plataforma";
   // sucursal = localStorage.getItem('Sucursal') || '';
   // DEFAULT_COD_SUCURSAL = JSON.parse(this.sucursal);
   nombreSucursal = ''
-  
+
   dataTable = []
   form!: FormGroup
   loading = false
@@ -23,9 +23,9 @@ export class HomeComponent implements OnInit, OnDestroy {
   idiomaSelect = [
     { label: 'Ingles', value: 'ING' },
     { label: 'Portugues', value: 'POR' },
-  ] 
+  ]
 
-
+  
   constructor(private fb: FormBuilder,
   ) { }
 
@@ -33,21 +33,13 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.initForm();
 
     this.form.get('time')?.valueChanges.subscribe(value => {
-      if (value == true) {
-        console.log('El valor de time es positivo', value);
-        //this.calcularTiempo(value)
-      } else if(value == false) {
-        console.log('El valor de time es negativo');
-  
-      }
+      console.log('El valor de time ha cambiado:', value);
     });
-
 
   }
 
   initForm() {
     this.form = this.fb.group({
-      codSucursal: [''],
       fechaInicio: [this.today.toISOString().split('T')[0]],
       idioma: ['Ingles'],
       nivel: ['Principiante'],
@@ -56,24 +48,34 @@ export class HomeComponent implements OnInit, OnDestroy {
     })
   }
 
-  calcularTiempo(time: boolean, cantidad: number){
+  calcularTiempo(cantidad: number, time: boolean) {
 
-      //let cantidadPreguntas = 5 //this.form.get('cantidad') || 0
-      let resultado = 0
-      const segundo = 30;
+    console.log('Valores recibidos en calcularTiempo:', {cantidad, time });
 
-      resultado = +cantidad * segundo
-      alert("tendras" + resultado + "para realizar el test")
-    
-    
+    let resultado = 0
+    const segundo = 30;
+    resultado = +cantidad * segundo
+
+    // Convertir el valor de time a una cadena "si" o "no"
+    let timeString = time ? 'si' : 'no';
+
+    if (timeString == 'si') {
+      alert("Tendrás " + resultado + " segundos para realizar el test");
+    } else {
+      alert("Tendrás todo el tiempo para realizar el test");
+    } 
+
   }
 
-  empezar(){
+  empezar() {
     this.loading = true
-    let time = this.form.get('time')?.value;
-    let cantidad = this.form.get('cantidad')?.value;
-    this.calcularTiempo(time, cantidad)
-    
+
+    setTimeout(() => {
+      let time = this.form.get('time')?.value === 'true';
+      let cantidad = +this.form.get('cantidad')?.value;
+      this.calcularTiempo(cantidad, time);
+    }, 2000);
+
   }
 
   resetAll() {
