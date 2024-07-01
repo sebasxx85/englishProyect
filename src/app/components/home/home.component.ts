@@ -1,5 +1,7 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -20,14 +22,16 @@ export class HomeComponent implements OnInit, OnDestroy {
   loading = false
   today = new Date();
 
+
   idiomaSelect = [
     { label: 'Ingles', value: 'ING' },
     { label: 'Portugues', value: 'POR' },
   ]
 
-  
-  constructor(private fb: FormBuilder,
-  ) { }
+  //Injectando servicios
+  //private httpClient = inject(HttpClient)
+  private fb = inject(FormBuilder)
+  private router = inject(Router)
 
   ngOnInit() {
     this.initForm();
@@ -74,6 +78,7 @@ export class HomeComponent implements OnInit, OnDestroy {
       let time = this.form.get('time')?.value === 'true';
       let cantidad = +this.form.get('cantidad')?.value;
       this.calcularTiempo(cantidad, time);
+      this.router.navigate(['/select']);
     }, 2000);
 
   }
