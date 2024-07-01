@@ -7,6 +7,7 @@ const routes: Routes = [
   // Ruta estática para el componente Home
   { path: '', redirectTo: '/home', pathMatch: 'full' }, // Redirige la ruta raíz a /home
   { path: 'home', component: HomeComponent },
+
   //Usando lazy load stanalone
   {path: 'result', loadChildren: () =>
       import('./components/result/result.component').then(m => m.ResultComponent)
@@ -18,6 +19,10 @@ const routes: Routes = [
   {path: 'top', loadChildren: () =>
       import('./components/top/top.module').then(m => m.TopModule)
   },
+
+  {path: 'ingresar', loadChildren: () =>
+    import('./components/user/user.component').then(m => m.UserComponent)
+},
 
 ];
 

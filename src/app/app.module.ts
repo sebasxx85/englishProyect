@@ -17,6 +17,7 @@ import {MatSelectModule} from '@angular/material/select';
 import { MatNativeDateModule } from '@angular/material/core';
 import { SharedModule } from './Shared/shared.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { UserComponent } from './components/user/user.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     // recordar que si uso lazyload no poner componentes aca ni los standalone ni tradicionales
     AppComponent,
     HomeComponent,
+    UserComponent,
   ],
   imports: [
     BrowserModule,

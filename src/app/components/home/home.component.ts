@@ -78,7 +78,7 @@ export class HomeComponent implements OnInit, OnDestroy {
       let time = this.form.get('time')?.value === 'true';
       let cantidad = +this.form.get('cantidad')?.value;
       this.calcularTiempo(cantidad, time);
-      this.router.navigate(['/select']);
+      this.router.navigate(['select']);
     }, 2000);
 
   }
