@@ -60,7 +60,7 @@ export class SelectLevelComponent {
   }
 
   verResultado(){
-
+    
   }
 
 }

@@ -39,7 +39,7 @@ export class UserComponent {
 
 
   ingresar() {
-
+    this.loading = true
   }
 
 }

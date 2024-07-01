@@ -6,13 +6,13 @@
       <form [formGroup]="form" (ngSubmit)="ingresar()">
         <div class="form-group">
           <label for="nproyecto" class="cantidad">Usuario:</label>
-          <input type="usuario" name="usuario" class="cantidadinput" min="1"
-            max="10" formControlName="usuario" placeholder="0">
+          <input type="usuario" name="usuario" class="usuario" min="5"
+            max="20" formControlName="usuario" placeholder="Ingresa Tu correo">
         </div>
         <div class="form-group">
-          <label for="nproyecto" class="contrasena">Contraseña:</label>
-          <input type="password" name="contrasena" class="cantidadinput" min="5"
-            max="10" formControlName="contrasena" placeholder="0">
+          <label for="nproyecto" class="cantidad">Contraseña:</label>
+          <input type="password" name="contrasena" class="contrasena" min="5"
+            max="10" formControlName="contrasena" placeholder="Ingresa Tu contraseña">
         </div>
       </form>
       <div class="float-left">
@@ -23,6 +23,6 @@
         class="progreso"></mat-progress-bar>
     </mat-card>
   </div>
-
+  <router-outlet></router-outlet>
 </body>
 <app-footer></app-footer>

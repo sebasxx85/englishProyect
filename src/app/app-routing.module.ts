@@ -8,20 +8,20 @@ const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' }, // Redirige la ruta raíz a /home
   { path: 'home', component: HomeComponent },
 
-  //Usando lazy load stanalone
+  //Usando lazy load stanalone con componentes
   {path: 'result', loadChildren: () =>
       import('./components/result/result.component').then(m => m.ResultComponent)
   },
   {path: 'select', loadChildren: () =>
       import('./components/select-level/select-level.component').then(m => m.SelectLevelComponent)
   },
-  //Usando lazy load tradicional
+
+  //Usando lazy load tradicional con modulos
   {path: 'top', loadChildren: () =>
       import('./components/top/top.module').then(m => m.TopModule)
   },
-
   {path: 'ingresar', loadChildren: () =>
-    import('./components/user/user.component').then(m => m.UserComponent)
+    import('./components/user/user.module').then(m => m.UserModule)
 },
 
 ];
