@@ -9,20 +9,28 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
 
   //Usando lazy load stanalone con componentes
-  {path: 'result', loadChildren: () =>
+  {
+    path: 'result', loadChildren: () =>
       import('./components/result/result.component').then(m => m.ResultComponent)
   },
-  {path: 'select', loadChildren: () =>
+  {
+    path: 'select', loadChildren: () =>
       import('./components/select-level/select-level.component').then(m => m.SelectLevelComponent)
   },
 
   //Usando lazy load tradicional con modulos
-  {path: 'top', loadChildren: () =>
+  {
+    path: 'top', loadChildren: () =>
       import('./components/top/top.module').then(m => m.TopModule)
   },
-  {path: 'ingresar', loadChildren: () =>
-    import('./components/user/user.module').then(m => m.UserModule)
-},
+  {
+    path: 'ingresar', loadChildren: () =>
+      import('./components/user/user.module').then(m => m.UserModule)
+  },
+  {
+    path: 'crear-usuario', loadChildren: () =>
+      import('./components/crear-usuario/crear-usuario.module').then(m => m.CrearUsuarioModule)
+  },
 
 ];
 

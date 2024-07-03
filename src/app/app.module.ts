@@ -18,6 +18,8 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { SharedModule } from './Shared/shared.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UserComponent } from './components/user/user.component';
+import { CrearUsuarioComponent } from './components/crear-usuario/crear-usuario.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -26,6 +28,7 @@ import { UserComponent } from './components/user/user.component';
     AppComponent,
     HomeComponent,
     UserComponent,
+    CrearUsuarioComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,7 +44,8 @@ import { UserComponent } from './components/user/user.component';
     MatFormFieldModule,
     MatSelectModule,
     MatNativeDateModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
 
   ],
   providers: [
