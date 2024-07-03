@@ -37,17 +37,28 @@ export class CrearUsuarioComponent {
 
   crearUsuario() {
     this.loading = true;
-    
+
     const crearUsuario = {
       name: "andres",
       email: "andres@cl"
     };
+    //Ver datos que se envian
     console.log("Enviando datos:", crearUsuario);
     this.crearUsuarioService.postCrearUsuario(crearUsuario).pipe(
       finalize(() => this.loading = false)
     ).subscribe((data: any) => {
       console.log(data);
     });
+  }
+
+  obtenerUsuarios() {
+    this.crearUsuarioService.getUsuarios().pipe(
+
+    ).subscribe((data: any) => {
+      this.dataTable = data
+      console.log(data);
+    })
+
   }
 
 }

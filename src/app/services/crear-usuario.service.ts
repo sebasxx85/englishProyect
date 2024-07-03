@@ -20,6 +20,16 @@ export class CrearUsuarioService {
     );
   }
 
+  getUsuarios() {
+    //api creada con java
+    return this.http.get('localhost:8080/api/users').pipe(
+      catchError(error => {
+        console.error('Se produjo un error:', error);
+        return throwError(error);
+      })
+    );
+  }
+
 
 
   
