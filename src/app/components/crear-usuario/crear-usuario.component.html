@@ -23,6 +23,10 @@
         <button mat-flat-button color="primary" class="boton"
           (click)="obtenerUsuarios()">Obtener</button>
       </div>
+      <div class="float-left">
+        <button mat-flat-button color="primary" class="boton"
+          (click)="obtenerUsuarioId()">ObtenerId</button>
+      </div>
       <mat-progress-bar *ngIf="loading" mode="indeterminate"
         class="progreso"></mat-progress-bar>
     </mat-card>

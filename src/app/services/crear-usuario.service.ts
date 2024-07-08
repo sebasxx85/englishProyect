@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, throwError } from 'rxjs';
+import { catchError, Observable, throwError } from 'rxjs';
 import { crearUsuario } from '../Models/crearUser';
+import { environment } from '../environments/environment.dev';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ export class CrearUsuarioService {
 
   postCrearUsuario(body: crearUsuario) {
     //api creada con java
-    return this.http.post('localhost:8080/api/users', body).pipe(
+    return this.http.post(environment.apiUrl, body).pipe(
       catchError(error => {
         console.error('Se produjo un error:', error);
         return throwError(error);
@@ -22,7 +23,7 @@ export class CrearUsuarioService {
 
   getUsuarios() {
     //api creada con java
-    return this.http.get('localhost:8080/api/users').pipe(
+    return this.http.get(environment.apiUrl).pipe(
       catchError(error => {
         console.error('Se produjo un error:', error);
         return throwError(error);
@@ -31,6 +32,15 @@ export class CrearUsuarioService {
   }
 
 
+  getUser(id:number):Observable<crearUsuario>{
+    return this.http.get<crearUsuario>(environment.apiUrl+"/"+id).pipe(
+      catchError(error => {
+        console.error('Se produjo un error:', error);
+        return throwError(error);
+      })
+    );
+  }
+  
 
   
 }

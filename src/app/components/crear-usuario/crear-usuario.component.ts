@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { finalize } from 'rxjs';
+import { crearUsuario } from 'src/app/Models/crearUser';
 import { CrearUsuarioService } from 'src/app/services/crear-usuario.service';
 
 @Component({
@@ -17,6 +18,9 @@ export class CrearUsuarioComponent {
   form!: FormGroup
   loading = false
   today = new Date();
+
+  errorMessage: String=""
+  crearUsario?: crearUsuario 
 
   private fb = inject(FormBuilder)
   private router = inject(Router)
@@ -39,8 +43,10 @@ export class CrearUsuarioComponent {
     this.loading = true;
 
     const crearUsuario = {
-      name: "andres",
-      email: "andres@cl"
+      name: "pablo",
+      email: "pablo@cl",
+      user: "pablito",
+      pasword: 23313
     };
     //Ver datos que se envian
     console.log("Enviando datos:", crearUsuario);
@@ -60,5 +66,15 @@ export class CrearUsuarioComponent {
     })
 
   }
+
+  //obtener usario x id
+  obtenerUsuarioId(){
+    this.crearUsuarioService.getUser(2).subscribe((data: any) => {
+      this.dataTable = data
+      console.log(data);
+    })
+  }
+
+
 
 }
