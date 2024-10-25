@@ -10,11 +10,11 @@
           <button mat-flat-button color="primary" class="boton" *ngFor="let palabra of dataTablePreguntas">{{ palabra }}</button>
         </div>
 
-        <!-- Columna 2: Selectores dinámicos -->
+        <!-- Columna 2: Selectores dinámicos basados en cantidad de preguntas -->
         <div class="col">
           <form [formGroup]="form" (ngSubmit)="enviar()">
-            <div class="form-group">
-              <select name="respuesta" formControlName="respuesta">
+            <div class="form-group" *ngFor="let index of cantidadArray">
+              <select [name]="'respuesta' + index" [formControlName]="'respuesta' + index">
                 <option value="Respuesta1">Respuesta1</option>
                 <option value="Respuesta2">Respuesta2</option>
                 <option value="Respuesta3">Respuesta3</option>
@@ -26,7 +26,7 @@
       </div>
 
       <div class="float-left">
-        <button mat-flat-button color="primary" class="boton" (click)="enviar()">Empezar</button>
+        <button mat-flat-button color="primary" class="boton" (click)="enviar()">Enviar</button>
       </div>
 
       <mat-progress-bar *ngIf="loading" mode="indeterminate" class="progreso"></mat-progress-bar>
