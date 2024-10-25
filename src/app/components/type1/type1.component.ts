@@ -21,6 +21,14 @@ export class Type1Component {
   cantidadArray: number[] = []; // Arreglo para generar los selectores dinámicos
   respuestasCorrectas = 0; //luego ver cuantas preg y resp hacen match y motstrar tabla en resultComponent
 
+  //Niveles
+  dataTablePreguntasA0: string[] = [];
+  dataTablePreguntasA1: string[] = [];
+  dataTablePreguntasA2: string[] = [];
+  dataTablePreguntasB1: string[] = [];
+  dataTablePreguntasB2: string[] = [];
+
+
   // Inyecciones
   private fb = inject(FormBuilder);
   private router = inject(Router);
