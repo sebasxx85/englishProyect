@@ -26,23 +26,22 @@ export class DataLevel1Service {
   ];
 
   private basicoAltoA2: string[] = [
-    'apple', 'banana', 'cherry', 'date', 'elephant', 'fish', 'grape', 
-    'house', 'island', 'jacket', 'kangaroo', 'lemon', 'monkey', 'notebook', 
-    'orange', 'pencil', 'queen', 'rabbit', 'sun', 'tiger'
+    'napkin', 'no way', 'regretted', 'pollution', 'quite a while', 'shack', 'gotta',
+    'have to', 'nowadays', 'trend', 'footage', 'forehead', 'shopaholic', 'fold',
+    'luckily', 'disappointing', 'knit', 'house', 'queen', 'rabbit'
   ];
 
   private intermedioB1: string[] = [
-    'apple', 'banana', 'cherry', 'date', 'elephant', 'fish', 'grape', 
-    'house', 'island', 'jacket', 'kangaroo', 'lemon', 'monkey', 'notebook', 
-    'orange', 'pencil', 'queen', 'rabbit', 'sun', 'tiger'
+    'tie', 'postponing', 'mostly', 'challenging', 'upset', 'ahead of time', 'reliable',
+    'likely', 'meanwhile', 'partly', 'as long as', 'encouraging',
+    'house', 'island', 'jacket', 'queen', 'rabbit', 'pencil', 'lemon'
   ];
 
   private intermedioAltoB2: string[] = [
-    'apple', 'banana', 'cherry', 'date', 'elephant', 'fish', 'grape', 
-    'house', 'island', 'jacket', 'kangaroo', 'lemon', 'monkey', 'notebook', 
-    'orange', 'pencil', 'queen', 'rabbit', 'sun', 'tiger'
+    'confidence', 'bridge', 'casualties', 'lead', 'along', 'prepped', 'wounded', 
+    'useless', 'yawn', 'muddy', 'mowing', 'pond', 'lawn', 'thumb', 
+    'unpredictable', 'disappeared', 'house', 'island', 'queen', 'rabbit'
   ];
-
 
 
   // Método para obtener las palabras

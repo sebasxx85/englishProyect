@@ -32,8 +32,9 @@ export class Type1Component {
   ngOnInit() {
     this.initForm();
     this.cantidadPreguntas = this.intercambioDatosService.getCantidad();
-    this.loadRandomWords(this.cantidadPreguntas);
     this.nivelIdioma = this.intercambioDatosService.getNivelIdioma();
+    this.loadRandomWords(this.cantidadPreguntas);
+    this.cargarNivelIngles();
 
     // Crear un array basado en la cantidad de preguntas
     this.cantidadArray = Array.from({ length: this.cantidadPreguntas }, (_, index) => index);
@@ -47,8 +48,8 @@ export class Type1Component {
   initForm() {
     this.form = this.fb.group({
       fechaInicio: [this.today.toISOString().split('T')[0]],
-      pregunta: ['Ingles'],
-      respuesta: ['Principiante'],
+      pregunta: ['ingles'],
+      respuesta: ['principiante'],
       cantidad: ['1'],
       time: ['true']
     });
@@ -68,25 +69,27 @@ export class Type1Component {
 
   //funcion para cargar dependiendo del nivel
   cargarNivelIngles() {
+    let palabras: string[] = [];
+
     if (this.nivelIdioma === 'principiante') {
-      this.dataTablePreguntas = this.dataLevel1Service.getWordsPrincipiantes();
-
+      palabras = this.dataLevel1Service.getWordsPrincipiantes();
     } else if (this.nivelIdioma === 'basico') {
-      this.dataTablePreguntas = this.dataLevel1Service.getWordsBasico();
-
+      palabras = this.dataLevel1Service.getWordsBasico();
     } else if (this.nivelIdioma === 'basico-alto') {
-      this.dataTablePreguntas = this.dataLevel1Service.getWordsBasicoAlto();
-
+      palabras = this.dataLevel1Service.getWordsBasicoAlto();
     } else if (this.nivelIdioma === 'intermedio') {
-      this.dataTablePreguntas = this.dataLevel1Service.getWordsintermedio();
-
+      palabras = this.dataLevel1Service.getWordsintermedio();
     } else if (this.nivelIdioma === 'intermedio-alto') {
-      this.dataTablePreguntas = this.dataLevel1Service.getWordsintermedioAlto()
-
+      palabras = this.dataLevel1Service.getWordsintermedioAlto();
     } else {
       console.log("Nivel no reconocido");
+      return; 
     }
+
+    // Aplicar aleatoriedad a las palabras obtenidas según el nivel
+    this.dataTablePreguntas = this.getRandomWords(palabras, this.cantidadPreguntas);
   }
+
 
   enviar() {
     this.loading = true;
