@@ -53,7 +53,7 @@ export class HomeComponent implements OnInit, OnDestroy {
       fechaInicio: [this.today.toISOString().split('T')[0]],
       idioma: ['Ingles'],
       nivel: ['principiante'],
-      cantidad: ['1'],
+      cantidad: ['4'],
       time: ['true']
     })
   }

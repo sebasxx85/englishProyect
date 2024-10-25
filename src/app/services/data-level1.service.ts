@@ -5,12 +5,12 @@ import { Injectable } from '@angular/core';
 })
 export class DataLevel1Service {
 
-  // Arreglo de palabras en inglés
-  private words: string[] = [
-    'apple', 'banana', 'cherry', 'date', 'elephant', 'fish', 'grape', 
-    'house', 'island', 'jacket', 'kangaroo', 'lemon', 'monkey', 'notebook', 
-    'orange', 'pencil', 'queen', 'rabbit', 'sun', 'tiger'
-  ];
+  // // Arreglo de palabras en inglés
+  // private words: string[] = [
+  //   'apple', 'banana', 'cherry', 'date', 'elephant', 'fish', 'grape', 
+  //   'house', 'island', 'jacket', 'kangaroo', 'lemon', 'monkey', 'notebook', 
+  //   'orange', 'pencil', 'queen', 'rabbit', 'sun', 'tiger'
+  // ];
 
   //NIVELES
   private principianteA0: string[] = [
@@ -43,11 +43,6 @@ export class DataLevel1Service {
     'unpredictable', 'disappeared', 'house', 'island', 'queen', 'rabbit'
   ];
 
-
-  // Método para obtener las palabras
-  getWords(): string[] {
-    return this.words;
-  }
 
   getWordsPrincipiantes(): string[] {
     return this.principianteA0;

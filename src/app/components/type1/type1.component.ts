@@ -33,7 +33,6 @@ export class Type1Component {
     this.initForm();
     this.cantidadPreguntas = this.intercambioDatosService.getCantidad();
     this.nivelIdioma = this.intercambioDatosService.getNivelIdioma();
-    this.loadRandomWords(this.cantidadPreguntas);
     this.cargarNivelIngles();
 
     // Crear un array basado en la cantidad de preguntas
@@ -55,12 +54,7 @@ export class Type1Component {
     });
   }
 
-  // Cargar palabras aleatorias del servicio basado en la cantidad
-  loadRandomWords(cantidad: number) {
-    const allWords = this.dataLevel1Service.getWords();
-    this.dataTablePreguntas = this.getRandomWords(allWords, cantidad);
-  }
-
+  
   // Función para obtener palabras aleatorias
   getRandomWords(words: string[], count: number): string[] {
     const shuffled = words.sort(() => 0.5 - Math.random()); // Barajar las palabras
