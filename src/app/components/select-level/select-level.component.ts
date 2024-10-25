@@ -46,7 +46,6 @@ export class SelectLevelComponent {
   ngOnInit() {
     this.initForm();
 
-
   }
 
   initForm() {
