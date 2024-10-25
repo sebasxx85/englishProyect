@@ -19,6 +19,7 @@ export class Type1Component {
   dataTablePreguntas: string[] = [];
   cantidadPreguntas = 0;
   cantidadArray: number[] = []; // Arreglo para generar los selectores dinámicos
+  respuestasCorrectas = 0; //luego ver cuantas preg y resp hacen match y motstrar tabla en resultComponent
 
   // Inyecciones
   private fb = inject(FormBuilder);
@@ -64,6 +65,11 @@ export class Type1Component {
 
   enviar() {
     this.loading = true;
+  
+    // Simula alguna lógica adicional (por ejemplo, mostrar un loader)
+    setTimeout(() => {
+      this.router.navigate(['/result']); // Navegar hacia ResultComponent
+    }, 1000);
   }
 
 }
