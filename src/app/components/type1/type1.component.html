@@ -2,27 +2,36 @@
 
 <body>
   <div class="card-container">
+    <!-- Preguntas y Respuestas en dos columnas -->
     <mat-card class="custom-card">
-      <form [formGroup]="form" (ngSubmit)="enviar()">
-        <div class="form-group">
+      <div class="row">
+        <!-- Columna 1: Diseño de botones con *ngFor -->
+        <div class="col">
+          <button mat-flat-button color="primary" class="boton" *ngFor="let palabra of dataTablePreguntas">{{ palabra }}</button>
         </div>
-        <div class="form-group">
-            <select name="nivel" formControlName="respuesta">
-                <option value="Principiante">Respuesta1</option>
-                <option value="Basico-bajo">Respuesta2</option>
-                <option value="Basico-alto">Respuesta3</option>
-                <option value="Intermedio-bajo">Respuesta4</option>
+
+        <!-- Columna 2: Selectores dinámicos -->
+        <div class="col">
+          <form [formGroup]="form" (ngSubmit)="enviar()">
+            <div class="form-group">
+              <select name="respuesta" formControlName="respuesta">
+                <option value="Respuesta1">Respuesta1</option>
+                <option value="Respuesta2">Respuesta2</option>
+                <option value="Respuesta3">Respuesta3</option>
+                <option value="Respuesta4">Respuesta4</option>
               </select>
+            </div>
+          </form>
         </div>
-      </form>
-      <div class="float-left">
-        <button mat-flat-button color="primary" class="boton"
-          (click)="enviar()">Empezar</button>
       </div>
-      <mat-progress-bar *ngIf="loading" mode="indeterminate"
-        class="progreso"></mat-progress-bar>
+
+      <div class="float-left">
+        <button mat-flat-button color="primary" class="boton" (click)="enviar()">Empezar</button>
+      </div>
+
+      <mat-progress-bar *ngIf="loading" mode="indeterminate" class="progreso"></mat-progress-bar>
     </mat-card>
   </div>
-
 </body>
+
 <app-footer></app-footer>

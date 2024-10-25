@@ -86,7 +86,8 @@ export class HomeComponent implements OnInit, OnDestroy {
 
       // Generar un número aleatorio entre 1 y 3 (o la cantidad de componentes que tengas)
       const randomComponent = Math.floor(Math.random() * 3) + 1;
-      this.router.navigate([`type${randomComponent}`]);
+     // this.router.navigate([`type${randomComponent}`]);
+     this.router.navigate([`type${1}`]);
     }, 2000);
 
   }

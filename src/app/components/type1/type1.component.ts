@@ -29,7 +29,11 @@ export class Type1Component {
     this.initForm();
     this.cantidadPreguntas = this.intercambioDatosService.getCantidad();
     this.loadRandomWords(this.cantidadPreguntas);
-
+  
+    // Crear dinámicamente los controles de formulario para las respuestas
+    this.dataTablePreguntas.forEach((palabra, index) => {
+      this.form.addControl(`respuesta${index}`, this.fb.control(''));
+    });
   }
 
   initForm() {
