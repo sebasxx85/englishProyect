@@ -42,13 +42,17 @@ export class HomeComponent implements OnInit, OnDestroy {
       console.log('El valor de time ha cambiado:', value);
     });
 
+    this.form.get('nivel')?.valueChanges.subscribe(value => {
+      console.log('El valor del nivel ha cambiado:', value);
+    });
+
   }
 
   initForm() {
     this.form = this.fb.group({
       fechaInicio: [this.today.toISOString().split('T')[0]],
       idioma: ['Ingles'],
-      nivel: ['Principiante'],
+      nivel: ['principiante'],
       cantidad: ['1'],
       time: ['true']
     })
@@ -83,6 +87,10 @@ export class HomeComponent implements OnInit, OnDestroy {
 
       // Guardar el valor de cantidad en el servicio
       this.intercambioDatosService.setCantidad(cantidad);
+
+      // Guardar el valor de nivel ingles
+      let nivelIdioma = this.form.get('nivel')?.value;
+      this.intercambioDatosService.setNivelIdioma(nivelIdioma);
 
       // Generar un número aleatorio entre 1 y 3 (o la cantidad de componentes que tengas)
       const randomComponent = Math.floor(Math.random() * 3) + 1;

@@ -20,13 +20,7 @@ export class Type1Component {
   cantidadPreguntas = 0;
   cantidadArray: number[] = []; // Arreglo para generar los selectores dinámicos
   respuestasCorrectas = 0; //luego ver cuantas preg y resp hacen match y motstrar tabla en resultComponent
-
-  //Niveles
-  dataTablePreguntasA0: string[] = [];
-  dataTablePreguntasA1: string[] = [];
-  dataTablePreguntasA2: string[] = [];
-  dataTablePreguntasB1: string[] = [];
-  dataTablePreguntasB2: string[] = [];
+  nivelIdioma = '';
 
 
   // Inyecciones
@@ -39,7 +33,8 @@ export class Type1Component {
     this.initForm();
     this.cantidadPreguntas = this.intercambioDatosService.getCantidad();
     this.loadRandomWords(this.cantidadPreguntas);
-    
+    this.nivelIdioma = this.intercambioDatosService.getNivelIdioma();
+
     // Crear un array basado en la cantidad de preguntas
     this.cantidadArray = Array.from({ length: this.cantidadPreguntas }, (_, index) => index);
 
@@ -71,9 +66,31 @@ export class Type1Component {
     return shuffled.slice(0, count); // Retornar las primeras `count` palabras
   }
 
+  //funcion para cargar dependiendo del nivel
+  cargarNivelIngles() {
+    if (this.nivelIdioma === 'principiante') {
+      this.dataTablePreguntas = this.dataLevel1Service.getWordsPrincipiantes();
+
+    } else if (this.nivelIdioma === 'basico') {
+      this.dataTablePreguntas = this.dataLevel1Service.getWordsBasico();
+
+    } else if (this.nivelIdioma === 'basico-alto') {
+      this.dataTablePreguntas = this.dataLevel1Service.getWordsBasicoAlto();
+
+    } else if (this.nivelIdioma === 'intermedio') {
+      this.dataTablePreguntas = this.dataLevel1Service.getWordsintermedio();
+
+    } else if (this.nivelIdioma === 'intermedio-alto') {
+      this.dataTablePreguntas = this.dataLevel1Service.getWordsintermedioAlto()
+
+    } else {
+      console.log("Nivel no reconocido");
+    }
+  }
+
   enviar() {
     this.loading = true;
-  
+
     // Simula alguna lógica adicional (por ejemplo, mostrar un loader)
     setTimeout(() => {
       this.router.navigate(['/result']); // Navegar hacia ResultComponent

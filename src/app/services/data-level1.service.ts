@@ -49,5 +49,27 @@ export class DataLevel1Service {
   getWords(): string[] {
     return this.words;
   }
+
+  getWordsPrincipiantes(): string[] {
+    return this.principianteA0;
+  }
+
+  getWordsBasico(): string[] {
+    return this.basicoA1;
+  }
+
+  getWordsintermedioAlto(): string[] {
+    return this.basicoAltoA2;
+  }
+
+  getWordsintermedio(): string[] {
+    return this.intermedioB1;
+  }
+
+  getWordsBasicoAlto(): string[] {
+    return this.intermedioAltoB2;
+  }
+
+
   
 }
