@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { IntercambioDatosService } from 'src/app/services/intercambio-datos.service';
 
 @Component({
   selector: 'app-home',
@@ -29,9 +30,10 @@ export class HomeComponent implements OnInit, OnDestroy {
   ]
 
   //Injectando servicios
-  //private httpClient = inject(HttpClient)
   private fb = inject(FormBuilder)
   private router = inject(Router)
+  private intercambioDatosService = inject(IntercambioDatosService);
+  
 
   ngOnInit() {
     this.initForm();
@@ -54,7 +56,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   calcularTiempo(cantidad: number, time: boolean) {
 
-    console.log('Valores recibidos en calcularTiempo:', {cantidad, time });
+    console.log('Valores recibidos en calcularTiempo:', { cantidad, time });
 
     let resultado = 0
     const segundo = 30;
@@ -67,7 +69,7 @@ export class HomeComponent implements OnInit, OnDestroy {
       alert("Tendrás " + resultado + " segundos para realizar el test");
     } else {
       alert("Tendrás todo el tiempo para realizar el test");
-    } 
+    }
 
   }
 
@@ -78,7 +80,13 @@ export class HomeComponent implements OnInit, OnDestroy {
       let time = this.form.get('time')?.value === 'true';
       let cantidad = +this.form.get('cantidad')?.value;
       this.calcularTiempo(cantidad, time);
-      this.router.navigate(['select']);
+
+      // Guardar el valor de cantidad en el servicio
+      this.intercambioDatosService.setCantidad(cantidad);
+
+      // Generar un número aleatorio entre 1 y 3 (o la cantidad de componentes que tengas)
+      const randomComponent = Math.floor(Math.random() * 3) + 1;
+      this.router.navigate([`type${randomComponent}`]);
     }, 2000);
 
   }

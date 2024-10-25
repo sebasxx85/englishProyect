@@ -1,0 +1,28 @@
+<app-header [title]="title"></app-header>
+
+<body>
+  <div class="card-container">
+    <mat-card class="custom-card">
+      <form [formGroup]="form" (ngSubmit)="enviar()">
+        <div class="form-group">
+        </div>
+        <div class="form-group">
+            <select name="nivel" formControlName="respuesta">
+                <option value="Principiante">Respuesta1</option>
+                <option value="Basico-bajo">Respuesta2</option>
+                <option value="Basico-alto">Respuesta3</option>
+                <option value="Intermedio-bajo">Respuesta4</option>
+              </select>
+        </div>
+      </form>
+      <div class="float-left">
+        <button mat-flat-button color="primary" class="boton"
+          (click)="enviar()">Empezar</button>
+      </div>
+      <mat-progress-bar *ngIf="loading" mode="indeterminate"
+        class="progreso"></mat-progress-bar>
+    </mat-card>
+  </div>
+
+</body>
+<app-footer></app-footer>
