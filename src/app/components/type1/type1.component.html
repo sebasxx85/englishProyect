@@ -4,32 +4,27 @@
   <div class="card-container">
     <!-- Preguntas y Respuestas en dos columnas -->
     <mat-card class="custom-card">
-      <div class="row">
-        <!-- Columna 1: Diseño de botones con *ngFor -->
-        <div class="col">
-          <button mat-flat-button color="primary" class="boton" *ngFor="let palabra of dataTablePreguntas">{{ palabra }}</button>
-        </div>
-
-        <!-- Columna 2: Selectores dinámicos basados en cantidad de preguntas -->
-        <div class="col">
-          <form [formGroup]="form" (ngSubmit)="enviar()">
-            <div class="form-group" *ngFor="let index of cantidadArray">
-              <select [name]="'respuesta' + index" [formControlName]="'respuesta' + index">
+      <form [formGroup]="form" (ngSubmit)="enviar()">
+        <div class="row">
+          <!-- Preguntas y respuestas alineadas en la misma fila -->
+          <div class="form-group" *ngFor="let index of cantidadArray; let i = index">
+            <div class="col">
+              <button mat-flat-button color="primary" class="botonword">{{ dataTablePreguntas[i] }}</button> <!-- Botón con palabra -->
+              <select [name]="'respuesta' + i" [formControlName]="'respuesta' + i">
                 <option value="Respuesta1">Respuesta1</option>
                 <option value="Respuesta2">Respuesta2</option>
                 <option value="Respuesta3">Respuesta3</option>
                 <option value="Respuesta4">Respuesta4</option>
               </select>
             </div>
-          </form>
+          </div>
         </div>
-      </div>
 
-      <div class="float-left">
-        <button mat-flat-button color="primary" class="boton" (click)="enviar()">Enviar</button>
-      </div>
-
-      <mat-progress-bar *ngIf="loading" mode="indeterminate" class="progreso"></mat-progress-bar>
+        <div class="float-left">
+          <button mat-flat-button color="primary" class="boton" (click)="enviar()">Enviar</button>
+        </div>
+        <mat-progress-bar *ngIf="loading" mode="indeterminate" class="progreso"></mat-progress-bar>
+      </form>
     </mat-card>
   </div>
 </body>
