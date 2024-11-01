@@ -9,7 +9,7 @@ import { IntercambioDatosService } from 'src/app/services/intercambio-datos.serv
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit, OnDestroy {
+export class HomeComponent implements OnInit {
 
 
   title = "Test de Inglés Gratis";
@@ -104,9 +104,6 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.form.reset
   }
 
-  ngOnDestroy() {
-    // this.destroy$.next();
-    // this.destroy$.complete();
-  }
+
 
 }
