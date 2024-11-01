@@ -150,4 +150,9 @@ export class Type1Component implements OnInit {
     }, 1000);
   }
 
+  ngOnDestroy() {
+    // Cancelar suscripción para evitar fugas de memoria
+    this.subscription.unsubscribe();
+  }
+
 }

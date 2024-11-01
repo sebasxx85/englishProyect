@@ -36,7 +36,6 @@ export class ResultComponent implements OnInit {
 
   title = "Realizando Prueba";
   loading = false;
-  form!: FormGroup;
   today = new Date();
   cantidadPreguntas = 0;
   cantidadArray: number[] = [];
@@ -47,7 +46,6 @@ export class ResultComponent implements OnInit {
   respuestasIncorrectas = 0;
 
   // Inyecciones
-  private fb = inject(FormBuilder);
   private router = inject(Router);
   private dataLevel1Service = inject(DataLevel1Service);
   private intercambioDatosService = inject(IntercambioDatosService);
@@ -56,6 +54,8 @@ export class ResultComponent implements OnInit {
     //this.initForm();
     this.respuestasCorrectas = this.intercambioDatosService.getCantidadRespCorrectas();
     this.respuestasIncorrectas= this.intercambioDatosService.getCantidadRespIncorrectas();
+    console.log(this.respuestasCorrectas)
+    console.log(this.respuestasIncorrectas)
   
   }
 
