@@ -8,22 +8,20 @@
       <form [formGroup]="form" (ngSubmit)="enviar()">
         <div class="row">
           <!-- Preguntas y respuestas alineadas en la misma fila -->
-          <div class="form-group"
-            *ngFor="let index of cantidadArray; let i = index">
+          <div class="form-group" *ngFor="let index of cantidadArray; let i = index">
             <div class="col">
-              <button mat-flat-button color="primary" class="botonword">{{
-                dataTablePreguntas[i] }}</button>
+              <button mat-flat-button color="primary" class="botonword">
+                {{ dataTablePreguntas[i] }}
+              </button>
               <label>Respuesta</label>
-              <select [name]="'respuesta' + i"
-                [formControlName]="'respuesta' + i">
-                <option value="Respuesta1">Respuesta1</option>
-                <option value="Respuesta2">Respuesta2</option>
-                <option value="Respuesta3">Respuesta3</option>
-                <option value="Respuesta4">Respuesta4</option>
+              <select [name]="'respuesta' + i" [formControlName]="'respuesta' + i">
+                <option *ngFor="let respuesta of dataTableRespuestas" [value]="respuesta">
+                  {{ respuesta }}
+                </option>
               </select>
             </div>
           </div>
-        </div>
+          </div>
 
         <div class="float-left">
           <button mat-flat-button color="primary" class="boton"

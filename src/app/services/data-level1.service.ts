@@ -5,14 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class DataLevel1Service {
 
-  // // Arreglo de palabras en inglés
-  // private words: string[] = [
-  //   'apple', 'banana', 'cherry', 'date', 'elephant', 'fish', 'grape', 
-  //   'house', 'island', 'jacket', 'kangaroo', 'lemon', 'monkey', 'notebook', 
-  //   'orange', 'pencil', 'queen', 'rabbit', 'sun', 'tiger'
-  // ];
-
-  //NIVELES
+  //Preguntas
   private principianteA0: string[] = [
     'apple', 'banana', 'cherry', 'date', 'elephant', 'fish', 'grape', 
     'house', 'island', 'jacket', 'kangaroo', 'lemon', 'monkey', 'notebook', 
@@ -43,6 +36,7 @@ export class DataLevel1Service {
     'unpredictable', 'disappeared', 'house', 'island', 'queen', 'rabbit'
   ];
 
+ //Metodos Preguntas
 
   getWordsPrincipiantes(): string[] {
     return this.principianteA0;
@@ -63,6 +57,63 @@ export class DataLevel1Service {
   getWordsBasicoAlto(): string[] {
     return this.intermedioAltoB2;
   }
+
+//Repuestas
+private principianteA0Res: string[] = [
+  'manzana', 'banana', 'cereza', 'dátil', 'elefante', 'pez', 'uva', 
+  'casa', 'isla', 'chaqueta', 'canguro', 'limón', 'mono', 'cuaderno', 
+  'naranja', 'lápiz', 'reina', 'conejo', 'sol', 'tigre'
+];
+
+private basicoA1Res: string[] = [
+  'manzana', 'banana', 'cereza', 'dátil', 'elefante', 'pez', 'uva', 
+  'casa', 'isla', 'chaqueta', 'canguro', 'limón', 'mono', 'cuaderno', 
+  'naranja', 'lápiz', 'reina', 'conejo', 'sol', 'tigre'
+];
+
+private basicoAltoA2Res: string[] = [
+  'servilleta', 'de ninguna manera', 'lamentó', 'contaminación', 'bastante tiempo', 'choza', 'tengo que',
+  'tener que', 'hoy en día', 'tendencia', 'metraje', 'frente', 'comprador compulsivo', 'doblar',
+  'afortunadamente', 'decepcionante', 'tejer', 'casa', 'reina', 'conejo'
+];
+
+
+private intermedioB1Res: string[] = [
+  'corbata', 'posponer', 'mayormente', 'desafiante', 'molesto', 'con anticipación', 'confiable',
+  'probable', 'mientras tanto', 'parcialmente', 'siempre que', 'alentador',
+  'casa', 'isla', 'chaqueta', 'reina', 'conejo', 'lápiz', 'limón'
+];
+
+
+private intermedioAltoB2Res: string[] = [
+  'confianza', 'puente', 'víctimas', 'liderar', 'a lo largo de', 'preparado', 'herido', 
+  'inútil', 'bostezar', 'fangoso', 'cortar el césped', 'estanque', 'césped', 'pulgar', 
+  'impredecible', 'desaparecido', 'casa', 'isla', 'reina', 'conejo'
+];
+
+
+//Metodos Respuestas
+
+getWordsPrincipiantesRes(): string[] {
+  return this.principianteA0Res;
+}
+
+getWordsBasicoRes(): string[] {
+  return this.basicoA1Res;
+}
+
+getWordsBasicoAltoRes(): string[] {
+  return this.basicoAltoA2Res;
+}
+
+getWordsintermedioRes(): string[] {
+  return this.intermedioB1Res;
+}
+
+getWordsIntermedioAltoRes(): string[] {
+  return this.intermedioAltoB2Res;
+}
+
 
 
   

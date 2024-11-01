@@ -16,11 +16,13 @@ export class Type1Component {
   loading = false;
   form!: FormGroup;
   today = new Date();
-  dataTablePreguntas: string[] = [];
   cantidadPreguntas = 0;
   cantidadArray: number[] = []; // Arreglo para generar los selectores dinámicos
   respuestasCorrectas = 0; //luego ver cuantas preg y resp hacen match y motstrar tabla en resultComponent
   nivelIdioma = '';
+  //Areglos preguntas y respuestas
+  dataTablePreguntas: string[] = [];
+  dataTableRespuestas: string[] = [];
 
 
   // Inyecciones
@@ -64,17 +66,23 @@ export class Type1Component {
   //funcion para cargar dependiendo del nivel
   cargarNivelIngles() {
     let palabras: string[] = [];
+    let palabras2: string[] = []; //Respuestas
 
     if (this.nivelIdioma === 'principiante') {
       palabras = this.dataLevel1Service.getWordsPrincipiantes();
+      palabras2 = this.dataLevel1Service.getWordsPrincipiantesRes();
     } else if (this.nivelIdioma === 'basico') {
       palabras = this.dataLevel1Service.getWordsBasico();
+      palabras2 = this.dataLevel1Service.getWordsBasicoRes();
     } else if (this.nivelIdioma === 'basico-alto') {
       palabras = this.dataLevel1Service.getWordsBasicoAlto();
+      palabras2 = this.dataLevel1Service.getWordsBasicoAltoRes();
     } else if (this.nivelIdioma === 'intermedio') {
       palabras = this.dataLevel1Service.getWordsintermedio();
+      palabras2 = this.dataLevel1Service.getWordsintermedioRes();
     } else if (this.nivelIdioma === 'intermedio-alto') {
       palabras = this.dataLevel1Service.getWordsintermedioAlto();
+      palabras = this.dataLevel1Service.getWordsIntermedioAltoRes();
     } else {
       console.log("Nivel no reconocido");
       return; 
@@ -82,6 +90,7 @@ export class Type1Component {
 
     // Aplicar aleatoriedad a las palabras obtenidas según el nivel
     this.dataTablePreguntas = this.getRandomWords(palabras, this.cantidadPreguntas);
+    this.dataTableRespuestas = this.getRandomWords(palabras2, this.cantidadPreguntas);
   }
 
 
