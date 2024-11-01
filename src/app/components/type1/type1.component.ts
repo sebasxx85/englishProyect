@@ -1,6 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { DataLevel1Service } from 'src/app/services/data-level1.service';
 import { IntercambioDatosService } from 'src/app/services/intercambio-datos.service';
 
@@ -17,12 +18,16 @@ export class Type1Component implements OnInit {
   today = new Date();
   cantidadPreguntas = 0;
   cantidadArray: number[] = [];
-  respuestasCorrectas = 0;
   nivelIdioma = '';
 
   // Arreglos de preguntas y respuestas
   dataTablePreguntas: string[] = [];
   dataTableRespuestas: string[] = [];
+
+  //Obtener respuestas correctas e incorrectas
+  respuestasCorrectas = 0;
+  respuestasIncorrectas = 0;
+  private subscription: Subscription = new Subscription();
 
   // Inyecciones
   private fb = inject(FormBuilder);
@@ -43,6 +48,21 @@ export class Type1Component implements OnInit {
     this.cantidadArray.forEach(index => {
       this.form.addControl(`respuesta${index}`, this.fb.control(''));
     });
+
+    //subscribirse al valor de respuestas correctas e incorrectas
+    this.subscription.add(
+      this.intercambioDatosService.respuestasCorrectas$.subscribe(
+        (valor) => this.respuestasCorrectas = valor
+      )
+    );
+
+    this.subscription.add(
+      this.intercambioDatosService.respuestasIncorrectas$.subscribe(
+        (valor) => this.respuestasIncorrectas = valor
+      )
+    );
+
+
   }
 
   initForm() {
@@ -106,8 +126,27 @@ export class Type1Component implements OnInit {
   enviar() {
     this.loading = true;
 
+    this.respuestasCorrectas = 0;
+    this.respuestasIncorrectas = 0;
+
+    // Contar respuestas correctas e incorrectas
+    this.cantidadArray.forEach((index) => {
+      const respuestaSeleccionada = this.form.get(`respuesta${index}`)?.value;
+      const respuestaCorrecta = this.dataTableRespuestas[index];
+
+      if (respuestaSeleccionada === respuestaCorrecta) {
+        this.respuestasCorrectas++;
+      } else {
+        this.respuestasIncorrectas++;
+      }
+    });
+
+    // Guardar los valores en el servicio IntercambioDatosService
+    this.intercambioDatosService.setCantidadRespCorrectas(this.respuestasCorrectas);
+    this.intercambioDatosService.setCantidadRespIncorrectas(this.respuestasIncorrectas);
+
     setTimeout(() => {
-      this.router.navigate(['/result']); // Navegar hacia ResultComponent
+      this.router.navigate(['/result']); 
     }, 1000);
   }
 
