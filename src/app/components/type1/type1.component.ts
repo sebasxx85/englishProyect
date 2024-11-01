@@ -98,7 +98,7 @@ export class Type1Component implements OnInit {
   buscarRespuestas(preguntasSeleccionadas: string[], todasLasPreguntas: string[], todasLasRespuestas: string[]): string[] {
     return preguntasSeleccionadas.map(pregunta => {
       const index = todasLasPreguntas.indexOf(pregunta);
-      return todasLasRespuestas[index] || ''; // Retorna la respuesta correspondiente o un string vacío si no se encuentra
+      return todasLasRespuestas[index] || ''; 
     });
   }
 
