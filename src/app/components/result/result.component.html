@@ -3,15 +3,18 @@
 <body>
 
   <div class="card-container">
-<mat-card>
-  <mat-card-title>Resultados de la Prueba</mat-card-title>
-  <mat-card-content>
-    Respuestas Correctas: {{ respuestasCorrectas }}<br>
-    Respuestas Incorrectas: {{ respuestasIncorrectas }}
-  </mat-card-content>
-</mat-card>
+    <mat-card class="custom-card">
+      <mat-card-title>Resultados de la Prueba</mat-card-title>
+      <mat-card-content>
+        <p>Respuestas Correctas: {{ respuestasCorrectas }}</p>
+        <p>
+          Respuestas Incorrectas: {{ respuestasIncorrectas }}
+          <mat-icon color="warn" class="red-icon">close</mat-icon>
+        </p>
+      </mat-card-content>
+    </mat-card>
 
-</div>
+  </div>
 </body>
 
 <app-footer></app-footer>
