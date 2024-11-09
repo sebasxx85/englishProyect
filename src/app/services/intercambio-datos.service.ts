@@ -8,6 +8,8 @@ export class IntercambioDatosService {
 
   private cantidad: number = 0;
   private nivel: string = '';
+  private resultadoSubject = new BehaviorSubject<number>(0); // Nuevo BehaviorSubject para resultado
+
 
   //Usando BehaviorSubject para numero de respuestas correctas e incorrectas
   private respuestasCorrectasSubject = new BehaviorSubject<number>(0);
@@ -15,6 +17,7 @@ export class IntercambioDatosService {
 
   respuestasCorrectas$ = this.respuestasCorrectasSubject.asObservable();
   respuestasIncorrectas$ = this.respuestasIncorrectasSubject.asObservable();
+  resultado$ = this.resultadoSubject.asObservable(); // Observable para resultado
 
   constructor() { }
 
@@ -38,8 +41,18 @@ export class IntercambioDatosService {
     return this.nivel;
   }
 
-   // Método para establecer el valor de respuestas correctas
-   setCantidadRespCorrectas(value: number) {
+  // Método para establecer el valor de resultado tiempo disponible
+  setResultado(value: number) {
+    this.resultadoSubject.next(value);
+  }
+
+  // Método para obtener el valor actual de resultado tiempo disponible
+  getResultado(): number {
+    return this.resultadoSubject.getValue();
+  }
+
+  // Método para establecer el valor de respuestas correctas
+  setCantidadRespCorrectas(value: number) {
     this.respuestasCorrectasSubject.next(value);
   }
 
@@ -58,5 +71,5 @@ export class IntercambioDatosService {
     return this.respuestasIncorrectasSubject.getValue();
   }
 
-  
+
 }

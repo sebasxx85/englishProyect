@@ -13,9 +13,9 @@ export class DataLevel1Service {
   ];
 
   private basicoA1: string[] = [
-    'apple', 'banana', 'cherry', 'date', 'elephant', 'fish', 'grape', 
-    'house', 'island', 'jacket', 'kangaroo', 'lemon', 'monkey', 'notebook', 
-    'orange', 'pencil', 'queen', 'rabbit', 'sun', 'tiger'
+    'cat', 'dog', 'book', 'car', 'tree', 'water', 'table',
+    'window', 'door', 'chair', 'school', 'ball', 'flower', 'street',
+    'clock', 'cup', 'shirt', 'shoe', 'bed', 'lamp'
   ];
 
   private basicoAltoA2: string[] = [
@@ -46,7 +46,7 @@ export class DataLevel1Service {
     return this.basicoA1;
   }
 
-  getWordsintermedioAlto(): string[] {
+  getWordsBasicoAlto(): string[] {
     return this.basicoAltoA2;
   }
 
@@ -54,21 +54,23 @@ export class DataLevel1Service {
     return this.intermedioB1;
   }
 
-  getWordsBasicoAlto(): string[] {
+  getWordsintermedioAlto(): string[] {
     return this.intermedioAltoB2;
   }
 
+ 
+
 //Repuestas
 private principianteA0Res: string[] = [
-  'manzana', 'banana', 'cereza', 'dátil', 'elefante', 'pez', 'uva', 
+  'manzana', 'banana', 'cereza', 'fecha', 'elefante', 'pez', 'uva', 
   'casa', 'isla', 'chaqueta', 'canguro', 'limón', 'mono', 'cuaderno', 
   'naranja', 'lápiz', 'reina', 'conejo', 'sol', 'tigre'
 ];
 
 private basicoA1Res: string[] = [
-  'manzana', 'banana', 'cereza', 'dátil', 'elefante', 'pez', 'uva', 
-  'casa', 'isla', 'chaqueta', 'canguro', 'limón', 'mono', 'cuaderno', 
-  'naranja', 'lápiz', 'reina', 'conejo', 'sol', 'tigre'
+  'gato', 'perro', 'libro', 'coche', 'árbol', 'agua', 'mesa',
+  'ventana', 'puerta', 'silla', 'escuela', 'pelota', 'flor', 'calle',
+  'reloj', 'taza', 'camisa', 'zapato', 'cama', 'lámpara'
 ];
 
 private basicoAltoA2Res: string[] = [

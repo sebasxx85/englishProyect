@@ -29,6 +29,8 @@ export class Type1Component implements OnInit {
   respuestasIncorrectas = 0;
   private subscription: Subscription = new Subscription();
 
+  contador = 0;
+
   // Inyecciones
   private fb = inject(FormBuilder);
   private router = inject(Router);
@@ -62,6 +64,7 @@ export class Type1Component implements OnInit {
       )
     );
 
+    this.terminar();
 
   }
 
@@ -121,6 +124,26 @@ export class Type1Component implements OnInit {
       return todasLasRespuestas[index] || ''; 
     });
   }
+
+
+
+//Logica de contador que cuando llega a cero se va a result
+  terminar(){
+    this.contador = this.intercambioDatosService.getResultado();
+
+    // Si el tiempo es mayor a cero, inicia el contador
+    if (this.contador > 0) {
+      const interval = setInterval(() => {
+        this.contador -= 1;
+        if (this.contador <= 0) {
+          clearInterval(interval); // Detener el intervalo cuando llega a cero
+          this.enviar();
+        }
+      }, 1000); // Reducir el contador cada segundo
+    }
+  }
+
+
 
 
   enviar() {

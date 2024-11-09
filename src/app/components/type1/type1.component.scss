@@ -84,3 +84,11 @@ select {
   justify-content: flex-start; /* Alinea el contenido al inicio de la fila */
   align-items: center; /* Centra verticalmente los botones y selects */
 }
+
+.contador {
+  color: rgb(223, 223, 133);
+  margin-top: 10px;
+  margin-bottom: 17px;
+  font-family: 'Roboto', sans-serif; /* Tipo de letra */
+  display: inline-block; /* Alineación en línea */
+}

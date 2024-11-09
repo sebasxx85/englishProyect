@@ -63,7 +63,7 @@ export class HomeComponent implements OnInit {
     console.log('Valores recibidos en calcularTiempo:', { cantidad, time });
 
     let resultado = 0
-    const segundo = 30;
+    const segundo = 9; //ajustar la cantidad de segundos x pregunta
     resultado = +cantidad * segundo
     time = this.form.get('time')?.value;
 
@@ -72,6 +72,7 @@ export class HomeComponent implements OnInit {
 
     if (timeString == true) {
       alert("Tendrás " + resultado + " segundos para realizar el test");
+      this.intercambioDatosService.setResultado(resultado);
     } else {
       alert("Tendrás todo el tiempo para realizar el test");
     }
