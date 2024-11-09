@@ -60,6 +60,7 @@ export class ResultComponent implements OnInit {
     this.puntajeNivel(this.nivelIdioma);
     this.respuestasCorrectas = this.intercambioDatosService.getCantidadRespCorrectas();
     this.respuestasIncorrectas = this.intercambioDatosService.getCantidadRespIncorrectas();
+
     //Formula puntaje, replazar 1 por tiempo
     this.Puntaje = parseFloat(
       ((this.respuestasCorrectas - (this.respuestasIncorrectas * 0.5)) *
@@ -72,8 +73,8 @@ export class ResultComponent implements OnInit {
     // Agregar el puntaje al arreglo en el servicio
     this.intercambioDatosService.addPuntaje(this.Puntaje);
 
-    //Obtener los ultimos puntajes
-    this.ultimosPuntajes = this.intercambioDatosService.getPuntajes();
+    //Obtener los ultimos puntajes, mostrando primero el ultimo puntaje
+    this.ultimosPuntajes = this.intercambioDatosService.getPuntajes().slice().reverse();
 
   }
 
