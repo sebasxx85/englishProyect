@@ -40,7 +40,8 @@ export class ResultComponent implements OnInit {
   cantidadPreguntas = 0;
   cantidadArray: number[] = [];
   nivelIdioma = '';
- 
+  nivelIdiomaPuntaje = 1.0;
+
   //Obtener respuestas correctas e incorrectas
   respuestasCorrectas = 0;
   respuestasIncorrectas = 0;
@@ -53,18 +54,50 @@ export class ResultComponent implements OnInit {
 
   ngOnInit() {
     //this.initForm();
+    this.nivelIdioma = this.intercambioDatosService.getNivelIdioma()
+    this.puntajeNivel(this.nivelIdioma);
     this.respuestasCorrectas = this.intercambioDatosService.getCantidadRespCorrectas();
-    this.respuestasIncorrectas= this.intercambioDatosService.getCantidadRespIncorrectas();
-    //falta agregar a la formula el nivel de dificultadd A1(1), A2(1.2), B1(1.4), etc y el tiempo restante
-    this.Puntaje = (this.respuestasCorrectas - (this.respuestasIncorrectas)*0.5) * 1 //replazar 1 por tiempo
+    this.respuestasIncorrectas = this.intercambioDatosService.getCantidadRespIncorrectas();
+    //Formula puntaje, replazar 1 por tiempo
+    this.Puntaje = parseFloat(
+      ((this.respuestasCorrectas - (this.respuestasIncorrectas * 0.5)) *
+        this.nivelIdiomaPuntaje * 1985 * 1).toFixed(2)
+    );
 
     console.log(this.respuestasCorrectas)
     console.log(this.respuestasIncorrectas)
-  
+
   }
 
-  //Calcular puntaje tiene que ver con respuestas correctas x el tiempo restante
-  //Crear usuarios y puntajes aleatorios con los que competir en el TOP
-  //a Los usuarios se le debe ir sumando su puntaje de todas las pruebas en su session
+  puntajeNivel(nivel: string) {
+    console.log("El nivel es:", nivel);
+
+    switch (nivel) {
+      case 'principiante':
+        this.nivelIdiomaPuntaje = 1.0;
+        break;
+      case 'basico':
+        this.nivelIdiomaPuntaje = 1.2;
+        break;
+      case 'basico-alto':
+        this.nivelIdiomaPuntaje = 1.4;
+        break;
+      case 'intermedio':
+        this.nivelIdiomaPuntaje = 1.6;
+        break;
+      case 'intermedio-alto':
+        this.nivelIdiomaPuntaje = 2.0;
+        break;
+      default:
+        this.nivelIdiomaPuntaje = 1.0; // Valor por defecto si no coincide con ningún nivel
+        break;
+    }
+
+    console.log("Multiplicador de nivel:", this.nivelIdiomaPuntaje);
+  }
 
 }
+
+//Crear usuarios y puntajes aleatorios con los que competir en el TOP
+//a Los usuarios se le debe ir sumando su puntaje de todas las pruebas en su session
+
