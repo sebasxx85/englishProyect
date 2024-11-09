@@ -22,12 +22,12 @@ export class IntercambioDatosService {
 
   constructor() { }
 
-  // Método para establecer el valor de cantidad
+  // Método para establecer el valor de cantidad preguntas
   setCantidad(value: number) {
     this.cantidad = value;
   }
 
-  // Método para obtener el valor de cantidad
+  // Método para obtener el valor de cantidad preguntas
   getCantidad(): number {
     return this.cantidad;
   }

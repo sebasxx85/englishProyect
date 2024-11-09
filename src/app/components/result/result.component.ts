@@ -106,7 +106,13 @@ export class ResultComponent implements OnInit {
   }
 
   volver() {
-    
+    //Resetear variables
+    this.intercambioDatosService.setResultado(0);
+    this.intercambioDatosService.setCantidad(4);
+    this.intercambioDatosService.setNivelIdioma('principiante')
+    this.intercambioDatosService.setCantidadRespCorrectas(0)
+    this.intercambioDatosService.setCantidadRespIncorrectas(0)
+
     setTimeout(() => {
       this.router.navigate(['/home']);
     }, 1000);
