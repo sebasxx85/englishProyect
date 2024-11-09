@@ -42,6 +42,8 @@ export class ResultComponent implements OnInit {
   nivelIdioma = '';
   nivelIdiomaPuntaje = 1.0;
 
+  ultimosPuntajes: number[] = [];
+
   //Obtener respuestas correctas e incorrectas
   respuestasCorrectas = 0;
   respuestasIncorrectas = 0;
@@ -66,6 +68,12 @@ export class ResultComponent implements OnInit {
 
     console.log(this.respuestasCorrectas)
     console.log(this.respuestasIncorrectas)
+
+    // Agregar el puntaje al arreglo en el servicio
+    this.intercambioDatosService.addPuntaje(this.Puntaje);
+
+    //Obtener los ultimos puntajes
+    this.ultimosPuntajes = this.intercambioDatosService.getPuntajes();
 
   }
 
@@ -95,6 +103,16 @@ export class ResultComponent implements OnInit {
 
     console.log("Multiplicador de nivel:", this.nivelIdiomaPuntaje);
   }
+
+  volver() {
+    
+    setTimeout(() => {
+      this.router.navigate(['/home']);
+    }, 1000);
+    
+  }
+
+
 
 }
 

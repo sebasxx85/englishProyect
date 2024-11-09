@@ -8,7 +8,8 @@ export class IntercambioDatosService {
 
   private cantidad: number = 0;
   private nivel: string = '';
-  private resultadoSubject = new BehaviorSubject<number>(0); // Nuevo BehaviorSubject para resultado
+  private resultadoSubject = new BehaviorSubject<number>(0);
+  private puntajes: number[] = []; // Arreglo para almacenar los últimos puntajes
 
 
   //Usando BehaviorSubject para numero de respuestas correctas e incorrectas
@@ -69,6 +70,20 @@ export class IntercambioDatosService {
   // Método para obtener el valor actual de respuestas incorrectas
   getCantidadRespIncorrectas(): number {
     return this.respuestasIncorrectasSubject.getValue();
+  }
+
+
+  // Método para agregar un nuevo puntaje al arreglo max 50 elementos
+  addPuntaje(puntaje: number) {
+    if (this.puntajes.length >= 50) {
+      this.puntajes.shift(); // Elimina el primer elemento si el tamaño es 50 o más
+    }
+    this.puntajes.push(puntaje);
+  }
+
+  // Método para obtener el arreglo de puntajes
+  getPuntajes(): number[] {
+    return this.puntajes;
   }
 
 

@@ -13,10 +13,24 @@
         </p>
         <p>Puntaje: {{ Puntaje }}</p>
       </mat-card-content>
-      
+
+      <div class="button-container">
+        <button mat-flat-button color="primary" class="boton"
+          (click)="volver()">Volver</button>
+      </div>
+
+    </mat-card>
+    <div class="espacio"></div>
+
+    <mat-card class="custom-card">
+      <mat-card-title>Mis últimos puntajes</mat-card-title>
+      <mat-card-content>
+        <p>{{ ultimosPuntajes.join(', ') }}</p>
+      </mat-card-content>
     </mat-card>
 
   </div>
+
 </body>
 
 <app-footer></app-footer>
