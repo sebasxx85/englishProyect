@@ -53,8 +53,8 @@ export class HomeComponent implements OnInit {
       fechaInicio: [this.today.toISOString().split('T')[0]],
       idioma: ['Ingles'],
       nivel: ['principiante'],
-      cantidad: ['4'],
-      time: ['true']
+      cantidad: [4],
+      time: [true]
     })
   }
 
@@ -65,11 +65,12 @@ export class HomeComponent implements OnInit {
     let resultado = 0
     const segundo = 30;
     resultado = +cantidad * segundo
+    time = this.form.get('time')?.value;
 
     // Convertir el valor de time a una cadena "si" o "no"
-    let timeString = time ? 'si' : 'no';
+    let timeString = time ? true : false;
 
-    if (timeString == 'si') {
+    if (timeString == true) {
       alert("Tendrás " + resultado + " segundos para realizar el test");
     } else {
       alert("Tendrás todo el tiempo para realizar el test");
