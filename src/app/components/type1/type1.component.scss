@@ -43,6 +43,7 @@
   background-color: rgb(47, 158, 210);
   margin-top: 10px;
   margin-bottom: 17px;
+  margin-right: 7px;
   width: 100px;
   border-radius: 9px; /* Esquinas más redondeadas */
   font-family: 'Roboto', sans-serif; /* Tipo de letra */
@@ -85,10 +86,17 @@ select {
   align-items: center; /* Centra verticalmente los botones y selects */
 }
 
-.contador {
+
+.button-container {
+  display: flex;
+  align-items: center; /* Alinea verticalmente el botón y el contador */
+  justify-content: flex-start; /* Alinea los elementos al inicio */
+  gap: 30px; /* Espacio entre el botón y el contador */
+}
+
+.contador-display {
   color: rgb(223, 223, 133);
-  margin-top: 10px;
-  margin-bottom: 17px;
   font-family: 'Roboto', sans-serif; /* Tipo de letra */
-  display: inline-block; /* Alineación en línea */
+  font-weight: bold; /* Para resaltar el texto */
+  margin-bottom: 7px;
 }
