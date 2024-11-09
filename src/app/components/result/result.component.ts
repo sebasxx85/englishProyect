@@ -40,10 +40,11 @@ export class ResultComponent implements OnInit {
   cantidadPreguntas = 0;
   cantidadArray: number[] = [];
   nivelIdioma = '';
-
+ 
   //Obtener respuestas correctas e incorrectas
   respuestasCorrectas = 0;
   respuestasIncorrectas = 0;
+  Puntaje = 0;
 
   // Inyecciones
   private router = inject(Router);
@@ -54,10 +55,16 @@ export class ResultComponent implements OnInit {
     //this.initForm();
     this.respuestasCorrectas = this.intercambioDatosService.getCantidadRespCorrectas();
     this.respuestasIncorrectas= this.intercambioDatosService.getCantidadRespIncorrectas();
+    //falta agregar a la formula el nivel de dificultadd A1, A2, etc y el tiempo restante
+    this.Puntaje = (this.respuestasCorrectas - (this.respuestasIncorrectas)*0.5) * 1 //replazar 1 por tiempo
+
     console.log(this.respuestasCorrectas)
     console.log(this.respuestasIncorrectas)
   
   }
 
+  //Calcular puntaje tiene que ver con respuestas correctas x el tiempo restante
+  //Crear usuarios y puntajes aleatorios con los que competir en el TOP
+  //a Los usuarios se le debe ir sumando su puntaje de todas las pruebas en su session
 
 }
