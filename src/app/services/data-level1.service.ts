@@ -25,15 +25,15 @@ export class DataLevel1Service {
   ];
 
   private intermedioB1: string[] = [
-    'tie', 'postponing', 'mostly', 'challenging', 'upset', 'ahead of time', 'reliable',
-    'likely', 'meanwhile', 'partly', 'as long as', 'encouraging',
-    'house', 'island', 'jacket', 'queen', 'rabbit', 'pencil', 'lemon'
+    'tie', 'postponing', 'mostly', 'challenging', 'upset', 'ahead of time', 'reliable', 'selfish',
+    'likely', 'meanwhile', 'partly', 'as long as', 'encouraging', 'ambush', 'dairy',
+    'house', 'island', 'jacket', 'queen', 'rabbit', 'pencil', 'lemon', 'cardboard', 'supposedly', 'sharp'
   ];
 
   private intermedioAltoB2: string[] = [
     'confidence', 'bridge', 'casualties', 'lead', 'along', 'prepped', 'wounded', 
-    'useless', 'yawn', 'muddy', 'mowing', 'pond', 'lawn', 'thumb', 
-    'unpredictable', 'disappeared', 'house', 'island', 'queen', 'rabbit'
+    'useless', 'yawn', 'muddy', 'mowing', 'pond', 'lawn', 'thumb', 'starve', 'futhermore',
+    'unpredictable', 'disappeared', 'house', 'island', 'queen', 'rabbit', 'landscape', 'frost', 'rainbow'
   ];
 
  //Metodos Preguntas
@@ -81,16 +81,16 @@ private basicoAltoA2Res: string[] = [
 
 
 private intermedioB1Res: string[] = [
-  'corbata', 'posponer', 'mayormente', 'desafiante', 'molesto', 'con anticipación', 'confiable',
-  'probable', 'mientras tanto', 'parcialmente', 'siempre que', 'alentador',
-  'casa', 'isla', 'chaqueta', 'reina', 'conejo', 'lápiz', 'limón'
+  'corbata', 'posponer', 'mayormente', 'desafiante', 'molesto', 'con anticipación', 'confiable', 'egoista',
+  'probable', 'mientras tanto', 'parcialmente', 'siempre que', 'alentador', 'emboscada', 'lacteos',
+  'casa', 'isla', 'chaqueta', 'reina', 'conejo', 'lápiz', 'limón', 'carton', 'supuestamente', 'afilado'
 ];
 
 
 private intermedioAltoB2Res: string[] = [
   'confianza', 'puente', 'víctimas', 'liderar', 'a lo largo de', 'preparado', 'herido', 
-  'inútil', 'bostezar', 'fangoso', 'cortar el césped', 'estanque', 'césped', 'pulgar', 
-  'impredecible', 'desaparecido', 'casa', 'isla', 'reina', 'conejo'
+  'inútil', 'bostezar', 'fangoso', 'cortar el césped', 'estanque', 'césped', 'pulgar', 'morir de hambre', 'ademas',
+  'impredecible', 'desaparecido', 'casa', 'isla', 'reina', 'conejo', 'paisaje', 'escarcha', 'arcoiris'
 ];
 
 
