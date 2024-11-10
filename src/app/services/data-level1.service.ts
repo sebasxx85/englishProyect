@@ -31,9 +31,9 @@ export class DataLevel1Service {
   ];
 
   private intermedioAltoB2: string[] = [
-    'confidence', 'bridge', 'casualties', 'lead', 'along', 'prepped', 'wounded', 
-    'useless', 'yawn', 'muddy', 'mowing', 'pond', 'lawn', 'thumb', 'starve', 'futhermore',
-    'unpredictable', 'disappeared', 'house', 'island', 'queen', 'rabbit', 'landscape', 'frost', 'rainbow'
+    'confidence', 'bridge', 'casualties', 'lead', 'along', 'prepped', 'wounded', 'guilty',
+    'useless', 'yawn', 'muddy', 'mowing', 'pond', 'lawn', 'thumb', 'starve', 'futhermore', 'mustache',
+    'unpredictable', 'disappeared', 'house', 'island', 'queen', 'rabbit', 'landscape', 'frost', 'rainbow', 'split'
   ];
 
  //Metodos Preguntas
@@ -88,9 +88,9 @@ private intermedioB1Res: string[] = [
 
 
 private intermedioAltoB2Res: string[] = [
-  'confianza', 'puente', 'víctimas', 'liderar', 'a lo largo de', 'preparado', 'herido', 
-  'inútil', 'bostezar', 'fangoso', 'cortar el césped', 'estanque', 'césped', 'pulgar', 'morir de hambre', 'ademas',
-  'impredecible', 'desaparecido', 'casa', 'isla', 'reina', 'conejo', 'paisaje', 'escarcha', 'arcoiris'
+  'confianza', 'puente', 'víctimas', 'liderar', 'a lo largo de', 'preparado', 'herido', 'culpable',
+  'inútil', 'bostezar', 'fangoso', 'cortar el césped', 'estanque', 'césped', 'pulgar', 'morir de hambre', 'ademas', 'bigote',
+  'impredecible', 'desaparecido', 'casa', 'isla', 'reina', 'conejo', 'paisaje', 'escarcha', 'arcoiris', 'dividir'
 ];
 
 
