@@ -103,8 +103,18 @@ export class ResultComponent implements OnInit {
     console.log("Multiplicador de nivel:", this.nivelIdiomaPuntaje);
   }
 
-  reset(){
-    this.intercambioDatosService.resetPuntajes()
+  //Resetear PUNTAJES
+  reset() {
+    // Mostrar el mensaje de confirmación
+    const confirmar = window.confirm("¿Estás seguro de borrar todos tus puntajes actuales?");
+    
+    // Si el usuario confirma, ejecutar el reset
+    if (confirmar) {
+      this.intercambioDatosService.resetPuntajes();
+      console.log("Puntajes eliminados");
+    } else {
+      console.log("Acción cancelada");
+    }
   }
 
   volver() {
