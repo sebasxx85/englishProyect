@@ -21,7 +21,11 @@ export class IntercambioDatosService {
   respuestasIncorrectas$ = this.respuestasIncorrectasSubject.asObservable();
   resultado$ = this.resultadoSubject.asObservable();
 
-  constructor() { }
+  constructor() {
+    // Cargar los puntajes desde localStorage al iniciar el servicio
+    this.getPuntajes();
+  }
+
 
   // Método para establecer el valor de cantidad preguntas
   setCantidad(value: number) {
@@ -91,12 +95,27 @@ export class IntercambioDatosService {
       this.puntajes.shift(); // Elimina el primer elemento si el tamaño es 50 o más
     }
     this.puntajes.push(puntaje);
+
+    // Guardar los puntajes en localStorage
+    localStorage.setItem('puntajes', JSON.stringify(this.puntajes));
   }
 
-  // Método para obtener el arreglo de puntajes
-  getPuntajes(): number[] {
-    return this.puntajes;
-  }
+
+    // Método para obtener el arreglo de puntajes desde localStorage
+    getPuntajes(): number[] {
+      const storedPuntajes = localStorage.getItem('puntajes');
+      if (storedPuntajes) {
+        this.puntajes = JSON.parse(storedPuntajes);
+      }
+      return this.puntajes;
+    }
+
+    resetPuntajes() {
+      this.puntajes = [];
+    
+      // Eliminar los datos de puntajes en localStorage
+      localStorage.removeItem('puntajes');
+    }
 
 
 }

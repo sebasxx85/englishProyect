@@ -51,9 +51,27 @@ select {
     padding: 12px 20px; /* Aumenta el padding para hacer el botón más alto */
     border: 1px solid rgba(0, 0, 0, 0.4); /* Borde ligero */
   }
+
+  .boton-reset {
+    color: black;
+    background-color: rgb(237, 61, 22);
+    margin-top: 10px;
+    margin-bottom: 17px;
+    width: 100px;
+    border-radius: 9px; /* Esquinas más redondeadas */
+    font-family: 'Roboto', sans-serif; /* Tipo de letra */
+    transition: background-color 0.3s ease; /* Transición suave del color de fondo */
+    padding: 12px 20px; /* Aumenta el padding para hacer el botón más alto */
+    border: 1px solid rgba(0, 0, 0, 0.4); /* Borde ligero */
+  }
   
   .boton:hover {
     background-color: rgb(240, 240, 190); 
+    cursor: pointer; /* Cambia el cursor a una mano */
+  }
+
+  .boton-reset:hover {
+    background-color: rgb(184, 52, 12); 
     cursor: pointer; /* Cambia el cursor a una mano */
   }
 

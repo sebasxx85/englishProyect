@@ -5,6 +5,8 @@ import { Injectable } from '@angular/core';
 })
 export class DataLevel2Service {
 
+  ///////////////////////////////////// Expresiones Coloquiales ////////////////
+
   private expresionColoquial: string[] = [
     'Buddy', 'Pops', 'Ma', 'Kid', 'Ride', 'Pad', 'Booze', 'Boss', 'Bro', 'Mate', 
     'Fuzz', 'Cool', 'Screw-up', 'Bucks', 'Grub', 'Brainy', 'Pissed', 'Chill', 'Chat', 'Yummy', 
@@ -14,7 +16,7 @@ export class DataLevel2Service {
     'Hilarious', 'Beat'
   ];
 
-  getWordsColoquial(): string[] {
+  getexpresionColoquial(): string[] {
     return this.expresionColoquial;
   }
   
@@ -27,9 +29,43 @@ export class DataLevel2Service {
     'Funny', 'Tired'
   ];
 
-  getWordsFormal(): string[] {
+  getexpresionFormal(): string[] {
     return this.expresionFormal;
   }
+
+  ///////////////////////////////////// Verbos Irregulares ////////////////
+
+  // Arreglo con verbos irregulares en presente
+  private irregularPresent: string[] = [
+    'arise', 'awake', 'be', 'bear', 'beat', 'become', 'begin', 'bend', 'bet', 'bind',
+    'bite', 'bleed', 'blow', 'break', 'bring', 'build', 'burn', 'buy', 'catch', 'choose',
+    'come', 'cost', 'cut', 'deal', 'dig', 'do', 'draw', 'dream', 'drink', 'drive',
+    'eat', 'fall', 'feed', 'feel', 'fight', 'find', 'fly', 'forget', 'forgive', 'freeze',
+    'get', 'give', 'go', 'grow', 'hang', 'have', 'hear', 'hide', 'hit', 'hold'
+  ];
+
+  getirregularPresent(): string[] {
+    return this.irregularPresent;
+  }
+  
+  // Arreglo con los equivalentes en pasado de los verbos en presente
+private  irregularPast: string[] = [
+    'arose', 'awoke', 'was/were', 'bore', 'beat', 'became', 'began', 'bent', 'bet', 'bound',
+    'bit', 'bled', 'blew', 'broke', 'brought', 'built', 'burnt/burned', 'bought', 'caught', 'chose',
+    'came', 'cost', 'cut', 'dealt', 'dug', 'did', 'drew', 'dreamt/dreamed', 'drank', 'drove',
+    'ate', 'fell', 'fed', 'felt', 'fought', 'found', 'flew', 'forgot', 'forgave', 'froze',
+    'got', 'gave', 'went', 'grew', 'hung', 'had', 'heard', 'hid', 'hit', 'held'
+  ];
+
+  getirregularPast(): string[] {
+    return this.irregularPast;
+  }
+
+
+  ///////////////////////////////////// Sinonimos ////////////////
+
+
+  ///////////////////////////////////// Expresiones Frecuentes ////////////////
 
 
 }

@@ -103,6 +103,10 @@ export class ResultComponent implements OnInit {
     console.log("Multiplicador de nivel:", this.nivelIdiomaPuntaje);
   }
 
+  reset(){
+    this.intercambioDatosService.resetPuntajes()
+  }
+
   volver() {
     //Resetear variables
     this.intercambioDatosService.setResultado(0);
