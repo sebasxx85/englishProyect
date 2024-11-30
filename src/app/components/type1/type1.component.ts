@@ -146,7 +146,7 @@ export class Type1Component implements OnInit {
 
   enviar() {
     this.loading = true;
-
+    this.contador = 0;
     this.respuestasCorrectas = 0;
     this.respuestasIncorrectas = 0;
 
