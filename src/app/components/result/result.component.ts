@@ -67,10 +67,8 @@ export class ResultComponent implements OnInit {
         this.nivelIdiomaPuntaje * 1985 * 1).toFixed(2)
     );
 
-    console.log(this.respuestasCorrectas)
-    console.log(this.respuestasIncorrectas)
 
-    // Agregar el puntaje al arreglo en el servicio
+    // Agregar el puntaje al arreglo puntajes
     this.intercambioDatosService.addPuntaje(this.Puntaje);
 
     //Obtener los ultimos puntajes, mostrando primero el ultimo puntaje
@@ -109,12 +107,13 @@ export class ResultComponent implements OnInit {
     //Resetear variables
     this.intercambioDatosService.setResultado(0);
     this.intercambioDatosService.setCantidad(4);
+    this.intercambioDatosService.setTime(0);
     this.intercambioDatosService.setNivelIdioma('principiante')
     this.intercambioDatosService.setCantidadRespCorrectas(0)
     this.intercambioDatosService.setCantidadRespIncorrectas(0)
 
     setTimeout(() => {
-      this.router.navigate(['/home']);
+      this.router.navigate(['']);
     }, 1000);
     
   }

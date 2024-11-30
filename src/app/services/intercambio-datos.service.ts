@@ -8,6 +8,7 @@ export class IntercambioDatosService {
 
   private cantidad: number = 0;
   private nivel: string = '';
+  private tiempo: number = 0;
   private resultadoSubject = new BehaviorSubject<number>(0);
   private puntajes: number[] = []; // Arreglo para almacenar los últimos puntajes
 
@@ -18,7 +19,7 @@ export class IntercambioDatosService {
 
   respuestasCorrectas$ = this.respuestasCorrectasSubject.asObservable();
   respuestasIncorrectas$ = this.respuestasIncorrectasSubject.asObservable();
-  resultado$ = this.resultadoSubject.asObservable(); // Observable para resultado
+  resultado$ = this.resultadoSubject.asObservable();
 
   constructor() { }
 
@@ -36,6 +37,17 @@ export class IntercambioDatosService {
   setNivelIdioma(value: string) {
     this.nivel = value;
   }
+
+  // Método para establecer el valor del tiempo
+  setTime(value: number) {
+    this.tiempo = value;
+  }
+
+   // Método para obtener el valor de cantidad preguntas
+   getTime(): number {
+    return this.tiempo;
+  }
+
 
   // Método para obtener el valor nivel ingles
   getNivelIdioma(): string {

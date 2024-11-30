@@ -84,15 +84,18 @@ export class HomeComponent implements OnInit {
 
     setTimeout(() => {
       let time = this.form.get('time')?.value === 'true';
-      let cantidad = +this.form.get('cantidad')?.value;
-      this.calcularTiempo(cantidad, time);
+      let cantidadPreguntas = +this.form.get('cantidad')?.value;
+      let tiempoDisponible = +this.calcularTiempo(cantidadPreguntas, time);
 
       // Guardar el valor de cantidad en el servicio
-      this.intercambioDatosService.setCantidad(cantidad);
+      this.intercambioDatosService.setCantidad(cantidadPreguntas);
 
       // Guardar el valor de nivel ingles
       let nivelIdioma = this.form.get('nivel')?.value;
       this.intercambioDatosService.setNivelIdioma(nivelIdioma);
+
+      //guardar valor tiempo
+      this.intercambioDatosService.setTime(tiempoDisponible);
 
       // Generar un número aleatorio entre 1 y 3 (o la cantidad de componentes que tengas)
       const randomComponent = Math.floor(Math.random() * 3) + 1;
