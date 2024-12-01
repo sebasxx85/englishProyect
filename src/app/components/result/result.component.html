@@ -3,6 +3,7 @@
 <body>
 
   <div class="card-container">
+    <!--Card 1-->
     <mat-card class="custom-card">
       <mat-card-title>Resultados de la Prueba</mat-card-title>
       <mat-card-content>
@@ -20,17 +21,20 @@
       </div>
 
     </mat-card>
+    
     <div class="espacio"></div>
-
+     <!--Card 2-->
     <mat-card class="custom-card">
       <mat-card-title>Mis últimos puntajes</mat-card-title>
       <mat-card-content>
         <p>{{ ultimosPuntajes.join(', ') }}</p>
       </mat-card-content>
+
       <div class="button-container">
         <button mat-flat-button color="primary" class="boton-reset"
           (click)="reset()">Reset</button>
       </div>
+
     </mat-card>
 
   </div>

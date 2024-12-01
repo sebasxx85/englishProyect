@@ -34,7 +34,7 @@ select {
     width: 37.33%; 
     margin-top: 30px; 
     padding: 1rem; 
-    box-shadow: 8px 8px 8px rgba(0.0, 0.0, 0.7, 0.7); /* Añade sombra para mejor visibilidad */
+    box-shadow: 8px 8px 8px rgba(0.0, 0.0, 0.7, 0.7); /* Añade sombra */
     min-height: 40vh;
     background-color: rgb(18, 13, 13);
   }
@@ -46,10 +46,10 @@ select {
     margin-bottom: 17px;
     width: 100px;
     border-radius: 9px; /* Esquinas más redondeadas */
-    font-family: 'Roboto', sans-serif; /* Tipo de letra */
+    font-family: 'Roboto', sans-serif; 
     transition: background-color 0.3s ease; /* Transición suave del color de fondo */
     padding: 12px 20px; /* Aumenta el padding para hacer el botón más alto */
-    border: 1px solid rgba(0, 0, 0, 0.4); /* Borde ligero */
+    border: 1px solid rgba(0, 0, 0, 0.4); 
   }
 
   .boton-reset {
@@ -59,10 +59,10 @@ select {
     margin-bottom: 17px;
     width: 100px;
     border-radius: 9px; /* Esquinas más redondeadas */
-    font-family: 'Roboto', sans-serif; /* Tipo de letra */
+    font-family: 'Roboto', sans-serif; 
     transition: background-color 0.3s ease; /* Transición suave del color de fondo */
     padding: 12px 20px; /* Aumenta el padding para hacer el botón más alto */
-    border: 1px solid rgba(0, 0, 0, 0.4); /* Borde ligero */
+    border: 1px solid rgba(0, 0, 0, 0.4); 
   }
   
   .boton:hover {
