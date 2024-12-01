@@ -10,16 +10,22 @@ export class IntercambioDatosService {
   private nivel: string = '';
   private tiempo: number = 0;
   private resultadoSubject = new BehaviorSubject<number>(0);
-  private puntajes: number[] = []; // Arreglo para almacenar los últimos puntajes
+  // Arreglo para almacenar los últimos puntajes
+  private puntajes: number[] = []; 
 
 
-  //Usando BehaviorSubject para numero de respuestas correctas e incorrectas
+  //Usando BehaviorSubject 
   private respuestasCorrectasSubject = new BehaviorSubject<number>(0);
   private respuestasIncorrectasSubject = new BehaviorSubject<number>(0);
+  //BehaviorSubject ultimos puntajes
+  private puntajesSubject = new BehaviorSubject<number[]>([]);
 
+  //Observables
   respuestasCorrectas$ = this.respuestasCorrectasSubject.asObservable();
   respuestasIncorrectas$ = this.respuestasIncorrectasSubject.asObservable();
   resultado$ = this.resultadoSubject.asObservable();
+  puntajes$ = this.puntajesSubject.asObservable();
+
 
   constructor() {
     // Cargar los puntajes desde localStorage al iniciar el servicio
@@ -96,25 +102,26 @@ export class IntercambioDatosService {
     }
     this.puntajes.push(puntaje);
 
-    // Guardar los puntajes en localStorage
+    // Guardar en localStorage y actualizar el BehaviorSubject
     localStorage.setItem('puntajes', JSON.stringify(this.puntajes));
+    this.puntajesSubject.next(this.puntajes); // Emitir el nuevo estado
   }
 
-
     // Método para obtener el arreglo de puntajes desde localStorage
-    getPuntajes(): number[] {
+    getPuntajes(): void {
       const storedPuntajes = localStorage.getItem('puntajes');
       if (storedPuntajes) {
         this.puntajes = JSON.parse(storedPuntajes);
       }
-      return this.puntajes;
+      this.puntajesSubject.next(this.puntajes); // Emitir el estado inicial
     }
+
 
     resetPuntajes() {
       this.puntajes = [];
-    
-      // Eliminar los datos de puntajes en localStorage
-      localStorage.removeItem('puntajes');
+  
+      localStorage.removeItem('puntajes');// Eliminar los datos de puntajes en localStorage
+      this.puntajesSubject.next(this.puntajes); // Emitir el estado vacío
     }
 
 

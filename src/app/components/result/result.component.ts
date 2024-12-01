@@ -10,6 +10,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
 import { Router, RouterModule } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { DataLevel1Service } from 'src/app/services/data-level1.service';
 import { IntercambioDatosService } from 'src/app/services/intercambio-datos.service';
 import { HeaderComponent } from 'src/app/Shared/components/header/header.component';
@@ -43,6 +44,7 @@ export class ResultComponent implements OnInit {
   nivelIdiomaPuntaje = 1.0;
 
   ultimosPuntajes: number[] = [];
+  private subscription = new Subscription();
 
   //Obtener respuestas correctas e incorrectas
   respuestasCorrectas = 0;
@@ -67,14 +69,20 @@ export class ResultComponent implements OnInit {
         this.nivelIdiomaPuntaje * 1985 * 1).toFixed(2)
     );
 
+    //Subscripcion arreglo ultimos puntajes
+    this.subscription.add(
+      this.intercambioDatosService.puntajes$.subscribe(puntajes => {
+        this.ultimosPuntajes = [...puntajes].reverse(); // Mostrar el último puntaje primero
+        console.log("Puntajes actualizados:", this.ultimosPuntajes);
+      })
+    );
+
 
     // Agregar el puntaje al arreglo puntajes
     this.intercambioDatosService.addPuntaje(this.Puntaje);
 
-    //Obtener los ultimos puntajes, mostrando primero el ultimo puntaje
-    this.ultimosPuntajes = this.intercambioDatosService.getPuntajes().slice().reverse();
-
   }
+
 
   puntajeNivel(nivel: string) {
     console.log("El nivel es:", nivel);
@@ -105,10 +113,8 @@ export class ResultComponent implements OnInit {
 
   //Resetear PUNTAJES
   reset() {
-    // Mostrar el mensaje de confirmación
     const confirmar = window.confirm("¿Estás seguro de borrar todos tus puntajes actuales?");
     
-    // Si el usuario confirma, ejecutar el reset
     if (confirmar) {
       this.intercambioDatosService.resetPuntajes();
       console.log("Puntajes eliminados");
@@ -118,7 +124,6 @@ export class ResultComponent implements OnInit {
   }
 
   volver() {
-    //Resetear variables
     this.intercambioDatosService.setResultado(0);
     this.intercambioDatosService.setCantidad(4);
     this.intercambioDatosService.setTime(0);
@@ -132,7 +137,10 @@ export class ResultComponent implements OnInit {
     
   }
 
-
+  ngOnDestroy() {
+    // Limpiar las suscripciones al destruir el componente
+    this.subscription.unsubscribe();
+  }
 
 }
 
