@@ -25,7 +25,8 @@
 
           <div class="button-container">
             <button mat-flat-button color="primary" class="boton" (click)="enviar()">Terminar</button>
-            <span class="contador-display">{{ contador }} segundos restantes</span>
+             <!-- Esconder contador si contador <= 0 -->
+            <span class="contador-display" *ngIf="contador > 0">{{ contador }} segundos restantes</span>
           </div>
 
         <mat-progress-bar *ngIf="loading" mode="indeterminate"
