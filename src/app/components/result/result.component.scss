@@ -37,6 +37,15 @@ select {
     box-shadow: 8px 8px 8px rgba(0.0, 0.0, 0.7, 0.7); /* Añade sombra */
     min-height: 40vh;
     background-color: rgb(18, 13, 13);
+    position: relative; /* Posiciona el contenedor como relativo */
+  }
+
+  .button-container {
+    position: absolute; /* Fija la posición respecto al contenedor padre */
+    bottom: 10px; /* Alinea los botones a 10px del fondo */
+    left: 10px; /* Alinea los botones a 10px del lado izquierdo */
+    display: flex; /* Asegura que los botones estén alineados si hay más de uno */
+    gap: 10px; /* Espaciado entre los botones si hay más de uno */
   }
 
   .boton {
@@ -44,8 +53,8 @@ select {
     background-color: rgb(223, 223, 133);
     margin-top: 10px;
     margin-bottom: 17px;
-    width: 100px;
-    border-radius: 9px; /* Esquinas más redondeadas */
+    width: auto; /* Ajusta el ancho del botón al contenido */
+    border-radius: 9px; 
     font-family: 'Roboto', sans-serif; 
     transition: background-color 0.3s ease; /* Transición suave del color de fondo */
     padding: 12px 20px; /* Aumenta el padding para hacer el botón más alto */
@@ -57,8 +66,8 @@ select {
     background-color: rgb(237, 61, 22);
     margin-top: 10px;
     margin-bottom: 17px;
-    width: 100px;
-    border-radius: 9px; /* Esquinas más redondeadas */
+    width: auto; /* Ajusta el ancho del botón al contenido */
+    border-radius: 9px; 
     font-family: 'Roboto', sans-serif; 
     transition: background-color 0.3s ease; /* Transición suave del color de fondo */
     padding: 12px 20px; /* Aumenta el padding para hacer el botón más alto */
