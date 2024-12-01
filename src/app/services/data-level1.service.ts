@@ -29,15 +29,15 @@ export class DataLevel1Service {
     'meanwhile', 'partly', 'as long as', 'encouraging', 'ambush', 'dairy', 'glad', 'crab', 'sue', 'island', 
     'jacket', 'queen', 'rabbit', 'pencil', 'lemon', 'cardboard', 'supposedly', 'sharp', 'among', 'buddy', 
     'shady', 'qualify', 'chandelier', 'sin', 'bouquet', 'bride', 'tablecloth', 'disaster', 'cracks', 'basement',
-    'figure out', 'as well'
+    'figure out', 'as well', 'often'
   ];
 
   private intermedioAltoB2: string[] = [
     'confidence', 'bridge', 'casualties', 'lead', 'along', 'prepped', 'wounded', 'guilty', 'remains','suspicion',
     'useless', 'yawn', 'muddy', 'mowing', 'pond', 'lawn', 'thumb', 'starve', 'futhermore', 'mustache',
-    'unpredictable', 'disappeared', 'house', 'island', 'queen', 'rabbit', 'landscape', 'frost', 'rainbow', 'split', 
+    'unpredictable', 'disappeared', 'island', 'queen', 'rabbit', 'landscape', 'frost', 'rainbow', 'split', 'chill out',
     'ahead', 'grabby', 'stubborn','fate', 'beyond', 'delightful', 'come along', 'doubtful', 'neither', 'brief', 
-    'concern', 'widespread','renaissance', 'chill out'
+    'concern', 'widespread','renaissance', 
   ];
 
  //Metodos Preguntas
@@ -88,16 +88,16 @@ private intermedioB1Res: string[] = [
   'mientras tanto', 'parcialmente', 'siempre que', 'alentador', 'emboscada', 'lácteos', 'contento', 'cangrejo', 'demandar', 'isla', 
   'chaqueta', 'reina', 'conejo', 'lápiz', 'limón', 'cartón', 'supuestamente', 'afilado', 'entre', 'amigo', 
   'sombra', 'calificar', 'candelabro', 'pecado', 'ramo', 'novia', 'mantel', 'desastre', 'grietas', 'sótano',
-  'descubrir/ averiguar', 'también'
+  'descubrir/ averiguar', 'también', 'a menudo'
 ];
 
 
 private intermedioAltoB2Res: string[] = [
   'confianza', 'puente', 'víctimas', 'liderar', 'a lo largo de', 'preparado', 'herido', 'culpable', 'restos', 'sospecha',
   'inútil', 'bostezar', 'fangoso', 'cortar el césped', 'estanque', 'césped', 'pulgar', 'morir de hambre', 'además', 'bigote',
-  'impredecible', 'desaparecido', 'casa', 'isla', 'reina', 'conejo', 'paisaje', 'escarcha', 'arcoiris', 'dividir', 
+  'impredecible', 'desaparecido', 'isla', 'reina', 'conejo', 'paisaje', 'escarcha', 'arcoiris', 'dividir', 'relajarse',
   'adelante','agarrador', 'obstinado', 'destino', 'más allá de', 'encantador', 'acompañar', 'dudoso', 'ninguno/ ni','breve', 
-  'preocupación', 'generalizado', 'renacimiento', 'relajarse'
+  'preocupación', 'generalizado', 'renacimiento'
 ];
 
 
