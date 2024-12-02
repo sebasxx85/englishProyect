@@ -1,15 +1,16 @@
 
 footer {
-    height: 177px;
-    background-color: #000;
-    color: #fff;
-    padding: 10px 20px;
-    margin-bottom: 27px;
-    margin-left: 7px;
-    margin-right: 7px;
-    border: 2px solid rgba(0, 0, 0.7, 0.8); /* Borde ligero */
-    border-radius: 7px;
-  }
+  width: 100%; /* Ocupar todo el ancho disponible */
+  height: 177px;
+  background-color: #000;
+  color: #fff;
+  padding: 10px 20px;
+  margin-top: 27px; /* Mantén el margen superior */
+  margin-bottom: 0; /* Ajusta el margen inferior si es necesario */
+  border: 2px solid rgba(0, 0, 0.7, 0.8); /* Borde ligero */
+  border-radius: 0; /* Opcional: elimina el borde redondeado para ocupar todo el ancho */
+  min-height: 15vh; 
+}
 
   .titulo {
     color: rgb(240, 240, 190); 

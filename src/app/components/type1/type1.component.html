@@ -14,7 +14,7 @@
                 {{ dataTablePreguntas[i] }}
               </button>
               <label>Respuesta</label>
-              <select [name]="'respuesta' + i" [formControlName]="'respuesta' + i">
+              <select class="select" [name]="'respuesta' + i" [formControlName]="'respuesta' + i">
                 <option *ngFor="let respuesta of dataTableRespuestas" [value]="respuesta">
                   {{ respuesta }}
                 </option>

@@ -13,6 +13,9 @@ header {
   box-sizing: border-box; /* Incluye padding y border en el ancho */
   border: 2px solid rgba(0, 0, 0.5, 0.7); /* Borde ligero */
   border-radius: 5px;
+  min-height: 15vh; 
+  min-width: 75vh;
+  margin-bottom: 27px;
 }
 
 h1, a {

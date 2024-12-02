@@ -3,8 +3,8 @@
   display: flex;
   justify-content: center;
   align-items: center; /* Centra verticalmente si el contenedor tiene una altura fija */
-  min-height: 107vh; 
-  min-width: 70vh;
+  min-height: 127vh; 
+  min-width: 107vh;
 }
 
 .container {
@@ -19,7 +19,8 @@
   margin-top: 30px; 
   padding: 1rem; 
   box-shadow: 8px 8px 8px rgba(0.0, 0.0, 0.7, 0.7); /* Añade sombra para mejor visibilidad */
-  min-height: 40vh;
+  min-height: 60vh;
+  min-width: 10vh;
   background-color: rgb(18, 13, 13);
 }
 
@@ -84,6 +85,7 @@ select {
   display: flex;
   justify-content: flex-start; /* Alinea el contenido al inicio de la fila */
   align-items: center; /* Centra verticalmente los botones y selects */
+  min-width: 10vh;
 }
 
 
@@ -99,4 +101,8 @@ select {
   font-family: 'Roboto', sans-serif; /* Tipo de letra */
   font-weight: bold; /* Para resaltar el texto */
   margin-bottom: 7px;
+}
+
+.select{
+  min-width: 10vh;
 }
