@@ -57,9 +57,10 @@ select {
   .button-container {
     position: absolute; /* Fija la posición respecto al contenedor padre */
     bottom: 10px; /* Alinea los botones a 10px del fondo */
-    left: 10px; /* Alinea los botones a 10px del lado izquierdo */
+    left: 17px; /* Alinea los botones a 10px del lado izquierdo */
     display: flex; /* Asegura que los botones estén alineados si hay más de uno */
     gap: 10px; /* Espaciado entre los botones si hay más de uno */
+    margin-top: 17px;
   }
   
   .boton:hover {
