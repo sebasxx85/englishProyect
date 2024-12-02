@@ -22,6 +22,7 @@ export class HomeComponent implements OnInit {
   form!: FormGroup
   loading = false
   today = new Date();
+  cookiesAccepted: boolean = false;
 
 
   idiomaSelect = [
@@ -45,6 +46,10 @@ export class HomeComponent implements OnInit {
     this.form.get('nivel')?.valueChanges.subscribe(value => {
       console.log('El valor del nivel ha cambiado:', value);
     });
+
+    // Verificar si el usuario ya aceptó las cookies
+    const cookiesStatus = localStorage.getItem('cookiesAccepted');
+    this.cookiesAccepted = cookiesStatus === 'true';
 
   }
 
@@ -77,6 +82,12 @@ export class HomeComponent implements OnInit {
       alert("Tendrás todo el tiempo para realizar el test");
     }
 
+  }
+
+  acceptCookies() {
+    // Marcar las cookies como aceptadas
+    localStorage.setItem('cookiesAccepted', 'true');
+    this.cookiesAccepted = true;
   }
 
   empezar() {

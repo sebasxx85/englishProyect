@@ -1,5 +1,11 @@
 <app-header [title]="title"></app-header>
 
+<!--Aceptar cookies-->
+<div id="cookie-banner" class="cookie-banner" *ngIf="!cookiesAccepted">
+  <p>Usamos cookies para mejorar tu experiencia. Al continuar navegando, aceptas el uso de cookies y nuestras <a href="/privacy-policy" target="_blank">políticas de privacidad</a>.</p>
+  <button mat-button color="primary" (click)="acceptCookies()">Aceptar</button>
+</div>
+
 <body>
   <div class="card-container">
     <mat-card class="custom-card">
