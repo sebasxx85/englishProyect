@@ -24,7 +24,7 @@ select {
     display: flex;
     justify-content: center;
     align-items: center; /* Centra verticalmente si el contenedor tiene una altura fija */
-    min-height: 100vh; 
+    min-height: 107vh; 
     min-width: 94vh;
   }
   
@@ -35,7 +35,7 @@ select {
     margin-top: 30px; 
     padding: 1rem; 
     box-shadow: 8px 8px 8px rgba(0.0, 0.0, 0.7, 0.7); /* Añade sombra para mejor visibilidad */
-    min-height: 60vh;
+    min-height: 55vh;
     min-width: 15vh;
     background-color: rgb(18, 13, 13);
     position: relative; /* Posiciona el contenedor como relativo */

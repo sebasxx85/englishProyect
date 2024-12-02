@@ -24,8 +24,8 @@ select {
     display: flex;
     justify-content: center;
     align-items: center; /* Centra verticalmente si el contenedor tiene una altura fija */
-    min-height: 87vh; 
-    min-width: 70vh;
+    min-height: 99vh; 
+    min-width: 99vh;
   }
   
   .custom-card {
@@ -38,6 +38,7 @@ select {
     min-height: 40vh;
     background-color: rgb(18, 13, 13);
     position: relative; /* Posiciona el contenedor como relativo */
+    min-width: 17vh; 
   }
 
   .button-container {
