@@ -9,19 +9,21 @@ export class DataLevel1Service {
   private principianteA0: string[] = [
     'apple', 'banana', 'cherry', 'date', 'elephant', 'fish', 'grape', 'house', 'island', 'jacket', 
     'kangaroo', 'lemon', 'monkey', 'notebook', 'orange', 'pencil', 'queen', 'rabbit', 'sun', 'tiger',
-    'blue', 'red', 'green'
+    'blue', 'red', 'green', 'king'
   ];
 
   private basicoA1: string[] = [
     'cat', 'dog', 'book', 'car', 'tree', 'water', 'table', 'window', 'door', 'chair', 
     'school', 'ball', 'flower', 'street', 'clock', 'cup', 'shirt', 'shoe', 'bed', 'lamp',
-    'wine', 'sleep', 'dream', 'also'
+    'wine', 'sleep', 'dream', 'also', 'goma'
   ];
 
   private basicoAltoA2: string[] = [
     'napkin', 'no way', 'regretted', 'pollution', 'quite a while', 'shack', 'gotta', 'threat', 'have to', 'nowadays', 
     'trend', 'footage', 'forehead', 'shopaholic', 'fold', 'deceive','luckily', 'disappointing', 'knit', 'house', 
-    'queen', 'rabbit', 'tray', 'couch', 'lobster', 'once', 'both', 'meatballs', 'too'
+    'queen', 'rabbit', 'tray', 'couch', 'lobster', 'once', 'both', 'meatballs', 'too', 'away', 
+    'hometown', 'vanish', 'keychain', 'microwave', 'sew', 'gross', 'silk', 'anyway','bitter','flour',
+    'suggest','sudden'
   ];
 
   private intermedioB1: string[] = [
@@ -29,7 +31,8 @@ export class DataLevel1Service {
     'meanwhile', 'partly', 'as long as', 'encouraging', 'ambush', 'dairy', 'glad', 'crab', 'sue', 'island', 
     'jacket', 'queen', 'rabbit', 'pencil', 'lemon', 'cardboard', 'supposedly', 'sharp', 'among', 'buddy', 
     'shady', 'qualify', 'chandelier', 'sin', 'bouquet', 'bride', 'tablecloth', 'disaster', 'cracks', 'basement',
-    'figure out', 'as well', 'often'
+    'figure out', 'as well', 'often', 'leftovers', 'chew', 'deliverance', 'screw up','speech', 'cucumber', 'gossip',
+    'cattle', 'countryside','ankle', 'silverware'
   ];
 
   private intermedioAltoB2: string[] = [
@@ -37,7 +40,8 @@ export class DataLevel1Service {
     'useless', 'yawn', 'muddy', 'mowing', 'pond', 'lawn', 'thumb', 'starve', 'futhermore', 'mustache',
     'unpredictable', 'disappeared', 'island', 'queen', 'rabbit', 'landscape', 'frost', 'rainbow', 'split', 'chill out',
     'ahead', 'grabby', 'stubborn','fate', 'beyond', 'delightful', 'come along', 'doubtful', 'neither', 'brief', 
-    'concern', 'widespread','renaissance', 
+    'concern', 'widespread','renaissance', 'briefly', 'aware', 'wage', 'clap', 'farthest','seatbelt', 'clean up',
+    'wrapper','yummy','passed away'
   ];
 
  //Metodos Preguntas
@@ -67,19 +71,21 @@ export class DataLevel1Service {
 private principianteA0Res: string[] = [
   'manzana', 'banana', 'cereza', 'fecha', 'elefante', 'pez', 'uva', 'casa', 'isla', 'chaqueta', 
   'canguro', 'limón', 'mono', 'cuaderno','naranja', 'lápiz', 'reina', 'conejo', 'sol', 'tigre',
-  'azul', 'rojo', 'verde'
+  'azul', 'rojo', 'verde','rey'
 ];
 
 private basicoA1Res: string[] = [
   'gato', 'perro', 'libro', 'coche', 'árbol', 'agua', 'mesa','ventana', 'puerta', 'silla', 
   'escuela', 'pelota', 'flor', 'calle','reloj', 'taza', 'camisa', 'zapato', 'cama', 'lámpara',
-  'vino','dormir', 'sueño', 'tambien'
+  'vino','dormir', 'sueño', 'tambien', 'chicle/ goma'
 ];
 
 private basicoAltoA2Res: string[] = [
   'servilleta', 'de ninguna manera', 'lamentó', 'contaminación', 'bastante tiempo', 'choza', 'tengo que', 'amenaza','tener que', 'hoy en día', 
   'tendencia', 'metraje', 'frente', 'comprador compulsivo', 'doblar', 'engañar','afortunadamente', 'decepcionante', 'tejer', 'casa', 
-  'reina', 'conejo', 'bandeja', 'sofá', 'langosta', 'una vez', 'ambos', 'albóndigas', 'también'
+  'reina', 'conejo', 'bandeja', 'sofá', 'langosta', 'una vez', 'ambos', 'albóndigas', 'también', 'lejos', 
+  'ciudad natal', 'desaparecer', 'llavero', 'microondas', 'coser', 'asqueroso/ bruto', 'seda', 'de todos modos', 'amargo','harina',
+  'sugerir','repentino'
 ];
 
 
@@ -88,7 +94,8 @@ private intermedioB1Res: string[] = [
   'mientras tanto', 'parcialmente', 'siempre que', 'alentador', 'emboscada', 'lácteos', 'contento', 'cangrejo', 'demandar', 'isla', 
   'chaqueta', 'reina', 'conejo', 'lápiz', 'limón', 'cartón', 'supuestamente', 'afilado', 'entre', 'amigo', 
   'sombra', 'calificar', 'candelabro', 'pecado', 'ramo', 'novia', 'mantel', 'desastre', 'grietas', 'sótano',
-  'descubrir/ averiguar', 'también', 'a menudo'
+  'descubrir/ averiguar', 'también', 'a menudo', 'sobras', 'masticar', 'liberación', 'arruinar/ estropear','dar discurso', 'pepino', 'chisme',
+  'ganado', 'campo', 'tobillo','cubiertos'
 ];
 
 
@@ -97,7 +104,8 @@ private intermedioAltoB2Res: string[] = [
   'inútil', 'bostezar', 'fangoso', 'cortar el césped', 'estanque', 'césped', 'pulgar', 'morir de hambre', 'además', 'bigote',
   'impredecible', 'desaparecido', 'isla', 'reina', 'conejo', 'paisaje', 'escarcha', 'arcoiris', 'dividir', 'relajarse',
   'adelante','agarrador', 'obstinado', 'destino', 'más allá de', 'encantador', 'acompañar', 'dudoso', 'ninguno/ ni','breve', 
-  'preocupación', 'generalizado', 'renacimiento'
+  'preocupación', 'generalizado', 'renacimiento', 'brevemente','conciente', 'salario', 'aplaudir','más lejano', 'cinturon de seguridad', 'limpiar',
+  'envoltorio','delicioso', 'fallecer'
 ];
 
 
