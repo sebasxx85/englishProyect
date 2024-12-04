@@ -20,6 +20,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { UserComponent } from './components/user/user.component';
 import { CrearUsuarioComponent } from './components/crear-usuario/crear-usuario.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { Type1Component } from './components/type1/type1.component';
 import { Type2Component } from './components/type2/type2.component';
 import { Type3Component } from './components/type3/type3.component';
@@ -51,7 +52,8 @@ import { Type3Component } from './components/type3/type3.component';
     MatSelectModule,
     MatNativeDateModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatProgressSpinnerModule
 
   ],
   providers: [

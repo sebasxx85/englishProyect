@@ -30,8 +30,8 @@
           </div>
       </form>
 
-      <div class="progress">
-        <mat-progress-bar *ngIf="loading" mode="indeterminate" class="progreso"></mat-progress-bar>
+      <div *ngIf="loading" class="spinner-container">
+        <div class="custom-spinner"></div>
       </div>
     </mat-card>
   </div>

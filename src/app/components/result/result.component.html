@@ -19,27 +19,22 @@
         <button mat-flat-button color="primary" class="boton"
           (click)="volver()">Volver</button>
       </div>
-      
-      <div class="progress">
-        <mat-progress-bar *ngIf="loading" mode="indeterminate" class="progreso"></mat-progress-bar>
-      </div>
 
     </mat-card>
-    
+
     <div class="espacio"></div>
-     <!--Card 2-->
+    <!--Card 2-->
     <mat-card class="custom-card">
       <mat-card-title>Mis últimos puntajes</mat-card-title>
       <mat-card-content>
         <p>{{ ultimosPuntajes.join(', ') }}</p>
       </mat-card-content>
 
-      <div class="button-container">
-        <button mat-flat-button color="primary" class="boton-reset"
-          (click)="reset()">Reset</button>
+      <div *ngIf="loading" class="spinner-container">
+        <div class="custom-spinner"></div>
       </div>
     </mat-card>
-    
+
   </div>
 
 </body>
