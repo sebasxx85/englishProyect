@@ -124,6 +124,7 @@ export class ResultComponent implements OnInit {
   }
 
   volver() {
+    this.loading = true;
     this.intercambioDatosService.setResultado(0);
     this.intercambioDatosService.setCantidad(4);
     this.intercambioDatosService.setTime(0);

@@ -42,8 +42,12 @@
           <button mat-flat-button color="primary" class="boton" type="submit">Empezar</button>
         </div>
       </form>
-      <mat-progress-bar *ngIf="loading" mode="indeterminate" class="progreso"></mat-progress-bar>
+      
+      <div class="progress">
+        <mat-progress-bar *ngIf="loading" mode="indeterminate" class="progreso"></mat-progress-bar>
+      </div>
     </mat-card>
+    
   </div>
 </body>
 

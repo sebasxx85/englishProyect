@@ -28,13 +28,13 @@
              <!-- Esconder contador si contador <= 0 -->
             <span class="contador-display" *ngIf="contador > 0">{{ contador }} segundos restantes</span>
           </div>
-
-        <mat-progress-bar *ngIf="loading" mode="indeterminate"
-          class="progreso"></mat-progress-bar>
       </form>
+
+      <div class="progress">
+        <mat-progress-bar *ngIf="loading" mode="indeterminate" class="progreso"></mat-progress-bar>
+      </div>
     </mat-card>
   </div>
-
 </body>
 
 <app-footer></app-footer>
