@@ -29,6 +29,11 @@
       <mat-card-content>
         <p>{{ ultimosPuntajes.join(', ') }}</p>
       </mat-card-content>
+      
+      <div class="button-container">
+        <button mat-flat-button color="primary" class="boton-reset"
+          (click)="reset()">Reset</button>
+      </div>
 
       <div *ngIf="loading" class="spinner-container">
         <div class="custom-spinner"></div>

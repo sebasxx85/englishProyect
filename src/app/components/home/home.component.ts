@@ -58,7 +58,7 @@ export class HomeComponent implements OnInit {
       fechaInicio: [this.today.toISOString().split('T')[0]],
       idioma: ['Ingles'],
       nivel: ['principiante'],
-      cantidad: [4],
+      cantidad: [3],
       time: [true]
     })
   }
