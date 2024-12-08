@@ -19,7 +19,7 @@
                 </button>
                 <label>Respuesta</label>
                 <select class="select" [name]="'respuesta' + index" [formControlName]="'respuesta' + index">
-                  <option *ngFor="let respuesta of dataTableRespuestas" [value]="respuesta">
+                  <option *ngFor="let respuesta of dataTableRespuestas | shuffle" [value]="respuesta">
                     {{ respuesta }}
                   </option>
                 </select>

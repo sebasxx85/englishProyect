@@ -24,6 +24,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { Type1Component } from './components/type1/type1.component';
 import { Type2Component } from './components/type2/type2.component';
 import { Type3Component } from './components/type3/type3.component';
+import { ShufflePipe } from './pipes/shuffle.pipe';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { Type3Component } from './components/type3/type3.component';
     Type1Component,
     Type2Component,
     Type3Component,
+    ShufflePipe,
   ],
   imports: [
     BrowserModule,
