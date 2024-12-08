@@ -15,7 +15,7 @@ export class DataLevel1Service {
   private basicoA1: string[] = [
     'cat', 'dog', 'book', 'car', 'tree', 'water', 'table', 'window', 'door', 'chair', 
     'school', 'ball', 'flower', 'street', 'clock', 'cup', 'shirt', 'shoe', 'bed', 'lamp',
-    'wine', 'sleep', 'dream', 'also', 'goma'
+    'wine', 'sleep', 'dream', 'also', 'gum'
   ];
 
   private basicoAltoA2: string[] = [
@@ -23,7 +23,7 @@ export class DataLevel1Service {
     'trend', 'footage', 'forehead', 'shopaholic', 'fold', 'deceive','luckily', 'disappointing', 'knit', 'house', 
     'queen', 'rabbit', 'tray', 'couch', 'lobster', 'once', 'both', 'meatballs', 'too', 'away', 
     'hometown', 'vanish', 'keychain', 'microwave', 'sew', 'gross', 'silk', 'anyway','bitter','flour',
-    'suggest','sudden'
+    'suggest','sudden', 'rhythm', 'discouraged', 'nevertheless', 'waterproof', 'hideous', 'appetite'
   ];
 
   private intermedioB1: string[] = [
@@ -32,7 +32,7 @@ export class DataLevel1Service {
     'jacket', 'queen', 'rabbit', 'pencil', 'lemon', 'cardboard', 'supposedly', 'sharp', 'among', 'buddy', 
     'shady', 'qualify', 'chandelier', 'sin', 'bouquet', 'bride', 'tablecloth', 'disaster', 'cracks', 'basement',
     'figure out', 'as well', 'often', 'leftovers', 'chew', 'deliverance', 'screw up','speech', 'cucumber', 'gossip',
-    'cattle', 'countryside','ankle', 'silverware'
+    'cattle', 'countryside','ankle', 'silverware', 'sprinkles', 'hesitate', 'thoughtful'
   ];
 
   private intermedioAltoB2: string[] = [
@@ -85,7 +85,7 @@ private basicoAltoA2Res: string[] = [
   'tendencia', 'metraje', 'frente', 'comprador compulsivo', 'doblar', 'engañar','afortunadamente', 'decepcionante', 'tejer', 'casa', 
   'reina', 'conejo', 'bandeja', 'sofá', 'langosta', 'una vez', 'ambos', 'albóndigas', 'también', 'lejos', 
   'ciudad natal', 'desaparecer', 'llavero', 'microondas', 'coser', 'asqueroso/ bruto', 'seda', 'de todos modos', 'amargo','harina',
-  'sugerir','repentino'
+  'sugerir','repentino', 'ritmo', 'desanimado', 'sin embargo', 'impermeable', 'espantoso', 'apetito' 
 ];
 
 
@@ -95,7 +95,7 @@ private intermedioB1Res: string[] = [
   'chaqueta', 'reina', 'conejo', 'lápiz', 'limón', 'cartón', 'supuestamente', 'afilado', 'entre', 'amigo', 
   'sombra', 'calificar', 'candelabro', 'pecado', 'ramo', 'novia', 'mantel', 'desastre', 'grietas', 'sótano',
   'descubrir/ averiguar', 'también', 'a menudo', 'sobras', 'masticar', 'liberación', 'arruinar/ estropear','dar discurso', 'pepino', 'chisme',
-  'ganado', 'campo', 'tobillo','cubiertos'
+  'ganado', 'campo', 'tobillo', 'cubiertos', 'chispitas', 'dudar', 'considerado'
 ];
 
 
