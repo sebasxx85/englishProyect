@@ -1,10 +1,9 @@
 .card-container {
-  border-radius: 49px;
   display: flex;
   justify-content: center;
-  align-items: center; /* Centra verticalmente si el contenedor tiene una altura fija */
-  min-height: 97vh; 
-  min-width: 163vh;
+  align-items: center;
+  position: relative;
+  min-height: 87vh;
 }
 
 .custom-card {
@@ -155,3 +154,58 @@ select {
 }
 
 ////////////////////////////////* FIN Contenedor del spinner *//////////////////////////////////
+
+.carousel {
+  display: flex;
+  flex-direction: column; /* Alinea las preguntas verticalmente */
+  align-items: center;
+  justify-content: center;
+}
+
+.questions-container {
+  display: flex;
+  flex-direction: column; /* Coloca las preguntas una debajo de otra */
+  gap: 1rem; /* Espaciado entre preguntas */
+  width: 100%;
+}
+
+.arrow-left,
+.arrow-right {
+  background-color: #FFD700; /* Amarillo */
+  color: black;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.arrow-left {
+  left: -60px;
+}
+
+.arrow-right {
+  right: -60px;
+}
+
+.arrow-left:hover,
+.arrow-right:hover {
+  background-color: #ecd9b2; /* Naranja */
+}
+
+.botonword {
+  margin-bottom: 0.5rem;
+}
+
+.select {
+  margin-top: 0.5rem;
+}

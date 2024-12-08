@@ -23,6 +23,8 @@ export class Type1Component implements OnInit {
   // Arreglos de preguntas y respuestas
   dataTablePreguntas: string[] = [];
   dataTableRespuestas: string[] = [];
+  currentPage = 0;
+  preguntasPorPagina = 3;
 
   //Obtener respuestas correctas e incorrectas
   respuestasCorrectas = 0;
@@ -140,6 +142,28 @@ export class Type1Component implements OnInit {
           this.enviar();
         }
       }, 1000); // Reducir el contador cada segundo
+    }
+  }
+
+  //////// Logica carrusel //////
+
+  getCurrentPageQuestions() {
+    const start = this.currentPage * this.preguntasPorPagina;
+    const end = start + this.preguntasPorPagina;
+    return Array.from({ length: this.dataTablePreguntas.slice(start, end).length }, (_, i) => start + i);
+  }
+
+
+  nextPage() {
+    const totalPages = Math.ceil(this.dataTablePreguntas.length / this.preguntasPorPagina);
+    if (this.currentPage < totalPages - 1) {
+      this.currentPage++;
+    }
+  }
+
+  previousPage() {
+    if (this.currentPage > 0) {
+      this.currentPage--;
     }
   }
 
