@@ -167,6 +167,11 @@ export class Type1Component implements OnInit {
     }
   }
 
+  isLastPage(): boolean {
+    const totalPages = Math.ceil(this.dataTablePreguntas.length / this.preguntasPorPagina);
+    return this.currentPage === totalPages - 1;
+  }
+
 
   enviar() {
     this.loading = true;
