@@ -36,14 +36,36 @@ export class DataLevel1Service {
   ];
 
   private intermedioAltoB2: string[] = [
-    'confidence', 'bridge', 'casualties', 'lead', 'along', 'prepped', 'wounded', 'guilty', 'remains','suspicion',
-    'useless', 'yawn', 'muddy', 'mowing', 'pond', 'lawn', 'thumb', 'starve', 'futhermore', 'mustache',
+    'confidence', 'bridge', 'casualties', 'lead', 'along', 'prepped', 'wounded', 'guilty', 'remains', 'suspicion',
+    'useless', 'yawn', 'muddy', 'mowing', 'pond', 'lawn', 'thumb', 'starve', 'furthermore', 'mustache',
     'unpredictable', 'disappeared', 'island', 'queen', 'rabbit', 'landscape', 'frost', 'rainbow', 'split', 'chill out',
-    'ahead', 'grabby', 'stubborn','fate', 'beyond', 'delightful', 'come along', 'doubtful', 'neither', 'brief', 
-    'concern', 'widespread','renaissance', 'briefly', 'aware', 'wage', 'clap', 'farthest','seatbelt', 'clean up',
-    'wrapper','yummy','passed away'
+    'ahead', 'grabby', 'stubborn', 'fate', 'beyond', 'delightful', 'come along', 'doubtful', 'neither', 'brief',
+    'concern', 'widespread', 'renaissance', 'briefly', 'aware', 'wage', 'clap', 'farthest', 'seatbelt', 'clean up',
+    'wrapper', 'yummy', 'passed away', 'explain', 'budget', 'never give up', 'giving up', 'either', 'kinda', 'stuff',
+    'however', 'nevertheless', 'afford', 'moreover', 'pierce', 'gaze', 'attend', 'tear-able', 'beacon', 'surrendered',
+    'hilarious', 'bluffing', 'humble', 'upon', 'make no mistake', 'loud', 'driven', 'chalk', 'carpet', 'hinted',
+    'thought', 'crumble', 'otherwise', 'runway', 'kidding', 'taping', 'research', 'hang out', 'go out', 'get out',
+    'out there', 'see ya', 'bay', 'straight', 'miss', 'leper', 'disband', 'taught', 'witnessed', 'witness', 'dean',
+    'behave', 'rotten', 'rising', 'indeed', 'vile', 'leverage', 'praise', 'filled', 'touch', 'hug', 'spinning',
+    'grin', 'grinning', 'sunshine', 'spread', 'lease', 'hoops', 'over there', 'couple', 'forth', 'supposed to say',
+    'mood', 'beat', 'strip mall', 'wires', 'still', 'jacked up', 'deer', 'billboard', 'choked', 'allow', 'I mean',
+    'I mean it', 'tough', 'liking it', 'scrap', 'owl', 'wooden', 'have a cold', 'toe', 'delayed', 'shortage',
+    'so far', 'encountered', 'overcome', 'wealthy', 'scared', 'portray', 'swept', 'goodspeed', 'broom', 'he sat',
+    'borrowed', 'physics', 'chemistry', 'his', 'her', 'meaningful', 'alright', 'jam', 'sausage', 'earlier', 'noon',
+    'midnight', 'warrants', 'relocated', 'allowance', 'loneliest', 'beats working', 'wings', 'downtown', 'clever',
+    'wink', 'backpacks', 'crumbs', 'mess it up', 'briefcase', 'bring me', 'got caught', 'awake', 'wake up', 'spark',
+    'tracker', 'labor union', 'teamed up', 'trial', 'hush', 'spoons', 'beekeeper', 'foreign', 'armchair', 'dresser',
+    'sink', 'furniture', 'pillow', 'neighbor', 'nearly', 'blanket', 'luggage', 'bring', 'instead', 'wore', 'raincoats',
+    'owe', 'lend', 'bill', 'quarter', 'anymore', 'seeing', 'suppose', 'actually', 'daunting', 'profound', 'raised me',
+    'reminder', 'fierce', 'appear', 'main', 'off-road', 'though', 'stall', 'properly', 'exceed', 'useful', 'guess',
+    'sense', 'trapped', 'hopelessly', 'lightning', 'good afternoon', 'good morning', 'good evening', 'discuss',
+    'crossroads', 'jump', 'leap', 'whatever', 'be quiet', 'shut up', 'its worth', 'sham', 'track', 'sale', 'makeup',
+    'drugstore', 'spills', 'dressing', 'harmless', 'toiletries', 'brushed', 'beard', 'floss', 'skate', 'skiing',
+    'jury', 'polite', 'take off', 'garlic', 'fewer', 'roasting', 'pounds', 'slice', 'liters', 'thief', 'blame',
+    'reach out', 'cozy', 'comfy', 'pole', 'heaters', 'chilly', 'fireplace', 'ruin', 'arch', 'died', 'wiring',
+    'fancy', 'ding', 'assembly line', 'achieve', 'scratch', 'bathtub', 'breach', 'showcase', 'stove', 'step forward',
+    'receipt', 'stealing', 'guessing', 'carrots', 'breakup', 'recipe', 'to hurry'
   ];
-
  //Metodos Preguntas
 
   getWordsPrincipiantes(): string[] {
@@ -103,10 +125,35 @@ private intermedioAltoB2Res: string[] = [
   'confianza', 'puente', 'víctimas', 'liderar', 'a lo largo de', 'preparado', 'herido', 'culpable', 'restos', 'sospecha',
   'inútil', 'bostezar', 'fangoso', 'cortar el césped', 'estanque', 'césped', 'pulgar', 'morir de hambre', 'además', 'bigote',
   'impredecible', 'desaparecido', 'isla', 'reina', 'conejo', 'paisaje', 'escarcha', 'arcoiris', 'dividir', 'relajarse',
-  'adelante','agarrador', 'obstinado', 'destino', 'más allá de', 'encantador', 'acompañar', 'dudoso', 'ninguno/ ni','breve', 
-  'preocupación', 'generalizado', 'renacimiento', 'brevemente','conciente', 'salario', 'aplaudir','más lejano', 'cinturon de seguridad', 'limpiar',
-  'envoltorio','delicioso', 'fallecer'
+  'adelante', 'agarrador', 'obstinado', 'destino', 'más allá de', 'encantador', 'acompañar', 'dudoso', 'ninguno/ni', 'breve',
+  'preocupación', 'generalizado', 'renacimiento', 'brevemente', 'consciente', 'salario', 'aplaudir', 'más lejano', 'cinturón de seguridad', 'limpiar',
+  'envoltorio', 'delicioso', 'fallecer', 'explicar', 'presupuesto', 'no rendirse nunca', 'abandonar/rendirse', 'cualquiera', 'un poco de', 'cosa',
+  'sin embargo', 'sin embargo', 'poder pagar', 'además', 'atravesar', 'mirada', 'asistir', 'desagradable', 'faro', 'rendido',
+  'gracioso', 'farol', 'humilde', 'sobre/encima de', 'no cometer errores', 'fuerte/ruidoso', 'impulsado', 'tiza', 'alfombra', 'insinuó',
+  'pensamiento/reflexión', 'desmoronarse', 'de lo contrario', 'pista', 'bromear', 'grabando', 'investigación', 'pasar el rato', 'salir', 'salir',
+  'allá afuera', 'nos vemos', 'bahía', 'hetero', 'extrañar', 'leproso', 'disolver/desmantelar', 'enseñó', 'presenciado', 'testigo', 'decano',
+  'comportarse', 'podrido', 'subida', 'en efecto/en realidad', 'vil', 'aprovechar', 'elogio/alabanza', 'completado/lleno', 'tacto/tocar', 'abrazar',
+  'girando', 'sonreír', 'sonriendo', 'luz del sol', 'propagar/esparcir', 'alquiler', 'aros', 'allá', 'par/pareja', 'adelante', 'suponer que debe decir',
+  'ánimo', 'derrotar/latido', 'centro comercial', 'alambres/cables', 'todavía/aún', 'levantado', 'ciervo', 'cartelera/anuncio', 'atragantarse',
+  'permitir', 'quiero decir', 'lo digo en serio', 'duro', 'me está gustando', 'chatarra', 'búho', 'de madera', 'resfriarse', 'dedo del pie',
+  'demora/retardo', 'escasez', 'hasta ahora', 'encontrado', 'superar o vencer obstáculos', 'adinerado', 'asustado', 'retrato/representación',
+  'barrer', 'buena suerte', 'escoba', 'se sentó', 'tomar prestado', 'física', 'química', 'su (de él)', 'su (de ella)', 'significativo', 'bien',
+  'mermelada', 'salchicha', 'más temprano', 'mediodía', 'medianoche', 'garantías', 'reubicado', 'prestación', 'más solitario', 'es mejor que trabajar',
+  'alas', 'centro de la ciudad', 'inteligente', 'guiño', 'mochilas', 'migajas', 'echarlo a perder', 'maletín', 'tráeme', 'quedar atrapado',
+  'despierto', 'despertar', 'chispa', 'rastreador', 'sindicato', 'unido (como equipo)', 'ensayo/juicio', 'silencio', 'cucharas', 'apicultor',
+  'extranjero', 'sillón', 'vestidor/cómoda', 'fregadero/lavaplatos', 'muebles', 'almohada', 'vecino', 'casi/cerca de', 'manta/frazada', 'equipaje',
+  'traer', 'en cambio', 'vistió/llevó puesto', 'impermeables', 'deber algo/deuda', 'prestar', 'billete/factura', 'cuarto/moneda de 25', 'ya/nunca más',
+  'viendo/saliendo con alguien', 'suponer', 'en realidad/de hecho', 'desalentador', 'profundo', 'me crió', 'recordatorio', 'intenso', 'aparecer',
+  'principal', 'fuera de camino', 'aunque', 'parar', 'propiamente', 'superar', 'útil', 'adivinar', 'sentido', 'atrapado', 'sin esperanza',
+  'relámpago', 'buenas tardes', 'buenos días', 'buenas noches', 'conversar/discutir', 'cruce/encrucijada', 'saltar', 'saltar', 'cualquiera',
+  'cállate', 'cállate', 'vale la pena', 'engaño/impostor', 'camino/pista', 'oferta/descuento', 'maquillaje', 'farmacia',
+  'derramar', 'ponerse elegante', 'inofensivo', 'artículos de aseo', 'cepillado', 'barba', 'hilo dental', 'patinar', 'esquiando', 'jurado',
+  'cortés', 'quitarse/despegar', 'ajo', 'menos', 'asando', 'libras', 'rebanada', 'litros', 'ladrón', 'culpa', 'alcanzar', 'acogedor', 'cómodo',
+  'poste/polo', 'calefactor', 'frío', 'chimenea', 'ruina', 'arco', 'falleció', 'alambrado', 'elegante', 'timbre', 'línea de ensamblaje', 'lograr',
+  'rascar', 'bañera', 'brecha', 'vitrina', 'estufa', 'un paso adelante', 'recibo', 'robando', 'adivinando', 'zanahorias', 'ruptura/separación',
+  'receta', 'apurarse'
 ];
+
 
 
 //Metodos Respuestas
