@@ -33,6 +33,7 @@ export class DataLevel1Service {
     'shady', 'qualify', 'chandelier', 'sin', 'bouquet', 'bride', 'tablecloth', 'disaster', 'cracks', 'basement',
     'figure out', 'as well', 'often', 'leftovers', 'chew', 'deliverance', 'screw up','speech', 'cucumber', 'gossip',
     'cattle', 'countryside','ankle', 'silverware', 'sprinkles', 'hesitate', 'thoughtful', 
+    
     'main', 'off-road', 'though', 'stall', 'properly', 'exceed', 'useful', 'guess',
     'sense', 'trapped', 'hopelessly', 'lightning', 'good afternoon', 'good morning', 'good evening', 'discuss',
     'crossroads', 'jump', 'leap', 'whatever', 'be quiet', 'shut up', 'its worth', 'sham', 'track', 'sale', 'makeup',
@@ -119,6 +120,7 @@ private intermedioB1Res: string[] = [
   'sombra', 'calificar', 'candelabro', 'pecado', 'ramo', 'novia', 'mantel', 'desastre', 'grietas', 'sótano',
   'descubrir/ averiguar', 'también', 'a menudo', 'sobras', 'masticar', 'liberación', 'arruinar/ estropear','dar discurso', 'pepino', 'chisme',
   'ganado', 'campo', 'tobillo', 'cubiertos', 'chispitas', 'dudar', 'considerado',
+
   'principal', 'fuera de camino', 'aunque', 'parar', 'propiamente', 'superar', 'útil', 'adivinar', 'sentido', 'atrapado', 'sin esperanza',
   'relámpago', 'buenas tardes', 'buenos días', 'buenas noches', 'conversar/discutir', 'cruce/encrucijada', 'saltar', 'saltar', 'cualquiera',
   'cállate', 'cállate', 'vale la pena', 'engaño/impostor', 'camino/pista', 'oferta/descuento', 'maquillaje', 'farmacia',
