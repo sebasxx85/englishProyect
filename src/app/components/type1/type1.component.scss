@@ -18,12 +18,13 @@
   min-width: 15vh;
   background-color: rgb(18, 13, 13);
   position: relative; /* Posiciona el contenedor como relativo */
+  
 }
 
 /* Pantallas entre 726px y 926px */
 @media (max-width: 926px) and (min-width: 726px) {
   .card-container {
-    min-width: 97vh;
+    max-width: 97vh;
   }
   .custom-card {
     min-width: 25vh;
@@ -34,7 +35,7 @@
 /* Pantallas entre 560px y 725px */
 @media (max-width: 725px) and (min-width: 560px) {
   .card-container {
-    min-width: 97vh;
+    max-width: 97vh;
   }
   .custom-card {
     min-width: 25vh;
