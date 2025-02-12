@@ -17,7 +17,8 @@
   min-height: 55vh;
   min-width: 15vh;
   background-color: rgb(18, 13, 13);
-  position: relative; /* Posiciona el contenedor como relativo */
+  position: absolute;
+  transform: translate(-17%, 17%);
   
 }
 
@@ -35,10 +36,26 @@
 /* Pantallas entre 560px y 725px */
 @media (max-width: 725px) and (min-width: 560px) {
   .card-container {
-    max-width: 97vh;
+    max-width: 87vh;
+    position: absolute;
+    transform: translate(-12%, 0%);
   }
   .custom-card {
     min-width: 25vh;
+  }
+}
+
+@media (max-width: 425px) and (min-width: 160px) {
+  .card-container {
+    max-width: 87vh;
+    margin-right: 50px;
+    position: absolute;
+    transform: translate(-12%, 0%);
+  }
+  .custom-card {
+    min-width: 25vh;
+    position: absolute;
+    transform: translate(-12%, 0%);
   }
 }
 
