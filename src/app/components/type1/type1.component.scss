@@ -15,7 +15,7 @@
   padding: 1rem; 
   box-shadow: 8px 8px 8px rgba(0.0, 0.0, 0.7, 0.7); /* Añade sombra para mejor visibilidad */
   min-height: 55vh;
-  min-width: 15vh;
+  min-width: 25vh;
   background-color: rgb(18, 13, 13);
   position: absolute;
   transform: translate(-17%, 17%);
@@ -45,17 +45,26 @@
   }
 }
 
-@media (max-width: 425px) and (min-width: 160px) {
+@media (max-width: 560px) and (min-width: 425px) {
   .card-container {
     max-width: 87vh;
+    position: absolute;
+    transform: translate(-12%, 0%);
+  }
+  .custom-card {
+    min-width: 25vh;
+  }
+}
+
+@media (max-width: 425px) and (min-width: 210px) {
+  .card-container {
+    max-width: 77vh;
     margin-right: 50px;
     position: absolute;
     transform: translate(-12%, 0%);
   }
   .custom-card {
     min-width: 25vh;
-    position: absolute;
-    transform: translate(-12%, 0%);
   }
 }
 
