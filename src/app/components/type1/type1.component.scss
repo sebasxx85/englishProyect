@@ -18,14 +18,15 @@
   min-width: 25vh;
   background-color: rgb(18, 13, 13);
   position: absolute;
-  transform: translate(-17%, 17%);
+  transform: translate(0%, 12%);
   
 }
 
 /* Pantallas entre 726px y 926px */
 @media (max-width: 926px) and (min-width: 726px) {
   .card-container {
-    max-width: 97vh;
+    position: absolute;
+    transform: translate(7%, 2%);
   }
   .custom-card {
     min-width: 25vh;
@@ -38,7 +39,7 @@
   .card-container {
     max-width: 87vh;
     position: absolute;
-    transform: translate(-12%, 0%);
+    transform: translate(-12%, 3%);
   }
   .custom-card {
     min-width: 25vh;
@@ -49,24 +50,37 @@
   .card-container {
     max-width: 87vh;
     position: absolute;
-    transform: translate(-12%, 0%);
+    transform: translate(-18%, 3%);
   }
   .custom-card {
     min-width: 25vh;
   }
 }
 
-@media (max-width: 425px) and (min-width: 210px) {
+@media (max-width: 425px) and (min-width: 310px) {
   .card-container {
-    max-width: 77vh;
+    max-width: 97vh;
     margin-right: 50px;
     position: absolute;
-    transform: translate(-12%, 0%);
+    transform: translate(-18%, 7%);
   }
   .custom-card {
     min-width: 25vh;
   }
 }
+
+@media (max-width: 309px) and (min-width: 210px) {
+  .card-container {
+    max-width: 97vh;
+    position: absolute;
+    transform: translate(-18%, 7%);
+  }
+  .custom-card {
+    min-width: 25vh;
+  }
+}
+
+
 
 .button-container {
   position: absolute; /* Fija la posición respecto al contenedor padre */
