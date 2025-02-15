@@ -9,35 +9,34 @@
             <div class="espacio2"></div>
 
             <mat-card-content>
-                <!-- Tabla de errores -->
-                <table mat-table [dataSource]="errores" class="mat-elevation-z8">
-
-                    <!-- Número -->
-                    <ng-container matColumnDef="numero">
-                        <th mat-header-cell *matHeaderCellDef> Número </th>
-                        <td mat-cell *matCellDef="let element"> {{
-                            element.numero }} </td>
-                    </ng-container>
-
-                    <!-- Error -->
-                    <ng-container matColumnDef="error">
-                        <th mat-header-cell *matHeaderCellDef> Error </th>
-                        <td mat-cell *matCellDef="let element"> {{ element.error
-                            }} </td>
-                    </ng-container>
-
-                    <!-- Corrección -->
-                    <ng-container matColumnDef="correccion">
-                        <th mat-header-cell *matHeaderCellDef> Corrección </th>
-                        <td mat-cell *matCellDef="let element"> {{
-                            element.correccion }} </td>
-                    </ng-container>
-
-                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-                    <tr mat-row
-                        *matRowDef="let row; columns: displayedColumns;"></tr>
-                </table>
+                <!-- Contenedor con scroll para la tabla -->
+                <div class="table-container">
+                    <table mat-table [dataSource]="errores" class="mat-elevation-z8">
+            
+                        <!-- Número -->
+                        <ng-container matColumnDef="numero">
+                            <th mat-header-cell *matHeaderCellDef> Número </th>
+                            <td mat-cell *matCellDef="let element"> {{ element.numero }} </td>
+                        </ng-container>
+            
+                        <!-- Error -->
+                        <ng-container matColumnDef="error">
+                            <th mat-header-cell *matHeaderCellDef> Error </th>
+                            <td mat-cell *matCellDef="let element"> {{ element.error }} </td>
+                        </ng-container>
+            
+                        <!-- Corrección -->
+                        <ng-container matColumnDef="correccion">
+                            <th mat-header-cell *matHeaderCellDef> Corrección </th>
+                            <td mat-cell *matCellDef="let element"> {{ element.correccion }} </td>
+                        </ng-container>
+            
+                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                    </table>
+                </div>
             </mat-card-content>
+            
 
             <div class="button-container">
                 <button mat-flat-button color="primary" class="boton"
