@@ -10,7 +10,6 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatNativeDateModule } from '@angular/material/core';
-import { DataLevel1Service } from '../services/data-level1.service';
 import { IntercambioDatosService } from '../services/intercambio-datos.service';
 
 @Component({
@@ -34,7 +33,6 @@ export class TableErrorsComponent implements OnInit{
   title = "Errores Cometidos";
   loading = false;
   cantidadArray: number[] = [];
-  nivelIdioma = '';
   nivelIdiomaPuntaje = 1.0;
 
   //Obtener respuestas correctas e incorrectas
@@ -44,7 +42,6 @@ export class TableErrorsComponent implements OnInit{
 
   // Inyecciones
   private router = inject(Router);
-  private dataLevel1Service = inject(DataLevel1Service);
   private intercambioDatosService = inject(IntercambioDatosService);
 
   //Para el mat-table
@@ -55,7 +52,7 @@ export class TableErrorsComponent implements OnInit{
   ngOnInit() {
     setTimeout(() => {
       this.respuestasIncorrectas = this.intercambioDatosService.getCantidadRespIncorrectas();
-      console.log("Respuestas Incorrectas en TableErrorsComponent:", this.respuestasIncorrectas);
+      console.log("Respuestas Incorrectas:", this.respuestasIncorrectas);
   
       // Generar filas dinámicamente
       this.errores = Array.from({ length: this.respuestasIncorrectas }, (_, i) => ({
