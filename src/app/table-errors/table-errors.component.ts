@@ -37,35 +37,35 @@ export class TableErrorsComponent implements OnInit{
   nivelIdioma = '';
   nivelIdiomaPuntaje = 1.0;
 
-
   //Obtener respuestas correctas e incorrectas
   respuestasCorrectas = 0;
   respuestasIncorrectas = 0;
   Puntaje = 0;
-
-  //errores
-  errors = [];
 
   // Inyecciones
   private router = inject(Router);
   private dataLevel1Service = inject(DataLevel1Service);
   private intercambioDatosService = inject(IntercambioDatosService);
 
+  //Para el mat-table
   displayedColumns: string[] = ['numero', 'error', 'correccion'];
   errores: { numero: number, error: string, correccion: string }[] = [];
 
-  ngOnInit() {
-    this.respuestasIncorrectas = this.intercambioDatosService.getCantidadRespIncorrectas();
-    console.log(this.respuestasIncorrectas);
-    
-    // Generar filas dinámicamente
-    this.errores = Array.from({ length: this.respuestasIncorrectas }, (_, i) => ({
-      numero: i + 1, // Número de la fila (1, 2, 3, ...)
-      error: '', // Inicialmente vacío
-      correccion: '' // Inicialmente vacío
-    }));
-  }
 
+  ngOnInit() {
+    setTimeout(() => {
+      this.respuestasIncorrectas = this.intercambioDatosService.getCantidadRespIncorrectas();
+      console.log("Respuestas Incorrectas en TableErrorsComponent:", this.respuestasIncorrectas);
+  
+      // Generar filas dinámicamente
+      this.errores = Array.from({ length: this.respuestasIncorrectas }, (_, i) => ({
+        numero: i + 1, 
+        error: '', 
+        correccion: ''
+      }));
+    }, 100);  // Pequeña espera para asegurar que el valor esté disponible
+  }
+  
 
   volver() {
     this.loading = true;
