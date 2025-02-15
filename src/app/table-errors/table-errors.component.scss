@@ -51,8 +51,16 @@ th {
 }
 
 .button-container {
-  position: relative;
+  position: absolute;
   bottom: 10px;
+  left: 17px;
+  display: flex;
+  gap: 10px;
+  margin-top: 17px;
+}
+
+.button-container-relative{
+  position: relative;
   left: 17px;
   display: flex;
   gap: 10px;

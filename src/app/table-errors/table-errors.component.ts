@@ -34,6 +34,7 @@ export class TableErrorsComponent implements OnInit{
   loading = false;
   cantidadArray: number[] = [];
   nivelIdiomaPuntaje = 1.0;
+  buttonPositionClass = 'button-container'; // Clase por defecto
 
   //Obtener respuestas correctas e incorrectas
   respuestasCorrectas = 0;
@@ -56,12 +57,19 @@ export class TableErrorsComponent implements OnInit{
   
       // Generar filas dinámicamente
       this.errores = Array.from({ length: this.respuestasIncorrectas }, (_, i) => ({
-        numero: i + 1, 
-        error: '', 
+        numero: i + 1,
+        error: '',
         correccion: ''
       }));
+  
+      // Definir la clase para el botón después de actualizar `errores`
+      this.buttonPositionClass = this.errores.length >= 4 ? 'button-container-relative' : 'button-container';
+  
+      console.log("Clase asignada:", this.buttonPositionClass); // Depuración
+  
     }, 100);  // Pequeña espera para asegurar que el valor esté disponible
   }
+  
   
 
   volver() {
