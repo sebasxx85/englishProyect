@@ -12,7 +12,7 @@
           Respuestas Incorrectas: {{ respuestasIncorrectas }}
           <mat-icon color="warn" class="red-icon">close</mat-icon>
         </p>
-        <p>
+        <p *ngIf="respuestasIncorrectas > 0">
           <a href="table-errors" class="error-link">Ver
             Errores</a>
         </p>
