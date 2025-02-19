@@ -48,7 +48,15 @@
         
         <div class="form-group">
           <label for="nproyecto" class="cantidad">Cantidad de preguntas:</label>
-          <input type="number" name="cantidad" class="cantidadinput" min="3" max="15" formControlName="cantidad" placeholder="0">
+          <input 
+          type="number" 
+          name="cantidad" 
+          class="cantidadinput" 
+          min="3" 
+          max="12" 
+          formControlName="cantidad" 
+          placeholder="0"
+          (input)="validarCantidad()">
         </div>
         <div class="form-group">
           <label for="nproyecto" class="timetag">Con Tiempo:</label>

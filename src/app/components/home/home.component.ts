@@ -95,6 +95,18 @@ export class HomeComponent implements OnInit {
     this.cookiesAccepted = true;
   }
 
+  validarCantidad() {
+    let cantidadControl = this.form.get('cantidad');
+    if (cantidadControl) {
+      let valor = cantidadControl.value;
+      if (valor > 12) {
+        cantidadControl.setValue(12);
+      } else if (valor < 3) {
+        cantidadControl.setValue(3);
+      }
+    }
+  }
+
   empezar() {
     this.loading = true
 
