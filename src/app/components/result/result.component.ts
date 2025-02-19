@@ -123,6 +123,16 @@ export class ResultComponent implements OnInit {
     }
   }
 
+  verErrores(event: Event) {
+    event.preventDefault(); // Evita la navegación inmediata
+  
+    this.loading = true; // Muestra el spinner
+  
+    setTimeout(() => {
+      this.router.navigate(['/table-errors']); // Redirige después de la animación
+    }, 1000); // Ajusta el tiempo del spinner
+  }
+
   volver() {
     this.loading = true;
     this.intercambioDatosService.setResultado(0);

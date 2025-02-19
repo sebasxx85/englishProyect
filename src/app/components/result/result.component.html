@@ -14,8 +14,13 @@
         </p>
         <p *ngIf="respuestasIncorrectas > 0">
           
-          <a [routerLink]="'/table-errors'" class="error-link">Ver Errores</a>
+          <a 
+          href="#" 
+          class="error-link"
+          (click)="verErrores($event)"
+          [class.disabled]="loading">Ver Errores</a>
         </p>
+     
         <p>Puntaje: {{ Puntaje }}</p>
       </mat-card-content>
 

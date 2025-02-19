@@ -130,6 +130,11 @@ select {
   margin-bottom: 7px;
 }
 
+.error-link.disabled {
+  pointer-events: none; /* Evita clics mientras carga */
+  opacity: 0.5; /* Reduce visibilidad */
+  cursor: not-allowed;
+}
 ////////////////////////////////* Contenedor del spinner *//////////////////////////////////
 .spinner-container {
   position: fixed;
