@@ -42,11 +42,13 @@ select {
   }
 
   .button-container {
-    position: absolute; /* Fija la posición respecto al contenedor padre */
-    bottom: 10px; /* Alinea los botones a 10px del fondo */
-    left: 17px; /* Alinea los botones a 10px del lado izquierdo */
-    display: flex; /* Asegura que los botones estén alineados si hay más de uno */
-    gap: 10px; /* Espaciado entre los botones si hay más de uno */
+    position: absolute;
+    bottom: 10px;
+    left: 17px;
+    right: 17px; /* Extiende el contenedor hasta la derecha */
+    display: flex;
+    justify-content: space-between; /* Distribuye los botones a los extremos */
+    gap: 10px; /* Espacio entre los botones */
     margin-top: 17px;
   }
 
@@ -124,8 +126,8 @@ select {
 }
 
 .espacio{
-  margin-left: 7px;
-  margin-right: 7px;
+  margin-top: 7px;
+  margin-bottom: 7px;
 }
 
 ////////////////////////////////* Contenedor del spinner *//////////////////////////////////

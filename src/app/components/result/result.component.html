@@ -13,34 +13,27 @@
           <mat-icon color="warn" class="red-icon">close</mat-icon>
         </p>
         <p *ngIf="respuestasIncorrectas > 0">
+          
           <a [routerLink]="'/table-errors'" class="error-link">Ver Errores</a>
         </p>
         <p>Puntaje: {{ Puntaje }}</p>
       </mat-card-content>
 
-      <div class="button-container">
-        <button mat-flat-button color="primary" class="boton"
-          (click)="volver()">Volver</button>
-      </div>
-
-    </mat-card>
-
-    <div class="espacio"></div>
-    <!--Card 2-->
-    <mat-card class="custom-card">
+      <div class="espacio"></div>
       <mat-card-title>Mis últimos puntajes</mat-card-title>
       <mat-card-content>
         <p>{{ ultimosPuntajes.join(', ') }}</p>
       </mat-card-content>
 
       <div class="button-container">
-        <button mat-flat-button color="primary" class="boton-reset"
-          (click)="reset()">Reset</button>
+        <button mat-flat-button color="primary" class="boton" (click)="volver()">Volver</button>
+        <button mat-flat-button color="primary" class="boton-reset" (click)="reset()">Reset</button>
       </div>
-
+      
       <div *ngIf="loading" class="spinner-container">
         <div class="custom-spinner"></div>
       </div>
+
     </mat-card>
 
   </div>
