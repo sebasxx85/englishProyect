@@ -15,19 +15,37 @@
           <select name="idioma" formControlName="idioma">
             <option value="Ingles">Inglés</option>
             <option value="Portugues">Portugués</option>
-            <option value="Portugues">Italiano</option>
+            <option value="Italiano">Italiano</option>
           </select>
         </div>
         <div class="form-group">
-          <label for="nproyecto" class="level">Nivel:</label>
+          <label for="nivel" class="level">Nivel:</label>
           <select name="nivel" formControlName="nivel">
-            <option value="principiante">Principiante(A0)</option>
-            <option value="basico">Básico(A1)</option>
-            <option value="basico-alto">Básico-Alto(A2)</option>
-            <option value="intermedio">Intermedio(B1)</option>
-            <option value="intermedio-alto">Intermedio-Alto(B2)</option>
+            <!-- Opciones para Inglés -->
+            <ng-container *ngIf="form.get('idioma')?.value === 'Ingles'">
+              <option value="principiante">Principiante (A0)</option>
+              <option value="basico">Básico (A1)</option>
+              <option value="basico-alto">Básico-Alto (A2)</option>
+              <option value="intermedio">Intermedio (B1)</option>
+              <option value="intermedio-alto">Intermedio-Alto (B2)</option>
+            </ng-container>
+        
+            <!-- Opciones para Italiano -->
+            <ng-container *ngIf="form.get('idioma')?.value === 'Italiano'">
+              <option value="italiano-principiante">Italiano Principiante</option>
+              <option value="italiano-basico">Italiano Básico</option>
+              <option value="italiano-intermedio">Italiano Intermedio</option>
+            </ng-container>
+        
+            <!-- Opciones para Portugués -->
+            <ng-container *ngIf="form.get('idioma')?.value === 'Portugues'">
+              <option value="portugues-principiante">Portugués Principiante</option>
+              <option value="portugues-basico">Portugués Básico</option>
+              <option value="portugues-intermedio">Portugués Intermedio</option>
+            </ng-container>
           </select>
         </div>
+        
         <div class="form-group">
           <label for="nproyecto" class="cantidad">Cantidad de preguntas:</label>
           <input type="number" name="cantidad" class="cantidadinput" min="3" max="15" formControlName="cantidad" placeholder="0">
