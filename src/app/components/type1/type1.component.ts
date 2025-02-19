@@ -103,6 +103,11 @@ export class Type1Component implements OnInit {
       respuestas = this.dataLevel1Service.getWordsIntermedioAltoRes();
     } else {
       console.log("Nivel no reconocido");
+      this.loading = true;
+      
+      setTimeout(() => {
+        this.router.navigate(['/home']);
+      }, 1000);
       return;
     }
 
@@ -123,13 +128,13 @@ export class Type1Component implements OnInit {
   buscarRespuestas(preguntasSeleccionadas: string[], todasLasPreguntas: string[], todasLasRespuestas: string[]): string[] {
     return preguntasSeleccionadas.map(pregunta => {
       const index = todasLasPreguntas.indexOf(pregunta);
-      return todasLasRespuestas[index] || ''; 
+      return todasLasRespuestas[index] || '';
     });
   }
 
 
 
-//Logica de contador que cuando llega a cero se va a result
+  //Logica de contador que cuando llega a cero se va a result
   terminar(){
     this.contador = this.intercambioDatosService.getResultado();
 
@@ -196,7 +201,7 @@ export class Type1Component implements OnInit {
     this.intercambioDatosService.setCantidadRespIncorrectas(this.respuestasIncorrectas);
 
     setTimeout(() => {
-      this.router.navigate(['/result']); 
+      this.router.navigate(['/result']);
     }, 1000);
   }
 
