@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class DataLevel1Service {
+export class DataEnglish1Service {
 
   //Preguntas
   private principianteA0: string[] = [
@@ -41,7 +41,7 @@ export class DataLevel1Service {
     'jury', 'polite', 'take off', 'garlic', 'fewer', 'roasting', 'pounds', 'slice', 'liters', 'thief', 'blame',
     'reach out', 'cozy', 'comfy', 'pole', 'heaters', 'chilly', 'fireplace', 'ruin', 'arch', 'died', 'wiring',
     'fancy', 'ding', 'assembly line', 'achieve', 'scratch', 'bathtub', 'breach', 'showcase', 'stove', 'step forward',
-    'receipt', 'stealing', 'guessing', 'carrots', 'breakup', 'recipe', 'to hurry'
+    'receipt', 'stealing', 'guessing', 'carrots', 'breakup', 'recipe', 'to hurry', 'knowledge'
   ];
 
   private intermedioAltoB2: string[] = [
@@ -128,7 +128,7 @@ private intermedioB1Res: string[] = [
   'cortés', 'quitarse/despegar', 'ajo', 'menos', 'asando', 'libras', 'rebanada', 'litros', 'ladrón', 'culpa', 'alcanzar', 'acogedor', 'cómodo',
   'poste/polo', 'calefactor', 'frío', 'chimenea', 'ruina', 'arco', 'falleció', 'alambrado', 'elegante', 'timbre', 'línea de ensamblaje', 'lograr',
   'rascar', 'bañera', 'brecha', 'vitrina', 'estufa', 'un paso adelante', 'recibo', 'robando', 'adivinando', 'zanahorias', 'ruptura/separación',
-  'receta', 'apurarse'
+  'receta', 'apurarse', 'conocimiento'
 ];
 
 

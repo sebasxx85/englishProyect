@@ -2,7 +2,7 @@ import { Component, inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { DataLevel1Service } from 'src/app/services/data-level1.service';
+import { DataEnglish1Service } from 'src/app/services/data-english1.service';
 import { IntercambioDatosService } from 'src/app/services/intercambio-datos.service';
 
 @Component({
@@ -36,7 +36,7 @@ export class Type1Component implements OnInit {
   // Inyecciones
   private fb = inject(FormBuilder);
   private router = inject(Router);
-  private dataLevel1Service = inject(DataLevel1Service);
+  private dataLevel1Service = inject(DataEnglish1Service);
   private intercambioDatosService = inject(IntercambioDatosService);
 
   ngOnInit() {

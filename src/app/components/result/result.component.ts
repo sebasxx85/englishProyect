@@ -11,7 +11,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
 import { Router, RouterModule } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { DataLevel1Service } from 'src/app/services/data-level1.service';
+import { DataEnglish1Service } from 'src/app/services/data-english1.service';
 import { IntercambioDatosService } from 'src/app/services/intercambio-datos.service';
 import { HeaderComponent } from 'src/app/Shared/components/header/header.component';
 import { SharedModule } from 'src/app/Shared/shared.module';
@@ -53,7 +53,7 @@ export class ResultComponent implements OnInit {
 
   // Inyecciones
   private router = inject(Router);
-  private dataLevel1Service = inject(DataLevel1Service);
+  private dataLevel1Service = inject(DataEnglish1Service);
   private intercambioDatosService = inject(IntercambioDatosService);
 
   ngOnInit() {
