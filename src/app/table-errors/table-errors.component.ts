@@ -34,7 +34,8 @@ export class TableErrorsComponent implements OnInit{
   loading = false;
   cantidadArray: number[] = [];
   nivelIdiomaPuntaje = 1.0;
-  buttonPositionClass = 'button-container'; // Clase por defecto
+  buttonPositionClass = 'button-container'; // Clase por defecto boton
+  tableClass = 'table-container'; // Clase por defecto para la tabla
 
   //Obtener respuestas correctas e incorrectas
   respuestasCorrectas = 0;
@@ -64,6 +65,9 @@ export class TableErrorsComponent implements OnInit{
   
       // Definir la clase para el botón después de actualizar `errores`
       this.buttonPositionClass = this.errores.length >= 4 ? 'button-container-relative' : 'button-container';
+
+      // Definir la clase de la tabla si hay 5 o más errores
+      this.tableClass = this.errores.length >= 5 ? 'table-container-scroll' : 'table-container';
   
       console.log("Clase asignada:", this.buttonPositionClass); // Depuración
   

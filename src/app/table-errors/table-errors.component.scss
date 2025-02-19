@@ -19,8 +19,7 @@ select {
 }
 
 .card-container {
-  max-height: 300px;
-  overflow-y: auto; /* Habilita scroll vertical si hay muchas filas */
+  max-height: 260px;
   border-radius: 49px;
   display: flex;
   justify-content: center;
@@ -49,6 +48,19 @@ th {
   background: #222; /* Asegura que el encabezado sea visible */
   z-index: 2;
 }
+
+.table-container {
+  max-height: 240px; /* Ajusta la altura máxima de la tabla */
+  overflow-y: auto; /* Agrega desplazamiento vertical */
+  border: 1px solid rgb(223, 223, 133);
+  padding: 10px;
+}
+
+.table-container-scroll {
+  max-height: 240px; /* Aumenta la altura si hay muchos errores */
+  overflow-y: scroll; /* Hace que el scroll sea siempre visible */
+}
+
 
 .button-container {
   position: absolute;
