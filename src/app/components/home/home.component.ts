@@ -47,6 +47,11 @@ export class HomeComponent implements OnInit {
       console.log('El valor del nivel ha cambiado:', value);
     });
 
+    //selecion de idima
+    this.form.get('idioma')?.valueChanges.subscribe(value => {
+      console.log('El idioma a cambiado:', value);
+    });
+
     // Verificar si el usuario ya aceptó las cookies
     const cookiesStatus = localStorage.getItem('cookiesAccepted');
     this.cookiesAccepted = cookiesStatus === 'true';
