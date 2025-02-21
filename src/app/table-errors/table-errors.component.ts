@@ -28,7 +28,7 @@ import { IntercambioDatosService } from '../services/intercambio-datos.service';
   templateUrl: './table-errors.component.html',
   styleUrl: './table-errors.component.scss'
 })
-export class TableErrorsComponent implements OnInit{
+export class TableErrorsComponent implements OnInit {
 
   title = "Errores Cometidos";
   loading = false;
@@ -47,34 +47,39 @@ export class TableErrorsComponent implements OnInit{
   private intercambioDatosService = inject(IntercambioDatosService);
 
   //Para el mat-table
-  displayedColumns: string[] = ['numero', 'error', 'correccion'];
-  errores: { numero: number, error: string, correccion: string }[] = [];
+  displayedColumns: string[] = ['numero', 'pregunta', 'error', 'correccion'];
+  errores: { numero: number, pregunta: string, error: string, correccion: string }[] = [];
+
 
 
   ngOnInit() {
     setTimeout(() => {
       this.respuestasIncorrectas = this.intercambioDatosService.getCantidadRespIncorrectas();
       console.log("Respuestas Incorrectas:", this.respuestasIncorrectas);
-  
+      //Obtener cuales fueron las incorrectas no la cantidad de incorrectas
+      this.respuestasIncorrectas = this.intercambioDatosService.getCantidadRespIncorrectas();
+
       // Generar filas dinámicamente
-      this.errores = Array.from({ length: this.respuestasIncorrectas }, (_, i) => ({
-        numero: i + 1,
-        error: '',
-        correccion: ''
-      }));
-  
+      // Obtener las respuestas incorrectas
+      this.errores = this.intercambioDatosService.getRespuestasIncorrectasArray().map((error, index) => ({
+        numero: index + 1,
+        pregunta: error.pregunta,
+        error: error.respuestaUsuario,
+        correccion: error.respuestaCorrecta
+        }));
+
       // Definir la clase para el botón después de actualizar `errores`
       this.buttonPositionClass = this.errores.length >= 4 ? 'button-container-relative' : 'button-container';
 
       // Definir la clase de la tabla si hay 5 o más errores
       this.tableClass = this.errores.length >= 5 ? 'table-container-scroll' : 'table-container';
-  
+
       console.log("Clase asignada:", this.buttonPositionClass); // Depuración
-  
+
     }, 100);  // Pequeña espera para asegurar que el valor esté disponible
   }
-  
-  
+
+
 
   volver() {
     this.loading = true;

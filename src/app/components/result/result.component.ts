@@ -46,7 +46,7 @@ export class ResultComponent implements OnInit {
   ultimosPuntajes: number[] = [];
   private subscription = new Subscription();
 
-  //Obtener respuestas correctas e incorrectas
+  //Obtener cantidad respuestas correctas e incorrectas
   respuestasCorrectas = 0;
   respuestasIncorrectas = 0;
   Puntaje = 0;

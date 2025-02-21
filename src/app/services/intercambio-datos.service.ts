@@ -11,7 +11,7 @@ export class IntercambioDatosService {
   private tiempo: number = 0;
   private resultadoSubject = new BehaviorSubject<number>(0);
   // Arreglo para almacenar los últimos puntajes
-  private puntajes: number[] = []; 
+  private puntajes: number[] = [];
 
 
   //Usando BehaviorSubject 
@@ -25,6 +25,12 @@ export class IntercambioDatosService {
   respuestasIncorrectas$ = this.respuestasIncorrectasSubject.asObservable();
   resultado$ = this.resultadoSubject.asObservable();
   puntajes$ = this.puntajesSubject.asObservable();
+
+  // Nuevo BehaviorSubject para almacenar las respuestas incorrectas y la coorectas a esas incorrectas
+  private respuestasIncorrectasArraySubject = new BehaviorSubject<{ pregunta: string, respuestaUsuario: string, respuestaCorrecta: string }[]>([]);
+
+  // Observable para las respuestas incorrectas
+  respuestasIncorrectasArray$ = this.respuestasIncorrectasArraySubject.asObservable();
 
 
   constructor() {
@@ -53,8 +59,8 @@ export class IntercambioDatosService {
     this.tiempo = value;
   }
 
-   // Método para obtener el valor de cantidad preguntas
-   getTime(): number {
+  // Método para obtener el valor de cantidad preguntas
+  getTime(): number {
     return this.tiempo;
   }
 
@@ -94,6 +100,18 @@ export class IntercambioDatosService {
     return this.respuestasIncorrectasSubject.getValue();
   }
 
+  // Método para establecer las respuestas incorrectas y las correctas
+  setRespuestasIncorrectasArray(value: { pregunta: string, respuestaUsuario: string, respuestaCorrecta: string }[]) {
+    console.log("📌 Respuestas incorrectas guardadas:", value);
+    this.respuestasIncorrectasArraySubject.next(value);
+}
+
+
+  // Método para obtener las respuestas incorrectas actuales
+  getRespuestasIncorrectasArray(): { pregunta: string, respuestaUsuario: string, respuestaCorrecta: string }[] {
+    return this.respuestasIncorrectasArraySubject.getValue();
+  }
+
 
   // Método para agregar un nuevo puntaje al arreglo max 50 elementos
   addPuntaje(puntaje: number) {
@@ -107,22 +125,22 @@ export class IntercambioDatosService {
     this.puntajesSubject.next(this.puntajes); // Emitir el nuevo estado
   }
 
-    // Método para obtener el arreglo de puntajes desde localStorage
-    getPuntajes(): void {
-      const storedPuntajes = localStorage.getItem('puntajes');
-      if (storedPuntajes) {
-        this.puntajes = JSON.parse(storedPuntajes);
-      }
-      this.puntajesSubject.next(this.puntajes); // Emitir el estado inicial
+  // Método para obtener el arreglo de puntajes desde localStorage
+  getPuntajes(): void {
+    const storedPuntajes = localStorage.getItem('puntajes');
+    if (storedPuntajes) {
+      this.puntajes = JSON.parse(storedPuntajes);
     }
+    this.puntajesSubject.next(this.puntajes); // Emitir el estado inicial
+  }
 
 
-    resetPuntajes() {
-      this.puntajes = [];
-  
-      localStorage.removeItem('puntajes');// Eliminar los datos de puntajes en localStorage
-      this.puntajesSubject.next(this.puntajes); // Emitir el estado vacío
-    }
+  resetPuntajes() {
+    this.puntajes = [];
+
+    localStorage.removeItem('puntajes');// Eliminar los datos de puntajes en localStorage
+    this.puntajesSubject.next(this.puntajes); // Emitir el estado vacío
+  }
 
 
 }

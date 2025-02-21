@@ -177,33 +177,44 @@ export class Type1Component implements OnInit {
     return this.currentPage === totalPages - 1;
   }
 
+  //////////////// Fin Logica carrusel ///////////////
 
   enviar() {
+
     this.loading = true;
     this.contador = 0;
     this.respuestasCorrectas = 0;
     this.respuestasIncorrectas = 0;
-
-    // Contar respuestas correctas e incorrectas
+  
+    let respuestasIncorrectasArray: { pregunta: string, respuestaUsuario: string, respuestaCorrecta: string }[] = [];
+  
+    // Contar respuestas correctas e incorrectas y guardar las incorrectas
     this.cantidadArray.forEach((index) => {
       const respuestaSeleccionada = this.form.get(`respuesta${index}`)?.value;
       const respuestaCorrecta = this.dataTableRespuestas[index];
-
+  
       if (respuestaSeleccionada === respuestaCorrecta) {
         this.respuestasCorrectas++;
       } else {
         this.respuestasIncorrectas++;
+        respuestasIncorrectasArray.push({
+          pregunta: this.dataTablePreguntas[index],
+          respuestaUsuario: respuestaSeleccionada && respuestaSeleccionada.trim() !== '' ? respuestaSeleccionada : 'No contestada',
+          respuestaCorrecta: respuestaCorrecta
+        });
       }
     });
-
-    // Guardar los valores en el servicio IntercambioDatosService
+  
+    // Guardar los valores en el servicio
     this.intercambioDatosService.setCantidadRespCorrectas(this.respuestasCorrectas);
     this.intercambioDatosService.setCantidadRespIncorrectas(this.respuestasIncorrectas);
-
+    this.intercambioDatosService.setRespuestasIncorrectasArray(respuestasIncorrectasArray);
+  
     setTimeout(() => {
       this.router.navigate(['/result']);
     }, 1000);
   }
+  
 
   ngOnDestroy() {
     // Cancelar suscripción para evitar fugas de memoria
