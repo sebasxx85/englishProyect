@@ -25,7 +25,7 @@ export class DataEnglish1Service {
     'hometown', 'vanish', 'keychain', 'microwave', 'sew', 'gross', 'silk', 'anyway','bitter','flour',
     'suggest','sudden', 'rhythm', 'discouraged', 'nevertheless', 'waterproof', 'hideous', 'appetite', 'despite', 'masterpiece',
     'ensure', 'madness', 'support','desire', 'assure', 'filmmaker','sore', 'duchess', 'certain', 'statement', 'worthy', 'spooky',
-    'fish tank', 'crown', 'deaf', 'warmth', 'seafood', 'gullible', 'bodyguard', 'venue', 'clue', 'suspect', 'greedy'
+    'fish tank', 'crown', 'deaf', 'warmth', 'seafood', 'gullible', 'bodyguard', 'venue', 'clue', 'suspect', 'greedy', 'failure'
   ];
 
   private intermedioB1: string[] = [
@@ -43,7 +43,7 @@ export class DataEnglish1Service {
     'jury', 'polite', 'take off', 'garlic', 'fewer', 'roasting', 'pounds', 'slice', 'liters', 'thief', 'blame',
     'reach out', 'cozy', 'comfy', 'pole', 'heaters', 'chilly', 'fireplace', 'ruin', 'arch', 'died', 'wiring',
     'fancy', 'ding', 'assembly line', 'achieve', 'scratch', 'bathtub', 'breach', 'showcase', 'stove', 'step forward',
-    'receipt', 'stealing', 'guessing', 'carrots', 'breakup', 'recipe', 'to hurry', 'knowledge', 'call', 'portrait',
+    'receipt', 'stealing', 'carrots', 'breakup', 'recipe', 'to hurry', 'knowledge', 'call', 'portrait',
     'skeptical', 'besides', 'flaws', 'queue', 'enterprise', 'patterns','hostage', 'stake', 'hold', 'overall', 'bakery'
   ];
 
@@ -115,7 +115,7 @@ private basicoAltoA2Res: string[] = [
   'sugerir','repentino', 'ritmo', 'desanimado', 'sin embargo', 'impermeable', 'espantoso', 'apetito', 'a pesar de', 'obra maestra',
   'asegurar', 'locura', 'apoyo', 'deseo', 'asegurar','cineasta', 'adolorido', 'duquesa', 'cierto/certero', 'declaración', 'valioso/digno',
   'escalofriante', 'pecera', 'corona', 'sordo', 'calidez', 'mariscos', 'crédulo', 'guardaespaldas', 'lugar/sitio', 'pista', 'sospechoso',
-  'codicioso'
+  'codicioso', 'fallo/fracaso'
 
 ];
 
@@ -134,7 +134,7 @@ private intermedioB1Res: string[] = [
   'derramar', 'ponerse elegante', 'inofensivo', 'artículos de aseo', 'cepillado', 'barba', 'hilo dental', 'patinar', 'esquiando', 'jurado',
   'cortés', 'quitarse/despegar', 'ajo', 'menos', 'asando', 'libras', 'rebanada', 'litros', 'ladrón', 'culpa', 'alcanzar', 'acogedor', 'cómodo',
   'poste/polo', 'calefactor', 'frío', 'chimenea', 'ruina', 'arco', 'falleció', 'alambrado', 'elegante', 'timbre', 'línea de ensamblaje', 'lograr',
-  'rascar', 'bañera', 'brecha', 'vitrina', 'estufa', 'un paso adelante', 'recibo', 'robando', 'adivinando', 'zanahorias', 'ruptura/separación',
+  'rascar', 'bañera', 'brecha', 'vitrina', 'estufa', 'un paso adelante', 'recibo', 'robando', 'zanahorias', 'ruptura/separación',
   'receta', 'apurarse', 'conocimiento', 'llamada/decisión', 'retrato', 'escéptico', 'además', 'defectos','cola', 'empresa/aventura', 'patrones',
   'rehén', 'apuesta/riesgo', 'sostener', 'en general', 'panadería'
 ];
