@@ -102,7 +102,9 @@ export class HomeComponent implements OnInit {
       let valor = cantidadControl.value;
       if (valor > 12) {
         cantidadControl.setValue(12);
-      } else if (valor < 3) {
+      } else if (valor = null) {
+        cantidadControl.setValue(0);
+      }else if (valor < 0) {
         cantidadControl.setValue(3);
       }
     }
