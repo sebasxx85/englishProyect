@@ -23,7 +23,9 @@ export class DataEnglish1Service {
     'trend', 'footage', 'forehead', 'shopaholic', 'fold', 'deceive','luckily', 'disappointing', 'knit', 'house', 
     'queen', 'rabbit', 'tray', 'couch', 'lobster', 'once', 'both', 'meatballs', 'too', 'away', 
     'hometown', 'vanish', 'keychain', 'microwave', 'sew', 'gross', 'silk', 'anyway','bitter','flour',
-    'suggest','sudden', 'rhythm', 'discouraged', 'nevertheless', 'waterproof', 'hideous', 'appetite'
+    'suggest','sudden', 'rhythm', 'discouraged', 'nevertheless', 'waterproof', 'hideous', 'appetite', 'despite', 'masterpiece',
+    'ensure', 'madness', 'support','desire', 'assure', 'filmmaker','sore', 'duchess', 'certain', 'statement', 'worthy', 'spooky',
+    'fish tank', 'crown', 'deaf', 'warmth', 'seafood', 'gullible', 'bodyguard', 'venue', 'clue', 'suspect', 'greedy'
   ];
 
   private intermedioB1: string[] = [
@@ -32,7 +34,7 @@ export class DataEnglish1Service {
     'jacket', 'queen', 'rabbit', 'pencil', 'lemon', 'cardboard', 'supposedly', 'sharp', 'among', 'buddy', 
     'shady', 'qualify', 'chandelier', 'sin', 'bouquet', 'bride', 'tablecloth', 'disaster', 'cracks', 'basement',
     'figure out', 'as well', 'often', 'leftovers', 'chew', 'deliverance', 'screw up','speech', 'cucumber', 'gossip',
-    'cattle', 'countryside','ankle', 'silverware', 'sprinkles', 'hesitate', 'thoughtful', 
+    'cattle', 'countryside','ankle', 'silverware', 'sprinkles', 'hesitate', 'thoughtful', 'relief', 'pottery',
     
     'main', 'off-road', 'though', 'stall', 'properly', 'exceed', 'useful', 'guess',
     'sense', 'trapped', 'hopelessly', 'lightning', 'good afternoon', 'good morning', 'good evening', 'discuss',
@@ -41,7 +43,8 @@ export class DataEnglish1Service {
     'jury', 'polite', 'take off', 'garlic', 'fewer', 'roasting', 'pounds', 'slice', 'liters', 'thief', 'blame',
     'reach out', 'cozy', 'comfy', 'pole', 'heaters', 'chilly', 'fireplace', 'ruin', 'arch', 'died', 'wiring',
     'fancy', 'ding', 'assembly line', 'achieve', 'scratch', 'bathtub', 'breach', 'showcase', 'stove', 'step forward',
-    'receipt', 'stealing', 'guessing', 'carrots', 'breakup', 'recipe', 'to hurry', 'knowledge'
+    'receipt', 'stealing', 'guessing', 'carrots', 'breakup', 'recipe', 'to hurry', 'knowledge', 'call', 'portrait',
+    'skeptical', 'besides', 'flaws', 'queue', 'enterprise', 'patterns','hostage', 'stake', 'hold', 'overall', 'bakery'
   ];
 
   private intermedioAltoB2: string[] = [
@@ -66,7 +69,7 @@ export class DataEnglish1Service {
     'tracker', 'labor union', 'teamed up', 'trial', 'hush', 'spoons', 'beekeeper', 'foreign', 'armchair', 'dresser',
     'sink', 'furniture', 'pillow', 'neighbor', 'nearly', 'blanket', 'luggage', 'bring', 'instead', 'wore', 'raincoats',
     'owe', 'lend', 'bill', 'quarter', 'anymore', 'seeing', 'suppose', 'actually', 'daunting', 'profound', 'raised me',
-    'reminder', 'fierce', 'appear', 
+    'reminder', 'fierce', 'appear', 'noteworthy', 'charm'
   ];
  //Metodos Preguntas
 
@@ -109,7 +112,11 @@ private basicoAltoA2Res: string[] = [
   'tendencia', 'metraje', 'frente', 'comprador compulsivo', 'doblar', 'engañar','afortunadamente', 'decepcionante', 'tejer', 'casa', 
   'reina', 'conejo', 'bandeja', 'sofá', 'langosta', 'una vez', 'ambos', 'albóndigas', 'también', 'lejos', 
   'ciudad natal', 'desaparecer', 'llavero', 'microondas', 'coser', 'asqueroso/ bruto', 'seda', 'de todos modos', 'amargo','harina',
-  'sugerir','repentino', 'ritmo', 'desanimado', 'sin embargo', 'impermeable', 'espantoso', 'apetito' 
+  'sugerir','repentino', 'ritmo', 'desanimado', 'sin embargo', 'impermeable', 'espantoso', 'apetito', 'a pesar de', 'obra maestra',
+  'asegurar', 'locura', 'apoyo', 'deseo', 'asegurar','cineasta', 'adolorido', 'duquesa', 'cierto/certero', 'declaración', 'valioso/digno',
+  'escalofriante', 'pecera', 'corona', 'sordo', 'calidez', 'mariscos', 'crédulo', 'guardaespaldas', 'lugar/sitio', 'pista', 'sospechoso',
+  'codicioso'
+
 ];
 
 
@@ -119,7 +126,7 @@ private intermedioB1Res: string[] = [
   'chaqueta', 'reina', 'conejo', 'lápiz', 'limón', 'cartón', 'supuestamente', 'afilado', 'entre', 'amigo', 
   'sombra', 'calificar', 'candelabro', 'pecado', 'ramo', 'novia', 'mantel', 'desastre', 'grietas', 'sótano',
   'descubrir/ averiguar', 'también', 'a menudo', 'sobras', 'masticar', 'liberación', 'arruinar/ estropear','dar discurso', 'pepino', 'chisme',
-  'ganado', 'campo', 'tobillo', 'cubiertos', 'chispitas', 'dudar', 'considerado',
+  'ganado', 'campo', 'tobillo', 'cubiertos', 'chispitas', 'dudar', 'considerado', 'alivio', 'cerámica',
 
   'principal', 'fuera de camino', 'aunque', 'parar', 'propiamente', 'superar', 'útil', 'adivinar', 'sentido', 'atrapado', 'sin esperanza',
   'relámpago', 'buenas tardes', 'buenos días', 'buenas noches', 'conversar/discutir', 'cruce/encrucijada', 'saltar', 'saltar', 'cualquiera',
@@ -128,7 +135,8 @@ private intermedioB1Res: string[] = [
   'cortés', 'quitarse/despegar', 'ajo', 'menos', 'asando', 'libras', 'rebanada', 'litros', 'ladrón', 'culpa', 'alcanzar', 'acogedor', 'cómodo',
   'poste/polo', 'calefactor', 'frío', 'chimenea', 'ruina', 'arco', 'falleció', 'alambrado', 'elegante', 'timbre', 'línea de ensamblaje', 'lograr',
   'rascar', 'bañera', 'brecha', 'vitrina', 'estufa', 'un paso adelante', 'recibo', 'robando', 'adivinando', 'zanahorias', 'ruptura/separación',
-  'receta', 'apurarse', 'conocimiento'
+  'receta', 'apurarse', 'conocimiento', 'llamada/decisión', 'retrato', 'escéptico', 'además', 'defectos','cola', 'empresa/aventura', 'patrones',
+  'rehén', 'apuesta/riesgo', 'sostener', 'en general', 'panadería'
 ];
 
 
@@ -155,7 +163,7 @@ private intermedioAltoB2Res: string[] = [
   'extranjero', 'sillón', 'vestidor/cómoda', 'fregadero/lavaplatos', 'muebles', 'almohada', 'vecino', 'casi/cerca de', 'manta/frazada', 'equipaje',
   'traer', 'en cambio', 'vistió/llevó puesto', 'impermeables', 'deber algo/deuda', 'prestar', 'billete/factura', 'cuarto/moneda de 25', 'ya/nunca más',
   'viendo/saliendo con alguien', 'suponer', 'en realidad/de hecho', 'desalentador', 'profundo', 'me crió', 'recordatorio', 'intenso', 'aparecer',
-
+  'notable', 'encanto'
 ];
 
 
