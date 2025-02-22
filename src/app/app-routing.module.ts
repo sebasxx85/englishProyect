@@ -28,10 +28,6 @@ const routes: Routes = [
  
   //Usando lazy load tradicional con modulos
   {
-    path: 'top', loadChildren: () =>
-      import('./components/top/top.module').then(m => m.TopModule)
-  },
-  {
     path: 'ingresar', loadChildren: () =>
       import('./components/user/user.module').then(m => m.UserModule)
   },
