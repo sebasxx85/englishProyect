@@ -190,7 +190,6 @@ getWordsIntermedioAltoRes(): string[] {
   return this.intermedioAltoB2Res;
 }
 
-// DEBO CREAR EL ARREGLO CON EL EJEMPLO PARA CADA PALABRA EN EL MISMO ORDEN EN EL ARREGLO
 
   
 }
