@@ -28,6 +28,7 @@ export class HomeComponent implements OnInit {
   idiomaSelect = [
     { label: 'Ingles', value: 'ING' },
     { label: 'Portugues', value: 'POR' },
+    { label: 'Italiano', value: 'ITA' },
   ]
 
   //Injectando servicios

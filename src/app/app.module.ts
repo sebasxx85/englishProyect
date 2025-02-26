@@ -21,9 +21,9 @@ import { UserComponent } from './components/user/user.component';
 import { CrearUsuarioComponent } from './components/crear-usuario/crear-usuario.component';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { Type1Component } from './components/type1/type1.component';
-import { Type2Component } from './components/type2/type2.component';
-import { Type3Component } from './components/type3/type3.component';
+import { Type1Component } from './components/EnglishType/type1/type1.component';
+import { Type2Component } from './components/EnglishType/type2/type2.component';
+import { Type3Component } from './components/EnglishType/type3/type3.component';
 import { ShufflePipe } from './pipes/shuffle.pipe';
 
 

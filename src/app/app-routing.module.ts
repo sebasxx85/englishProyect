@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
-import { Type1Component } from './components/type1/type1.component';
-import { Type2Component } from './components/type2/type2.component';
-import { Type3Component } from './components/type3/type3.component';
+import { Type1Component } from './components/EnglishType/type1/type1.component';
+import { Type2Component } from './components/EnglishType/type2/type2.component';
+import { Type3Component } from './components/EnglishType/type3/type3.component';
 import { ResultComponent } from './components/result/result.component';
 import { TableErrorsComponent } from './table-errors/table-errors.component';
 
