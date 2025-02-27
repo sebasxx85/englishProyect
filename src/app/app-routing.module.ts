@@ -8,6 +8,7 @@ import { ResultComponent } from './components/result/result.component';
 import { TableErrorsComponent } from './table-errors/table-errors.component';
 import { Type1ItaComponent } from './components/ItalianType/type1-ita/type1-ita.component';
 import { Type1PorComponent } from './components/PortuguesType/type1-por/type1-por.component';
+import { EjercicioComponent } from './components/ejercicio/ejercicio.component';
 
 //Si son componentes stanalone se carga el componente si son tradicionales el modulo si uso Lazy Load
 const routes: Routes = [
@@ -16,14 +17,10 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'table-errors', component: TableErrorsComponent },
  
-  //tipos de pruebas
-  //Ingles
-  { path: 'type1', component: Type1Component },
-  { path: 'type2', component: Type2Component },
-  { path: 'type3', component: Type3Component },
-  //Italiano y Portugues
-  { path: 'type1Ita', component: Type1ItaComponent },
-  { path: 'type1Por', component: Type1PorComponent },
+  // Nueva ruta única para todos los ejercicios
+  { path: 'ejercicio', component: EjercicioComponent }, // Componente contenedor
+
+  //Resultado
   { path: 'result', component: ResultComponent },
 
   //Usando lazy load stanalone con componentes

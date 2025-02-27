@@ -13,6 +13,8 @@ export class IntercambioDatosService {
   // Arreglo para almacenar los últimos puntajes
   private puntajes: number[] = [];
 
+  private idiomaSeleccionado: string = '';
+
 
   //Usando BehaviorSubject 
   private respuestasCorrectasSubject = new BehaviorSubject<number>(0);
@@ -98,6 +100,14 @@ export class IntercambioDatosService {
   // Método para obtener el valor actual de respuestas incorrectas
   getCantidadRespIncorrectas(): number {
     return this.respuestasIncorrectasSubject.getValue();
+  }
+
+  setIdioma(idioma: string) {
+    this.idiomaSeleccionado = idioma;
+  }
+  
+  getIdioma(): string {
+    return this.idiomaSeleccionado;
   }
 
   // Método para establecer las respuestas incorrectas y las correctas

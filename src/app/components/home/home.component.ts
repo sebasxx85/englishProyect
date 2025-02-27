@@ -35,7 +35,7 @@ export class HomeComponent implements OnInit {
   private fb = inject(FormBuilder)
   private router = inject(Router)
   private intercambioDatosService = inject(IntercambioDatosService);
-  
+
 
   ngOnInit() {
     this.initForm();
@@ -105,7 +105,7 @@ export class HomeComponent implements OnInit {
         cantidadControl.setValue(12);
       } else if (valor = null) {
         cantidadControl.setValue(0);
-      }else if (valor < 0) {
+      } else if (valor < 0) {
         cantidadControl.setValue(3);
       }
     }
@@ -131,24 +131,19 @@ export class HomeComponent implements OnInit {
       const randomComponent = Math.floor(Math.random() * 3) + 1;
 
 
-    // Obtener el idioma seleccionado
-    let idiomaSeleccionado = this.form.get('idioma')?.value;
+      // Obtener el idioma seleccionado
+      let idiomaSeleccionado = this.form.get('idioma')?.value;
 
-    // Debug en consola
-    console.log('Idioma seleccionado:', idiomaSeleccionado);
+      // Debug en consola
+      console.log('Idioma seleccionado:', idiomaSeleccionado);
 
-    // Redirigir según el idioma
-    if (idiomaSeleccionado === 'Ingles') {
-        this.router.navigate(['/type1']);
-    } else if (idiomaSeleccionado === 'Italiano') {
-        this.router.navigate(['/type1Ita']);
-    } else if (idiomaSeleccionado === 'Portugues') {
-        this.router.navigate(['/type1Por']);
-    } else {
-        console.error('Idioma no reconocido:', idiomaSeleccionado);
-    }
-}, 2000);
-}
+      // Guardar el idioma seleccionado en el servicio
+      this.intercambioDatosService.setIdioma(idiomaSeleccionado );
+
+      // Redirigir siempre a /ejercicio sin exponer el idioma en la URL
+      this.router.navigate(['/ejercicio']);
+    }, 2000);
+  }
 
   resetAll() {
     this.form.reset

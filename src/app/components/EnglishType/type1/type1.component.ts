@@ -1,12 +1,18 @@
+import { CommonModule } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { MatCardModule } from '@angular/material/card';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { ShufflePipe2 } from 'src/app/pipes/shuffle2.pipe';
 import { DataEnglish1Service } from 'src/app/services/data-english1.service';
 import { IntercambioDatosService } from 'src/app/services/intercambio-datos.service';
+import { SharedModule } from 'src/app/Shared/shared.module';
 
 @Component({
   selector: 'app-type1',
+  standalone: true,
+  imports: [CommonModule, ShufflePipe2, MatCardModule, ReactiveFormsModule, SharedModule],
   templateUrl: './type1.component.html',
   styleUrls: ['./type1.component.scss']
 })

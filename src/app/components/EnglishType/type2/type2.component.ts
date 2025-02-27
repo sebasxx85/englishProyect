@@ -1,11 +1,17 @@
+import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { MatCardModule } from '@angular/material/card';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { Router } from '@angular/router';
 import { DataEnglish1Service } from 'src/app/services/data-english1.service';
 import { IntercambioDatosService } from 'src/app/services/intercambio-datos.service';
+import { SharedModule } from 'src/app/Shared/shared.module';
 
 @Component({
   selector: 'app-type2',
+  standalone: true,
+  imports: [CommonModule, MatCardModule, ReactiveFormsModule, SharedModule, MatProgressBarModule],
   templateUrl: './type2.component.html',
   styleUrls: ['./type2.component.scss']
 })

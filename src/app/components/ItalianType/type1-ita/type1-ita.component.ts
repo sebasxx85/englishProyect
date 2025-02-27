@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { ShufflePipe2 } from 'src/app/pipes/shuffle2.pipe';
@@ -12,7 +13,7 @@ import { SharedModule } from 'src/app/Shared/shared.module';
 @Component({
   selector: 'app-type1-ita',
   standalone: true,
-  imports: [CommonModule, ShufflePipe2, MatCardModule, ReactiveFormsModule, SharedModule],
+  imports: [CommonModule, ShufflePipe2, MatCardModule, ReactiveFormsModule, SharedModule, MatProgressBarModule],
   templateUrl: './type1-ita.component.html',
   styleUrl: './type1-ita.component.scss'
 })
