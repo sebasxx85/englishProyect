@@ -1,0 +1,274 @@
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    min-height: 87vh;
+    min-width: 117vh;
+  }
+  
+  .custom-card {
+    color: rgb(248, 241, 232);
+    border: 4px solid rgb(223, 223, 133);
+    width: 37.33%; 
+    margin-top: 30px; 
+    padding: 1rem; 
+    box-shadow: 8px 8px 8px rgba(0.0, 0.0, 0.7, 0.7); /* Añade sombra para mejor visibilidad */
+    min-height: 55vh;
+    min-width: 25vh;
+    background-color: rgb(18, 13, 13);
+    position: absolute;
+    transform: translate(0%, 12%);
+    
+  }
+  
+  /* Pantallas entre 726px y 926px */
+  @media (max-width: 926px) and (min-width: 726px) {
+    .card-container {
+      position: absolute;
+      transform: translate(7%, 2%);
+    }
+    .custom-card {
+      min-width: 25vh;
+  
+    }
+  }
+  
+  /* Pantallas entre 560px y 725px */
+  @media (max-width: 725px) and (min-width: 560px) {
+    .card-container {
+      max-width: 87vh;
+      position: absolute;
+      transform: translate(-12%, 3%);
+    }
+    .custom-card {
+      min-width: 25vh;
+    }
+  }
+  
+  @media (max-width: 560px) and (min-width: 425px) {
+    .card-container {
+      max-width: 87vh;
+      position: absolute;
+      transform: translate(-18%, 3%);
+    }
+    .custom-card {
+      min-width: 25vh;
+    }
+  }
+  
+  @media (max-width: 425px) and (min-width: 310px) {
+    .card-container {
+      max-width: 97vh;
+      margin-right: 50px;
+      position: absolute;
+      transform: translate(-18%, 3%);
+    }
+    .custom-card {
+      min-width: 25vh;
+    }
+  }
+  
+  @media (max-width: 309px) and (min-width: 210px) {
+    .card-container {
+      max-width: 97vh;
+      position: absolute;
+      transform: translate(-18%, 3%);
+    }
+    .custom-card {
+      min-width: 25vh;
+    }
+  }
+  
+  
+  
+  .button-container {
+    position: absolute; /* Fija la posición respecto al contenedor padre */
+    bottom: 10px; /* Alinea los botones a 10px del fondo */
+    left: 17px; /* Alinea los botones a 10px del lado izquierdo */
+    display: flex; /* Asegura que los botones estén alineados si hay más de uno */
+    gap: 10px; /* Espaciado entre los botones si hay más de uno */
+    margin-top: 17px;
+  }
+  
+  .boton {
+    color: black;
+    background-color: rgb(223, 223, 133);
+    margin-top: 10px;
+    margin-bottom: 17px;
+    width: 100px;
+    border-radius: 9px; /* Esquinas más redondeadas */
+    font-family: 'Roboto', sans-serif; /* Tipo de letra */
+    transition: background-color 0.3s ease; /* Transición suave del color de fondo */
+    padding: 12px 20px; /* Aumenta el padding para hacer el botón más alto */
+    border: 1px solid rgba(0, 0, 0, 0.4); /* Borde ligero */
+    display: inline-block; /* Alineación en línea */
+    vertical-align: middle; /* Asegura que se alinee al centro verticalmente con el select */
+  }
+  
+  .botonword {
+    color: black;
+    background-color: rgb(47, 158, 210);
+    margin-top: 10px;
+    margin-bottom: 17px;
+    margin-right: 7px;
+    width: 100px;
+    border-radius: 9px; /* Esquinas más redondeadas */
+    font-family: 'Roboto', sans-serif; /* Tipo de letra */
+    transition: background-color 0.3s ease; /* Transición suave del color de fondo */
+    padding: 12px 20px; /* Aumenta el padding para hacer el botón más alto */
+    border: 1px solid rgba(0, 0, 0, 0.4); /* Borde ligero */
+    display: inline-block; /* Alineación en línea */
+    vertical-align: middle; /* Asegura que se alinee al centro verticalmente con el select */
+  }
+  
+  .boton:hover {
+    background-color: rgb(240, 240, 190); 
+    cursor: pointer; /* Cambia el cursor a una mano */
+  }
+  
+  .botonword:hover {
+    background-color: rgb(111, 218, 239); 
+  }
+  
+  select {
+    margin-left: 10px; /* Espacio entre botón y select */
+    display: inline-block; /* Alineación en línea */
+    vertical-align: middle; /* Asegura que se alinee al centro verticalmente con el botón */
+    width: 150px; /* Ajusta el ancho del select */
+  }
+  
+  .form-group {
+    margin-bottom: 12px; /* Espacio entre cada fila de botón y select */
+  }
+  
+  .row {
+    display: flex;
+    flex-wrap: wrap; /* Permite que se alineen como columnas flexibles */
+    justify-content: space-between; /* Espacio entre las columnas */
+  }
+  
+  .col {
+    display: flex;
+    justify-content: flex-start; /* Alinea el contenido al inicio de la fila */
+    align-items: center; /* Centra verticalmente los botones y selects */
+    min-width: 10vh;
+  }
+  
+  
+  .contador-display {
+    color: rgb(223, 223, 133);
+    font-family: 'Roboto', sans-serif; /* Tipo de letra */
+    font-weight: bold; /* Para resaltar el texto */
+    margin-top: 17px;
+    margin-left: 7px;
+  }
+  
+  .select{
+    min-width: 10vh;
+  }
+  
+  ////////////////////////////////* Contenedor del spinner *//////////////////////////////////
+  .spinner-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .custom-spinner {
+    width: 80px;
+    height: 80px;
+    border: 10px solid rgba(0, 0, 0, 0.1); /* Borde gris claro */
+    border-top: 10px solid #DFDF85; /* Amarillo (#DFDF85) */
+    border-right: 10px solid #e8e897; /* Naranja pálido (#FFC48C) */
+    border-radius: 50%;
+    animation: spin 1.2s linear infinite, color-change 2s linear infinite;
+  }
+  
+  /* Animación de rotación */
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Animación de cambio de color */
+  @keyframes color-change {
+    0% {
+      border-top-color: #DFDF85; /* Amarillo */
+      border-right-color: #e8e897; /* Naranja pálido */
+    }
+    50% {
+      border-top-color: #e8e897; /* Naranja pálido */
+      border-right-color: #DFDF85; /* Amarillo */
+    }
+    100% {
+      border-top-color: #DFDF85; /* Amarillo */
+      border-right-color: #e8e897; /* Naranja pálido */
+    }
+  }
+  
+  ////////////////////////////////* FIN Contenedor del spinner *//////////////////////////////////
+  
+  .carousel {
+    display: flex;
+    flex-direction: column; /* Alinea las preguntas verticalmente */
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .questions-container {
+    display: flex;
+    flex-direction: column; /* Coloca las preguntas una debajo de otra */
+    gap: 1rem; /* Espaciado entre preguntas */
+    width: 100%;
+  }
+  
+  .arrow-left,
+  .arrow-right {
+    background-color: #FFD700; /* Amarillo */
+    color: black;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+  }
+  
+  .arrow-left {
+    left: -60px;
+  }
+  
+  .arrow-right {
+    right: -60px;
+  }
+  
+  .arrow-left:hover,
+  .arrow-right:hover {
+    background-color: #ecd9b2; /* Naranja */
+  }
+  
+  .botonword {
+    margin-bottom: 0.5rem;
+  }
+  
+  .select {
+    margin-top: 0.5rem;
+  }
