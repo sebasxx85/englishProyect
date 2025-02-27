@@ -64,7 +64,7 @@ export class HomeComponent implements OnInit {
       fechaInicio: [this.today.toISOString().split('T')[0]],
       idioma: ['Ingles'],
       nivel: ['principiante'],
-      cantidad: [9],
+      cantidad: [10],
       time: [true]
     })
   }
@@ -125,17 +125,30 @@ export class HomeComponent implements OnInit {
       // Guardar el valor de nivel ingles
       let nivelIdioma = this.form.get('nivel')?.value;
       this.intercambioDatosService.setNivelIdioma(nivelIdioma);
-
-      //guardar valor tiempo
       this.intercambioDatosService.setTime(tiempoDisponible);
 
       // Generar un número aleatorio entre 1 y 3 (o la cantidad de componentes que tengas)
       const randomComponent = Math.floor(Math.random() * 3) + 1;
-     // this.router.navigate([`type${randomComponent}`]);
-     this.router.navigate([`type${1}`]);
-    }, 2000);
 
-  }
+
+    // Obtener el idioma seleccionado
+    let idiomaSeleccionado = this.form.get('idioma')?.value;
+
+    // Debug en consola
+    console.log('Idioma seleccionado:', idiomaSeleccionado);
+
+    // Redirigir según el idioma
+    if (idiomaSeleccionado === 'Ingles') {
+        this.router.navigate(['/type1']);
+    } else if (idiomaSeleccionado === 'Italiano') {
+        this.router.navigate(['/type1Ita']);
+    } else if (idiomaSeleccionado === 'Portugues') {
+        this.router.navigate(['/type1Por']);
+    } else {
+        console.error('Idioma no reconocido:', idiomaSeleccionado);
+    }
+}, 2000);
+}
 
   resetAll() {
     this.form.reset
