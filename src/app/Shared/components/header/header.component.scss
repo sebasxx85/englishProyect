@@ -1,53 +1,28 @@
 
-header {
-  position: fixed;
-  width: calc(100% - 10px); /* Resta los márgenes izquierdo y derecho del body */
-  height: 90px; 
-  background-color: #000; 
-  color: #fff; 
-  padding: 20px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 1000; /* Asegúrate de que el header esté encima de otros elementos */
-  box-sizing: border-box; /* Incluye padding y border en el ancho */
-  border: 2px solid rgba(0, 0, 0.5, 0.7); /* Borde ligero */
-  border-radius: 5px;
-  min-height: 15vh; 
-  min-width: 70vh;
-}
 
-h1{
-  color: #ff0;
-  margin: 0;
-  text-align: left;
-  size: 9px;
+.toolbar-title a {
   text-decoration: none;
+  color: rgb(223, 223, 133);
+  font-weight: bold;
+  font-size: 1.2rem;
 }
 
-a {
-  color: #ff0;
-  margin: 0;
-  text-align: left;
-  size: 7px;
-  text-decoration: none;
-}
-
-h1:hover {
+.toolbar-title a:hover {
   color: rgb(240, 240, 190); 
-  cursor: pointer; 
+  cursor: pointer;  
 }
 
-nav {
-  text-align: center;
+.spacer {
+  flex: 1 1 auto;
 }
 
-nav a {
-  color: #ff0;
-  text-decoration: none;
-  margin: 0 10px;
+.mat-menu {
+  color: rgb(223, 223, 133);
+  
 }
 
-nav a:hover {
+.mat-menu:hover{
+  background-color: black;
   color: rgb(240, 240, 190); 
+  cursor: pointer;  
 }

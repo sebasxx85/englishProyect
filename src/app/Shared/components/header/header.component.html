@@ -1,14 +1,28 @@
+<mat-toolbar class="toolbar">
+  <!-- Menú para dispositivos móviles -->
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>menu</mat-icon>
+  </button>
 
-<title>English-Proyect</title>
+  <!-- Título con enlace a Home -->
+  <span class="toolbar-title">
+    <a href="home">Language Tests</a>
+  </span>
 
-<header>
-  <h1 class="alinicio"><a href="home">{{title}}</a></h1>
+  <span class="spacer"></span>
 
-  <nav>
-    <a href="ingresar" >Ingresar</a>
-    <a href="#">Practicar</a>
-    <a href="#">Cursos</a>
-    <a href="#">Ranking</a>
-  </nav>
-
-</header>
+<!-- Menú desplegable -->
+<mat-menu #menu="matMenu" class="mat-menu">
+  <button mat-menu-item href="ingresar" >
+    <mat-icon>login</mat-icon> Ingresar
+  </button>
+  <button mat-menu-item>
+    <mat-icon>school</mat-icon> Practicar
+  </button>
+  <button mat-menu-item>
+    <mat-icon>book</mat-icon> Cursos
+  </button>
+  <button mat-menu-item>
+    <mat-icon>leaderboard</mat-icon> Ranking
+  </button>
+</mat-menu>

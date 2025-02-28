@@ -9,6 +9,7 @@ import { TableErrorsComponent } from './table-errors/table-errors.component';
 import { Type1ItaComponent } from './components/ItalianType/type1-ita/type1-ita.component';
 import { Type1PorComponent } from './components/PortuguesType/type1-por/type1-por.component';
 import { EjercicioComponent } from './components/ejercicio/ejercicio.component';
+import { UserComponent } from './components/user/user.component';
 
 //Si son componentes stanalone se carga el componente si son tradicionales el modulo si uso Lazy Load
 const routes: Routes = [
@@ -16,6 +17,9 @@ const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' }, // Redirige la ruta raíz a /home
   { path: 'home', component: HomeComponent },
   { path: 'table-errors', component: TableErrorsComponent },
+  { path: 'ingresar', component:  UserComponent },
+
+ 
  
   // Nueva ruta única para todos los ejercicios
   { path: 'ejercicio', component: EjercicioComponent }, // Componente contenedor
