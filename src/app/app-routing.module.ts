@@ -1,16 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
-import { Type1Component } from './components/EnglishType/type1/type1.component';
-import { Type2Component } from './components/EnglishType/type2/type2.component';
-import { Type3Component } from './components/EnglishType/type3/type3.component';
 import { ResultComponent } from './components/result/result.component';
 import { TableErrorsComponent } from './table-errors/table-errors.component';
-import { Type1ItaComponent } from './components/ItalianType/type1-ita/type1-ita.component';
-import { Type1PorComponent } from './components/PortuguesType/type1-por/type1-por.component';
 import { EjercicioComponent } from './components/ejercicio/ejercicio.component';
 import { UserComponent } from './components/user/user.component';
 import { CursosComponent } from './components/cursos/cursos.component';
+import { RankingComponent } from './components/ranking/ranking.component';
 
 //Si son componentes stanalone se carga el componente si son tradicionales el modulo si uso Lazy Load
 const routes: Routes = [
@@ -20,11 +16,12 @@ const routes: Routes = [
   { path: 'table-errors', component: TableErrorsComponent },
   { path: 'ingresar', component:  UserComponent },
   { path: 'cursos', component:  CursosComponent },
+  { path: 'ranking', component:  RankingComponent },
 
  
  
   // Nueva ruta única para todos los ejercicios
-  { path: 'ejercicio', component: EjercicioComponent }, // Componente contenedor
+  { path: 'ejercicios', component: EjercicioComponent }, // Componente contenedor
 
   //Resultado
   { path: 'result', component: ResultComponent },
