@@ -1,13 +1,14 @@
 
 footer {
-  height: 177px;
+  height: 127px;
   background-color: #000;
   color: #fff;
   padding: 10px 20px;
   margin-top: 47px; 
   margin-bottom: 0; 
-  border: 2px solid rgba(0, 0, 0.7, 0.8); /* Borde ligero */
-  border-radius: 7px;
+  border: '0.7'px solid #000;  /* Borde ligero */
+  border-radius: 5px;
+  min-height: 20vh; 
   min-width: 97vh;
 }
 

@@ -1,5 +1,4 @@
 
-
 .toolbar-title a {
   text-decoration: none;
   color: rgb(223, 223, 133);
@@ -12,17 +11,36 @@
   cursor: pointer;  
 }
 
+.toolbar{
+  position: fixed;
+  width: calc(100% - 10px); /* Resta los márgenes izquierdo y derecho del body */
+  height: 57px; 
+  background-color: #000; 
+  color: #fff; 
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000; /* Asegúrate de que el header esté encima de otros elementos */
+  box-sizing: border-box; /* Incluye padding y border en el ancho */
+  border: 1px solid #000;  /* Borde ligero */
+  border-radius: 5px;
+  min-height: 15vh; 
+  min-width: 97vh;
+}
+
 .spacer {
   flex: 1 1 auto;
 }
 
 .mat-menu {
   color: rgb(223, 223, 133);
+  position: fixed;
   
 }
 
 .mat-menu:hover{
-  background-color: black;
+  background-color: #000; 
   color: rgb(240, 240, 190); 
   cursor: pointer;  
 }
