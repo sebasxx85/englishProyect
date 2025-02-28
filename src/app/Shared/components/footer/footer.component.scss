@@ -1,49 +1,20 @@
 
-footer {
-  height: 127px;
-  background-color: #000;
-  color: #fff;
+.toolbar{
+  width: calc(100% - 10px); /* Resta los márgenes izquierdo y derecho del body */
+  margin-bottom: 7px;
+  height: 87px; 
+  background-color: #000; 
+  color: #fff; 
   padding: 10px 20px;
-  margin-top: 47px; 
-  margin-bottom: 0; 
-  border: '0.7'px solid #000;  /* Borde ligero */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000; /* Asegúrate de que el header esté encima de otros elementos */
+  box-sizing: border-box; /* Incluye padding y border en el ancho */
+  border: 1px solid #000;  /* Borde ligero */
   border-radius: 5px;
-  min-height: 20vh; 
-  min-width: 97vh;
-}
-
- /* Pantallas entre 726px y 926px */
- @media (max-width: 926px) and (min-width: 726px) {
-  footer {
-    min-width: 97vh;
-
-  }
- }
-
-/* Pantallas entre 560px y 725px */
-@media (max-width: 725px) and (min-width: 560px) {
-  footer {
-    min-width: 97vh;
-
-  }
-}
-
-@media (max-width: 560px) and (min-width: 425px) {
-  footer{
-    min-width: 97vh;
-    max-width: 150px;
-
-  }
-
-}
-
-@media (max-width: 425px) and (min-width: 210px) {
-  footer {
-    min-width: 97vh;
-    max-width: 150px;
-
-  }
-
+  min-height: 27vh; 
+  min-width: 100vh;
 }
 
 .titulo {
@@ -62,7 +33,7 @@ footer {
   color: rgb(240, 240, 190); 
   margin-left: 20px; /* Opcional: margen interno para texto */
   margin-top: 10px;
-  text-align: left; /* Alinea a la izquierda */
+  text-align: right; /* Alinea a la izquierda */
   font-size: 14px; /* Ajusta el tamaño de fuente */
 }
 
