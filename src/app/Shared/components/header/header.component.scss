@@ -1,19 +1,9 @@
 
-.toolbar-title a {
-  text-decoration: none;
-  color: rgb(223, 223, 133);
-  font-weight: bold;
-  font-size: 1.2rem;
-}
-
-.toolbar-title a:hover {
-  color: rgb(240, 240, 190); 
-  cursor: pointer;  
-}
 
 .toolbar{
   position: fixed;
   width: calc(100% - 10px); /* Resta los márgenes izquierdo y derecho del body */
+  margin-bottom: 7px;
   height: 57px; 
   background-color: #000; 
   color: #fff; 
@@ -31,6 +21,18 @@
 
 .spacer {
   flex: 1 1 auto;
+}
+
+.toolbar-title a {
+  text-decoration: none;
+  color: rgb(223, 223, 133);
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.toolbar-title a:hover {
+  color: rgb(240, 240, 190); 
+  cursor: pointer;  
 }
 
 .mat-menu {
