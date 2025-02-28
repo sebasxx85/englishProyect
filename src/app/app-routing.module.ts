@@ -10,6 +10,7 @@ import { Type1ItaComponent } from './components/ItalianType/type1-ita/type1-ita.
 import { Type1PorComponent } from './components/PortuguesType/type1-por/type1-por.component';
 import { EjercicioComponent } from './components/ejercicio/ejercicio.component';
 import { UserComponent } from './components/user/user.component';
+import { CursosComponent } from './components/cursos/cursos.component';
 
 //Si son componentes stanalone se carga el componente si son tradicionales el modulo si uso Lazy Load
 const routes: Routes = [
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'table-errors', component: TableErrorsComponent },
   { path: 'ingresar', component:  UserComponent },
+  { path: 'cursos', component:  CursosComponent },
 
  
  
@@ -27,12 +29,6 @@ const routes: Routes = [
   //Resultado
   { path: 'result', component: ResultComponent },
 
-  //Usando lazy load stanalone con componentes
-  // {
-  //   path: 'result', loadChildren: () =>
-  //     import('./components/result/result.component').then(m => m.ResultComponent)
-  // },
- 
   //Usando lazy load tradicional con modulos
   {
     path: 'ingresar', loadChildren: () =>
