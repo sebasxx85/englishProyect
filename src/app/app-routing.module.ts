@@ -18,8 +18,6 @@ const routes: Routes = [
   { path: 'cursos', component:  CursosComponent },
   { path: 'ranking', component:  RankingComponent },
 
- 
- 
   // Nueva ruta única para todos los ejercicios
   { path: 'ejercicios', component: EjercicioComponent }, // Componente contenedor
 

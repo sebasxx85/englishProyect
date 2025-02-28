@@ -141,7 +141,7 @@ export class HomeComponent implements OnInit {
       this.intercambioDatosService.setIdioma(idiomaSeleccionado );
 
       // Redirigir siempre a /ejercicio sin exponer el idioma en la URL
-      this.router.navigate(['/ejercicio']);
+      this.router.navigate(['/ejercicios']);
     }, 2000);
   }
 
