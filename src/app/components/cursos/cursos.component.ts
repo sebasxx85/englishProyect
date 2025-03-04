@@ -40,16 +40,19 @@ export class CursosComponent {
   }
 
   siguiente() {
-    if (this.inicio + 4 < this.cursosFiltrados.length) {
-      this.inicio += 4;
+    const cantidad = window.innerWidth < 400 ? 1 : 4; // Si es menor a 400px, mostrar 1 curso
+    if (this.inicio + cantidad < this.cursosFiltrados.length) {
+      this.inicio += cantidad;
     }
   }
-
+  
   anterior() {
-    if (this.inicio - 4 >= 0) {
-      this.inicio -= 4;
+    const cantidad = window.innerWidth < 400 ? 1 : 4; // Si es menor a 400px, retroceder 1 curso
+    if (this.inicio - cantidad >= 0) {
+      this.inicio -= cantidad;
     }
   }
+  
 
   eliminarCurso(id: number) {
     this.cursosService.eliminarCurso(id);
