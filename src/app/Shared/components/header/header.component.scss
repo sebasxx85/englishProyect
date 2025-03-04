@@ -1,22 +1,20 @@
 
 
-.toolbar{
+.toolbar {
   position: fixed;
-  width: calc(100% - 10px); /* Resta los márgenes izquierdo y derecho del body */
-  margin-bottom: 7px;
-  height: 57px; 
-  background-color: #000; 
-  color: #fff; 
+  top: 0;  /* Mantiene el header en la parte superior */
+  left: 0; /* Asegura que cubra toda la pantalla */
+  width: 100%; /* Hace que ocupe toda la pantalla correctamente */
+  height: 70px; /* Ajusta el alto del header */
+  background-color: #000;
+  color: #fff;
   padding: 10px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 1000; /* Asegúrate de que el header esté encima de otros elementos */
-  box-sizing: border-box; /* Incluye padding y border en el ancho */
-  border: 1px solid #000;  /* Borde ligero */
-  border-radius: 5px;
-  min-height: 15vh; 
-  min-width: 100vh;
+  z-index: 1000; /* Asegura que el header esté encima de otros elementos */
+  box-sizing: border-box;
+  border-bottom: 1px solid #333; /* Línea sutil para separación */
 }
 
 .spacer {

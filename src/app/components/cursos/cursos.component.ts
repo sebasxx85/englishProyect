@@ -18,6 +18,7 @@ export class CursosComponent {
   cursos: any[] = [];
   cursosFiltrados: any[] = [];
   terminoBusqueda: string = '';
+  inicio: number = 0; // Índice inicial del carrusel
 
   private cursosService = inject(CursosService);
 
@@ -34,6 +35,19 @@ export class CursosComponent {
       this.cursosFiltrados = this.cursos.filter(curso =>
         curso.categoria.toLowerCase().includes(termino.toLowerCase())
       );
+    }
+    this.inicio = 0; // Reinicia la vista al buscar
+  }
+
+  siguiente() {
+    if (this.inicio + 4 < this.cursosFiltrados.length) {
+      this.inicio += 4;
+    }
+  }
+
+  anterior() {
+    if (this.inicio - 4 >= 0) {
+      this.inicio -= 4;
     }
   }
 

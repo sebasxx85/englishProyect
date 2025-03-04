@@ -6,10 +6,14 @@ import { Injectable } from '@angular/core';
 export class CursosService {
 
   MisCursos = [
-    { id: 1, categoria: 'Ingles', curso: 'Producto 1', sitio: 'http://example.com/curso1', imagen: 'assets/images/Curso.png', estrellas: 'assets/images/2Estrellas.png' },
-    { id: 2, categoria: 'Ingles', curso: 'Producto 2', sitio: 'http://example.com/curso2', imagen: 'assets/images/Curso.png', estrellas: 'assets/images/3Estrellas.png' },
-    { id: 3, categoria: 'Portugues', curso: 'Producto 3', sitio: 'http://example.com/curso3', imagen: 'assets/images/Curso.png', estrellas: 'assets/images/5Estrellas.png' },
+    { id: 1, categoria: 'Inglés', curso: 'Producto 1', sitio: 'http://example.com/curso1', imagen: 'assets/images/Curso.png', estrellas: 'assets/images/2Estrellas.png' },
+    { id: 2, categoria: 'Inglés', curso: 'Producto 2', sitio: 'http://example.com/curso2', imagen: 'assets/images/Curso.png', estrellas: 'assets/images/3Estrellas.png' },
+    { id: 3, categoria: 'Portugués', curso: 'Producto 3', sitio: 'http://example.com/curso3', imagen: 'assets/images/Curso.png', estrellas: 'assets/images/5Estrellas.png' },
     { id: 4, categoria: 'Italiano', curso: 'Producto 4', sitio: 'http://example.com/curso4', imagen: 'assets/images/Curso.png', estrellas: 'assets/images/4Estrellas.png' },
+    { id: 5, categoria: 'Inglés', curso: 'Producto 5', sitio: 'http://example.com/curso1', imagen: 'assets/images/Curso.png', estrellas: 'assets/images/2Estrellas.png' },
+    { id: 6, categoria: 'Inglés', curso: 'Producto 6', sitio: 'http://example.com/curso2', imagen: 'assets/images/Curso.png', estrellas: 'assets/images/3Estrellas.png' },
+    { id: 7, categoria: 'Portugués', curso: 'Producto 7', sitio: 'http://example.com/curso3', imagen: 'assets/images/Curso.png', estrellas: 'assets/images/5Estrellas.png' },
+    { id: 8, categoria: 'Italiano', curso: 'Producto 8', sitio: 'http://example.com/curso4', imagen: 'assets/images/Curso.png', estrellas: 'assets/images/4Estrellas.png' },
   ];
   
   

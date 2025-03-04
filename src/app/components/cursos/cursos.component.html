@@ -1,17 +1,25 @@
 <app-header [title]="title"></app-header>
 
 <body>
-  <div class="card-container">
-    <div class="card" *ngFor="let curso of cursosFiltrados">
-      <img [src]="curso.imagen" alt="{{ curso.curso }}" class="card-img">
-      <div class="card-content">
-        <h3>{{ curso.curso }}</h3>
-        <p>Categoría: {{ curso.categoria }}</p>
-        <p>Calificación: <img [src]="curso.estrellas" width="67px"></p>
-        <p><a [href]="curso.sitio" target="_blank">Ir al curso</a></p>
-      <!--<button class="eliminar" (click)="eliminarCurso(curso.id)">Eliminar</button> -->
+  <div class="carousel-container">
+    <!-- Botón Izquierdo -->
+    <button class="carousel-btn left" (click)="anterior()">&#10094;</button>
+
+    <!-- Contenedor de cursos deslizable -->
+    <div class="carousel-inner">
+      <div class="card" *ngFor="let curso of cursosFiltrados.slice(inicio, inicio + 4)">
+        <img [src]="curso.imagen" alt="{{ curso.curso }}" class="card-img">
+        <div class="card-content">
+          <h3>{{ curso.curso }}</h3>
+          <p>Categoría: {{ curso.categoria }}</p>
+          <p>Calificación: <img [src]="curso.estrellas" width="67px"></p>
+          <p><a [href]="curso.sitio" target="_blank">Ir al curso</a></p>
+        </div>
       </div>
     </div>
+
+    <!-- Botón Derecho -->
+    <button class="carousel-btn right" (click)="siguiente()">&#10095;</button>
   </div>
 
   <div class="search-container">
