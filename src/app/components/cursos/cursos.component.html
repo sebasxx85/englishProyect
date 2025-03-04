@@ -2,8 +2,22 @@
 
 <body>
   <div class="card-container">
-
+    <div class="card" *ngFor="let curso of cursosFiltrados">
+      <img [src]="curso.imagen" alt="{{ curso.curso }}" class="card-img">
+      <div class="card-content">
+        <h3>{{ curso.curso }}</h3>
+        <p>Categoría: {{ curso.categoria }}</p>
+        <p>Calificación: <img [src]="curso.estrellas" width="67px"></p>
+        <p><a [href]="curso.sitio" target="_blank">Ir al curso</a></p>
+      <!--<button class="eliminar" (click)="eliminarCurso(curso.id)">Eliminar</button> -->
+      </div>
+    </div>
   </div>
 
+  <div class="search-container">
+    <input type="text" [(ngModel)]="terminoBusqueda" placeholder="Buscar categoría..." />
+    <button (click)="filtrarCursos(terminoBusqueda)">🔍 Buscar</button>
+  </div>
 </body>
+
 <app-footer></app-footer>
