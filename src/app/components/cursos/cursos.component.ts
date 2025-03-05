@@ -32,11 +32,18 @@ export class CursosComponent {
     if (termino.trim() === '') {
       this.cursosFiltrados = [...this.cursos];
     } else {
+      const terminoNormalizado = this.eliminarAcentos(termino.toLowerCase());
+  
       this.cursosFiltrados = this.cursos.filter(curso =>
-        curso.categoria.toLowerCase().includes(termino.toLowerCase())
+        this.eliminarAcentos(curso.categoria.toLowerCase()).includes(terminoNormalizado)
       );
     }
     this.inicio = 0; // Reinicia la vista al buscar
+  }
+  
+  // Función para eliminar acentos
+  eliminarAcentos(texto: string): string {
+    return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
   }
 
   siguiente() {
