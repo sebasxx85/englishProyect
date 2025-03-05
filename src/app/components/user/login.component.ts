@@ -1,13 +1,15 @@
 import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { RegisteredUseService } from 'src/app/services/registered-use.service';
+import { DashboardComponent } from '../dashboard/dashboard.component';
 
 @Component({
   selector: 'app-user',
-  templateUrl: './user.component.html',
-  styleUrls: ['./user.component.scss']
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss']
 })
-export class UserComponent {
+export class LoginComponent {
 
   title = "Test de Inglés Gratis";
   codPrograma = "Ingreso Plataforma";
@@ -22,6 +24,7 @@ export class UserComponent {
 
   private fb = inject(FormBuilder)
   private router = inject(Router)
+  private registerUser = inject(RegisteredUseService)
 
   ngOnInit() {
     this.initForm();
@@ -37,9 +40,23 @@ export class UserComponent {
     })
   }
 
-
-  ingresar() {
+  //Usando signal para el Login
+  login() {
     this.loading = true
+    
+    const { usuario, password } = this.form.value;
+    this.registerUser.login(usuario, password);
+  
+    // Redirigir al dashboard si el login es exitoso
+    if (this.registerUser.usuario()) {
+      setTimeout(() => {
+      this.router.navigate(['/dashboard']);
+    }, 2000);
+
+    } else {
+      alert('Credenciales incorrectas');
+    }
   }
+  
 
 }

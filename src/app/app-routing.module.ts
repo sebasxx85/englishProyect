@@ -4,9 +4,10 @@ import { HomeComponent } from './components/home/home.component';
 import { ResultComponent } from './components/result/result.component';
 import { TableErrorsComponent } from './table-errors/table-errors.component';
 import { EjercicioComponent } from './components/ejercicio/ejercicio.component';
-import { UserComponent } from './components/user/user.component';
+import { LoginComponent } from './components/user/login.component';
 import { CursosComponent } from './components/cursos/cursos.component';
 import { RankingComponent } from './components/ranking/ranking.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 //Si son componentes stanalone se carga el componente si son tradicionales el modulo si uso Lazy Load
 const routes: Routes = [
@@ -14,7 +15,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' }, // Redirige la ruta raíz a /home
   { path: 'home', component: HomeComponent },
   { path: 'table-errors', component: TableErrorsComponent },
-  { path: 'ingresar', component:  UserComponent },
+  { path: 'ingresar', component:  LoginComponent },
   { path: 'cursos', component:  CursosComponent },
   { path: 'ranking', component:  RankingComponent },
 
@@ -24,10 +25,12 @@ const routes: Routes = [
   //Resultado
   { path: 'result', component: ResultComponent },
 
+  { path: 'dashboard', component: DashboardComponent },
+
   //Usando lazy load tradicional con modulos
   {
     path: 'ingresar', loadChildren: () =>
-      import('./components/user/user.module').then(m => m.UserModule)
+      import('./components/user/login.module').then(m => m.UserModule)
   },
   {
     path: 'crear-usuario', loadChildren: () =>

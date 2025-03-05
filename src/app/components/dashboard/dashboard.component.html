@@ -1,1 +1,8 @@
-<p>dashboard works!</p>
+<div *ngIf="registerUser.usuario(); else noLogueado">
+    <p>Bienvenido, {{ registerUser.usuario() }}</p>
+    <button (click)="logout()">Cerrar Sesión</button>
+  </div>
+  
+  <ng-template #noLogueado>
+    <p>No has iniciado sesión.</p>
+  </ng-template>

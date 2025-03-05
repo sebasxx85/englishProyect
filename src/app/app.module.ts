@@ -17,7 +17,7 @@ import {MatSelectModule} from '@angular/material/select';
 import { MatNativeDateModule } from '@angular/material/core';
 import { SharedModule } from './Shared/shared.module';
 import { ReactiveFormsModule } from '@angular/forms';
-import { UserComponent } from './components/user/user.component';
+import { LoginComponent } from './components/user/login.component';
 import { CrearUsuarioComponent } from './components/crear-usuario/crear-usuario.component';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
@@ -31,7 +31,7 @@ import { ShufflePipe } from './pipes/shuffle.pipe';
         // recordar que si uso lazyload no poner componentes aca ni los standalone ni tradicionales
         AppComponent,
         HomeComponent,
-        UserComponent,
+        LoginComponent,
         CrearUsuarioComponent,
         ShufflePipe,
     ],
