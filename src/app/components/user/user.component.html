@@ -5,19 +5,18 @@
     <mat-card class="custom-card">
       <form [formGroup]="form" (ngSubmit)="ingresar()">
         <div class="form-group">
-          <label for="nproyecto" class="cantidad">Usuario:</label>
-          <input type="usuario" name="usuario" class="usuario" min="5"
-            max="20" formControlName="usuario" placeholder="Ingresa Tu correo">
+          <label for="usuario" class="cantidad">Usuario:</label>
+          <input type="text" name="usuario" class="usuario" formControlName="usuario" placeholder="Ingresa Tu correo">
         </div>
         <div class="form-group">
-          <label for="nproyecto" class="cantidad">Contraseña:</label>
-          <input type="password" name="contrasena" class="contrasena" min="5"
-            max="10" formControlName="contrasena" placeholder="Ingresa Tu contraseña">
+          <label for="password" class="cantidad">Contraseña:</label>
+          <input type="password" name="password" class="password" formControlName="password" placeholder="Ingresa Tu contraseña">
         </div>
       </form>
-      <div class="float-left">
-        <button mat-flat-button color="primary" class="boton"
-          (click)="ingresar()">Ingresar</button>
+      
+      <div class="button-container">
+        <button mat-flat-button color="primary" class="boton" (click)="ingresar()">Ingresar</button>
+        <a routerLink="/crear-usuario" class="crear-usuario-link">Crear usuario</a>
       </div>
       <mat-progress-bar *ngIf="loading" mode="indeterminate"
         class="progreso"></mat-progress-bar>

@@ -33,7 +33,7 @@ export class UserComponent {
     this.form = this.fb.group({
       fechaInicio: [this.today.toISOString().split('T')[0]],
       usuario: [''],
-      contrasena: [''],
+      password: [''],
     })
   }
 

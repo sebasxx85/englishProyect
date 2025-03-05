@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { finalize } from 'rxjs';
 import { crearUsuario } from 'src/app/Models/crearUser';
@@ -33,20 +33,23 @@ export class CrearUsuarioComponent {
 
   initForm() {
     this.form = this.fb.group({
-      fechaInicio: [this.today.toISOString().split('T')[0]],
-      usuario: [''],
-      contrasena: [''],
-    })
+      email: ['', [Validators.required, Validators.email]],
+      name: ['', Validators.required],
+      lastname: ['', Validators.required],
+      user: ['', [Validators.required, Validators.minLength(5)]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+    });
   }
-
+  
   crearUsuario() {
     this.loading = true;
 
     const crearUsuario = {
       name: "pablo",
+      lastname:"gonzalez",
       email: "pablo@cl",
       user: "pablito",
-      pasword: 23313
+      password: '233@13'
     };
     //Ver datos que se envian
     console.log("Enviando datos:", crearUsuario);

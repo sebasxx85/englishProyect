@@ -1,4 +1,8 @@
-import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { inject, Injectable } from '@angular/core';
+import { catchError, throwError } from 'rxjs';
+import { crearUsuario } from '../Models/crearUser';
+import { environment } from '../environments/environment.dev';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +20,25 @@ export class CursosService {
     { id: 8, categoria: 'Italiano', curso: 'Producto 8', sitio: 'http://example.com/curso4', imagen: 'assets/images/Curso.png', estrellas: 'assets/images/4Estrellas.png' },
   ];
   
-  
+  //luegi implementar sercicio
+  private apiUrl = 'http://localhost:8080/cursos'; // URL del backend
+
+  private http = inject(HttpClient);
+
+  // obtenerCursos(): Observable<any[]> {
+  //   return this.http.get<any[]>(this.apiUrl);
+  // }
+
+  //API crear usaurio
+   postCrearUsuario(body: crearUsuario) {
+      //api creada con java
+      return this.http.post(environment.apiUrl, body).pipe(
+        catchError(error => {
+          console.error('Se produjo un error:', error);
+          return throwError(error);
+        })
+      );
+    }
 
 
   obtenerCursos() {

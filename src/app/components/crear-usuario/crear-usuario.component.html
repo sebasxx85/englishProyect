@@ -5,16 +5,27 @@
     <mat-card class="custom-card">
       <form [formGroup]="form" (ngSubmit)="crearUsuario()">
         <div class="form-group">
-          <label for="nproyecto" class="cantidad">Usuario:</label>
-          <input type="usuario" name="usuario" class="usuario" min="5"
-            max="20" formControlName="usuario" placeholder="Ingresa Tu correo">
+          <label for="user" class="cantidad">Usuario:</label>
+          <input type="text" name="user" class="usuario" formControlName="user" placeholder="Ingresa Tu usuario">
         </div>
         <div class="form-group">
-          <label for="nproyecto" class="cantidad">Email:</label>
-          <input type="password" name="contrasena" class="contrasena" min="5"
-            max="10" formControlName="contrasena" placeholder="Ingresa Tu contraseña">
+          <label for="email" class="cantidad">Email:</label>
+          <input type="email" name="email" class="email" formControlName="email" placeholder="Ingresa Tu correo">
+        </div>
+        <div class="form-group">
+          <label for="name" class="cantidad">Nombre:</label>
+          <input type="text" name="name" class="name" formControlName="name" placeholder="Ingresa Tu nombre">
+        </div>
+        <div class="form-group">
+          <label for="lastname" class="cantidad">Apellido:</label>
+          <input type="text" name="lastname" class="lastname" formControlName="lastname" placeholder="Ingresa Tu apellido">
+        </div>
+        <div class="form-group">
+          <label for="password" class="cantidad">Contraseña:</label>
+          <input type="password" name="password" class="contrasena" formControlName="password" placeholder="Ingresa Tu contraseña">
         </div>
       </form>
+      
       <div class="float-left">
         <button mat-flat-button color="primary" class="boton"
           (click)="crearUsuario()">Crear</button>
