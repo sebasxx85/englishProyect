@@ -14,7 +14,10 @@ const routes: Routes = [
   // Ruta estática para el componente Home
   { path: '', redirectTo: '/home', pathMatch: 'full' }, // Redirige la ruta raíz a /home
   { path: 'home', component: HomeComponent },
-  { path: 'table-errors', component: TableErrorsComponent },
+  
+  { path: 'table-errors', redirectTo: '/corrections', pathMatch: 'full' },
+  { path: 'corrections', component: TableErrorsComponent },
+
   { path: 'ingresar', component:  LoginComponent },
   { path: 'cursos', component:  CursosComponent },
   { path: 'ranking', component:  RankingComponent },
