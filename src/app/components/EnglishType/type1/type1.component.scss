@@ -3,83 +3,58 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  min-height: 87vh;
-  min-width: 117vh;
+  min-height: 90vh;
+  min-width: 90vh;
+  width: 100%;
+  padding: 0 10px; /* Márgenes laterales para evitar que el card toque los bordes */
 }
 
 .custom-card {
   color: rgb(248, 241, 232);
   border: 4px solid rgb(223, 223, 133);
-  width: 37.33%; 
-  margin-top: 30px; 
+  width: 87%; /* Ocupará el 50% del ancho en pantallas grandes */
+  max-width: 427px; /* No crecerá más allá de 500px */
+  min-width: 210px;
+  margin-top: -7px; 
   padding: 1rem; 
   box-shadow: 8px 8px 8px rgba(0.0, 0.0, 0.7, 0.7); /* Añade sombra para mejor visibilidad */
   min-height: 55vh;
-  min-width: 25vh;
   background-color: rgb(18, 13, 13);
   position: absolute;
   transform: translate(0%, 12%);
   
 }
 
-/* Pantallas entre 726px y 926px */
-@media (max-width: 926px) and (min-width: 726px) {
-  .card-container {
-    position: absolute;
-    transform: translate(7%, 2%);
+  /* Pantallas entre 726px y 926px */
+  @media (max-width: 926px) and (min-width: 726px) {
+    .custom-card {
+      width: 90%; /* Aumenta el ancho en pantallas pequeñas */
+      max-width: 400px; /* Ajusta el límite superior */
+  
+    }
   }
-  .custom-card {
-    min-width: 25vh;
-
+  
+  /* Pantallas entre 560px y 725px */
+  @media (max-width: 725px) and (min-width: 560px) {
+    .custom-card {
+      width: 90%; /* Aumenta el ancho en pantallas pequeñas */
+      max-width: 400px; /* Ajusta el límite superior */
+    }
   }
-}
-
-/* Pantallas entre 560px y 725px */
-@media (max-width: 725px) and (min-width: 560px) {
-  .card-container {
-    max-width: 87vh;
-    position: absolute;
-    transform: translate(-12%, 3%);
+  
+  @media (max-width: 560px) and (min-width: 425px) {
+    .custom-card {
+      width: 97%; /* Ocupa casi todo el ancho en móviles */
+      max-width: 350px;
+    }
   }
-  .custom-card {
-    min-width: 25vh;
+  
+  @media (max-width: 425px) and (min-width: 210px) {
+    .custom-card {
+      width: 97%; /* Ocupa casi todo el ancho en móviles */
+      max-width: 350px;
+    }
   }
-}
-
-@media (max-width: 560px) and (min-width: 425px) {
-  .card-container {
-    max-width: 87vh;
-    position: absolute;
-    transform: translate(-18%, 3%);
-  }
-  .custom-card {
-    min-width: 25vh;
-  }
-}
-
-@media (max-width: 425px) and (min-width: 310px) {
-  .card-container {
-    max-width: 97vh;
-    margin-right: 50px;
-    position: absolute;
-    transform: translate(-18%, 3%);
-  }
-  .custom-card {
-    min-width: 25vh;
-  }
-}
-
-@media (max-width: 309px) and (min-width: 210px) {
-  .card-container {
-    max-width: 97vh;
-    position: absolute;
-    transform: translate(-18%, 3%);
-  }
-  .custom-card {
-    min-width: 25vh;
-  }
-}
-
 
 
 .button-container {
