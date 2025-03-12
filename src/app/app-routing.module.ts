@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { ResultComponent } from './components/result/result.component';
-import { TableErrorsComponent } from './table-errors/table-errors.component';
+import { TableErrorsComponent } from './components/table-errors/table-errors.component';
 import { EjercicioComponent } from './components/ejercicio/ejercicio.component';
 import { LoginComponent } from './components/user/login.component';
 import { CursosComponent } from './components/cursos/cursos.component';
