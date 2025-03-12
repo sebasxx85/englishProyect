@@ -124,22 +124,23 @@ input, select {
 }
 
 .boton {
-  background-color: rgb(223, 223, 133);
   color: black;
-  border-radius: 9px;
-  font-family: 'Roboto', sans-serif;
-  transition: background-color 0.3s ease;
-  padding: 12px 20px;
-  border: 1px solid rgba(0, 0, 0, 0.4);
-  width: auto;
-  min-width: 120px;
-  font-size: 16px;
+  background-color: rgb(223, 223, 133);
+  margin-top: 10px;
+  margin-bottom: 17px;
+  width: 100px;
+  border-radius: 9px; /* Esquinas más redondeadas */
+  font-family: 'Roboto', sans-serif; 
+  transition: background-color 0.3s ease; /* Transición suave del color de fondo */
+  padding: 12px 20px; /* Aumenta el padding para hacer el botón más alto */
+  border: 1px solid rgba(0, 0, 0, 0.4); /* Borde ligero */
 }
 
 .boton:hover {
   background-color: rgb(240, 240, 190);
   cursor: pointer;
 }
+
 
 .form-group input[type="radio"] {
   width: 7px; /* Tamaño reducido */
