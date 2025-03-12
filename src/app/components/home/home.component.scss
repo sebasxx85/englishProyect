@@ -150,15 +150,19 @@ input, select {
 }
 
 .form-group input[type="radio"] {
-  width: 50%; /* Reducido a la mitad */
-  height: 50%;
+  width: 14px; /* Tamaño reducido */
+  height: 14px;
   transform: scale(1.2); /* Alternativa para reducir tamaño sin afectar layout */
+  margin-left: 5px; /* Reduce el espacio entre el label y el radio button */
+  margin-right: 5px; /* Reduce el espacio entre el radio button y la etiqueta siguiente */
 }
 
 .form-group label.time {
-  width: auto; /* Ajusta los labels para radio buttons */
+  width: auto; 
+  margin-top: 3px;
+  margin-right: 17px; 
+  margin-left: -87px;
 }
-
 ////////////////////////////////* Cookie banner privacy *//////////////////////////////////
 
 .cookie-banner {
