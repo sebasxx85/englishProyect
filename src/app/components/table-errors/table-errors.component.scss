@@ -39,6 +39,7 @@ select {
   min-width: 240px; /* No será más pequeño que 320px */
   min-height: 50vh;
   margin-top: 27px;
+  padding-bottom: 20px;
   padding: 1rem;
   box-shadow: 8px 8px 8px rgba(0.0, 0.0, 0.7, 0.7);
   background-color: rgb(18, 13, 13);
@@ -90,6 +91,7 @@ th {
   overflow-y: auto; /* Agrega desplazamiento vertical */
   border: 1px solid rgb(223, 223, 133);
   padding: -5px;
+ 
 }
 
 .table-container-scroll {
@@ -99,7 +101,7 @@ th {
 
 
 .button-container {
-  position: absolute;
+  position: relative;
   bottom: 10px;
   left: 17px;
   display: flex;
