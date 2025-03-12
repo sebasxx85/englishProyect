@@ -11,6 +11,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
 import { Router, RouterModule } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { ColorPuntajePipe } from 'src/app/pipes/color-puntaje.pipe';
 import { DataEnglish1Service } from 'src/app/services/data-english1.service';
 import { IntercambioDatosService } from 'src/app/services/intercambio-datos.service';
 import { HeaderComponent } from 'src/app/Shared/components/header/header.component';
@@ -19,7 +20,10 @@ import { SharedModule } from 'src/app/Shared/shared.module';
 @Component({
   selector: 'app-result',
   standalone: true,
-  imports: [CommonModule, RouterModule, SharedModule,   //nota se trae SharedModule para usar header y foot que no son standalone
+  imports: [CommonModule, 
+    RouterModule, 
+    SharedModule,  
+    ColorPuntajePipe, 
     //Angular Material
     MatIconModule,
     MatCardModule,

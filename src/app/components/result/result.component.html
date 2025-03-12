@@ -27,7 +27,7 @@
       <div class="espacio"></div>
       <mat-card-title>Mis últimos puntajes</mat-card-title>
       <mat-card-content>
-        <p>{{ ultimosPuntajes.join(', ') }}</p>
+        <p [innerHTML]="ultimosPuntajes | ColorPuntajePipe"></p>
       </mat-card-content>
 
       <div class="button-container">
