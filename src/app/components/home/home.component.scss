@@ -26,8 +26,9 @@ input, select {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 15px;
+  margin-bottom: 7px;
   width: 100%;
+  margin-top: 7px;
 }
 
 .card-container {
@@ -50,6 +51,7 @@ input, select {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-top: 10px;
 }
 
 .form-group input[type="radio"] {
@@ -64,7 +66,7 @@ input, select {
 }
 
 .cantidadinput {
-  height: 22px; /* Misma altura que los otros inputs */
+  height: 19px; /* Misma altura que los otros inputs */
   width: 30%; /* La mitad del ancho de los otros inputs */
   max-width: 80px; /* Controla que no crezca demasiado en pantallas grandes */
 }
@@ -161,8 +163,9 @@ input, select {
   width: auto; 
   margin-top: 3px;
   margin-right: 17px; 
-  margin-left: -87px;
+  margin-left: -80px;
 }
+
 ////////////////////////////////* Cookie banner privacy *//////////////////////////////////
 
 .cookie-banner {
