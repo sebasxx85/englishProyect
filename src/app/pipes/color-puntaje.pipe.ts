@@ -9,16 +9,24 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 export class ColorPuntajePipe implements PipeTransform {
   constructor(private sanitizer: DomSanitizer) {}
 
-  transform(values: number[]): SafeHtml {
-    if (!values || !Array.isArray(values)) {
+  transform(value: number | number[]): SafeHtml {
+    if (value === null || value === undefined) {
       return '';
     }
 
-    const formattedValues = values.map(value => {
-      const color = value >= 0 ? 'green' : 'red';
-      return `<span style="color: ${color};">${value}</span>`;
-    }).join(', ');
+    if (Array.isArray(value)) {
+      // Si es un array, formatea cada número individualmente
+      const formattedValues = value.map(num => this.formatNumber(num)).join(', ');
+      return this.sanitizer.bypassSecurityTrustHtml(formattedValues);
+    } else {
+      // Si es un solo número, aplica el formato directamente
+      return this.sanitizer.bypassSecurityTrustHtml(this.formatNumber(value));
+    }
+}
 
-    return this.sanitizer.bypassSecurityTrustHtml(formattedValues);
-  }
+private formatNumber(num: number): string {
+  const color = num >= 0 ? 'green' : 'red';
+  return `<span style="color: ${color};">${num}</span>`;
+}
+
 }

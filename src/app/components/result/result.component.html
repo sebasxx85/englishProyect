@@ -21,7 +21,7 @@
           [class.disabled]="loading">Ver Errores</a>
         </p>
      
-        <p>Puntaje: {{ Puntaje }}</p>
+        <p>Puntaje Obtenido: <span [innerHTML]="Puntaje | ColorPuntajePipe"></span></p>
       </mat-card-content>
 
       <div class="espacio"></div>
