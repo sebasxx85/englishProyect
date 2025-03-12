@@ -5,41 +5,64 @@ form {
     margin-bottom: 7px;
 }
 
-label{
-    font-size: 14px;
-    margin-bottom: 27px;
-    margin-right: 27px;
+label {
+  font-size: 14px;
+  width: 100px; /* Se asigna un ancho fijo para todos los labels */
+  text-align: right;
+  margin-right: 10px;
 }
 
-input{
-    margin-bottom: 15px;
+input, select {
+  flex: 1; /* Hace que todos los inputs ocupen el mismo espacio */
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 250px; /* Se mantiene igual en todos los formularios */
+  height: 40px; /* Se asegura de que todos los campos tengan la misma altura */
 }
 
-select {
-    margin-bottom: 7px;
+.form-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  width: 100%;
 }
 
 .card-container {
-    border-radius: 49px;
-    display: flex;
-    justify-content: center;
-    align-items: center; /* Centra verticalmente si el contenedor tiene una altura fija */
-    min-height: 97vh; 
-    min-width: 117vh;
-  }
-  
-  .custom-card {
-    color: rgb(248, 241, 232);
-    border: 4px solid rgb(223, 223, 133);
-    width: 37.33%; 
-    margin-top: 30px; 
-    padding: 1rem; 
-    box-shadow: 8px 8px 8px rgba(0.0, 0.0, 0.7, 0.7); /* Añade sombra para mejor visibilidad */
-    min-height: 55vh;
-    min-width: 15vh;
-    background-color: rgb(18, 13, 13);
-    position: relative; /* Posiciona el contenedor como relativo */
-  }
+  border-radius: 49px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+  min-width: 70vh;
+}
+
+.custom-card {
+  color: rgb(248, 241, 232);
+  border: 4px solid rgb(223, 223, 133);
+  width: 37.33%;
+  padding: 1rem;
+  box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.7);
+  background-color: rgb(18, 13, 13);
+  min-height: 45vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-group input[type="radio"] {
+  width: 16px;
+  height: 16px;
+  margin-left: 10px;
+}
+
+.form-group label.time {
+  width: auto; /* Ajusta los labels para radio buttons */
+  margin-left: 5px;
+}
 
   /* Pantallas entre 726px y 926px */
 @media (max-width: 926px) and (min-width: 726px) {
@@ -87,68 +110,41 @@ select {
   }
 }
 
-  .boton {
-    color: black;
-    background-color: rgb(223, 223, 133);
-    margin-top: 10px;
-    margin-bottom: 17px;
-    width: 100px;
-    border-radius: 9px; /* Esquinas más redondeadas */
-    font-family: 'Roboto', sans-serif; /* Tipo de letra */
-    transition: background-color 0.3s ease; /* Transición suave del color de fondo */
-    padding: 12px 20px; /* Aumenta el padding para hacer el botón más alto */
-    border: 1px solid rgba(0, 0, 0, 0.4); /* Borde ligero */
-  }
+.button-container {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  gap: 10px; /* Espacio entre botón y enlace */
+  margin-top: 20px;
+}
 
-  .button-container {
-    position: absolute; /* Fija la posición respecto al contenedor padre */
-    bottom: 10px; /* Alinea los botones a 10px del fondo */
-    left: 17px; /* Alinea los botones a 10px del lado izquierdo */
-    display: flex; /* Asegura que los botones estén alineados si hay más de uno */
-    gap: 10px; /* Espaciado entre los botones si hay más de uno */
-    margin-top: 17px;
-  }
-  
-  .boton:hover {
-    background-color: rgb(240, 240, 190); 
-    cursor: pointer; /* Cambia el cursor a una mano */
-  }
+.boton {
+  background-color: rgb(223, 223, 133);
+  color: black;
+  border-radius: 9px;
+  font-family: 'Roboto', sans-serif;
+  transition: background-color 0.3s ease;
+  padding: 12px 20px;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  width: auto;
+  min-width: 120px;
+  font-size: 16px;
+}
 
-  //Labels
-  .cantidad{
-    max-width: 20.7%;
-    margin-right: 86px;
-  }
+.boton:hover {
+  background-color: rgb(240, 240, 190);
+  cursor: pointer;
+}
 
-  .cantidadinput{
-    max-width: 21.5%;
-  }
-
-  .level{
-    margin-right: 147px;
-  }
-
-  .idioma{
-    margin-right: 117px;
-  }
-
-  .timetag{
-    margin-right: 112px;
-  }
-
-  .progreso {
-    max-width: 50%;
-    display: flex;
-    justify-content: center;
-  }
-
-  //radio button
 .form-group input[type="radio"] {
-  width: auto; /* Ajusta el tamaño según el contenido */
-  height: auto; /* Ajusta el tamaño según el contenido */
-  border: 2px solid #ffc107; /* Color de borde amarillo */
-  display: inline-flex;
-  margin-right: 5px;
+  width: 16px;
+  height: 16px;
+  margin-left: 10px;
+}
+
+.form-group label.time {
+  width: auto; /* Ajusta los labels para radio buttons */
+  margin-left: 5px;
 }
 
 ////////////////////////////////* Cookie banner privacy *//////////////////////////////////
