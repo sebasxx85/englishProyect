@@ -7,9 +7,8 @@ form {
 
 label {
   font-size: 14px;
-  width: 100px; /* Se asigna un ancho fijo para todos los labels */
+  width: 120px; /* Se asigna un ancho fijo para todos los labels */
   text-align: right;
-  margin-right: 10px;
 }
 
 input, select {
@@ -18,8 +17,8 @@ input, select {
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  width: 100%;
-  max-width: 250px; /* Se mantiene igual en todos los formularios */
+  width: 80%;
+  max-width: 200px; /* Se mantiene igual en todos los formularios */
   height: 40px; /* Se asegura de que todos los campos tengan la misma altura */
 }
 
@@ -62,6 +61,18 @@ input, select {
 .form-group label.time {
   width: auto; /* Ajusta los labels para radio buttons */
   margin-left: 5px;
+}
+
+.cantidadinput {
+  height: 22px; /* Misma altura que los otros inputs */
+  width: 30%; /* La mitad del ancho de los otros inputs */
+  max-width: 80px; /* Controla que no crezca demasiado en pantallas grandes */
+}
+
+.cantidad {
+  width: 120px; /* Ajuste según el espacio necesario */
+  text-align: right;
+  margin-right: 10px;
 }
 
   /* Pantallas entre 726px y 926px */
@@ -115,7 +126,9 @@ input, select {
   align-items: start;
   justify-content: start;
   gap: 10px; /* Espacio entre botón y enlace */
-  margin-top: 20px;
+  margin-top: 50px;
+  margin-bottom: 10px;
+  margin-left: 10px;
 }
 
 .boton {
@@ -137,14 +150,13 @@ input, select {
 }
 
 .form-group input[type="radio"] {
-  width: 16px;
-  height: 16px;
-  margin-left: 10px;
+  width: 50%; /* Reducido a la mitad */
+  height: 50%;
+  transform: scale(1.2); /* Alternativa para reducir tamaño sin afectar layout */
 }
 
 .form-group label.time {
   width: auto; /* Ajusta los labels para radio buttons */
-  margin-left: 5px;
 }
 
 ////////////////////////////////* Cookie banner privacy *//////////////////////////////////
