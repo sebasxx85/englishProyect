@@ -38,12 +38,16 @@ input, select {
   align-items: center;
   min-height: 90vh;
   min-width: 70vh;
+  width: 100%;
+  padding: 0 10px; /* Márgenes laterales para evitar que el card toque los bordes */
 }
 
 .custom-card {
   color: rgb(248, 241, 232);
   border: 4px solid rgb(223, 223, 133);
-  width: 37.33%;
+  width: 87%; /* Ocupará el 50% del ancho en pantallas grandes */
+  max-width: 500px; /* No crecerá más allá de 500px */
+  min-width: 300px; /* No será más pequeño que 320px */
   padding: 1rem;
   box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.7);
   background-color: rgb(18, 13, 13);
@@ -78,48 +82,33 @@ input, select {
 }
 
   /* Pantallas entre 726px y 926px */
-@media (max-width: 926px) and (min-width: 726px) {
-  .card-container {
-    max-width: 97vh;
-  }
+  @media (max-width: 926px) and (min-width: 726px) {
   .custom-card {
-    min-width: 25vh;
+    width: 80%; /* Aumenta el ancho en pantallas pequeñas */
+    max-width: 400px; /* Ajusta el límite superior */
 
   }
 }
 
 /* Pantallas entre 560px y 725px */
 @media (max-width: 725px) and (min-width: 560px) {
-  .card-container {
-    max-width: 87vh;
-    position: absolute;
-    transform: translate(-12%, 0%);
-  }
   .custom-card {
-    min-width: 25vh;
+    width: 80%; /* Aumenta el ancho en pantallas pequeñas */
+    max-width: 400px; /* Ajusta el límite superior */
   }
 }
 
 @media (max-width: 560px) and (min-width: 425px) {
-  .card-container {
-    max-width: 87vh;
-    position: absolute;
-    transform: translate(-17%, 0%);
-  }
   .custom-card {
-    min-width: 25vh;
+    width: 97%; /* Ocupa casi todo el ancho en móviles */
+    max-width: 350px;
   }
 }
 
 @media (max-width: 425px) and (min-width: 210px) {
-  .card-container {
-    max-width: 77vh;
-    margin-right: 50px;
-    position: absolute;
-    transform: translate(-17%, 0%);
-  }
   .custom-card {
-    min-width: 25vh;
+    width: 97%; /* Ocupa casi todo el ancho en móviles */
+    max-width: 350px;
   }
 }
 
@@ -152,7 +141,7 @@ input, select {
 }
 
 .form-group input[type="radio"] {
-  width: 14px; /* Tamaño reducido */
+  width: 7px; /* Tamaño reducido */
   height: 14px;
   transform: scale(1.2); /* Alternativa para reducir tamaño sin afectar layout */
   margin-left: 5px; /* Reduce el espacio entre el label y el radio button */
@@ -162,8 +151,8 @@ input, select {
 .form-group label.time {
   width: auto; 
   margin-top: 3px;
-  margin-right: 17px; 
-  margin-left: -80px;
+  margin-right: 10px; 
+  margin-left: -107px;
 }
 
 ////////////////////////////////* Cookie banner privacy *//////////////////////////////////
