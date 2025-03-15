@@ -2,8 +2,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 95vh;
+  min-height: 90vh;
   padding: 20px;
+  margin-top: 57px;
 }
 
 .custom-card {
@@ -54,6 +55,7 @@ th {
 
 .trophy-icon {
   margin-left: 17px;
+  margin-bottom: 7px;
   width: 47px; /* Ajusta el tamaño del trofeo */
   height: 47px;
 }
