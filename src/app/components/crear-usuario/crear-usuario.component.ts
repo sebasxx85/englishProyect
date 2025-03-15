@@ -1,12 +1,29 @@
+import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatTableModule } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { finalize } from 'rxjs';
 import { crearUsuario } from 'src/app/Models/crearUser';
 import { CrearUsuarioService } from 'src/app/services/crear-usuario.service';
+import { SharedModule } from 'src/app/Shared/shared.module';
 
 @Component({
   selector: 'app-crear-usuario',
+  standalone: true,
+    imports: [
+      CommonModule,
+      SharedModule,
+      MatTableModule,
+      MatIconModule,
+      MatCardModule,
+      MatTableModule,
+      ReactiveFormsModule,
+      MatProgressBarModule
+    ],
   templateUrl: './crear-usuario.component.html',
   styleUrls: ['./crear-usuario.component.scss']
 })
@@ -27,29 +44,25 @@ export class CrearUsuarioComponent {
 
   initForm() {
     this.form = this.fb.group({
-      user: ['', [Validators.required, Validators.minLength(5)]],
+      user: ['', [Validators.required, Validators.minLength(4)]],
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]],
+      password: ['', [Validators.required, Validators.minLength(4)]],
       confirmPassword: ['', [Validators.required]],
-    }, { validator: this.matchPasswordValidator }); // Aplica el validador
+    }, { validators: this.matchPasswordValidator }); // Se usa 'validators' en plural
   }
 
-  matchPasswordValidator(form: FormGroup) {
-    const password = form.get('password')?.value;
-    const confirmPassword = form.get('confirmPassword')?.value;
+  matchPasswordValidator(formGroup: FormGroup) {
+    const password = formGroup.get('password')?.value;
+    const confirmPassword = formGroup.get('confirmPassword')?.value;
     return password === confirmPassword ? null : { mismatch: true };
   }
 
   crearUsuario() {
     this.loading = true;
-  
-    // Simular respuesta sin hacer petición HTTP
     setTimeout(() => {
       this.loading = false;
       this.mensaje = "No se permiten más registros por ahora.";
       console.log(this.mensaje);
-    }, 2000); // Simulación de carga (2 segundos)
+    }, 2000); 
   }
-
-  
 }

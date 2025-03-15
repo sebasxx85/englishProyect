@@ -32,7 +32,6 @@ import { ShufflePipe } from './pipes/shuffle.pipe';
         AppComponent,
         HomeComponent,
         LoginComponent,
-        CrearUsuarioComponent,
         ShufflePipe,
     ],
     bootstrap: [AppComponent], imports: [BrowserModule,

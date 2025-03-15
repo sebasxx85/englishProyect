@@ -109,3 +109,8 @@ input {
   color: yellow;
   font-weight: bold;
 }
+
+.boton:disabled {
+  background-color: rgba(223, 223, 133, 0.5); /* Color opaco */
+  cursor: not-allowed;
+}

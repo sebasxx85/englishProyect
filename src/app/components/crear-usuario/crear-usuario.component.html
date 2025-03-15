@@ -30,7 +30,14 @@
         <p *ngIf="mensaje" class="mensaje-error">{{ mensaje }}</p>
 
         <div class="button-container">
-          <button mat-flat-button color="primary" class="boton" type="submit">Crear</button>
+          <button 
+            mat-flat-button 
+            color="primary" 
+            class="boton" 
+            type="submit"
+            [disabled]="form.invalid || form.errors?.['mismatch']">
+            Crear
+          </button>
         </div>
 
         <mat-progress-bar *ngIf="loading" mode="indeterminate" class="progreso"></mat-progress-bar>
@@ -38,7 +45,7 @@
     </mat-card>
   </div>
 
-  <router-outlet></router-outlet>
+
 </body>
 
 <app-footer></app-footer>
