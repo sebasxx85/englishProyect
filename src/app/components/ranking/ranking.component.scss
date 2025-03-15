@@ -38,7 +38,7 @@ select {
   border: 4px solid rgb(223, 223, 133);
   width: 95%; /* Ocupará el 50% del ancho en pantallas grandes */
   max-width: 550px; /* No crecerá más allá de 500px */
-  min-width: 250px; /* No será más pequeño que 320px */
+  min-width: 240px; /* No será más pequeño que 320px */
   min-height: 50vh;
   margin-top: 27px;
   padding-bottom: 20px;
@@ -51,8 +51,8 @@ select {
   /* Pantallas entre 726px y 926px */
   @media (max-width: 926px) and (min-width: 726px) {
     .custom-card {
-      width: 97%; /* Aumenta el ancho en pantallas pequeñas */
-      max-width: 440px; /* Ajusta el límite superior */
+      width: 94%; /* Aumenta el ancho en pantallas pequeñas */
+      max-width: 420px; /* Ajusta el límite superior */
   
     }
   }
@@ -60,8 +60,8 @@ select {
   /* Pantallas entre 560px y 725px */
   @media (max-width: 725px) and (min-width: 560px) {
     .custom-card {
-      width: 97%; /* Aumenta el ancho en pantallas pequeñas */
-      max-width: 440px; /* Ajusta el límite superior */
+      width: 94%; /* Aumenta el ancho en pantallas pequeñas */
+      max-width: 420px; /* Ajusta el límite superior */
     }
   }
   

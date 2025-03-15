@@ -13,22 +13,16 @@ import { CrearUsuarioService } from 'src/app/services/crear-usuario.service';
 export class CrearUsuarioComponent {
 
   title = "Crear Usuario";
+  form!: FormGroup;
+  loading = false;
+  mensaje: string = ''; 
 
-  dataTable = []
-  form!: FormGroup
-  loading = false
-  today = new Date();
-
-  errorMessage: String=""
-  crearUsario?: crearUsuario 
-
-  private fb = inject(FormBuilder)
-  private router = inject(Router)
-  private crearUsuarioService = inject(CrearUsuarioService)
+  private fb = inject(FormBuilder);
+  private router = inject(Router);
+  private crearUsuarioService = inject(CrearUsuarioService);
 
   ngOnInit() {
     this.initForm();
-
   }
 
   initForm() {
@@ -36,13 +30,17 @@ export class CrearUsuarioComponent {
       user: ['', [Validators.required, Validators.minLength(5)]],
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
-    });
+      confirmPassword: ['', [Validators.required]],
+    }, { validator: this.matchPasswordValidator }); // Aplica el validador
   }
-  
-  mensaje: string = ''; // Variable para mostrar mensaje en la UI
+
+  matchPasswordValidator(form: FormGroup) {
+    const password = form.get('password')?.value;
+    const confirmPassword = form.get('confirmPassword')?.value;
+    return password === confirmPassword ? null : { mismatch: true };
+  }
 
   crearUsuario() {
-  
     this.loading = true;
   
     // Simular respuesta sin hacer petición HTTP
@@ -50,10 +48,8 @@ export class CrearUsuarioComponent {
       this.loading = false;
       this.mensaje = "No se permiten más registros por ahora.";
       console.log(this.mensaje);
-    }, 2000); // Simulación de carga (1 segundo)
+    }, 2000); // Simulación de carga (2 segundos)
   }
-  
-  
 
-
+  
 }

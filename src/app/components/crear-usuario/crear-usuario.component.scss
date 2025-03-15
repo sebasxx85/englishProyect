@@ -99,3 +99,13 @@ input {
   display: flex;
   justify-content: center;
 }
+
+.mensaje-error {
+  color: red;
+  font-weight: bold;
+}
+
+.mensaje-aviso {
+  color: yellow;
+  font-weight: bold;
+}
