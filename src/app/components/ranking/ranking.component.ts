@@ -1,15 +1,40 @@
+import { Component, OnInit, inject } from '@angular/core';
+import { UsersRankingService } from 'src/app/services/users-ranking.service';
+import { MatTableModule } from '@angular/material/table';
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
 import { SharedModule } from 'src/app/Shared/shared.module';
+import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'app-ranking',
   standalone: true,
-  imports: [CommonModule, SharedModule],
+  imports: [
+    CommonModule,
+    SharedModule,
+    MatTableModule,
+    MatIconModule,
+    MatCardModule,
+    MatTableModule,
+  ],
   templateUrl: './ranking.component.html',
-  styleUrl: './ranking.component.scss'
+  styleUrls: ['./ranking.component.scss'] // ← Corrección aquí
 })
-export class RankingComponent {
-  title = "Ranking";
+export class RankingComponent implements OnInit {
+  title = "TOP Users";
+  users: any[] = [];
+  topUsers: any[] = []; // Inicializa vacío
+  displayedColumns: string[] = ['avatar', 'name', 'score', 'language'];
 
-}
+  private usersRankingService = inject(UsersRankingService);
+
+  ngOnInit(): void {
+    this.users = this.usersRankingService.obtenerUsers()
+      .sort((a, b) => b.score - a.score); // Ordenar de mayor a menor
+    
+    this.topUsers = this.users.slice(0, 30); // Solo los 30
+  }
+
+
+
+}  

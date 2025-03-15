@@ -21,6 +21,7 @@
         <div class="form-group">
           <label for="nivel" class="level">Nivel:</label>
           <select name="nivel" formControlName="nivel">
+            
             <!-- Opciones para Inglés -->
             <ng-container *ngIf="form.get('idioma')?.value === 'Ingles'">
               <option value="principiante">Principiante (A0)</option>
@@ -33,15 +34,15 @@
             <!-- Opciones para Italiano -->
             <ng-container *ngIf="form.get('idioma')?.value === 'Italiano'">
               <option value="italiano-principiante">Italiano Principiante</option>
-              <option value="italiano-basico">Italiano Básico</option>
-              <option value="italiano-intermedio">Italiano Intermedio</option>
+              <!-- <option value="italiano-basico">Italiano Básico</option>
+              <option value="italiano-intermedio">Italiano Intermedio</option> -->
             </ng-container>
         
             <!-- Opciones para Portugués -->
             <ng-container *ngIf="form.get('idioma')?.value === 'Portugues'">
               <option value="portugues-principiante">Portugués Principiante</option>
-              <option value="portugues-basico">Portugués Básico</option>
-              <option value="portugues-intermedio">Portugués Intermedio</option>
+              <!-- <option value="portugues-basico">Portugués Básico</option>
+              <option value="portugues-intermedio">Portugués Intermedio</option> -->
             </ng-container>
           </select>
         </div>
