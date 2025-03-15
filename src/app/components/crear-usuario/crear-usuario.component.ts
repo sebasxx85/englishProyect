@@ -52,7 +52,7 @@ export class CrearUsuarioComponent {
       this.loading = false;
       this.mensaje = "No se permiten más registros por ahora.";
       console.log(this.mensaje);
-    }, 1000); // Simulación de carga (1 segundo)
+    }, 2000); // Simulación de carga (1 segundo)
   }
   
   

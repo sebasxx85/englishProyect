@@ -23,8 +23,8 @@ import { MatCardModule } from '@angular/material/card';
 export class RankingComponent implements OnInit {
   title = "TOP Users";
   users: any[] = [];
-  topUsers: any[] = []; // Inicializa vacío
-  displayedColumns: string[] = ['avatar', 'name', 'score', 'language'];
+  topUsers: any[] = [];
+  displayedColumns: string[] = ['position', 'avatar', 'name', 'score', 'language']; // Agregamos 'position'
 
   private usersRankingService = inject(UsersRankingService);
 
@@ -32,9 +32,12 @@ export class RankingComponent implements OnInit {
     this.users = this.usersRankingService.obtenerUsers()
       .sort((a, b) => b.score - a.score); // Ordenar de mayor a menor
     
-    this.topUsers = this.users.slice(0, 30); // Solo los 30
+    this.topUsers = this.users.slice(0, 30).map((user, index) => ({
+      ...user,
+      position: index + 1 // Agregamos el puesto
+    }));
   }
+}
 
 
 
-}  

@@ -15,6 +15,12 @@
                 <div class="table-container">
                     <table mat-table [dataSource]="topUsers" class="mat-elevation-z8">
 
+                        <!-- Columna de Posición (N°) -->
+                        <ng-container matColumnDef="position">
+                         <th mat-header-cell *matHeaderCellDef> N° </th>
+                         <td mat-cell *matCellDef="let user"> {{ user.position }} </td>
+                        </ng-container>
+
                         <!-- Columna de Avatar -->
                         <ng-container matColumnDef="avatar">
                             <th mat-header-cell *matHeaderCellDef></th>

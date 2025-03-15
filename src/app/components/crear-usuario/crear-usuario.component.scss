@@ -1,102 +1,83 @@
-
+/* Estilos del formulario */
 form {
-    border: solid rgb(223, 223, 133);
-    padding: 7px;
-    margin-bottom: 7px;
+  border: solid rgb(223, 223, 133);
+  padding: 7px;
+  margin-bottom: 7px;
 }
 
-label{
-    font-size: 14px;
-    margin-bottom: 27px;
-    margin-right: 27px;
-}
-
-input{
-    margin-bottom: 15px;
-}
-
-select {
-    margin-bottom: 7px;
-}
-
+/* Estilos del contenedor de la tarjeta */
 .card-container {
-    border-radius: 49px;
-    display: flex;
-    justify-content: center;
-    align-items: center; /* Centra verticalmente si el contenedor tiene una altura fija */
-    min-height: 87vh; 
-    min-width: 70vh;
-  }
-  
-  .custom-card {
-    color: rgb(248, 241, 232);
-    border: 4px solid rgb(223, 223, 133);
-    width: 37.33%; 
-    margin-top: 30px; 
-    padding: 1rem; 
-    box-shadow: 8px 8px 8px rgba(0.0, 0.0, 0.7, 0.7); /* Añade sombra para mejor visibilidad */
-    min-height: 40vh;
-    background-color: rgb(18, 13, 13);
-  }
+  border-radius: 49px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 87vh;
+  min-width: 70vh;
+}
 
-  .boton {
-    color: black;
-    background-color: rgb(223, 223, 133);
-    margin-top: 10px;
-    margin-bottom: 17px;
-    width: 100px;
-    border-radius: 9px; /* Esquinas más redondeadas */
-    font-family: 'Roboto', sans-serif; /* Tipo de letra */
-    transition: background-color 0.3s ease; /* Transición suave del color de fondo */
-    padding: 12px 20px; /* Aumenta el padding para hacer el botón más alto */
-    border: 1px solid rgba(0, 0, 0, 0.4); /* Borde ligero */
-  }
-  
-  .boton:hover {
-    background-color: rgb(240, 240, 190); 
-    cursor: pointer; /* Cambia el cursor a una mano */
-  }
+.custom-card {
+  color: rgb(248, 241, 232);
+  border: 4px solid rgb(223, 223, 133);
+  width: 87%;
+  max-width: 500px;
+  min-width: 240px;
+  margin-top: 27px;
+  padding: 1rem;
+  box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.7);
+  min-height: 40vh;
+  background-color: rgb(18, 13, 13);
+}
 
-  //Labels
-  .cantidad{
-    max-width: 20.7%;
-    margin-right: 86px;
-  }
+/* Estilos de los inputs */
+.input-text {
+  flex: 1;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 9px;
+  width: 100%;
+  max-width: 250px;
+  height: 40px;
+}
 
-  .usuario{
-    max-width: 40.5%;
-  }
+/* Estilos de la estructura del formulario */
+.form-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
 
-  .contrasena{
-    max-width: 20%;
-    margin-left: 33.7px;
-  }
+label {
+  font-size: 14px;
+  width: 100px;
+  text-align: right;
+  margin-right: 10px;
+}
 
-  .level{
-    margin-right: 147px;
-  }
+/* Estilos del botón */
+.boton {
+  color: black;
+  background-color: rgb(223, 223, 133);
+  margin-top: 10px;
+  margin-bottom: 17px;
+  width: 100px;
+  border-radius: 9px;
+  font-family: 'Roboto', sans-serif;
+  transition: background-color 0.3s ease;
+  padding: 12px 20px;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+}
 
-  .idioma{
-    margin-right: 117px;
-  }
+.boton:hover {
+  background-color: rgb(240, 240, 190);
+  cursor: pointer;
+}
 
-  .timetag{
-    margin-right: 112px;
-  }
-
-  .progreso {
-    max-width: 50%;
-    display: flex;
-    justify-content: center;
-  }
-
-  //radio button
-.form-group input[type="radio"] {
-  width: auto; /* Ajusta el tamaño según el contenido */
-  height: auto; /* Ajusta el tamaño según el contenido */
-  border: 2px solid #ffc107; /* Color de borde amarillo */
-  display: inline-flex;
-  margin-right: 5px;
+/* Estilos del contenedor del botón */
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
 }
 
 .mensaje-error {
