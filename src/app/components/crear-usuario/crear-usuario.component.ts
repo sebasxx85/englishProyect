@@ -41,43 +41,21 @@ export class CrearUsuarioComponent {
     });
   }
   
+  mensaje: string = ''; // Variable para mostrar mensaje en la UI
+
   crearUsuario() {
+  
     this.loading = true;
-
-    const crearUsuario = {
-      name: "pablo",
-      lastname:"gonzalez",
-      email: "pablo@cl",
-      user: "pablito",
-      password: '233@13'
-    };
-    //Ver datos que se envian
-    console.log("Enviando datos:", crearUsuario);
-    this.crearUsuarioService.postCrearUsuario(crearUsuario).pipe(
-      finalize(() => this.loading = false)
-    ).subscribe((data: any) => {
-      console.log(data);
-    });
+  
+    // Simular respuesta sin hacer petición HTTP
+    setTimeout(() => {
+      this.loading = false;
+      this.mensaje = "No se permiten más registros por ahora.";
+      console.log(this.mensaje);
+    }, 1000); // Simulación de carga (1 segundo)
   }
-
-  obtenerUsuarios() {
-    this.crearUsuarioService.getUsuarios().pipe(
-
-    ).subscribe((data: any) => {
-      this.dataTable = data
-      console.log(data);
-    })
-
-  }
-
-  //obtener usario x id
-  obtenerUsuarioId(){
-    this.crearUsuarioService.getUser(2).subscribe((data: any) => {
-      this.dataTable = data
-      console.log(data);
-    })
-  }
-
+  
+  
 
 
 }

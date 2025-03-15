@@ -17,27 +17,16 @@
           <input type="text" name="name" class="name" formControlName="name" placeholder="Ingresa Tu nombre">
         </div>
         <div class="form-group">
-          <label for="lastname" class="cantidad">Apellido:</label>
-          <input type="text" name="lastname" class="lastname" formControlName="lastname" placeholder="Ingresa Tu apellido">
-        </div>
-        <div class="form-group">
           <label for="password" class="cantidad">Contraseña:</label>
           <input type="password" name="password" class="contrasena" formControlName="password" placeholder="Ingresa Tu contraseña">
         </div>
       </form>
       
       <div class="float-left">
-        <button mat-flat-button color="primary" class="boton"
-          (click)="crearUsuario()">Crear</button>
+        <button mat-flat-button color="primary" class="boton" (click)="crearUsuario()">Crear</button>
+        <p *ngIf="mensaje" class="mensaje-error">{{ mensaje }}</p>
       </div>
-      <div class="float-left">
-        <button mat-flat-button color="primary" class="boton"
-          (click)="obtenerUsuarios()">Obtener</button>
-      </div>
-      <div class="float-left">
-        <button mat-flat-button color="primary" class="boton"
-          (click)="obtenerUsuarioId()">ObtenerId</button>
-      </div>
+      
       <mat-progress-bar *ngIf="loading" mode="indeterminate"
         class="progreso"></mat-progress-bar>
     </mat-card>
