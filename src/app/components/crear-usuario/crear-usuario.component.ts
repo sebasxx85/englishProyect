@@ -33,10 +33,8 @@ export class CrearUsuarioComponent {
 
   initForm() {
     this.form = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
-      name: ['', Validators.required],
-      lastname: ['', Validators.required],
       user: ['', [Validators.required, Validators.minLength(5)]],
+      email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
     });
   }

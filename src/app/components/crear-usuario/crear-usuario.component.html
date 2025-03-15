@@ -6,32 +6,31 @@
       <form [formGroup]="form" (ngSubmit)="crearUsuario()">
         <div class="form-group">
           <label for="user" class="cantidad">Usuario:</label>
-          <input type="text" name="user" class="usuario" formControlName="user" placeholder="Ingresa Tu usuario">
+          <input type="text" name="user" class="input-text" formControlName="user" placeholder="Ingresa un usuario">
         </div>
         <div class="form-group">
           <label for="email" class="cantidad">Email:</label>
-          <input type="email" name="email" class="email" formControlName="email" placeholder="Ingresa Tu correo">
-        </div>
-        <div class="form-group">
-          <label for="name" class="cantidad">Nombre:</label>
-          <input type="text" name="name" class="name" formControlName="name" placeholder="Ingresa Tu nombre">
+          <input type="email" name="email" class="input-text" formControlName="email" placeholder="Ingresa un correo">
         </div>
         <div class="form-group">
           <label for="password" class="cantidad">Contraseña:</label>
-          <input type="password" name="password" class="contrasena" formControlName="password" placeholder="Ingresa Tu contraseña">
+          <input type="password" name="password" class="input-text" formControlName="password" placeholder="Ingresa una contraseña">
+        </div>
+        <div class="form-group">
+          <label for="password" class="cantidad">Repetir Contraseña:</label>
+          <input type="password" name="password" class="input-text" formControlName="password" placeholder="Reingresa la contraseña">
         </div>
       </form>
-      
-      <div class="float-left">
+
+      <div class="button-container">
         <button mat-flat-button color="primary" class="boton" (click)="crearUsuario()">Crear</button>
         <p *ngIf="mensaje" class="mensaje-error">{{ mensaje }}</p>
       </div>
-      
-      <mat-progress-bar *ngIf="loading" mode="indeterminate"
-        class="progreso"></mat-progress-bar>
+
+      <mat-progress-bar *ngIf="loading" mode="indeterminate" class="progreso"></mat-progress-bar>
     </mat-card>
   </div>
   <router-outlet></router-outlet>
 </body>
-<app-footer></app-footer>
 
+<app-footer></app-footer>

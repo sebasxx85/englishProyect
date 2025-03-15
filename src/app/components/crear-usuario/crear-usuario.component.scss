@@ -1,8 +1,8 @@
 /* Estilos del formulario */
 form {
   border: solid rgb(223, 223, 133);
-  padding: 7px;
-  margin-bottom: 7px;
+  padding: 10px;
+  margin-bottom: 10px;
 }
 
 /* Estilos del contenedor de la tarjeta */
@@ -28,23 +28,13 @@ form {
   background-color: rgb(18, 13, 13);
 }
 
-/* Estilos de los inputs */
-.input-text {
-  flex: 1;
-  padding: 8px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 9px;
-  width: 100%;
-  max-width: 250px;
-  height: 40px;
-}
 
-/* Estilos de la estructura del formulario */
+/* Alinear etiquetas más a la izquierda */
 .form-group {
   display: flex;
   align-items: center;
   margin-bottom: 10px;
+  width: 97%;
 }
 
 label {
@@ -52,6 +42,19 @@ label {
   width: 100px;
   text-align: right;
   margin-right: 10px;
+  color: rgb(223, 223, 133);
+}
+
+input {
+  flex: 1; /* Hace que los inputs ocupen el mismo espacio */
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 25%;
+  max-width: 250px;
+  margin-left: 62px;
+
 }
 
 /* Estilos del botón */
@@ -76,12 +79,22 @@ label {
 /* Estilos del contenedor del botón */
 .button-container {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 15px;
   margin-top: 10px;
 }
 
+/* Mensaje de error */
 .mensaje-error {
   color: red;
   font-weight: bold;
   margin-top: 10px;
+}
+
+/* Estilos del progreso */
+.progreso {
+  max-width: 50%;
+  display: flex;
+  justify-content: center;
 }
