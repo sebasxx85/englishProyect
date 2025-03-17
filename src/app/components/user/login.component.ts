@@ -60,9 +60,9 @@ export class LoginComponent {
       this.router.navigate(['/dashboard']);
     }, 2000);
 
-    } else {
-      alert('Credenciales incorrectas');
-    }
+    } //else {
+    //   alert('Credenciales incorrectas');
+    // }
   }
   
 
