@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, signal } from '@angular/core';
 import { Router } from '@angular/router';
+import { catchError, Observable, tap, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +13,8 @@ export class RegisteredUseService {
 
   constructor(private http: HttpClient, private router: Router) {}
 
+
+
   // login(usuario: string, password: string) {
   //   // Simulación de autenticación (en un caso real, iría una petición HTTP)
   //   if (usuario === 'admin' && password === '1234') { 
@@ -21,23 +24,18 @@ export class RegisteredUseService {
   //   }
   // }
 
-  // logout() {
-  //   this.usuario.set(null);
-  // }
 
-//Node
-
-login(usuario: string, password: string): void {
-  this.http.post<{ message: string, user: any }>(`${this.apiUrl}/login`, { usuario, password })
-    .subscribe({
-      next: (response) => {
-        this.usuario.set(response.user.name);
-        this.router.navigate(['/dashboard']);
-      },
-      error: () => {
-        alert('Credenciales incorrectas');
-      }
-    });
+//Backend con NodeJs
+login(usuario: string, password: string): Observable<{ message: string, user: any }> {
+  return this.http.post<{ message: string, user: any }>(`${this.apiUrl}/login`, { usuario, password }).pipe(
+    tap(response => {
+      this.usuario.set(response.user.name); // Guarda el usuario si el login es exitoso
+    }),
+    catchError(error => {
+      console.error('Error en el login:', error);
+      return throwError(() => new Error('Credenciales incorrectas'));
+    })
+  );
 }
 
 logout(): void {

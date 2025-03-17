@@ -49,20 +49,23 @@ export class LoginComponent {
 
   //Usando signal para el Login
   login() {
-    this.loading = true
+    this.loading = true;
     
     const { usuario, password } = this.form.value;
-    this.registerUser.login(usuario, password);
   
-    // Redirigir al dashboard si el login es exitoso
-    if (this.registerUser.usuario()) {
-      setTimeout(() => {
-      this.router.navigate(['/dashboard']);
-    }, 2000);
-
-    } //else {
-    //   alert('Credenciales incorrectas');
-    // }
+    this.registerUser.login(usuario, password).subscribe({
+      next: () => {
+        // Redirigir al dashboard si el login es exitoso
+        setTimeout(() => {
+          this.router.navigate(['/dashboard']);
+          this.loading = false;
+        }, 2000);
+      },
+      error: (err) => {
+        alert(err.message); // Mensaje de error desde el servicio
+        this.loading = false;
+      }
+    });
   }
   
 
