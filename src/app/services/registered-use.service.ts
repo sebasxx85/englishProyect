@@ -8,7 +8,7 @@ import { catchError, Observable, tap, throwError } from 'rxjs';
 })
 export class RegisteredUseService {
   
-  private apiUrl = 'http://localhost:3000/api'; // URL del backend en Node.js
+  private apiUrl = 'https://nodejs-english-734228083178.us-central1.run.app/api'; // URL del backend en Node.js
   usuario = signal<string | null>(null); // Solo almacena el nombre de usuario
 
   constructor(private http: HttpClient, private router: Router) {}
