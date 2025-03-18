@@ -67,5 +67,4 @@ export class CursosComponent {
     this.cursosFiltrados = [...this.cursos];
   }
 
-
 }

@@ -13,7 +13,9 @@
           <h3 style="color: blue;">{{ curso.curso }}</h3>
           <p>Categoría: {{ curso.categoria }}</p>
           <p>Calificación: <img [src]="curso.estrellas" width="67px"></p>
-          <p><a style="color: green;" [href]="curso.sitio" target="_blank">Ir al curso</a></p>
+          <p>
+            <a style="color: green;" [href]="curso.sitio" target="_blank" title="Ir al curso">Ir al curso</a>
+          </p>
         </div>
       </div>
     </div>
