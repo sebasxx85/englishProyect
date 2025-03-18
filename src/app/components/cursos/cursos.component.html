@@ -8,12 +8,12 @@
     <!-- Contenedor de cursos deslizable -->
     <div class="carousel-inner">
       <div class="card" *ngFor="let curso of cursosFiltrados.slice(inicio, inicio + 4)">
-        <img [src]="curso.imagen" alt="{{ curso.curso }}" class="card-img">
+        <img [src]="curso.imagen" alt="{{ curso.curso }}" class="card-img" width="147px" height="147px">
         <div class="card-content">
-          <h3>{{ curso.curso }}</h3>
+          <h3 style="color: blue;">{{ curso.curso }}</h3>
           <p>Categoría: {{ curso.categoria }}</p>
           <p>Calificación: <img [src]="curso.estrellas" width="67px"></p>
-          <p><a [href]="curso.sitio" target="_blank">Ir al curso</a></p>
+          <p><a style="color: green;" [href]="curso.sitio" target="_blank">Ir al curso</a></p>
         </div>
       </div>
     </div>

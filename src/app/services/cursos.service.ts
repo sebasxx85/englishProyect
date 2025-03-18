@@ -10,17 +10,18 @@ import { environment } from '../environments/environment.dev';
 export class CursosService {
 
   MisCursos = [
-    { id: 1, categoria: 'Inglés', curso: 'Producto 1', sitio: 'http://example.com/curso1', imagen: 'assets/images/Curso.png', estrellas: 'assets/images/5Estrellas.png' },
-    { id: 2, categoria: 'Inglés', curso: 'Producto 2', sitio: 'http://example.com/curso2', imagen: 'assets/images/Curso.png', estrellas: 'assets/images/3Estrellas.png' },
-    { id: 3, categoria: 'Portugués', curso: 'Producto 3', sitio: 'http://example.com/curso3', imagen: 'assets/images/CursoPortugues.png', estrellas: 'assets/images/5Estrellas.png' },
-    { id: 4, categoria: 'Italiano', curso: 'Producto 4', sitio: 'http://example.com/curso4', imagen: 'assets/images/CursoItalianoBasico.png', estrellas: 'assets/images/1Estrellas.png' },
-    { id: 5, categoria: 'Inglés', curso: 'Producto 5', sitio: 'http://example.com/curso1', imagen: 'assets/images/Curso.png', estrellas: 'assets/images/2Estrellas.png' },
-    { id: 6, categoria: 'Inglés', curso: 'Producto 6', sitio: 'http://example.com/curso2', imagen: 'assets/images/Curso.png', estrellas: 'assets/images/3Estrellas.png' },
-    { id: 7, categoria: 'Portugués', curso: 'Producto 7', sitio: 'http://example.com/curso3', imagen: 'assets/images/CursoPortugues.png', estrellas: 'assets/images/5Estrellas.png' },
-    { id: 8, categoria: 'Italiano', curso: 'Producto 8', sitio: 'http://example.com/curso4', imagen: 'assets/images/CursoItalianoIntermedio.png', estrellas: 'assets/images/2Estrellas.png' },
-    { id: 9, categoria: 'Portugués', curso: 'Producto 9', sitio: 'http://example.com/curso3', imagen: 'assets/images/CursoPortugues.png', estrellas: 'assets/images/4Estrellas.png' },
-    { id: 10, categoria: 'Italiano', curso: 'Producto 10', sitio: 'http://example.com/curso4', imagen: 'assets/images/CursoItalianoAvanzado.png', estrellas: 'assets/images/3Estrellas.png' },
-    { id: 11, categoria: 'Italiano', curso: 'Producto 11', sitio: 'http://example.com/curso4', imagen: 'assets/images/Curso.png', estrellas: 'assets/images/1Estrellas.png' },
+    { id: 1, categoria: 'Inglés', curso: 'Aprende Inglés con cuentos cortos', sitio: 'https://go.hotmart.com/H98743635J', imagen: 'assets/images/CursoIngles.png', estrellas: 'assets/images/5Estrellas.png' },
+    { id: 2, categoria: 'Inglés', curso: 'Inglés 360° - Aprende Inglés desde cero', sitio: 'https://go.hotmart.com/M98743870O', imagen: 'assets/images/CursoIngles2.png', estrellas: 'assets/images/4Estrellas.png' },
+    { id: 3, categoria: 'Portugués', curso: 'Portugués de Negocios para Hispanos', sitio: 'https://go.hotmart.com/O98743990R', imagen: 'assets/images/CursoPortugues.png', estrellas: 'assets/images/5Estrellas.png' },
+    { id: 4, categoria: 'Otros', curso: 'Aprende Idiomas & Haz Amigos', sitio: 'https://go.hotmart.com/Q98744107N', imagen: 'assets/images/OtrosCursos.png', estrellas: 'assets/images/4Estrellas.png' },
+    { id: 5, categoria: 'Portugués', curso: 'Portugués de Negocios para Hispanos', sitio: 'https://go.hotmart.com/O98743990R', imagen: 'assets/images/CursoPortugues.png', estrellas: 'assets/images/5Estrellas.png' },
+    { id: 6, categoria: 'Inglés', curso: 'Aprende Inglés mientras duermes', sitio: 'https://go.hotmart.com/I98744241U', imagen: 'assets/images/CursoIngles3.png', estrellas: 'assets/images/4Estrellas.png' },
+    { id: 7, categoria: 'Italiano', curso: 'Curso de Italiano de cero a Nativo', sitio: 'https://go.hotmart.com/X98744354H', imagen: 'assets/images/CursoItaliano.png', estrellas: 'assets/images/5Estrellas.png' },
+    { id: 8, categoria: 'Inglés', curso: 'Curso para aprender Inglés en 90 días', sitio: 'https://go.hotmart.com/C98744731Q?dp=1', imagen: 'assets/images/CursoIngles4.png', estrellas: 'assets/images/5Estrellas.png' },
+    { id: 9, categoria: 'Italiano', curso: 'Curso de Italiano para principiantes', sitio: 'https://go.hotmart.com/K98744887S', imagen: 'assets/images/CursoItaliano2.png', estrellas: 'assets/images/4Estrellas.png' },
+    { id: 10, categoria: 'Italiano', curso: 'Curso de Italiano Básico para Hispanos', sitio: 'https://go.hotmart.com/D98745032X', imagen: 'assets/images/CursoItalianoBasico.png', estrellas: 'assets/images/4Estrellas.png' },
+    { id: 11, categoria: 'Italiano', curso: 'Curso de Italiano Intermedio para Hispanos', sitio: 'https://go.hotmart.com/F98745050R', imagen: 'assets/images/CursoItalianoIntermedio.png', estrellas: 'assets/images/5Estrellas.png' },
+    { id: 12, categoria: 'Italiano', curso: 'Curso de Italiano Avanzado para Hispanos', sitio: 'https://go.hotmart.com/L98745063K', imagen: 'assets/images/CursoItalianoAvanzado.png', estrellas: 'assets/images/5Estrellas.png' },
   ];
   
   //luegi implementar sercicio
