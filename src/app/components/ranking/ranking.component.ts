@@ -14,28 +14,37 @@ import { MatCardModule } from '@angular/material/card';
     SharedModule,
     MatTableModule,
     MatIconModule,
-    MatCardModule,
-    MatTableModule,
+    MatCardModule
   ],
   templateUrl: './ranking.component.html',
-  styleUrls: ['./ranking.component.scss'] // ← Corrección aquí
+  styleUrls: ['./ranking.component.scss']
 })
 export class RankingComponent implements OnInit {
   title = "TOP Users";
   users: any[] = [];
   topUsers: any[] = [];
-  displayedColumns: string[] = ['position', 'avatar', 'name', 'score', 'language']; // Agregamos 'position'
+  displayedColumns: string[] = ['position', 'avatar', 'name', 'score', 'language'];
 
   private usersRankingService = inject(UsersRankingService);
 
   ngOnInit(): void {
-    this.users = this.usersRankingService.obtenerUsers()
-      .sort((a, b) => b.score - a.score); // Ordenar de mayor a menor
-    
-    this.topUsers = this.users.slice(0, 30).map((user, index) => ({
-      ...user,
-      position: index + 1 // Agregamos el puesto
-    }));
+    this.usersRankingService.obtenerUsers().subscribe({
+      next: (data) => {
+        // Ordenar usuarios de mayor a menor puntaje
+        this.users = data.sort((a, b) => b.score - a.score);
+
+        // Tomar solo los 30 primeros y agregar la posición
+        this.topUsers = this.users.slice(0, 30).map((user, index) => ({
+          ...user,
+          position: index + 1
+        }));
+
+        console.log('Usuarios cargados:', this.topUsers);
+      },
+      error: (error) => {
+        console.error('Error al cargar usuarios:', error);
+      }
+    });
   }
 }
 
