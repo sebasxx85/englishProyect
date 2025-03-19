@@ -22,7 +22,7 @@
     bottom: 20px; /* Ajusta según la necesidad */
     left: 50%;
     transform: translateX(-50%);
-    min-width: 417px;
+    min-width: 427px !important; /* Asegura un mínimo tamaño */
   }
   
   .search-container input {
@@ -49,12 +49,13 @@
     background-color: #0056b3;
   }
 
-  .container-superior{
-    min-width: 427;
+  .container-superior {
+    min-width: 427px !important; /* Asegura un mínimo tamaño */
+    display: flex; /* Activa flexbox para alinear los elementos */
+    flex-direction: column; /* Asegura que el contenido esté en columna */
     justify-content: center;
     align-items: center;
-  }
-
+}
   .eliminar {
     background-color: #f1e3f5;
     color: white;
@@ -142,11 +143,11 @@
 }
 
 .carousel-btn.left {
-  left: 7px;
+  left: 17px;
 }
 
 .carousel-btn.right {
-  right: 7px;
+  right: 17px;
 }
 
 .carousel-btn:hover {
