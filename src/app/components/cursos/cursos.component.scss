@@ -5,7 +5,7 @@
     justify-content: center;
     align-items: center; /* Centra verticalmente si el contenedor tiene una altura fija */
     min-height: 97vh; 
-    min-width: 117vh;
+    min-width: 417px;
   }
   
   .search-container {
@@ -64,9 +64,11 @@
     justify-content: center;
     width: 90%;
     max-width: 1200px;
+    min-width: 417px;
     margin: 0 auto; /* Centrar correctamente */
     overflow: hidden;
     margin-top: 100px; 
+    min-width: 417px;
 
 }
   
@@ -86,6 +88,7 @@
     text-align: center;
     background: white;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    min-width: 147px;
 }
 
  
@@ -105,7 +108,7 @@
 }
 
 /* Ajuste para móviles pequeños */
-@media (max-width: 500px) {
+@media (max-width: 400px) {
   .carousel-inner {
       grid-auto-columns: 100%; /* 1 tarjeta por fila */
   }
@@ -125,14 +128,15 @@
   border-radius: 50%;
   transition: 0.3s;
   z-index: 10;
+  
 }
 
 .carousel-btn.left {
-  left: 10px;
+  left: 27px;
 }
 
 .carousel-btn.right {
-  right: 10px;
+  right: 27px;
 }
 
 .carousel-btn:hover {
