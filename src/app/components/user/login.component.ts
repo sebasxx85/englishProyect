@@ -11,7 +11,7 @@ import { DashboardComponent } from '../dashboard/dashboard.component';
 })
 export class LoginComponent {
 
-  title = "Test de Inglés Gratis";
+  title = "Ingreso Usuarios";
   codPrograma = "Ingreso Plataforma";
   // sucursal = localStorage.getItem('Sucursal') || '';
   // DEFAULT_COD_SUCURSAL = JSON.parse(this.sucursal);

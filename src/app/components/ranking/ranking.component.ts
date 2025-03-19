@@ -20,7 +20,7 @@ import { MatCardModule } from '@angular/material/card';
   styleUrls: ['./ranking.component.scss']
 })
 export class RankingComponent implements OnInit {
-  title = "TOP Users";
+  title = "Ranking";
   users: any[] = [];
   topUsers: any[] = [];
   displayedColumns: string[] = ['position', 'avatar', 'name', 'score', 'language'];
