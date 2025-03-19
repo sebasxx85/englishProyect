@@ -124,6 +124,7 @@
 @media (max-width: 500px) {
   .carousel-inner {
       grid-auto-columns: 100%; /* 1 tarjeta por fila */
+      margin-right: 57px;
   }
   .container-superior {
     min-width: 427px !important; /* Asegura un mínimo tamaño */
@@ -159,7 +160,7 @@
 }
 
 .carousel-btn.right {
-  right: 17px;
+  right: 7px;
 }
 
 .carousel-btn:hover {

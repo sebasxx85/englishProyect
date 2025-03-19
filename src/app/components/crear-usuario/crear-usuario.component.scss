@@ -58,6 +58,14 @@ input {
 
 }
 
+@media (max-width: 400px) {
+  .custom-card {
+    width: 97%; /* Ocupa casi todo el ancho en móviles */
+    margin-left: 47px;
+  }
+
+}
+
 /* Estilos del botón */
 .boton {
   color: black;

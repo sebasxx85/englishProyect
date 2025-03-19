@@ -53,27 +53,27 @@ select {
   @media (max-width: 500px) and (min-width: 401px) {
     .custom-card {
       width: 97%; /* Ocupa casi todo el ancho en móviles */
-      max-width: 427px;
-      min-width: 427px;
+      max-width: 457px;
+      min-width: 457px;
       margin-left: 147px;
     }
     .card-container{
-      max-width: 427px;
-      min-width: 427px
+      max-width: 457px;
+      min-width: 457px
     }
   }
   
   
-  @media (max-width: 400px) {
+  @media (max-width: 400px) and (min-width: 101px) {
     .custom-card {
       width: 87%; /* Ocupa casi todo el ancho en móviles */
-      max-width: 427px;
-      min-width: 427px;
+      max-width: 457px;
+      min-width: 457px;
       margin-left: 107px;
     }
     .card-container{
-      max-width: 427px;
-      min-width: 427px
+      max-width: 457px;
+      min-width: 457px
     }
   
   }

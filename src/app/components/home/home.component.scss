@@ -110,12 +110,13 @@ input, select {
 @media (max-width: 425px) {
   .custom-card {
     width: 97%; /* Ocupa casi todo el ancho en móviles */
-    max-width: 347px;
+    max-width: 437px;
+    min-width: 437px;
+    margin-left: 127px;
   }
   .card-container{
-    margin-right: 97px;
-    max-width: 347px;
-  
+    max-width: 437px;
+    min-width: 437px;
   }
 }
 
