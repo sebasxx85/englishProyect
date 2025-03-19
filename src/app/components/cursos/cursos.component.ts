@@ -48,7 +48,7 @@ export class CursosComponent {
 
   siguiente() {
     const totalCursos = this.cursosFiltrados.length;
-    const cursosEnPantalla = window.innerWidth < 550 ? 1 : 2; // 2 en móviles, 4 en pantallas grandes
+    const cursosEnPantalla = window.innerWidth < 550 ? 2 : 4; // 2 en móviles, 4 en pantallas grandes
     const cantidadAvance = cursosEnPantalla === 2 ? 1 : 2; // Mueve 1 en móviles, 2 en pantallas grandes
   
     if (this.inicio + cursosEnPantalla + cantidadAvance <= totalCursos) {
