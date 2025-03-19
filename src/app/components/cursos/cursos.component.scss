@@ -22,6 +22,7 @@
     bottom: 20px; /* Ajusta según la necesidad */
     left: 50%;
     transform: translateX(-50%);
+    min-width: 377px;
   }
   
   .search-container input {
@@ -30,6 +31,7 @@
     border: 1px solid #ddd;
     border-radius: 5px;
     margin-right: 10px;
+    min-width: 177px;
   }
   
   .search-container button {
@@ -43,6 +45,12 @@
   
   .search-container button:hover {
     background-color: #0056b3;
+  }
+
+  .container-superior{
+    min-width: 427;
+    justify-content: center;
+    align-items: center;
   }
 
   .eliminar {
@@ -141,4 +149,8 @@
 
 .carousel-btn:hover {
   background: rgba(0, 0, 0, 0.8);
+}
+
+.titulo2 {
+  margin-top: 57px;
 }

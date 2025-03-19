@@ -1,33 +1,35 @@
-<app-header [title]="title"></app-header>
+<app-header [title]="title">{{title}}</app-header>
 
 <body>
-  <div class="carousel-container">
-    <!-- Botón Izquierdo -->
-    <button class="carousel-btn left" (click)="anterior()">&#10094;</button>
+  <div class="container-superior">
+    <div class="carousel-container">
+      <!-- Botón Izquierdo -->
+      <button class="carousel-btn left" (click)="anterior()">&#10094;</button>
 
-    <!-- Contenedor de cursos deslizable -->
-    <div class="carousel-inner">
+      <!-- Contenedor de cursos deslizable -->
+      <div class="carousel-inner">
         <div class="card" *ngFor="let curso of cursosFiltrados.slice(inicio, inicio + 4)">
-            <img [src]="curso.imagen" alt="{{ curso.curso }}" class="card-img" width="147px" height="147px">
-            <div class="card-content">
-                <h3 style="color: blue;">{{ curso.curso }}</h3>
-                <p>Categoría: {{ curso.categoria }}</p>
-                <p>Calificación: <img [src]="curso.estrellas" width="67px"></p>
-                <p>
-                    <a style="color: green;" [href]="curso.sitio" target="_blank" title="Ir al curso">Ir al curso</a>
-                </p>
-            </div>
+          <img [src]="curso.imagen" alt="{{ curso.curso }}" class="card-img" width="147px" height="147px">
+          <div class="card-content">
+            <h3 style="color: blue;">{{ curso.curso }}</h3>
+            <p>Categoría: {{ curso.categoria }}</p>
+            <p>Calificación: <img [src]="curso.estrellas" width="67px"></p>
+            <p>
+              <a style="color: green;" [href]="curso.sitio" target="_blank" title="Ir al curso">Ir al curso</a>
+            </p>
+          </div>
         </div>
+      </div>
+
+      <!-- Botón Derecho -->
+      <button class="carousel-btn right" (click)="siguiente()">&#10095;</button>
     </div>
 
-    <!-- Botón Derecho -->
-    <button class="carousel-btn right" (click)="siguiente()">&#10095;</button>
-</div>
-
-<div class="search-container">
-  <input type="text" [(ngModel)]="terminoBusqueda" placeholder="Buscar categoría..." />
-  <button (click)="filtrarCursos(terminoBusqueda)">🔍 Buscar</button>
-</div>
+    <div class="search-container">
+      <input type="text" [(ngModel)]="terminoBusqueda" placeholder="Buscar categoría..." />
+      <button (click)="filtrarCursos(terminoBusqueda)">🔍 Buscar</button>
+    </div>
+  </div>
 </body>
 
 <app-footer></app-footer>
