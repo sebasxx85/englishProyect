@@ -41,6 +41,7 @@ select {
   min-width: 240px; /* No será más pequeño que 320px */
   min-height: 50vh;
   margin-top: 27px;
+  margin-right: 77px;
   padding-bottom: 20px;
   padding: 1rem;
   box-shadow: 8px 8px 8px rgba(0.0, 0.0, 0.7, 0.7);
@@ -49,22 +50,33 @@ select {
 }
 
   /* Pantallas entre 726px y 926px */
-  @media (max-width: 926px) and (min-width: 726px) {
+  @media (max-width: 500px) and (min-width: 401px) {
     .custom-card {
-      width: 94%; /* Aumenta el ancho en pantallas pequeñas */
-      max-width: 420px; /* Ajusta el límite superior */
-  
+      width: 97%; /* Ocupa casi todo el ancho en móviles */
+      max-width: 427px;
+      min-width: 427px;
+      margin-left: 147px;
+    }
+    .card-container{
+      max-width: 427px;
+      min-width: 427px
     }
   }
   
-  /* Pantallas entre 560px y 725px */
-  @media (max-width: 725px) and (min-width: 560px) {
-    .custom-card {
-      width: 94%; /* Aumenta el ancho en pantallas pequeñas */
-      max-width: 420px; /* Ajusta el límite superior */
-    }
-  }
   
+  @media (max-width: 400px) {
+    .custom-card {
+      width: 87%; /* Ocupa casi todo el ancho en móviles */
+      max-width: 427px;
+      min-width: 427px;
+      margin-left: 107px;
+    }
+    .card-container{
+      max-width: 427px;
+      min-width: 427px
+    }
+  
+  }
 
 /* Ajuste opcional para evitar que los encabezados desaparezcan */
 th {
