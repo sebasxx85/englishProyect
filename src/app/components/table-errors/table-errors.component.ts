@@ -30,7 +30,7 @@ import { IntercambioDatosService } from '../../services/intercambio-datos.servic
 })
 export class TableErrorsComponent implements OnInit {
 
-  title = "Repaso";
+  title = "Correciones";
   loading = false;
   cantidadArray: number[] = [];
   nivelIdiomaPuntaje = 1.0;
