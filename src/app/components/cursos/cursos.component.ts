@@ -48,18 +48,19 @@ export class CursosComponent {
 
   siguiente() {
     const totalCursos = this.cursosFiltrados.length;
-    const cantidadAvance = 2; // Avanza de 2 en 2
-    const cantidadMostrada = 4; // Siempre mostrar 4 cursos
+    const cursosEnPantalla = window.innerWidth < 600 ? 2 : 4; // 2 en móviles, 4 en pantallas grandes
+    const cantidadAvance = cursosEnPantalla === 2 ? 1 : 2; // Avanza 1 en móviles, 2 en pantallas grandes
   
-    if (this.inicio + cantidadMostrada + cantidadAvance <= totalCursos) {
+    if (this.inicio + cursosEnPantalla + cantidadAvance <= totalCursos) {
       this.inicio += cantidadAvance;
     } else {
-      this.inicio = totalCursos - cantidadMostrada; // No permite mostrar menos de 4 cursos
+      this.inicio = totalCursos - cursosEnPantalla; // Asegura que siempre se vean los últimos cursos
     }
   }
   
   anterior() {
-    const cantidadAvance = 2; // Retrocede de 2 en 2
+    const cursosEnPantalla = window.innerWidth < 600 ? 2 : 4; // 2 en móviles, 4 en pantallas grandes
+    const cantidadAvance = cursosEnPantalla === 2 ? 1 : 2; // Retrocede 1 en móviles, 2 en pantallas grandes
   
     if (this.inicio - cantidadAvance >= 0) {
       this.inicio -= cantidadAvance;
@@ -69,7 +70,6 @@ export class CursosComponent {
   }
   
   
-
   eliminarCurso(id: number) {
     this.cursosService.eliminarCurso(id);
     this.cursos = this.cursosService.obtenerCursos();
