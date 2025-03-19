@@ -47,18 +47,27 @@ export class CursosComponent {
   }
 
   siguiente() {
-    const cantidad = window.innerWidth < 400 ? 1 : 4; // Si es menor a 400px, mostrar 1 curso
-    if (this.inicio + cantidad < this.cursosFiltrados.length) {
-      this.inicio += cantidad;
+    const totalCursos = this.cursosFiltrados.length;
+    const cantidadAvance = 2; // Avanza de 2 en 2
+    const cantidadMostrada = 4; // Siempre mostrar 4 cursos
+  
+    if (this.inicio + cantidadMostrada + cantidadAvance <= totalCursos) {
+      this.inicio += cantidadAvance;
+    } else {
+      this.inicio = totalCursos - cantidadMostrada; // No permite mostrar menos de 4 cursos
     }
   }
   
   anterior() {
-    const cantidad = window.innerWidth < 400 ? 1 : 4; // Si es menor a 400px, retroceder 1 curso
-    if (this.inicio - cantidad >= 0) {
-      this.inicio -= cantidad;
+    const cantidadAvance = 2; // Retrocede de 2 en 2
+  
+    if (this.inicio - cantidadAvance >= 0) {
+      this.inicio -= cantidadAvance;
+    } else {
+      this.inicio = 0; // No retrocede más allá del primer curso
     }
   }
+  
   
 
   eliminarCurso(id: number) {

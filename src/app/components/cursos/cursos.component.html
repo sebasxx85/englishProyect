@@ -24,6 +24,10 @@
     <button class="carousel-btn right" (click)="siguiente()">&#10095;</button>
 </div>
 
+<div class="search-container">
+  <input type="text" [(ngModel)]="terminoBusqueda" placeholder="Buscar categoría..." />
+  <button (click)="filtrarCursos(terminoBusqueda)">🔍 Buscar</button>
+</div>
 </body>
 
 <app-footer></app-footer>
