@@ -31,6 +31,18 @@ select {
   background-color: rgb(18, 13, 13);
 }
 
+@media (max-width: 425px) {
+  .custom-card {
+    width: 97%; /* Ocupa casi todo el ancho en móviles */
+    max-width: 347px;
+  }
+  .card-container{
+    margin-right: 97px;
+    max-width: 347px;
+  
+  }
+}
+
 .boton {
   color: black;
   background-color: rgb(223, 223, 133);

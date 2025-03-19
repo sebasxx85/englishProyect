@@ -23,6 +23,7 @@
     left: 50%;
     transform: translateX(-50%);
     min-width: 427px !important; /* Asegura un mínimo tamaño */
+    margin-top: 47px;
   }
   
   .search-container input {
@@ -55,6 +56,7 @@
     flex-direction: column; /* Asegura que el contenido esté en columna */
     justify-content: center;
     align-items: center;
+
 }
   .eliminar {
     background-color: #f1e3f5;
@@ -119,11 +121,21 @@
 }
 
 /* Ajuste para móviles pequeños */
-@media (max-width: 400px) {
+@media (max-width: 500px) {
   .carousel-inner {
       grid-auto-columns: 100%; /* 1 tarjeta por fila */
   }
+  .container-superior {
+    min-width: 427px !important; /* Asegura un mínimo tamaño */
+    display: flex; /* Activa flexbox para alinear los elementos */
+    flex-direction: column; /* Asegura que el contenido esté en columna */
+    justify-content: center;
+    align-items: center;
+    margin-left: 47px;
 }
+
+}
+
 
 /* Botones de navegación */
 .carousel-btn {

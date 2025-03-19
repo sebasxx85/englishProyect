@@ -106,10 +106,15 @@ input, select {
   }
 }
 
-@media (max-width: 425px) and (min-width: 210px) {
+@media (max-width: 425px) {
   .custom-card {
     width: 97%; /* Ocupa casi todo el ancho en móviles */
-    max-width: 390px;
+    max-width: 347px;
+  }
+  .card-container{
+    margin-right: 97px;
+    max-width: 347px;
+  
   }
 }
 
