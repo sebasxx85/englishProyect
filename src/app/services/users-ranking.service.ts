@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, throwError } from 'rxjs';
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -40,7 +41,7 @@ export class UsersRankingService {
   //   { "name": "blazeX", "score": 606789, "language": "Portuguese", "avatar": "https://robohash.org/blazex.png" }
   // ]
   
-  private apiUrl = 'https://nodejs-english-734228083178.us-central1.run.app/api/usuarios'; // URL correcta del backend
+  private apiUrl = `${environment.apiUrl}usuarios`;
 
   constructor(private http: HttpClient) {}
 

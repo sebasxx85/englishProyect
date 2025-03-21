@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { catchError, throwError } from 'rxjs';
 import { crearUsuario } from '../Models/crearUser';
-import { environment } from '../environments/environment.prod';
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -25,7 +25,8 @@ export class CursosService {
   ];
   
   //luegi implementar sercicio
-  private apiUrl = 'http://localhost:8080/cursos'; // URL del backend
+ // private apiUrl = 'http://localhost:8080/cursos'; // URL del backend
+  private apiUrl = environment.apiUrl
 
   private http = inject(HttpClient);
 
