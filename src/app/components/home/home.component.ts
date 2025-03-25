@@ -25,6 +25,7 @@ export class HomeComponent implements OnInit {
   today = new Date();
   cookiesAccepted: boolean = false;
   login = false;
+  mensajeBloqueo: string = '';
 
 
   idiomaSelect = [
@@ -61,6 +62,10 @@ export class HomeComponent implements OnInit {
     this.cookiesAccepted = cookiesStatus === 'true';
 
     this.login = this.registeredUseService.usuario() !== null;
+
+     this.form.get('nivel')?.valueChanges.subscribe(() => {
+     this.mensajeBloqueo = '';
+  });
 
   }
 
@@ -115,6 +120,17 @@ export class HomeComponent implements OnInit {
       }
     }
   }
+
+  //Mensaje loguearse
+  mostrarMensajeBloqueo(event: Event) {
+    if (!this.login) {
+      event.preventDefault(); // Previene el comportamiento de selección
+      this.mensajeBloqueo = '⚠️ Inicia sesión para acceder a los niveles avanzados.';
+    } else {
+      this.mensajeBloqueo = '';
+    }
+  }
+  
 
   empezar() {
     this.loading = true

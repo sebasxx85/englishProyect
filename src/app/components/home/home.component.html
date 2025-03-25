@@ -1,15 +1,22 @@
 <app-header [title]="title"></app-header>
 
-<!--Aceptar cookies-->
+<!-- Aceptar cookies -->
 <div id="cookie-banner" class="cookie-banner" *ngIf="!cookiesAccepted">
-  <p>Usamos cookies para mejorar tu experiencia. Al continuar navegando, aceptas el uso de cookies y nuestras <a href="/privacy-policy" target="_blank">políticas de privacidad</a>.</p>
+  <p>
+    Usamos cookies para mejorar tu experiencia. Al continuar navegando, aceptas
+    el uso de cookies y nuestras <a href="/privacy-policy" target="_blank">políticas de privacidad</a>.
+  </p>
   <button mat-button color="primary" (click)="acceptCookies()">Aceptar</button>
 </div>
 
 <body>
   <div class="card-container">
+    
+    <!-- Tarjeta de formulario -->
     <mat-card class="custom-card">
       <form [formGroup]="form" (ngSubmit)="empezar()">
+        
+        <!-- Selección de idioma -->
         <div class="form-group">
           <label for="cliente" class="idioma">Elige tu idioma:</label>
           <select name="idioma" formControlName="idioma">
@@ -18,52 +25,52 @@
             <option value="Italiano">Italiano</option>
           </select>
         </div>
+
+        <!-- Selección de nivel -->
         <div class="form-group">
           <label for="nivel" class="level">Nivel:</label>
-          <select name="nivel" formControlName="nivel">
+          <select name="nivel" formControlName="nivel" (mousedown)="mostrarMensajeBloqueo($event)">
             
+            <!-- Inglés -->
             <ng-container *ngIf="form.get('idioma')?.value === 'Ingles'">
               <option value="principiante">Principiante (A0)</option>
               <option value="basico">Básico (A1)</option>
               <option value="basico-alto">Básico-Alto (A2)</option>
               <option value="intermedio">Intermedio (B1)</option>
+            
+              <!-- Opciones avanzadas (no se bloquean directamente, se interceptan) -->
               <option value="intermedio-alto" [disabled]="!login">Intermedio-Alto (B2)</option>
               <option value="avanzado" [disabled]="!login">Avanzado (C1)</option>
-              <small *ngIf="!login" style="color: goldenrod; font-style: italic;">
-                ⚠️ Inicia sesión para acceder a los niveles avanzados.
-              </small>
             </ng-container>
-            
 
-            <!-- Opciones para Italiano -->
+            <!-- Italiano -->
             <ng-container *ngIf="form.get('idioma')?.value === 'Italiano'">
               <option value="italiano-principiante">Italiano Principiante</option>
-              <!-- <option value="italiano-basico">Italiano Básico</option>
-              <option value="italiano-intermedio">Italiano Intermedio</option> -->
             </ng-container>
-        
-            <!-- Opciones para Portugués -->
+
+            <!-- Portugués -->
             <ng-container *ngIf="form.get('idioma')?.value === 'Portugues'">
               <option value="portugues-principiante">Portugués Principiante</option>
-              <!-- <option value="portugues-basico">Portugués Básico</option>
-              <option value="portugues-intermedio">Portugués Intermedio</option> -->
             </ng-container>
+
           </select>
-          
         </div>
-        
+
+        <!-- Número de preguntas -->
         <div class="form-group">
           <label for="nproyecto" class="cantidad">N° de preguntas:</label>
-          <input 
-          type="number" 
-          name="cantidad" 
-          class="cantidadinput" 
-          min="3" 
-          max="12" 
-          formControlName="cantidad" 
-          placeholder="0"
-          (input)="validarCantidad()">
+          <input
+            type="number"
+            name="cantidad"
+            class="cantidadinput"
+            min="3"
+            max="12"
+            formControlName="cantidad"
+            placeholder="0"
+            (input)="validarCantidad()">
         </div>
+
+        <!-- Tiempo -->
         <div class="form-group">
           <label for="nproyecto" class="timetag">Con Tiempo:</label>
           <input type="radio" id="time-si" name="time" [value]="true" formControlName="time">
@@ -71,16 +78,31 @@
           <input type="radio" id="time-no" name="time" [value]="false" formControlName="time">
           <label for="time-no" class="time">No</label>
         </div>
+
+        <!-- Botón -->
         <div class="button-container">
-          <button mat-flat-button color="primary" class="boton" type="submit">Empezar</button>
+          <button
+            mat-flat-button
+            color="primary"
+            class="boton"
+            type="submit"
+            [disabled]="form.invalid">
+            Empezar
+          </button>
+          <div *ngIf="mensajeBloqueo" class="mensaje-bloqueo">
+            {{ mensajeBloqueo }}
+          </div>
         </div>
+
       </form>
-      
+
+      <!-- Spinner -->
       <div *ngIf="loading" class="spinner-container">
         <div class="custom-spinner"></div>
       </div>
     </mat-card>
-    
+   
+
   </div>
 </body>
 
