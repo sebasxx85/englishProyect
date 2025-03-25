@@ -72,6 +72,13 @@ export class DataEnglish1Service {
     'owe', 'lend', 'bill', 'quarter', 'anymore', 'seeing', 'suppose', 'actually', 'daunting', 'profound', 'raised me',
     'reminder', 'fierce', 'appear', 'noteworthy', 'charm'
   ];
+
+
+  private AltoC1: string[] = [
+    'gimme'
+  ]
+
+
  //Metodos Preguntas
 
   getWordsPrincipiantes(): string[] {
@@ -93,6 +100,11 @@ export class DataEnglish1Service {
   getWordsintermedioAlto(): string[] {
     return this.intermedioAltoB2;
   }
+
+  getWordsAlto(): string[] {
+    return this.AltoC1;
+  }
+
 
  
 //Repuestas
@@ -166,6 +178,10 @@ private intermedioAltoB2Res: string[] = [
   'notable', 'encanto'
 ];
 
+private AltoC1Res: string[] = [
+  'dame'
+]
+
 
 
 //Metodos Respuestas
@@ -188,6 +204,10 @@ getWordsintermedioRes(): string[] {
 
 getWordsIntermedioAltoRes(): string[] {
   return this.intermedioAltoB2Res;
+}
+
+getWordsAltoRes(): string[] {
+  return this.AltoC1Res;
 }
 
 
