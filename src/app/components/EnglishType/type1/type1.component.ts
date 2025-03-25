@@ -107,6 +107,9 @@ export class Type1Component implements OnInit {
     } else if (this.nivelIdioma === 'intermedio-alto') {
       preguntas = this.dataLevel1Service.getWordsintermedioAlto();
       respuestas = this.dataLevel1Service.getWordsIntermedioAltoRes();
+    } else if (this.nivelIdioma === 'avanzado') {
+      preguntas = this.dataLevel1Service.getWordsAlto();
+      respuestas = this.dataLevel1Service.getWordsAltoRes();
     } else {
       console.log("Nivel no reconocido");
       this.loading = true;

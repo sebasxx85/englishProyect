@@ -3,6 +3,7 @@ import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { IntercambioDatosService } from 'src/app/services/intercambio-datos.service';
+import { RegisteredUseService } from 'src/app/services/registered-use.service';
 
 @Component({
   selector: 'app-home',
@@ -23,6 +24,7 @@ export class HomeComponent implements OnInit {
   loading = false
   today = new Date();
   cookiesAccepted: boolean = false;
+  login = false;
 
 
   idiomaSelect = [
@@ -35,6 +37,7 @@ export class HomeComponent implements OnInit {
   private fb = inject(FormBuilder)
   private router = inject(Router)
   private intercambioDatosService = inject(IntercambioDatosService);
+  private registeredUseService = inject(RegisteredUseService);
 
 
   ngOnInit() {
@@ -56,6 +59,8 @@ export class HomeComponent implements OnInit {
     // Verificar si el usuario ya aceptó las cookies
     const cookiesStatus = localStorage.getItem('cookiesAccepted');
     this.cookiesAccepted = cookiesStatus === 'true';
+
+    this.login = this.registeredUseService.usuario() !== null;
 
   }
 

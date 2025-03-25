@@ -22,15 +22,19 @@
           <label for="nivel" class="level">Nivel:</label>
           <select name="nivel" formControlName="nivel">
             
-            <!-- Opciones para Inglés -->
             <ng-container *ngIf="form.get('idioma')?.value === 'Ingles'">
               <option value="principiante">Principiante (A0)</option>
               <option value="basico">Básico (A1)</option>
               <option value="basico-alto">Básico-Alto (A2)</option>
               <option value="intermedio">Intermedio (B1)</option>
-              <option value="intermedio-alto">Intermedio-Alto (B2)</option>
+              <option value="intermedio-alto" [disabled]="!login">Intermedio-Alto (B2)</option>
+              <option value="avanzado" [disabled]="!login">Avanzado (C1)</option>
+              <small *ngIf="!login" style="color: goldenrod; font-style: italic;">
+                ⚠️ Inicia sesión para acceder a los niveles avanzados.
+              </small>
             </ng-container>
-        
+            
+
             <!-- Opciones para Italiano -->
             <ng-container *ngIf="form.get('idioma')?.value === 'Italiano'">
               <option value="italiano-principiante">Italiano Principiante</option>
@@ -45,6 +49,7 @@
               <option value="portugues-intermedio">Portugués Intermedio</option> -->
             </ng-container>
           </select>
+          
         </div>
         
         <div class="form-group">

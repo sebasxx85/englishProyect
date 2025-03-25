@@ -32,4 +32,6 @@ logout(): void {
   this.usuario.set(null);
   this.router.navigate(['/login']);
 }
+
+
 }
