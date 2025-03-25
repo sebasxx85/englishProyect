@@ -2,14 +2,17 @@
 
 <body>
   <div class="card-container">
-  <div *ngIf="registerUser.usuario(); else noLogueado">
-    <p>Bienvenido, {{ registerUser.usuario() }}</p>
-    <button class="boton" (click)="logout()">Cerrar Sesión</button>
+    <div *ngIf="nombreUsuario; else noLogueado">
+      <p>Bienvenido, {{ nombreUsuario }}</p>
+      <button class="boton" (click)="logout()">Cerrar Sesión</button>
+    </div>
+  
+    <h2>Agregar gráficas estadísticas con PrimeNG y Chart.js</h2>
+  
+    <ng-template #noLogueado>
+      <p>No has iniciado sesión.</p>
+    </ng-template>
   </div>
-    <h2>Agrgegar graficas estadisticas con PrimeNG y chart js</h2>
-  <ng-template #noLogueado>
-    <p>No has iniciado sesión.</p>
-  </ng-template>
-</div>
-</body>
+  </body>
+  
 <app-footer></app-footer>
