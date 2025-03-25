@@ -63,9 +63,13 @@ export class HomeComponent implements OnInit {
 
     this.login = this.registeredUseService.usuario() !== null;
 
-     this.form.get('nivel')?.valueChanges.subscribe(() => {
-     this.mensajeBloqueo = '';
-  });
+    this.form.get('nivel')?.valueChanges.subscribe(() => {
+      this.mensajeBloqueo = '';
+    });
+    
+    //variable login localStorage
+    const usuarioGuardado = localStorage.getItem('usuarioLogueado');
+    this.login = usuarioGuardado !== null;
 
   }
 
@@ -130,7 +134,7 @@ export class HomeComponent implements OnInit {
       this.mensajeBloqueo = '';
     }
   }
-  
+
 
   empezar() {
     this.loading = true
@@ -159,7 +163,7 @@ export class HomeComponent implements OnInit {
       console.log('Idioma seleccionado:', idiomaSeleccionado);
 
       // Guardar el idioma seleccionado en el servicio
-      this.intercambioDatosService.setIdioma(idiomaSeleccionado );
+      this.intercambioDatosService.setIdioma(idiomaSeleccionado);
 
       // Redirigir siempre a /ejercicio sin exponer el idioma en la URL
       this.router.navigate(['/ejercicios']);

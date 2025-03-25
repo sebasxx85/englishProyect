@@ -20,6 +20,7 @@ login(usuario: string, password: string): Observable<{ message: string, user: an
   return this.http.post<{ message: string, user: any }>(`${this.apiUrl}login`, { usuario, password }).pipe(
     tap(response => {
       this.usuario.set(response.user.name); // Guarda el usuario si el login es exitoso
+      localStorage.setItem('usuarioLogueado', response.user.name); // guardar en localStorage
     }),
     catchError(error => {
       console.error('Error en el login:', error);
@@ -30,6 +31,7 @@ login(usuario: string, password: string): Observable<{ message: string, user: an
 
 logout(): void {
   this.usuario.set(null);
+  localStorage.removeItem('usuarioLogueado'); // limpiar de localSotorage
   this.router.navigate(['/login']);
 }
 

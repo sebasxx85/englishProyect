@@ -29,7 +29,7 @@
         <!-- Selección de nivel -->
         <div class="form-group">
           <label for="nivel" class="level">Nivel:</label>
-          <select name="nivel" formControlName="nivel" (mousedown)="mostrarMensajeBloqueo($event)">
+          <select name="nivel" formControlName="nivel" (click)="mostrarMensajeBloqueo($event)">
             
             <!-- Inglés -->
             <ng-container *ngIf="form.get('idioma')?.value === 'Ingles'">

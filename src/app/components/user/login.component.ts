@@ -27,18 +27,20 @@ export class LoginComponent {
   private registerUser = inject(RegisteredUseService)
 
   ngOnInit() {
-    // Si el usuario ya está logueado, redirigir al dashboard después de 1 segundo
-    if (this.registerUser.usuario()) {
+    // Verifica también localStorage
+    const usuarioGuardado = localStorage.getItem('usuarioLogueado');
+  
+    if (usuarioGuardado) {
       setTimeout(() => {
         this.router.navigate(['/dashboard']);
       }, 700);
-      return; // Detener la ejecución de más lógica en este componente
+      return;
     }
   
     this.initForm();
   }
   
-
+  
   initForm() {
     this.form = this.fb.group({
       fechaInicio: [this.today.toISOString().split('T')[0]],
