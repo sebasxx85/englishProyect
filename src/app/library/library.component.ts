@@ -66,8 +66,11 @@ import { PreposicionesComponent } from './components/gramatica/preposiciones/pre
   styleUrl: './library.component.scss'
 })
 export class LibraryComponent {
-  selectedTopic = '';
-  title = "Biblioteca del Inglés";
+
+ //Dejar selecionado el componente antonimo x defecto
+  selectedTopic: string = 'antonimos';
+
+  title = "Biblioteca del Idioma";
 
   selectTopic(topic: string): void {
     this.selectedTopic = topic;
