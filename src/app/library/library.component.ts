@@ -68,7 +68,7 @@ import { PreposicionesComponent } from './components/gramatica/preposiciones/pre
 export class LibraryComponent {
 
  //Dejar selecionado el componente antonimo x defecto
-  selectedTopic: string = 'antonimos';
+  selectedTopic: string = 'to-be';
 
   title = "Biblioteca del Idioma";
 

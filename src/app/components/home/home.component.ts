@@ -13,7 +13,7 @@ import { RegisteredUseService } from 'src/app/services/registered-use.service';
 export class HomeComponent implements OnInit {
 
 
-  title = "Test de Inglés Gratis";
+  title = "Práctica tu Idioma";
   codPrograma = "Ingreso Plataforma";
   // sucursal = localStorage.getItem('Sucursal') || '';
   // DEFAULT_COD_SUCURSAL = JSON.parse(this.sucursal);
