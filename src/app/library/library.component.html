@@ -1,40 +1,61 @@
 <app-header [title]="title">{{title}}</app-header>
 
-<mat-sidenav-container class="sidenav-container">
-    <mat-sidenav mode="side" opened class="sidenav">
-      <mat-nav-list>
-        <mat-expansion-panel>
-          <mat-expansion-panel-header>
-            <mat-panel-title>Verbos principales</mat-panel-title>
-          </mat-expansion-panel-header>
-          <mat-action-list>
-            <button mat-button (click)="selectTopic('toBe')">Verbo To Be</button>
-            <button mat-button (click)="selectTopic('toHave')">Verbo To Have</button>
-          </mat-action-list>
-        </mat-expansion-panel>
-  
-        <mat-expansion-panel>
-          <mat-expansion-panel-header>
-            <mat-panel-title>Vocabulario</mat-panel-title>
-          </mat-expansion-panel-header>
-          <mat-action-list>
-            <button mat-button (click)="selectTopic('colores')">Colores</button>
-            <button mat-button (click)="selectTopic('dias')">Días de la semana</button>
-          </mat-action-list>
-        </mat-expansion-panel>
-      </mat-nav-list>
-    </mat-sidenav>
-  
-    <mat-sidenav-content class="content">
-      <ng-container [ngSwitch]="selectedTopic">
-        <!-- <app-to-be *ngSwitchCase="'toBe'"></app-to-be>
-        <app-to-have *ngSwitchCase="'toHave'"></app-to-have>
-        <app-vocab-colores *ngSwitchCase="'colores'"></app-vocab-colores>
-        <app-vocab-dias *ngSwitchCase="'dias'"></app-vocab-dias> -->
-        <div *ngSwitchDefault>Selecciona un tema del menú.</div>
-      </ng-container>
-    </mat-sidenav-content>
-  </mat-sidenav-container>
-  
+<body>
+  <div class="container">
+
+    <mat-sidenav-container class="sidenav-container">
+  <mat-sidenav mode="side" opened class="sidenav">
+    <mat-nav-list>
+
+      <!-- Verbos -->
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>Verbos principales</mat-panel-title>
+        </mat-expansion-panel-header>
+        <button mat-button (click)="selectTopic('to-be')">To Be</button>
+        <button mat-button (click)="selectTopic('to-have')">To Have</button>
+        <button mat-button (click)="selectTopic('to-do')">To Do</button>
+      </mat-expansion-panel>
+
+      <!-- Vocabulario -->
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>Vocabulario</mat-panel-title>
+        </mat-expansion-panel-header>
+        <button mat-button (click)="selectTopic('colores')">Colores</button>
+        <button mat-button (click)="selectTopic('dias')">Días</button>
+      </mat-expansion-panel>
+
+      <!-- Gramática -->
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>Gramática</mat-panel-title>
+        </mat-expansion-panel-header>
+        <button mat-button (click)="selectTopic('articulos')">Artículos</button>
+        <button mat-button (click)="selectTopic('pronombres')">Pronombres</button>
+      </mat-expansion-panel>
+
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="content">
+    <ng-container [ngSwitch]="selectedTopic">
+      <app-to-be *ngSwitchCase="'to-be'"></app-to-be>
+      <app-to-have *ngSwitchCase="'to-have'"></app-to-have>
+      <app-to-do *ngSwitchCase="'to-do'"></app-to-do>
+
+      <app-colores *ngSwitchCase="'colores'"></app-colores>
+      <app-dias *ngSwitchCase="'dias'"></app-dias>
+
+      <app-articulos *ngSwitchCase="'articulos'"></app-articulos>
+      <app-pronombres *ngSwitchCase="'pronombres'"></app-pronombres>
+
+      <div *ngSwitchDefault>Selecciona una sección del menú.</div>
+    </ng-container>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+</div>
+</body>
 
 <app-footer></app-footer>

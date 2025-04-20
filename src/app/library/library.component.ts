@@ -1,34 +1,42 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { MatButtonModule } from '@angular/material/button';
-import { MatCardModule } from '@angular/material/card';
-import { MatDividerModule } from '@angular/material/divider';
+import { CommonModule } from '@angular/common';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatExpansionModule } from '@angular/material/expansion';
-import { SharedModule } from 'src/app/Shared/shared.module';
+import { MatButtonModule } from '@angular/material/button';
+import { ToBeComponent } from './components/verbos/to-be/to-be.component';
+import { ToHaveComponent } from './components/verbos/to-have/to-have.component';
+import { ToDoComponent } from './components/verbos/to-do/to-do.component';
+import { ColoresComponent } from './components/vocabulario/colores/colores.component';
+import { DiasComponent } from './components/vocabulario/dias/dias.component';
+import { ArticulosComponent } from './components/gramatica/articulos/articulos.component';
+import { PronombresComponent } from './components/gramatica/pronombres/pronombres.component';
+import { SharedModule } from '../Shared/shared.module';
 
 @Component({
   selector: 'app-library',
   standalone: true,
   imports: [
     CommonModule,
-    FormsModule,
-    SharedModule,
-    MatCardModule,
-    MatButtonModule,
     MatSidenavModule,
     MatListModule,
     MatExpansionModule,
-    MatDividerModule
+    MatButtonModule,
+    ToBeComponent,
+    ToHaveComponent,
+    ToDoComponent,
+    ColoresComponent,
+    DiasComponent,
+    ArticulosComponent,
+    PronombresComponent,
+    SharedModule
   ],
   templateUrl: './library.component.html',
   styleUrl: './library.component.scss'
 })
 export class LibraryComponent {
-  title = 'Biblioteca';
-  selectedTopic: string = '';
+  selectedTopic = '';
+  title = "Biblioteca del Inglés";
 
   selectTopic(topic: string): void {
     this.selectedTopic = topic;
