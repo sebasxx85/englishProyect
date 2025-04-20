@@ -14,6 +14,9 @@
             <button mat-button (click)="selectTopic('to-be')">To Be</button>
             <button mat-button (click)="selectTopic('to-have')">To Have</button>
             <button mat-button (click)="selectTopic('to-do')">To Do</button>
+            <button mat-button (click)="selectTopic('to-get')">To Get</button>
+            <button mat-button (click)="selectTopic('to-make')">To Make</button>
+            <button mat-button (click)="selectTopic('to-go')">To Go</button>
           </mat-expansion-panel>
 
           <!-- Vocabulario -->
@@ -21,8 +24,12 @@
             <mat-expansion-panel-header>
               <mat-panel-title>Vocabulario</mat-panel-title>
             </mat-expansion-panel-header>
+            <button mat-button (click)="selectTopic('animales')">Animales</button>
             <button mat-button (click)="selectTopic('colores')">Colores</button>
             <button mat-button (click)="selectTopic('dias')">Días</button>
+            <button mat-button (click)="selectTopic('frutas')">Frutas</button>
+            <button mat-button (click)="selectTopic('meses')">Meses</button>
+            <button mat-button (click)="selectTopic('ropa')">Ropa</button>
           </mat-expansion-panel>
 
           <!-- Gramática -->
@@ -32,12 +39,14 @@
             </mat-expansion-panel-header>
             <button mat-button (click)="selectTopic('articulos')">Artículos</button>
             <button mat-button (click)="selectTopic('pronombres')">Pronombres</button>
+            <button mat-button (click)="selectTopic('presente-simple')">Presente Simple</button>
+            <button mat-button (click)="selectTopic('preposiciones')">Preposiciones</button>
           </mat-expansion-panel>
 
-          <!-- Avanzado -->
+          <!-- Otros -->
           <mat-expansion-panel [expanded]="true">
             <mat-expansion-panel-header>
-              <mat-panel-title>Avanzado</mat-panel-title>
+              <mat-panel-title>Otros</mat-panel-title>
             </mat-expansion-panel-header>
             <button mat-button (click)="selectTopic('antonimos')">Antónimos</button>
             <button mat-button (click)="selectTopic('sinonimos')">Sinónimos</button>
@@ -48,16 +57,30 @@
 
       <mat-sidenav-content class="content">
         <ng-container [ngSwitch]="selectedTopic">
+
+          <!-- Verbos -->
           <app-to-be *ngSwitchCase="'to-be'"></app-to-be>
           <app-to-have *ngSwitchCase="'to-have'"></app-to-have>
           <app-to-do *ngSwitchCase="'to-do'"></app-to-do>
+          <app-to-get *ngSwitchCase="'to-get'"></app-to-get>
+          <app-to-make *ngSwitchCase="'to-make'"></app-to-make>
+          <app-to-go *ngSwitchCase="'to-go'"></app-to-go>
 
+          <!-- Vocabulario -->
+          <app-animales *ngSwitchCase="'animales'"></app-animales>
           <app-colores *ngSwitchCase="'colores'"></app-colores>
           <app-dias *ngSwitchCase="'dias'"></app-dias>
+          <app-frutas *ngSwitchCase="'frutas'"></app-frutas>
+          <app-meses *ngSwitchCase="'meses'"></app-meses>
+          <app-ropa *ngSwitchCase="'ropa'"></app-ropa>
 
+          <!-- Gramática -->
           <app-articulos *ngSwitchCase="'articulos'"></app-articulos>
           <app-pronombres *ngSwitchCase="'pronombres'"></app-pronombres>
+          <app-presente-simple *ngSwitchCase="'presente-simple'"></app-presente-simple>
+          <app-preposiciones *ngSwitchCase="'preposiciones'"></app-preposiciones>
 
+          <!-- Avanzado -->
           <app-antonimos *ngSwitchCase="'antonimos'"></app-antonimos>
           <app-sinonimos *ngSwitchCase="'sinonimos'"></app-sinonimos>
 

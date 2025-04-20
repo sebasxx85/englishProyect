@@ -14,6 +14,15 @@ import { PronombresComponent } from './components/gramatica/pronombres/pronombre
 import { SharedModule } from '../Shared/shared.module';
 import { SinonimosComponent } from './components/avanzado/sinonimos/sinonimos.component';
 import { AntonimosComponent } from './components/avanzado/antonimos/antonimos.component';
+import { ToGetComponent } from './components/verbos/to-get/to-get.component';
+import { ToMakeComponent } from './components/verbos/to-make/to-make.component';
+import { ToGoComponent } from './components/verbos/to-go/to-go.component';
+import { AnimalesComponent } from './components/vocabulario/animales/animales.component';
+import { FrutasComponent } from './components/vocabulario/frutas/frutas.component';
+import { MesesComponent } from './components/vocabulario/meses/meses.component';
+import { RopaComponent } from './components/vocabulario/ropa/ropa.component';
+import { PresenteSimpleComponent } from './components/gramatica/presente-simple/presente-simple.component';
+import { PreposicionesComponent } from './components/gramatica/preposiciones/preposiciones.component';
 
 @Component({
   selector: 'app-library',
@@ -24,15 +33,33 @@ import { AntonimosComponent } from './components/avanzado/antonimos/antonimos.co
     MatListModule,
     MatExpansionModule,
     MatButtonModule,
+  
+    // Verbos
     ToBeComponent,
     ToHaveComponent,
     ToDoComponent,
+    ToGetComponent,
+    ToMakeComponent,
+    ToGoComponent,
+  
+    // Vocabulario
+    AnimalesComponent,
     ColoresComponent,
     DiasComponent,
+    FrutasComponent,
+    MesesComponent,
+    RopaComponent,
+  
+    // Gramática
     ArticulosComponent,
     PronombresComponent,
+    PresenteSimpleComponent,
+    PreposicionesComponent,
+  
+    // Avanzado
     SinonimosComponent,
     AntonimosComponent,
+  
     SharedModule
   ],
   templateUrl: './library.component.html',
