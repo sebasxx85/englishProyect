@@ -12,6 +12,8 @@ import { DiasComponent } from './components/vocabulario/dias/dias.component';
 import { ArticulosComponent } from './components/gramatica/articulos/articulos.component';
 import { PronombresComponent } from './components/gramatica/pronombres/pronombres.component';
 import { SharedModule } from '../Shared/shared.module';
+import { SinonimosComponent } from './components/avanzado/sinonimos/sinonimos.component';
+import { AntonimosComponent } from './components/avanzado/antonimos/antonimos.component';
 
 @Component({
   selector: 'app-library',
@@ -29,6 +31,8 @@ import { SharedModule } from '../Shared/shared.module';
     DiasComponent,
     ArticulosComponent,
     PronombresComponent,
+    SinonimosComponent,
+    AntonimosComponent,
     SharedModule
   ],
   templateUrl: './library.component.html',
