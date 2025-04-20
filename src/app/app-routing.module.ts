@@ -8,7 +8,7 @@ import { LoginComponent } from './components/user/login.component';
 import { CursosComponent } from './components/cursos/cursos.component';
 import { RankingComponent } from './components/ranking/ranking.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { LibraryComponent } from './components/library/library.component';
+import { LibraryComponent } from './library/library.component';
 
 //Si son componentes stanalone se carga el componente si son tradicionales el modulo si uso Lazy Load
 const routes: Routes = [
