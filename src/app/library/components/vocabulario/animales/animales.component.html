@@ -1,1 +1,33 @@
-<p>animales works!</p>
+
+
+<body>
+  <div class="container">
+    <mat-card>
+      <mat-card-title>Animales en inglés – Traducción y ejemplo</mat-card-title>
+
+      <table mat-table [dataSource]="animales" class="mat-elevation-z2 antonimos-table">
+
+        <!-- Animal -->
+        <ng-container matColumnDef="animal">
+          <th mat-header-cell *matHeaderCellDef> Animal </th>
+          <td mat-cell *matCellDef="let elem"> {{ elem.animal }} </td>
+        </ng-container>
+
+        <!-- Traducción -->
+        <ng-container matColumnDef="traduccion">
+          <th mat-header-cell *matHeaderCellDef> Traducción </th>
+          <td mat-cell *matCellDef="let elem"> {{ elem.traduccion }} </td>
+        </ng-container>
+
+        <!-- Ejemplo -->
+        <ng-container matColumnDef="ejemplo">
+          <th mat-header-cell *matHeaderCellDef> Ejemplo </th>
+          <td mat-cell *matCellDef="let elem"> {{ elem.ejemplo }} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="columnas"></tr>
+        <tr mat-row *matRowDef="let row; columns: columnas;"></tr>
+      </table>
+    </mat-card>
+  </div>
+</body>

@@ -1,1 +1,32 @@
-<p>frutas works!</p>
+<body>
+    <div class="container">
+      <mat-card>
+        <mat-card-title>Frutas en inglés – Traducción y ejemplo</mat-card-title>
+  
+        <table mat-table [dataSource]="frutas" class="mat-elevation-z2 antonimos-table">
+  
+          <!-- Fruta -->
+          <ng-container matColumnDef="fruta">
+            <th mat-header-cell *matHeaderCellDef> Fruta </th>
+            <td mat-cell *matCellDef="let elem"> {{ elem.fruta }} </td>
+          </ng-container>
+  
+          <!-- Traducción -->
+          <ng-container matColumnDef="traduccion">
+            <th mat-header-cell *matHeaderCellDef> Traducción </th>
+            <td mat-cell *matCellDef="let elem"> {{ elem.traduccion }} </td>
+          </ng-container>
+  
+          <!-- Ejemplo -->
+          <ng-container matColumnDef="ejemplo">
+            <th mat-header-cell *matHeaderCellDef> Ejemplo </th>
+            <td mat-cell *matCellDef="let elem"> {{ elem.ejemplo }} </td>
+          </ng-container>
+  
+          <tr mat-header-row *matHeaderRowDef="columnas"></tr>
+          <tr mat-row *matRowDef="let row; columns: columnas;"></tr>
+        </table>
+      </mat-card>
+    </div>
+  </body>
+  
