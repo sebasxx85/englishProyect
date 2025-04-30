@@ -1,1 +1,38 @@
-<p>preposiciones works!</p>
+<body>
+    <div class="container">
+      <mat-card>
+        <mat-card-title>Preposiciones en inglés – Uso y ejemplos</mat-card-title>
+  
+        <table mat-table [dataSource]="preposiciones" class="mat-elevation-z2 antonimos-table">
+  
+          <!-- Preposición -->
+          <ng-container matColumnDef="preposicion">
+            <th mat-header-cell *matHeaderCellDef> Preposición </th>
+            <td mat-cell *matCellDef="let elem"> {{ elem.preposicion }} </td>
+          </ng-container>
+  
+          <!-- Traducción -->
+          <ng-container matColumnDef="traduccion">
+            <th mat-header-cell *matHeaderCellDef> Traducción </th>
+            <td mat-cell *matCellDef="let elem"> {{ elem.traduccion }} </td>
+          </ng-container>
+  
+          <!-- Uso -->
+          <ng-container matColumnDef="uso">
+            <th mat-header-cell *matHeaderCellDef> Uso </th>
+            <td mat-cell *matCellDef="let elem"> {{ elem.uso }} </td>
+          </ng-container>
+  
+          <!-- Ejemplo -->
+          <ng-container matColumnDef="ejemplo">
+            <th mat-header-cell *matHeaderCellDef> Ejemplo </th>
+            <td mat-cell *matCellDef="let elem"> {{ elem.ejemplo }} </td>
+          </ng-container>
+  
+          <tr mat-header-row *matHeaderRowDef="columnas"></tr>
+          <tr mat-row *matRowDef="let row; columns: columnas;"></tr>
+        </table>
+      </mat-card>
+    </div>
+  </body>
+  
