@@ -26,7 +26,8 @@ export class DataEnglish1Service {
     'suggest','sudden', 'rhythm', 'discouraged', 'nevertheless', 'waterproof', 'hideous', 'appetite', 'despite', 'masterpiece',
     'ensure', 'madness', 'support','desire', 'assure', 'filmmaker','sore', 'duchess', 'certain', 'statement', 'worthy', 'spooky',
     'fish tank', 'crown', 'deaf', 'warmth', 'seafood', 'gullible', 'bodyguard', 'venue', 'clue', 'suspect', 'greedy', 'failure',
-    'postage stamp', 'fuzzy', 'brick', 'fired', 'clumsy','warn', 'loverly', 'until', 'naive', 'grudges', 'kiddo', 'pushy'
+    'postage stamp', 'fuzzy', 'brick', 'fired', 'clumsy','warn', 'loverly', 'until', 'naive', 'grudges', 'kiddo', 'pushy',
+    'voyage', 'dock', 'fish tank', 'mortgage', 'tile'
   ];
 
   private intermedioB1: string[] = [
@@ -129,7 +130,7 @@ private basicoAltoA2Res: string[] = [
   'asegurar', 'locura', 'apoyo', 'deseo', 'asegurar','cineasta', 'adolorido', 'duquesa', 'cierto/certero', 'declaración', 'valioso/digno',
   'escalofriante', 'pecera', 'corona', 'sordo', 'calidez', 'mariscos', 'crédulo', 'guardaespaldas', 'lugar/sitio', 'pista', 'sospechoso',
   'codicioso', 'fallo/fracaso', 'estampilla', 'difuso/confuso', 'ladrillo', 'despedido', 'torpe', 'advertir','encantador','hasta', 'ingenuo',
-  'rencores', 'niño/niña', 'insistente/agresivo'
+  'rencores', 'niño/niña', 'insistente/agresivo','viaje', 'muelle', 'pecera', 'hipoteca', 'azulejo'
 ];
 
 
