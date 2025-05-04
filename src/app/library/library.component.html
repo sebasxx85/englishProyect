@@ -26,10 +26,11 @@
             </mat-expansion-panel-header>
             <button mat-button (click)="selectTopic('animales')">Animales</button>
             <button mat-button (click)="selectTopic('colores')">Colores</button>
+            <button mat-button (click)="selectTopic('cuerpo')">Partes del cuerpo</button>
             <button mat-button (click)="selectTopic('dias')">Días</button>
             <button mat-button (click)="selectTopic('frutas')">Frutas</button>
             <button mat-button (click)="selectTopic('meses')">Meses</button>
-            <button mat-button (click)="selectTopic('ropa')">Ropa</button>
+            <button mat-button (click)="selectTopic('ropa')">Ropa</button>   
           </mat-expansion-panel>
 
           <!-- Gramática -->
@@ -69,6 +70,7 @@
           <!-- Vocabulario -->
           <app-animales *ngSwitchCase="'animales'"></app-animales>
           <app-colores *ngSwitchCase="'colores'"></app-colores>
+          <app-cuerpo *ngSwitchCase="'cuerpo'"></app-cuerpo>
           <app-dias *ngSwitchCase="'dias'"></app-dias>
           <app-frutas *ngSwitchCase="'frutas'"></app-frutas>
           <app-meses *ngSwitchCase="'meses'"></app-meses>

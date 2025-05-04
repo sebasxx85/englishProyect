@@ -23,6 +23,7 @@ import { MesesComponent } from './components/vocabulario/meses/meses.component';
 import { RopaComponent } from './components/vocabulario/ropa/ropa.component';
 import { PresenteSimpleComponent } from './components/gramatica/presente-simple/presente-simple.component';
 import { PreposicionesComponent } from './components/gramatica/preposiciones/preposiciones.component';
+import { PartesCuerpoComponent } from './components/vocabulario/cuerpo-humano/cuerpo-humano.component';
 
 @Component({
   selector: 'app-library',
@@ -49,6 +50,7 @@ import { PreposicionesComponent } from './components/gramatica/preposiciones/pre
     FrutasComponent,
     MesesComponent,
     RopaComponent,
+    PartesCuerpoComponent,
   
     // Gramática
     ArticulosComponent,
