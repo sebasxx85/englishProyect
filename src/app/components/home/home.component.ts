@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
 
   title = "Práctica tu Idioma";
   codPrograma = "Ingreso Plataforma";
-  // sucursal = localStorage.getItem('Sucursal') || '';
+  // TOKEN = localStorage.getItem('TOKEN') || '';
   // DEFAULT_COD_SUCURSAL = JSON.parse(this.sucursal);
   nombreSucursal = ''
 
