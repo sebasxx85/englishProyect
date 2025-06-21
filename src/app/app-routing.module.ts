@@ -13,13 +13,14 @@ import { LibraryComponent } from './library/library.component';
 //Si son componentes stanalone se carga el componente si son tradicionales el modulo si uso Lazy Load
 const routes: Routes = [
   // Ruta estática para el componente Home
-  { path: '', redirectTo: '/home', pathMatch: 'full' }, // Redirige la ruta raíz a /home
-  { path: 'home', component: HomeComponent },
+  { path: '', redirectTo: '/library', pathMatch: 'full' }, // Redirige la ruta raíz a /home
+  { path: 'home', component: LibraryComponent },
   
   { path: 'table-errors', redirectTo: '/corrections', pathMatch: 'full' },
   { path: 'corrections', component: TableErrorsComponent },
 
   { path: 'ingresar', component:  LoginComponent },
+  { path: 'practicar', component:  HomeComponent },
   { path: 'cursos', component:  CursosComponent },
   { path: 'ranking', component:  RankingComponent },
   { path: 'library', component:  LibraryComponent },

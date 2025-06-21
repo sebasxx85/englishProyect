@@ -72,7 +72,7 @@ export class LibraryComponent {
  //Dejar selecionado el componente antonimo x defecto
   selectedTopic: string = 'to-be';
 
-  title = "Biblioteca del Idioma";
+  title = "Biblioteca";
 
   selectTopic(topic: string): void {
     this.selectedTopic = topic;
