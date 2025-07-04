@@ -157,7 +157,7 @@ private intermedioB1Res: string[] = [
   'poste/polo', 'calefactor', 'frío', 'chimenea', 'ruina', 'arco', 'falleció', 'alambrado', 'elegante', 'timbre', 'línea de ensamblaje', 'lograr',
   'rascar', 'bañera', 'brecha', 'vitrina', 'estufa', 'un paso adelante', 'recibo', 'robando', 'zanahorias', 'ruptura/separación',
   'receta', 'apurarse', 'conocimiento', 'llamada/decisión', 'retrato', 'escéptico', 'además', 'defectos','cola', 'empresa/aventura', 'patrones',
-  'rehén', 'apuesta/riesgo', 'sostener', 'en general', 'panadería','exactitud/precisión','responsable','petardo','comprender','lamentable'
+  'rehén', 'apuesta/riesgo', 'sostener', 'en general', 'panadería','exactitud/precisión','responsable','petardo','darse cuenta/percatarse','lamentable'
 ];
 
 
