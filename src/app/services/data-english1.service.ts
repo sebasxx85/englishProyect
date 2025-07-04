@@ -15,7 +15,8 @@ export class DataEnglish1Service {
   private basicoA1: string[] = [
     'cat', 'dog', 'book', 'car', 'tree', 'water', 'table', 'window', 'door', 'chair', 
     'school', 'ball', 'flower', 'street', 'clock', 'cup', 'shirt', 'shoe', 'bed', 'lamp',
-    'wine', 'sleep', 'dream', 'also', 'gum'
+    'wine', 'sleep', 'dream', 'also', 'gum', 'skull', 'nightmare','jam','request','advice', 'through',
+    'sorrow','far away'
   ];
 
   private basicoAltoA2: string[] = [
@@ -27,7 +28,8 @@ export class DataEnglish1Service {
     'ensure', 'madness', 'support','desire', 'assure', 'filmmaker','sore', 'duchess', 'certain', 'statement', 'worthy', 'spooky',
     'fish tank', 'crown', 'deaf', 'warmth', 'seafood', 'gullible', 'bodyguard', 'venue', 'clue', 'suspect', 'greedy', 'failure',
     'postage stamp', 'fuzzy', 'brick', 'fired', 'clumsy','warn', 'loverly', 'until', 'naive', 'grudges', 'kiddo', 'pushy',
-    'voyage', 'dock', 'fish tank', 'mortgage', 'tile'
+    'voyage', 'dock', 'fish tank', 'mortgage', 'tile', 'hire','hopefully','easier','homeless','take cover','strike','brings',
+    'improvements','cheats','held','confidence','unable','warehouse','fact','somehow','leaf','sheet'
   ];
 
   private intermedioB1: string[] = [
@@ -46,7 +48,8 @@ export class DataEnglish1Service {
     'reach out', 'cozy', 'comfy', 'pole', 'heaters', 'chilly', 'fireplace', 'ruin', 'arch', 'died', 'wiring',
     'fancy', 'ding', 'assembly line', 'achieve', 'scratch', 'bathtub', 'breach', 'showcase', 'stove', 'step forward',
     'receipt', 'stealing', 'carrots', 'breakup', 'recipe', 'to hurry', 'knowledge', 'call', 'portrait',
-    'skeptical', 'besides', 'flaws', 'queue', 'enterprise', 'patterns','hostage', 'stake', 'hold', 'overall', 'bakery'
+    'skeptical', 'besides', 'flaws', 'queue', 'enterprise', 'patterns','hostage', 'stake', 'hold', 'overall', 'bakery',
+    'accuracy','accountable','firecracker','realized','regrettable'
   ];
 
   private intermedioAltoB2: string[] = [
@@ -76,7 +79,8 @@ export class DataEnglish1Service {
 
 
   private AltoC1: string[] = [
-    'gimme'
+    'gimme', 'piss off','come undone', 'falling apart','unlawful','struggles','troublemaker','go over to', 'goosebumps',
+    'runs out','mutual friend'
   ]
 
 
@@ -118,7 +122,8 @@ private principianteA0Res: string[] = [
 private basicoA1Res: string[] = [
   'gato', 'perro', 'libro', 'coche', 'árbol', 'agua', 'mesa','ventana', 'puerta', 'silla', 
   'escuela', 'pelota', 'flor', 'calle','reloj', 'taza', 'camisa', 'zapato', 'cama', 'lámpara',
-  'vino','dormir', 'sueño', 'tambien', 'chicle/ goma'
+  'vino','dormir', 'sueño', 'tambien', 'chicle/ goma','cráneo', 'pesadilla','solicitud/petición',
+  'consejo','a través de/mediante','pena/aflicción','lejos'
 ];
 
 private basicoAltoA2Res: string[] = [
@@ -130,7 +135,9 @@ private basicoAltoA2Res: string[] = [
   'asegurar', 'locura', 'apoyo', 'deseo', 'asegurar','cineasta', 'adolorido', 'duquesa', 'cierto/certero', 'declaración', 'valioso/digno',
   'escalofriante', 'pecera', 'corona', 'sordo', 'calidez', 'mariscos', 'crédulo', 'guardaespaldas', 'lugar/sitio', 'pista', 'sospechoso',
   'codicioso', 'fallo/fracaso', 'estampilla', 'difuso/confuso', 'ladrillo', 'despedido', 'torpe', 'advertir','encantador','hasta', 'ingenuo',
-  'rencores', 'niño/niña', 'insistente/agresivo','viaje', 'muelle', 'pecera', 'hipoteca', 'azulejo'
+  'rencores', 'niño/niña', 'insistente/agresivo','viaje', 'muelle', 'pecera', 'hipoteca', 'azulejo','contratar/emplear','con suerte/ojalá',
+  'más fácil', 'sin hogar','refugiarse','huelga/ataque','traer','mejoras','engañar/trampas','retenido/sostenido','confianza','incapaz','almacén',
+  'el hecho','de alguna manera','hoja de planta','hoja de papel'
 ];
 
 
@@ -150,7 +157,7 @@ private intermedioB1Res: string[] = [
   'poste/polo', 'calefactor', 'frío', 'chimenea', 'ruina', 'arco', 'falleció', 'alambrado', 'elegante', 'timbre', 'línea de ensamblaje', 'lograr',
   'rascar', 'bañera', 'brecha', 'vitrina', 'estufa', 'un paso adelante', 'recibo', 'robando', 'zanahorias', 'ruptura/separación',
   'receta', 'apurarse', 'conocimiento', 'llamada/decisión', 'retrato', 'escéptico', 'además', 'defectos','cola', 'empresa/aventura', 'patrones',
-  'rehén', 'apuesta/riesgo', 'sostener', 'en general', 'panadería'
+  'rehén', 'apuesta/riesgo', 'sostener', 'en general', 'panadería','exactitud/precisión','responsable','petardo','comprender','lamentable'
 ];
 
 
@@ -181,7 +188,9 @@ private intermedioAltoB2Res: string[] = [
 ];
 
 private AltoC1Res: string[] = [
-  'dame'
+  'dame', 'enfadar/echar','deshacerse/quebrarse','estar colapsando','ilegal','luchas/dificultades','alborotador',
+  'ir a visitar/pasarse por','piel de gallina','acabarse/agotarse','amigo en común'
+
 ]
 
 
