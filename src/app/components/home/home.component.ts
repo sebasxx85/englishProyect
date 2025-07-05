@@ -113,17 +113,22 @@ export class HomeComponent implements OnInit {
   //Que no sean menos de 3 y mas de 18 preguntas
   validarCantidad() {
     let cantidadControl = this.form.get('cantidad');
+
     if (cantidadControl) {
       let valor = cantidadControl.value;
-      if (valor > 18) {
-        cantidadControl.setValue(18);
-      } else if (valor = null) {
-        cantidadControl.setValue(0);
-      } else if (valor < 0) {
-        cantidadControl.setValue(3);
-      }
+
+     // Establece el límite máximo según si el usuario está logueado o no
+    const limiteMaximo = this.login ? 36 : 18;
+
+    if (valor > limiteMaximo) {
+      cantidadControl.setValue(limiteMaximo);
+    } else if (valor == null || valor === '') {
+      cantidadControl.setValue(0);
+    } else if (valor < 0) {
+      cantidadControl.setValue(3);
     }
   }
+}
 
   //Mensaje loguearse
   mostrarMensajeBloqueo(event: Event) {

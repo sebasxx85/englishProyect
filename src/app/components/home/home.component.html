@@ -64,7 +64,7 @@
             name="cantidad"
             class="cantidadinput"
             min="3"
-            max="18"
+            [max]="login ? 36 : 18"
             formControlName="cantidad"
             placeholder="0"
             (input)="validarCantidad()">
