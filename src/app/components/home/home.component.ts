@@ -110,13 +110,13 @@ export class HomeComponent implements OnInit {
     this.cookiesAccepted = true;
   }
 
-  //Que no sean menos de 3 y mas de 12 preguntas
+  //Que no sean menos de 3 y mas de 18 preguntas
   validarCantidad() {
     let cantidadControl = this.form.get('cantidad');
     if (cantidadControl) {
       let valor = cantidadControl.value;
-      if (valor > 12) {
-        cantidadControl.setValue(12);
+      if (valor > 18) {
+        cantidadControl.setValue(18);
       } else if (valor = null) {
         cantidadControl.setValue(0);
       } else if (valor < 0) {
