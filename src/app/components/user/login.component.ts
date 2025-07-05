@@ -21,6 +21,7 @@ export class LoginComponent {
   form!: FormGroup
   loading = false
   today = new Date();
+  verPassword = false;
 
   private fb = inject(FormBuilder)
   private router = inject(Router)
@@ -69,6 +70,10 @@ export class LoginComponent {
       }
     });
   }
+
+  togglePassword() {
+  this.verPassword = !this.verPassword;
+}
   
 
 }
