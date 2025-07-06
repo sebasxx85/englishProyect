@@ -81,8 +81,8 @@ export class DataEnglish1Service {
   private AltoC1: string[] = [
     'gimme', 'piss off','come undone', 'falling apart','unlawful','struggles','troublemaker','go over to', 'goosebumps',
     'runs out','mutual friend','bucks','pal', 'see ya','booze','grub','chill','nuts','moron','brainy','mess','concerned',
-    'goddamn','get lost','bail out','screw you'
-
+    'goddamn','get lost','bail out','screw you', 'jacked up', 'bummed out', 'beat it', 'zonked', 'blow off', 'lose it', 
+    'flip out', 'cringe', 'ripped', 'wasted', 'savage'
   ]
 
 
@@ -191,11 +191,11 @@ private intermedioAltoB2Res: string[] = [
 ];
 
 private AltoC1Res: string[] = [
-  'dame', 'enfadar/echar','deshacerse/quebrarse','estar colapsando','ilegal','luchas/dificultades','alborotador',
-  'ir a visitar/pasarse por','piel de gallina','acabarse/agotarse','amigo en común', 'dólares', 'amigo', 'adiós',
-  'trago/copete','comida','relajarse/descansar','loco/rayado','tonto/idiota/imbécil','inteligente/cerebrito',
-   'desorden/lío/caos','preocupado/interesado','maldito/maldita sea','piérdase/lárgate','sacar de apuro/rescatar',
-   'púdrete/jódete'
+  'dame', 'enfadar/echar','deshacerse/quebrarse','estar colapsando','ilegal','luchas/dificultades','alborotador', 'ir a visitar/pasarse por',
+  'piel de gallina','acabarse/agotarse','amigo en común', 'dólares', 'amigo', 'adiós','trago/copete','comida','relajarse/descansar','loco/rayado',
+  'tonto/idiota/imbécil','inteligente/cerebrito','desorden/lío/caos','preocupado/interesado','maldito/maldita sea','piérdase/lárgate',
+  'sacar de apuro/rescatar','púdrete/jódete',  'estropeado/alterado', 'deprimido', 'lárgate', 'agotado','ignorar a alguien', 'perder el control', 
+  'enloquecer/alterarse','vergonzoso/incómodo', 'musculoso/definido', 'borracho', 'brutal/genial'
 
 ]
 
