@@ -16,7 +16,7 @@ export class DataEnglish1Service {
     'cat', 'dog', 'book', 'car', 'tree', 'water', 'table', 'window', 'door', 'chair', 
     'school', 'ball', 'flower', 'street', 'clock', 'cup', 'shirt', 'shoe', 'bed', 'lamp',
     'wine', 'sleep', 'dream', 'also', 'gum', 'skull', 'nightmare','jam','request','advice', 'through',
-    'sorrow','far away'
+    'sorrow','far away','as such','clown'
   ];
 
   private basicoAltoA2: string[] = [
@@ -29,7 +29,8 @@ export class DataEnglish1Service {
     'fish tank', 'crown', 'deaf', 'warmth', 'seafood', 'gullible', 'bodyguard', 'venue', 'clue', 'suspect', 'greedy', 'failure',
     'postage stamp', 'fuzzy', 'brick', 'fired', 'clumsy','warn', 'loverly', 'until', 'naive', 'grudges', 'kiddo', 'pushy',
     'voyage', 'dock', 'fish tank', 'mortgage', 'tile', 'hire','hopefully','easier','homeless','take cover','strike','brings',
-    'improvements','cheats','held','confidence','unable','warehouse','fact','somehow','leaf','sheet','polite'
+    'improvements','cheats','held','confidence','unable','warehouse','fact','somehow','leaf','sheet','polite', 'released',
+    'rioters', 'smuggler','cabinet'
   ];
 
   private intermedioB1: string[] = [
@@ -125,7 +126,7 @@ private basicoA1Res: string[] = [
   'gato', 'perro', 'libro', 'coche', 'árbol', 'agua', 'mesa','ventana', 'puerta', 'silla', 
   'escuela', 'pelota', 'flor', 'calle','reloj', 'taza', 'camisa', 'zapato', 'cama', 'lámpara',
   'vino','dormir', 'sueño', 'tambien', 'chicle/ goma','cráneo', 'pesadilla','solicitud/petición',
-  'consejo','a través de/mediante','pena/aflicción','lejos'
+  'consejo','a través de/mediante','pena/aflicción','lejos','tal como','payaso'
 ];
 
 private basicoAltoA2Res: string[] = [
@@ -139,7 +140,7 @@ private basicoAltoA2Res: string[] = [
   'codicioso', 'fallo/fracaso', 'estampilla', 'difuso/confuso', 'ladrillo', 'despedido', 'torpe', 'advertir','encantador','hasta', 'ingenuo',
   'rencores', 'niño/niña', 'insistente/agresivo','viaje', 'muelle', 'pecera', 'hipoteca', 'azulejo','contratar/emplear','con suerte/ojalá',
   'más fácil', 'sin hogar','refugiarse','huelga/ataque','traer','mejoras','engañar/trampas','retenido/sostenido','confianza','incapaz','almacén',
-  'el hecho','de alguna manera','hoja de planta','hoja de papel','educado/cortés'
+  'el hecho','de alguna manera','hoja de planta','hoja de papel','educado/cortés','liberado/publicado','alborotadores','contrabandista', 'gabinete'
 ];
 
 
