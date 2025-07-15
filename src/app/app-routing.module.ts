@@ -9,6 +9,7 @@ import { CursosComponent } from './components/cursos/cursos.component';
 import { RankingComponent } from './components/ranking/ranking.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { LibraryComponent } from './library/library.component';
+import { adminGuard } from './guards/admin.guard';
 
 //Si son componentes stanalone se carga el componente si son tradicionales el modulo si uso Lazy Load
 const routes: Routes = [
@@ -42,6 +43,14 @@ const routes: Routes = [
     path: 'crear-usuario', loadChildren: () =>
       import('./components/crear-usuario/crear-usuario.module').then(m => m.CrearUsuarioModule)
   },
+
+  {
+  path: 'editor',
+  canActivate: [adminGuard],
+  loadComponent: () =>
+    import('./library/components/blog/editor/editor-articulo.component')
+      .then(m => m.EditorArticuloComponent)
+}
 
 ];
 

@@ -24,6 +24,7 @@ import { RopaComponent } from './components/vocabulario/ropa/ropa.component';
 import { PresenteSimpleComponent } from './components/gramatica/presente-simple/presente-simple.component';
 import { PreposicionesComponent } from './components/gramatica/preposiciones/preposiciones.component';
 import { PartesCuerpoComponent } from './components/vocabulario/cuerpo-humano/cuerpo-humano.component';
+import { PrimerArticuloComponent } from './components/blog/primer-articulo/primer-articulo.component';
 
 @Component({
   selector: 'app-library',
@@ -61,6 +62,9 @@ import { PartesCuerpoComponent } from './components/vocabulario/cuerpo-humano/cu
     // Avanzado
     SinonimosComponent,
     AntonimosComponent,
+
+    // Blog
+    PrimerArticuloComponent,
   
     SharedModule
   ],

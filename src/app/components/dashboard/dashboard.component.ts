@@ -33,4 +33,10 @@ export class DashboardComponent implements OnInit {
     }, 2000);
   }
 
+   editor() {
+    setTimeout(() => {
+      this.router.navigate(['editor']);
+    }, 2000);
+  }
+
 }

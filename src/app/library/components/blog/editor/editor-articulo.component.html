@@ -1,0 +1,11 @@
+<app-header [title]="'Editor de artículo'"></app-header>
+
+<div class="editor-container">
+  <quill-editor [(ngModel)]="contenido" [styles]="{height: '250px'}"></quill-editor>
+  
+  <div class="boton-guardar">
+    <button class="boton" (click)="guardar()">Guardar artículo</button>
+  </div>
+</div>
+
+<app-footer></app-footer>

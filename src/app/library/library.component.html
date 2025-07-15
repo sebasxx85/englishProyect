@@ -30,7 +30,7 @@
             <button mat-button (click)="selectTopic('dias')">Días</button>
             <button mat-button (click)="selectTopic('frutas')">Frutas</button>
             <button mat-button (click)="selectTopic('meses')">Meses</button>
-            <button mat-button (click)="selectTopic('ropa')">Ropa</button>   
+            <button mat-button (click)="selectTopic('ropa')">Ropa</button>
           </mat-expansion-panel>
 
           <!-- Gramática -->
@@ -51,6 +51,14 @@
             </mat-expansion-panel-header>
             <button mat-button (click)="selectTopic('antonimos')">Antónimos</button>
             <button mat-button (click)="selectTopic('sinonimos')">Sinónimos</button>
+          </mat-expansion-panel>
+
+          <!-- Blog -->
+          <mat-expansion-panel [expanded]="true">
+            <mat-expansion-panel-header>
+              <mat-panel-title>Blog</mat-panel-title>
+            </mat-expansion-panel-header>
+            <button mat-button (click)="selectTopic('primer-articulo')">Primer Artículo</button>
           </mat-expansion-panel>
 
         </mat-nav-list>
@@ -85,6 +93,9 @@
           <!-- Avanzado -->
           <app-antonimos *ngSwitchCase="'antonimos'"></app-antonimos>
           <app-sinonimos *ngSwitchCase="'sinonimos'"></app-sinonimos>
+
+          <!-- Blog -->
+          <app-primer-articulo *ngSwitchCase="'primer-articulo'"></app-primer-articulo>
 
           <div *ngSwitchDefault>Selecciona una sección del menú.</div>
         </ng-container>
