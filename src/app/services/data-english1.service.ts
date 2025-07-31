@@ -16,7 +16,7 @@ export class DataEnglish1Service {
     'cat', 'dog', 'book', 'car', 'tree', 'water', 'table', 'window', 'door', 'chair', 
     'school', 'ball', 'flower', 'street', 'clock', 'cup', 'shirt', 'shoe', 'bed', 'lamp',
     'wine', 'sleep', 'dream', 'also', 'gum', 'skull', 'nightmare','jam','request','advice', 'through',
-    'sorrow','far away','as such','clown','solemn','granted','blueprint'
+    'sorrow','far away','as such','clown','solemn','granted','blueprint','agree','disagree'
   ];
 
   private basicoAltoA2: string[] = [
@@ -30,7 +30,8 @@ export class DataEnglish1Service {
     'postage stamp', 'fuzzy', 'brick', 'fired', 'clumsy','warn', 'loverly', 'until', 'naive', 'grudges', 'kiddo', 'pushy',
     'voyage', 'dock', 'fish tank', 'mortgage', 'tile', 'hire','hopefully','easier','homeless','take cover','strike','brings',
     'improvements','cheats','held','confidence','unable','warehouse','fact','somehow','leaf','sheet','polite', 'released',
-    'rioters', 'smuggler','cabinet', 'choir','charisma', 'dearth','efface'
+    'rioters', 'smuggler','cabinet', 'choir','charisma', 'dearth','efface','dreamt','pray','steep','nook','pathway','rely on',
+    'approach','enhance','demonstrate','moreover','purchase','exploit','stir','fluently','receipt', 'front desk','tight'
   ];
 
   private intermedioB1: string[] = [
@@ -71,11 +72,11 @@ export class DataEnglish1Service {
     'so far', 'encountered', 'overcome', 'wealthy', 'scared', 'portray', 'swept', 'goodspeed', 'broom', 'he sat',
     'borrowed', 'physics', 'chemistry', 'his', 'her', 'meaningful', 'alright', 'jam', 'sausage', 'earlier', 'noon',
     'midnight', 'warrants', 'relocated', 'allowance', 'loneliest', 'beats working', 'wings', 'downtown', 'clever',
-    'wink', 'backpacks', 'crumbs', 'mess it up', 'briefcase', 'bring me', 'got caught', 'awake', 'wake up', 'spark',
+    'wink', 'backpack', 'crumbs', 'mess it up', 'briefcase', 'bring me', 'got caught', 'awake', 'wake up', 'spark',
     'tracker', 'labor union', 'teamed up', 'trial', 'hush', 'spoons', 'beekeeper', 'foreign', 'armchair', 'dresser',
     'sink', 'furniture', 'pillow', 'neighbor', 'nearly', 'blanket', 'luggage', 'bring', 'instead', 'wore', 'raincoats',
     'owe', 'lend', 'bill', 'quarter', 'anymore', 'seeing', 'suppose', 'actually', 'daunting', 'profound', 'raised me',
-    'reminder', 'fierce', 'appear', 'noteworthy', 'charm'
+    'reminder', 'fierce', 'appear', 'noteworthy', 'charm','crawl','seldom','struck'
   ];
 
 
@@ -83,7 +84,8 @@ export class DataEnglish1Service {
     'gimme', 'piss off','come undone', 'falling apart','unlawful','struggles','troublemaker','go over to', 'goosebumps',
     'runs out','mutual friend','bucks','pal', 'see ya','booze','grub','chill','nuts','moron','brainy','mess','concerned',
     'goddamn','get lost','bail out','screw you', 'jacked up', 'bummed out', 'beat it', 'zonked', 'blow off', 'lose it', 
-    'flip out', 'cringe', 'ripped', 'wasted', 'savage'
+    'flip out', 'cringe', 'ripped', 'wasted', 'savage', 'take it on','I hope so','by the way','my treat','what a pity',
+    'all set','so what','puppy love','chill out','turn into','homies','hush','what a shame','dude','shape up'
   ]
 
 
@@ -127,7 +129,7 @@ private basicoA1Res: string[] = [
   'escuela', 'pelota', 'flor', 'calle','reloj', 'taza', 'camisa', 'zapato', 'cama', 'lámpara',
   'vino','dormir', 'sueño', 'tambien', 'chicle/ goma','cráneo', 'pesadilla','solicitud/petición',
   'consejo','a través de/mediante','pena/aflicción','lejos','tal como','payaso','solemne','otorgado/concedido',
-  'plano/plan'
+  'plano/plan','estar de acuerdo','no estar de acuerdo'
 ];
 
 private basicoAltoA2Res: string[] = [
@@ -142,7 +144,8 @@ private basicoAltoA2Res: string[] = [
   'rencores', 'niño/niña', 'insistente/agresivo','viaje', 'muelle', 'pecera', 'hipoteca', 'azulejo','contratar/emplear','con suerte/ojalá',
   'más fácil', 'sin hogar','refugiarse','huelga/ataque','traer','mejoras','engañar/trampas','retenido/sostenido','confianza','incapaz','almacén',
   'el hecho','de alguna manera','hoja de planta','hoja de papel','educado/cortés','liberado/publicado','alborotadores','contrabandista', 'gabinete',
-  'coro','carisma','escasez', 'borrar/eliminar'
+  'coro','carisma','escasez', 'borrar/eliminar','soñado','orar','empinado','rincón','camino/sendero','confiar', 'enfoque/acercarse','mejorar',
+  'demostrar','además','comprar','usar/aprovechar', 'remover/revolver', 'con fluidez','recibo','recepción','ajustado/ceñido'
 ];
 
 
@@ -181,16 +184,16 @@ private intermedioAltoB2Res: string[] = [
   'comportarse', 'podrido', 'subida', 'en efecto/en realidad', 'vil', 'aprovechar', 'elogio/alabanza', 'completado/lleno', 'tacto/tocar', 'abrazar',
   'girando', 'sonreír', 'sonriendo', 'luz del sol', 'propagar/esparcir', 'alquiler', 'aros', 'allá', 'par/pareja', 'adelante', 'suponer que debe decir',
   'ánimo', 'derrotar/latido', 'centro comercial', 'alambres/cables', 'todavía/aún', 'levantado', 'ciervo', 'cartelera/anuncio', 'atragantarse',
-  'permitir', 'quiero decir', 'lo digo en serio', 'duro', 'me está gustando', 'chatarra', 'búho', 'de madera', 'resfriarse', 'dedo del pie',
+  'permitir', 'quiero decir', 'lo digo en serio', 'difícil/duro', 'me está gustando', 'chatarra', 'búho', 'de madera', 'resfriarse', 'dedo del pie',
   'demora/retardo', 'escasez', 'hasta ahora', 'encontrado', 'superar o vencer obstáculos', 'adinerado', 'asustado', 'retrato/representación',
   'barrer', 'buena suerte', 'escoba', 'se sentó', 'tomar prestado', 'física', 'química', 'su (de él)', 'su (de ella)', 'significativo', 'bien',
   'mermelada', 'salchicha', 'más temprano', 'mediodía', 'medianoche', 'garantías', 'reubicado', 'prestación', 'más solitario', 'es mejor que trabajar',
-  'alas', 'centro de la ciudad', 'inteligente', 'guiño', 'mochilas', 'migajas', 'echarlo a perder', 'maletín', 'tráeme', 'quedar atrapado',
+  'alas', 'centro de la ciudad', 'inteligente', 'guiño', 'mochila', 'migajas', 'echarlo a perder', 'maletín', 'tráeme', 'quedar atrapado',
   'despierto', 'despertar', 'chispa', 'rastreador', 'sindicato', 'unido (como equipo)', 'ensayo/juicio', 'silencio', 'cucharas', 'apicultor',
   'extranjero', 'sillón', 'vestidor/cómoda', 'fregadero/lavaplatos', 'muebles', 'almohada', 'vecino', 'casi/cerca de', 'manta/frazada', 'equipaje',
   'traer', 'en cambio', 'vistió/llevó puesto', 'impermeables', 'deber algo/deuda', 'prestar', 'billete/factura', 'cuarto/moneda de 25', 'ya/nunca más',
   'viendo/saliendo con alguien', 'suponer', 'en realidad/de hecho', 'desalentador', 'profundo', 'me crió', 'recordatorio', 'intenso', 'aparecer',
-  'notable', 'encanto'
+  'notable', 'encanto','arrastrarse/gatear','rara vez','golpeado/impactado'
 ];
 
 private AltoC1Res: string[] = [
@@ -198,7 +201,9 @@ private AltoC1Res: string[] = [
   'piel de gallina','acabarse/agotarse','amigo en común', 'dólares', 'amigo', 'adiós','trago/copete','comida','relajarse/descansar','loco/rayado',
   'tonto/idiota/imbécil','inteligente/cerebrito','desorden/lío/caos','preocupado/interesado','maldito/maldita sea','piérdase/lárgate',
   'sacar de apuro/rescatar','púdrete/jódete',  'estropeado/alterado', 'deprimido', 'lárgate', 'agotado','ignorar a alguien', 'perder el control', 
-  'enloquecer/alterarse','vergonzoso/incómodo', 'musculoso/definido', 'borracho', 'brutal/genial'
+  'enloquecer/alterarse','vergonzoso/incómodo', 'musculoso/definido', 'borracho', 'brutal/genial','enfrentarlo/asumirlo', 'eso espero','por cierto',
+  'yo invito','qué pena/qué lástima','todo listo','¿y qué?','amor juvenil','relajarse','convertirse en/transformarse','amigos','calla/silencio',
+  '¡qué verguenza!/¡qué pena!','amigo/compa','ponerse en forma'
 
 ]
 
