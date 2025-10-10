@@ -1,28 +1,81 @@
+<mat-card class="article-card">
+  <header>
+    <h1>Sinónimos en inglés (Synonyms): guía completa con ejemplos</h1>
+    <p class="lead">
+      Los <strong>sinónimos</strong> son palabras con significado similar: <em>fast ↔ quick</em>,
+      <em>smart ↔ clever</em>, <em>tired ↔ exhausted</em>. Entender los matices mejora la precisión
+      y evita repeticiones al hablar y escribir.
+    </p>
+  </header>
 
+  <section>
+    <h2>¿Qué es un sinónimo?</h2>
+    <p>
+      En inglés, un <strong>synonym</strong> es una palabra con un significado parecido al de otra.
+      Muchos sinónimos no son intercambiables en todos los contextos; por eso se habla de
+      <em>near-synonyms</em> (sinónimos “cercanos”) con diferencias de <strong>matiz</strong>
+      (fuerza, registro formal/informal, frecuencia de uso).
+    </p>
+    <ul>
+      <li><strong>Registro:</strong> <em>mad</em> (informal) vs. <em>angry</em> (neutral).</li>
+      <li><strong>Intensidad:</strong> <em>tired</em> (cansado) &lt; <em>exhausted</em> (agotado).</li>
+      <li><strong>Colocaciones (collocations):</strong> se dice <em>strong coffee</em>, no <em>powerful coffee</em>.</li>
+    </ul>
+  </section>
 
-<body>
-  <div class="container">
-    <mat-card>
-      <mat-card-title>Sinónimos en inglés</mat-card-title>
+  <section>
+    <h2>Lista esencial de sinónimos</h2>
+    <p>Una lista breve de pares frecuentes para enriquecer tu vocabulario:</p>
+    <ul class="synonyms-list">
+      <li *ngFor="let s of sinonimos">
+        <strong>{{ s.palabra }}</strong> ↔ <span>{{ s.sinonimo }}</span>
+      </li>
+    </ul>
+    <aside class="note">
+      <p>
+        Consejo: crea tus propias oraciones con cada par. Usa un diccionario para verificar
+        registro e intensidad antes de sustituir palabras.
+      </p>
+    </aside>
+  </section>
 
-      <table mat-table [dataSource]="sinonimos" class="mat-elevation-z2 antonimos-table">
+  <section>
+    <h2>Ejemplos en contexto</h2>
+    <ul class="examples">
+      <li *ngFor="let e of ejemplos">
+        <blockquote><p>“{{ e.en }}”</p></blockquote>
+        <small>Traducción: {{ e.es }}</small>
+      </li>
+    </ul>
+  </section>
 
-        <!-- Palabra columna -->
-        <ng-container matColumnDef="palabra">
-          <th mat-header-cell *matHeaderCellDef> Palabra </th>
-          <td mat-cell *matCellDef="let elemento"> {{ elemento.palabra }} </td>
-        </ng-container>
+  <section>
+    <h2>Errores comunes</h2>
+    <ul>
+      <li><strong>Intercambiar sinónimos sin revisar colocaciones.</strong> <em>strong coffee</em> ✔️ / <em>powerful coffee</em> ❌</li>
+      <li><strong>Ignorar el registro.</strong> <em>mad</em> es más informal que <em>angry</em>.</li>
+      <li><strong>No considerar la intensidad.</strong> <em>exhausted</em> es más fuerte que <em>tired</em>.</li>
+    </ul>
+  </section>
 
-        <!-- Sinónimo columna -->
-        <ng-container matColumnDef="sinonimo">
-          <th mat-header-cell *matHeaderCellDef> Sinónimo </th>
-          <td mat-cell *matCellDef="let elemento"> {{ elemento.sinonimo }} </td>
-        </ng-container>
-
-        <tr mat-header-row *matHeaderRowDef="columnas"></tr>
-        <tr mat-row *matRowDef="let row; columns: columnas;"></tr>
-      </table>
-    </mat-card>
-  </div>
-</body>
-
+  <section>
+    <h2>Práctica rápida</h2>
+    <ol class="exercise">
+      <li>Reescribe con un sinónimo más formal: “He is mad about the price.” → ________</li>
+      <li>Elige el sinónimo que indica más intensidad: tired / exhausted</li>
+      <li>Completa la colocación correcta: “a ____ decision” (strong / powerful)</li>
+      <li>Sustituye por un sinónimo natural: “a quick look” → “a ____ glance”</li>
+      <li>Traducción inversa: “Empezaron el proyecto” → “They ____ the project.”</li>
+    </ol>
+    <details>
+      <summary>Ver soluciones sugeridas</summary>
+      <ul>
+        <li>1) He is <em>angry</em> about the price.</li>
+        <li>2) <em>exhausted</em></li>
+        <li>3) a <em>strong</em> decision (también: <em>a firm decision</em>)</li>
+        <li>4) a <em>brief</em> glance / a <em>quick</em> glance</li>
+        <li>5) <em>started/began</em></li>
+      </ul>
+    </details>
+  </section>
+</mat-card>

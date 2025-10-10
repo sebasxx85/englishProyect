@@ -1,53 +1,71 @@
-.container {
-    display: flex;
-    justify-content: center;
-    padding: 30px 20px;
-    height: 90vh;
-    overflow-y: auto;
-    margin-top: 70px;
-    margin-bottom: 70px;
-  }
-  
- mat-card {
-  padding: 15px;
-  max-width: 650px;
+/* Card blanco, texto negro, sin container. Reutiliza el mismo esquema de Antónimos con tu preferencia */
+.article-card {
+  padding: 16px;
   width: 100%;
-  max-height: 500px;     /* controla altura visible */
-  overflow-y: auto;      /* agrega scroll si se pasa */
-  overflow-x: auto;
+  max-width: 97%;                 /* preferencia guardada */
+  margin: 70px auto;              /* centra y separa de header/footer */
+  max-height: calc(100vh - 140px);
+  overflow: auto;                 /* el scroll está dentro del card */
+  background: #ffffff !important;
+  color: #111111 !important;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,.15);
 }
-  
-  /* Tabla con color gris personalizado */
-  ::ng-deep .antonimos-table {
-    width: 100%;
-    border-radius: 8px;
-    margin-top: 20px;
-    border-collapse: collapse;
-  
-    /* Encabezado */
-    th.mat-header-cell {
-      background-color: #e0e0e0 !important; /* gris plomo claro */
-      color: #000 !important;
-      font-weight: bold;
-      text-align: left;
-      padding: 10px;
-    }
-  
-    /* Celdas */
-    td.mat-cell {
-      background-color: #000000 !important;
-      color: #000 !important;
-      padding: 10px;
-    }
-  
-    /* Zebra alternada */
-    tr.mat-row:nth-child(even) td.mat-cell {
-      background-color: #eeeeee !important;
-    }
-  
-    /* Hover */
-    tr.mat-row:hover td.mat-cell {
-      background-color: #e0e0e0 !important;
-    }
+
+/* Forzar texto negro bajo tema dark */
+.article-card h1,
+.article-card h2,
+.article-card h3,
+.article-card p,
+.article-card li,
+.article-card small,
+.article-card blockquote {
+  color: #111111 !important;
+}
+
+/* Tipografía y jerarquía */
+.lead { font-size: 1.05rem; line-height: 1.6; }
+h1 { font-size: 1.6rem; margin: 0 0 10px; }
+h2 { font-size: 1.25rem; margin: 18px 0 8px; }
+h3 { font-size: 1.1rem; margin: 14px 0 6px; }
+
+/* Lista tipo “zebra” (sustituye tabla) */
+.synonyms-list {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0;
+  border: 1px solid #e6e6e6;
+  border-radius: 8px;
+  overflow: hidden;
+
+  li {
+    padding: 10px 12px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #eee;
   }
-  
+
+  li:nth-child(even) { background: #f7f7f7; }
+  li:last-child { border-bottom: none; }
+}
+
+/* Citas y ejemplos */
+.examples {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li { margin-bottom: 10px; }
+  blockquote {
+    margin: 0;
+    padding-left: 12px;
+    border-left: 3px solid #dddddd;
+    font-style: italic;
+  }
+  small { display: block; margin-top: 4px; opacity: .85; }
+}
+
+/* Ajuste en pantallas muy grandes (opcional) */
+@media (min-width: 1400px) {
+  .article-card { max-width: 97%; } /* mantenemos 97% también en desktop grande */
+}

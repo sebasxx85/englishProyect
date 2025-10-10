@@ -44,13 +44,6 @@ const routes: Routes = [
       import('./components/crear-usuario/crear-usuario.module').then(m => m.CrearUsuarioModule)
   },
 
-  {
-  path: 'editor',
-  canActivate: [adminGuard],
-  loadComponent: () =>
-    import('./library/components/blog/editor/editor-articulo.component')
-      .then(m => m.EditorArticuloComponent)
-}
 
 ];
 
