@@ -1,45 +1,97 @@
+<mat-card class="article-card">
+  <header>
+    <h1>Verbo <em>to do</em>: presente, pasado y usos</h1>
+    <p class="lead">
+      El verbo <strong>to do</strong> se traduce como “hacer”, pero también se usa como auxiliar
+      para formar preguntas y negaciones. Aprender sus funciones es clave para dominar la estructura
+      básica del inglés.
+    </p>
+  </header>
+
+  <section>
+    <h2>Conjugación básica: presente y pasado</h2>
+    <p>El verbo <em>to do</em> cambia solo en la tercera persona del singular (he, she, it → does):</p>
+
+    <ul class="be-list">
+      <li class="be-head">
+        <span>Pronombre</span>
+        <span>Presente</span>
+        <span>Pasado</span>
+      </li>
+      <li *ngFor="let c of conjugaciones">
+        <span class="col-pron">{{ c.pronombre }}</span>
+        <span class="col-pres"><strong>{{ c.presente }}</strong> — <small>{{ c.traduccionPresente }}</small></span>
+        <span class="col-past"><strong>{{ c.pasado }}</strong> — <small>{{ c.traduccionPasado }}</small></span>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Usos principales</h2>
+    <ul class="bullets">
+      <li *ngFor="let u of usos" [innerHTML]="u"></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Negaciones y preguntas</h2>
+    <p>
+      En presente se usan <strong>do not</strong> (don’t) y <strong>does not</strong> (doesn’t).  
+      En pasado: <strong>did not</strong> (didn’t).
+    </p>
+    <ul class="examples">
+      <li><blockquote><p>“I don’t like rain.”</p></blockquote><small>No me gusta la lluvia.</small></li>
+      <li><blockquote><p>“Does he play football?”</p></blockquote><small>¿Él juega fútbol?</small></li>
+      <li><blockquote><p>“We didn’t go out yesterday.”</p></blockquote><small>No salimos ayer.</small></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Ejemplos en contexto</h2>
+    <ul class="examples">
+      <li *ngFor="let e of ejemplos">
+        <blockquote><p>“{{ e.en }}”</p></blockquote>
+        <small>Traducción: {{ e.es }}</small>
+      </li>
+    </ul>
+  </section>
+<section>
+  <h2>Práctica rápida</h2>
+  <ol class="exercise">
+    <li>Complete (presente): “He ____ his job well.”</li>
+    <li>Negación (presente): “They ____ not watch TV.”</li>
+    <li>Pregunta (presente): “____ you like music?”</li>
+    <li>Complete (pasado): “We ____ our homework yesterday.”</li>
+    <li>Negación (pasado): “I ____ finish the task.”</li>
+    <li>Pregunta (pasado): “____ she call you last night?”</li>
+    <li>Enfático (presente): “I ____ appreciate your help!”</li>
+    <li>Short answer (presente): “— Do you play chess? — Yes, I ____.”</li>
+    <li>Short answer (pasado): “— Did they win? — No, they ____.”</li>
+    <li>Transforme a negación (presente): “He does his homework.” → “He ____ ____ his homework.”</li>
+  </ol>
+  <details class="solutions">
+    <summary class="summary">Ver soluciones sugeridas</summary>
+    <ul>
+      <li>1) <em>does</em></li>
+      <li>2) <em>do (don’t)</em></li>
+      <li>3) <em>Do</em></li>
+      <li>4) <em>did</em></li>
+      <li>5) <em>didn’t</em></li>
+      <li>6) <em>Did</em></li>
+      <li>7) <em>do</em></li>
+      <li>8) <em>do</em></li>
+      <li>9) <em>didn’t</em></li>
+      <li>10) <em>does not / doesn’t</em></li>
+    </ul>
+  </details>
+</section>
 
 
-<body>
-  <div class="container">
-    <mat-card>
-      <mat-card-title>Verbo To Do – Presente y Pasado</mat-card-title>
-
-      <table mat-table [dataSource]="conjugaciones" class="mat-elevation-z2 antonimos-table">
-
-        <!-- Pronombre -->
-        <ng-container matColumnDef="pronombre">
-          <th mat-header-cell *matHeaderCellDef> Pronombre </th>
-          <td mat-cell *matCellDef="let elem"> {{ elem.pronombre }} </td>
-        </ng-container>
-
-        <!-- Presente -->
-        <ng-container matColumnDef="presente">
-          <th mat-header-cell *matHeaderCellDef> Presente </th>
-          <td mat-cell *matCellDef="let elem"> {{ elem.presente }} </td>
-        </ng-container>
-
-        <!-- Traducción presente -->
-        <ng-container matColumnDef="traduccionPresente">
-          <th mat-header-cell *matHeaderCellDef> Traducción presente </th>
-          <td mat-cell *matCellDef="let elem"> {{ elem.traduccionPresente }} </td>
-        </ng-container>
-
-        <!-- Pasado -->
-        <ng-container matColumnDef="pasado">
-          <th mat-header-cell *matHeaderCellDef> Pasado </th>
-          <td mat-cell *matCellDef="let elem"> {{ elem.pasado }} </td>
-        </ng-container>
-
-        <!-- Traducción pasado -->
-        <ng-container matColumnDef="traduccionPasado">
-          <th mat-header-cell *matHeaderCellDef> Traducción pasado </th>
-          <td mat-cell *matCellDef="let elem"> {{ elem.traduccionPasado }} </td>
-        </ng-container>
-
-        <tr mat-header-row *matHeaderRowDef="columnas"></tr>
-        <tr mat-row *matRowDef="let row; columns: columnas;"></tr>
-      </table>
-    </mat-card>
-  </div>
-</body>
+  <section>
+    <h2>Preguntas frecuentes</h2>
+    <h3>¿Cuál es la diferencia entre “do” y “make”?</h3>
+    <p>
+      <strong>Do</strong> se usa para actividades generales o tareas (“do homework”, “do the dishes”),
+      mientras que <strong>make</strong> implica crear o producir algo (“make a cake”, “make a plan”).
+    </p>
+    <h3>¿Se usa “do” c
