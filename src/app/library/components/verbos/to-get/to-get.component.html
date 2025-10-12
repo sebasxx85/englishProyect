@@ -1,45 +1,99 @@
+<mat-card class="article-card">
+ <header>
+  <h1>Verbo <em>to get</em>: presente, pasado y usos cotidianos</h1>
+  <p class="lead">
+    El verbo <strong>to get</strong> es uno de los más versátiles y utilizados del inglés, tanto en contextos
+    formales como en el habla diaria. Su significado principal es “obtener” o “recibir”, pero también puede
+    expresar ideas como “llegar”, “volverse”, “ponerse” o “entender”, según el contexto.  
+    <br><br>
+    En la conversación cotidiana, aparece constantemente en expresiones como 
+    <em>get here</em> (llegar aquí), <em>get dressed</em> (vestirse), <em>get older</em> (envejecer),
+    <em>get better</em> (mejorar) o <em>get home</em> (llegar a casa).  
+    <br><br>
+    En esta guía se presentan sus formas más comunes, significados principales, 
+    <em>phrasal verbs</em> frecuentes y ejemplos prácticos para dominar su uso tanto en 
+    situaciones formales como informales.
+  </p>
+</header>
 
 
-<body>
-  <div class="container">
-    <mat-card>
-      <mat-card-title>Verbo To Get – Presente y Pasado</mat-card-title>
+  <section>
+    <h2>Conjugación básica: presente y pasado</h2>
+    <p>En presente cambia a <strong>gets</strong> con <em>he/she/it</em>; el pasado simple es <strong>got</strong> para todas las personas.</p>
 
-      <table mat-table [dataSource]="conjugaciones" class="mat-elevation-z2 antonimos-table">
+    <ul class="be-list">
+      <li class="be-head">
+        <span>Pronombre</span>
+        <span>Presente</span>
+        <span>Pasado</span>
+      </li>
+      <li *ngFor="let c of conjugaciones">
+        <span class="col-pron">{{ c.pronombre }}</span>
+        <span class="col-pres"><strong>{{ c.presente }}</strong> — <small>{{ c.traduccionPresente }}</small></span>
+        <span class="col-past"><strong>{{ c.pasado }}</strong> — <small>{{ c.traduccionPasado }}</small></span>
+      </li>
+    </ul>
+  </section>
 
-        <!-- Pronombre -->
-        <ng-container matColumnDef="pronombre">
-          <th mat-header-cell *matHeaderCellDef> Pronombre </th>
-          <td mat-cell *matCellDef="let elem"> {{ elem.pronombre }} </td>
-        </ng-container>
+  <section>
+    <h2>Usos principales</h2>
+    <ul class="bullets">
+      <li *ngFor="let u of usos" [innerHTML]="u"></li>
+    </ul>
+  </section>
 
-        <!-- Presente -->
-        <ng-container matColumnDef="presente">
-          <th mat-header-cell *matHeaderCellDef> Presente </th>
-          <td mat-cell *matCellDef="let elem"> {{ elem.presente }} </td>
-        </ng-container>
+  <section>
+    <h2>Estructuras frecuentes con <em>get</em></h2>
+    <ul class="bullets">
+      <li *ngFor="let e of estructuras" [innerHTML]="e"></li>
+    </ul>
+  </section>
 
-        <!-- Traducción presente -->
-        <ng-container matColumnDef="traduccionPresente">
-          <th mat-header-cell *matHeaderCellDef> Traducción presente </th>
-          <td mat-cell *matCellDef="let elem"> {{ elem.traduccionPresente }} </td>
-        </ng-container>
+  <section>
+    <h2><em>Phrasal verbs</em> esenciales con <em>get</em></h2>
+    <ul class="bullets two-cols">
+      <li *ngFor="let p of phrasals" [innerHTML]="p"></li>
+    </ul>
+  </section>
 
-        <!-- Pasado -->
-        <ng-container matColumnDef="pasado">
-          <th mat-header-cell *matHeaderCellDef> Pasado </th>
-          <td mat-cell *matCellDef="let elem"> {{ elem.pasado }} </td>
-        </ng-container>
+  <section>
+    <h2>Ejemplos en contexto</h2>
+    <ul class="examples">
+      <li *ngFor="let e of ejemplos">
+        <blockquote><p>“{{ e.en }}”</p></blockquote>
+        <small>Traducción: {{ e.es }}</small>
+      </li>
+    </ul>
+  </section>
 
-        <!-- Traducción pasado -->
-        <ng-container matColumnDef="traduccionPasado">
-          <th mat-header-cell *matHeaderCellDef> Traducción pasado </th>
-          <td mat-cell *matCellDef="let elem"> {{ elem.traduccionPasado }} </td>
-        </ng-container>
-
-        <tr mat-header-row *matHeaderRowDef="columnas"></tr>
-        <tr mat-row *matRowDef="let row; columns: columnas;"></tr>
-      </table>
-    </mat-card>
-  </div>
-</body>
+  <section>
+    <h2>Práctica rápida</h2>
+    <ol class="exercise">
+      <li>Complete (presente): “She ____ a lot of emails every day.”</li>
+      <li>Complete (pasado): “We ____ to the airport on time.”</li>
+      <li>Volverse (+ adjetivo): “It is ____ late.” (get + ________)</li>
+      <li>Causativo: “They ____ the house painted last summer.”</li>
+      <li>Pregunta (presente): “____ you ____ it?” (¿lo entiendes?)</li>
+      <li>Negación (pasado): “I ____ ____ the message.”</li>
+      <li>Phrasal: “He ____ ____ early on weekdays.” (levantarse)</li>
+      <li>Phrasal (transporte): “We ____ ____ the bus at the next stop.”</li>
+      <li>Estructura: “How do I ____ ____ the museum?” (llegar a)</li>
+      <li>Sinónimo de “obtener”: “Did you ____ the tickets?”</li>
+    </ol>
+    <details class="solutions">
+      <summary class="summary">Ver soluciones sugeridas</summary>
+      <ul>
+        <li>1) <em>gets</em></li>
+        <li>2) <em>got</em></li>
+        <li>3) <em>getting</em> (It is <em>getting</em> late.)</li>
+        <li>4) <em>got</em> (They <em>got</em> the house painted…)</li>
+        <li>5) <em>Do</em> you <em>get</em> it?</li>
+        <li>6) <em>didn’t get</em></li>
+        <li>7) <em>gets up</em></li>
+        <li>8) <em>get off</em></li>
+        <li>9) <em>get to</em> (…get to the museum)</li>
+        <li>10) <em>get</em></li>
+      </ul>
+    </details>
+  </section>
+</mat-card>

@@ -1,45 +1,110 @@
+<mat-card class="article-card">
+  <header>
+    <h1>Verbo <em>to go</em>: presente, pasado y usos cotidianos</h1>
+    <p class="lead">
+      El verbo <strong>to go</strong> significa “ir” y es uno de los más usados del inglés, tanto en
+      contextos formales como en la conversación diaria. Se emplea para hablar de desplazamientos y
+      actividades frecuentes: <em>go home</em> (ir a casa), <em>go out</em> (salir), <em>go shopping</em>
+      (ir de compras), <em>go to bed</em> (acostarse) o <em>go on</em> (continuar). En presente toma la forma
+      <strong>goes</strong> con <em>he/she/it</em>, y su pasado irregular es <strong>went</strong>.
+      En esta guía verás sus usos clave, estructuras comunes, <em>phrasal verbs</em>, ejemplos y práctica.
+    </p>
+  </header>
 
+  <section>
+    <h2>Conjugación básica: presente y pasado</h2>
+    <p>Lista “tipo tabla” para repasar rápidamente:</p>
+    <ul class="be-list">
+      <li class="be-head">
+        <span>Pronombre</span>
+        <span>Presente</span>
+        <span>Pasado</span>
+      </li>
+      <li *ngFor="let c of conjugaciones">
+        <span class="col-pron">{{ c.pronombre }}</span>
+        <span class="col-pres"><strong>{{ c.presente }}</strong> — <small>{{ c.traduccionPresente }}</small></span>
+        <span class="col-past"><strong>{{ c.pasado }}</strong> — <small>{{ c.traduccionPasado }}</small></span>
+      </li>
+    </ul>
+  </section>
 
-<body>
-  <div class="container">
-    <mat-card>
-      <mat-card-title>Verbo To Go – Presente y Pasado</mat-card-title>
+  <section>
+    <h2>Usos principales</h2>
+    <ul class="bullets">
+      <li><strong>Movimiento / destino:</strong> <em>go to school, go to work, go home</em>.</li>
+      <li><strong>Actividades y planes:</strong> <em>go shopping, go running, go out</em>.</li>
+      <li><strong>Eventos / viajes:</strong> <em>go to a concert, go abroad, go camping</em>.</li>
+      <li><strong>Procesos / estados:</strong> <em>go bad</em> (echarse a perder), <em>go crazy</em> (volverse loco).</li>
+      <li><strong>Expresiones con “on”:</strong> <em>go on</em> (continuar), <em>go on vacation</em> (irse de vacaciones).</li>
+    </ul>
+  </section>
 
-      <table mat-table [dataSource]="conjugaciones" class="mat-elevation-z2 antonimos-table">
+  <section>
+    <h2>Estructuras comunes</h2>
+    <ul class="bullets">
+      <li><em>go + lugar</em>: <em>I go to school</em> → voy a la escuela.</li>
+      <li><em>go + verbo-ing</em> (actividad): <em>We go swimming</em> → vamos a nadar.</li>
+      <li><em>go + for</em>: <em>Let’s go for a walk</em> → vamos a dar un paseo.</li>
+      <li><em>go + with</em>: <em>Who will go with you?</em> → ¿Quién irá contigo?</li>
+      <li><em>go + on</em>: <em>Go on, please</em> → continúa, por favor.</li>
+    </ul>
+  </section>
 
-        <!-- Pronombre -->
-        <ng-container matColumnDef="pronombre">
-          <th mat-header-cell *matHeaderCellDef> Pronombre </th>
-          <td mat-cell *matCellDef="let elem"> {{ elem.pronombre }} </td>
-        </ng-container>
+  <section>
+    <h2><em>Phrasal verbs</em> frecuentes con <em>go</em></h2>
+    <ul class="bullets two-cols">
+      <li><strong>go out</strong>: salir</li>
+      <li><strong>go in / go into</strong>: entrar</li>
+      <li><strong>go back</strong>: regresar</li>
+      <li><strong>go on</strong>: continuar / suceder</li>
+      <li><strong>go over</strong>: repasar / revisar</li>
+      <li><strong>go off</strong>: sonar / explotar / apagarse</li>
+      <li><strong>go along (with)</strong>: estar de acuerdo / acompañar</li>
+      <li><strong>go by</strong>: pasar (el tiempo)</li>
+      <li><strong>go through</strong>: atravesar / experimentar</li>
+      <li><strong>go ahead</strong>: seguir adelante</li>
+    </ul>
+  </section>
 
-        <!-- Presente -->
-        <ng-container matColumnDef="presente">
-          <th mat-header-cell *matHeaderCellDef> Presente </th>
-          <td mat-cell *matCellDef="let elem"> {{ elem.presente }} </td>
-        </ng-container>
+  <section>
+    <h2>Ejemplos en contexto</h2>
+    <ul class="examples">
+      <li><blockquote><p>“We go to school every day.”</p></blockquote><small>Vamos a la escuela todos los días.</small></li>
+      <li><blockquote><p>“She went to Paris last summer.”</p></blockquote><small>Ella fue a París el verano pasado.</small></li>
+      <li><blockquote><p>“Let’s go out tonight.”</p></blockquote><small>Salgamos esta noche.</small></li>
+      <li><blockquote><p>“What’s going on?”</p></blockquote><small>¿Qué está pasando?</small></li>
+      <li><blockquote><p>“Time goes by so fast.”</p></blockquote><small>El tiempo pasa muy rápido.</small></li>
+    </ul>
+  </section>
 
-        <!-- Traducción presente -->
-        <ng-container matColumnDef="traduccionPresente">
-          <th mat-header-cell *matHeaderCellDef> Traducción presente </th>
-          <td mat-cell *matCellDef="let elem"> {{ elem.traduccionPresente }} </td>
-        </ng-container>
-
-        <!-- Pasado -->
-        <ng-container matColumnDef="pasado">
-          <th mat-header-cell *matHeaderCellDef> Pasado </th>
-          <td mat-cell *matCellDef="let elem"> {{ elem.pasado }} </td>
-        </ng-container>
-
-        <!-- Traducción pasado -->
-        <ng-container matColumnDef="traduccionPasado">
-          <th mat-header-cell *matHeaderCellDef> Traducción pasado </th>
-          <td mat-cell *matCellDef="let elem"> {{ elem.traduccionPasado }} </td>
-        </ng-container>
-
-        <tr mat-header-row *matHeaderRowDef="columnas"></tr>
-        <tr mat-row *matRowDef="let row; columns: columnas;"></tr>
-      </table>
-    </mat-card>
-  </div>
-</body>
+  <section>
+    <h2>Práctica rápida</h2>
+    <ol class="exercise">
+      <li>Complete (presente): “I ____ to the gym every morning.”</li>
+      <li>Complete (pasado): “They ____ to Spain last year.”</li>
+      <li>Negación (presente): “He ____ not go to work on Sundays.”</li>
+      <li>Pregunta (presente): “Where ____ you ____ after class?”</li>
+      <li>Phrasal: “Let’s ____ ____ tonight.” (salir)</li>
+      <li>Expresión: “What’s ____ ____?” (¿qué pasa?)</li>
+      <li>Vocabulario: “Don’t ____ crazy!” (¡no te vuelvas loco!)</li>
+      <li>Colocación: “We ____ for a walk every evening.”</li>
+      <li>Tiempo verbal: “The alarm ____ off suddenly.”</li>
+      <li>Traducción: “Ella fue al cine.” → “She ____ to the cinema.”</li>
+    </ol>
+    <details class="solutions">
+      <summary class="summary">Ver soluciones sugeridas</summary>
+      <ul>
+        <li>1) go</li>
+        <li>2) went</li>
+        <li>3) does (doesn’t)</li>
+        <li>4) do / go</li>
+        <li>5) go out</li>
+        <li>6) going on</li>
+        <li>7) go</li>
+        <li>8) go</li>
+        <li>9) went</li>
+        <li>10) went</li>
+      </ul>
+    </details>
+  </section>
+</mat-card>
