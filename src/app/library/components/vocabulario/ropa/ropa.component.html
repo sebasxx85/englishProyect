@@ -1,32 +1,60 @@
-<body>
-    <div class="container">
-      <mat-card>
-        <mat-card-title>Ropa en inglés – Traducción y ejemplo</mat-card-title>
-  
-        <table mat-table [dataSource]="prendas" class="mat-elevation-z2 antonimos-table">
-  
-          <!-- Prenda -->
-          <ng-container matColumnDef="prenda">
-            <th mat-header-cell *matHeaderCellDef> Prenda </th>
-            <td mat-cell *matCellDef="let elem"> {{ elem.prenda }} </td>
-          </ng-container>
-  
-          <!-- Traducción -->
-          <ng-container matColumnDef="traduccion">
-            <th mat-header-cell *matHeaderCellDef> Traducción </th>
-            <td mat-cell *matCellDef="let elem"> {{ elem.traduccion }} </td>
-          </ng-container>
-  
-          <!-- Ejemplo -->
-          <ng-container matColumnDef="ejemplo">
-            <th mat-header-cell *matHeaderCellDef> Ejemplo </th>
-            <td mat-cell *matCellDef="let elem"> {{ elem.ejemplo }} </td>
-          </ng-container>
-  
-          <tr mat-header-row *matHeaderRowDef="columnas"></tr>
-          <tr mat-row *matRowDef="let row; columns: columnas;"></tr>
-        </table>
-      </mat-card>
+<div class="container">
+  <mat-card class="article-card">
+    <h1>{{ title }}</h1>
+
+    <p class="intro">
+      En esta lección se revisa vocabulario esencial de prendas de vestir en inglés con su traducción al español y
+      un ejemplo breve en contexto. No se busca cubrir todo el guardarropa posible, sino ofrecer un conjunto práctico
+      para el día a día: descripciones de atuendos, compras, clima y actividades. Además del vocabulario, interesa
+      asociar verbos frecuentes como <em>wear</em> (usar/vestir), <em>put on</em> (ponerse) y <em>take off</em> (sacarse),
+      que aparecen constantemente en instrucciones, historias breves y conversaciones. Se recomienda el siguiente orden:
+      (1) lista rápida para reconocimiento; (2) mini-glosario con ejemplo; (3) práctica que combina vocabulario con
+      acciones típicas con ropa en pasado, presente y futuro.
+    </p>
+
+    <p class="intro">
+      Nota útil: varias prendas se usan en plural en inglés aunque se refieran a una sola pieza (<strong>pants</strong>,
+      <strong>jeans</strong>, <strong>shorts</strong>, <strong>gloves</strong>, <strong>socks</strong>). En esas palabras
+      los verbos concuerdan en plural: <em>These pants are new</em>. Para hablar de ponerse/quitase prendas, se usan
+      combinaciones frecuentes: <em>put on a jacket</em>, <em>take off your shoes</em>.
+    </p>
+
+    <h2>Lista rápida (10 esenciales)</h2>
+    <mat-divider></mat-divider>
+    <ul class="quick-list">
+      <li *ngFor="let e of esenciales">
+        <span class="en">{{ e.prenda }}</span>
+        <span class="sep">—</span>
+        <span class="es">{{ e.traduccion }}</span>
+      </li>
+    </ul>
+
+    <h2>Mini-glosario con ejemplo</h2>
+    <mat-divider></mat-divider>
+    <div class="glossary">
+      <div class="glossary-item" *ngFor="let e of prendas">
+        <div class="term">
+          <span class="en">{{ e.prenda }}</span>
+          <span class="sep">·</span>
+          <span class="es">{{ e.traduccion }}</span>
+        </div>
+        <div class="ex">“{{ e.ejemplo }}”</div>
+      </div>
     </div>
-  </body>
-  
+
+    <h2>Práctica</h2>
+    <mat-divider></mat-divider>
+    <ol class="practice">
+      <li *ngFor="let p of practica">
+        {{ p.frase }}
+        <div class="solution" *ngIf="mostrarSoluciones">
+          ✅ Solución: <strong>{{ p.solucion }}</strong>
+        </div>
+      </li>
+    </ol>
+
+    <button mat-raised-button (click)="mostrarSoluciones = !mostrarSoluciones">
+      {{ mostrarSoluciones ? 'Ocultar soluciones' : 'Mostrar soluciones' }}
+    </button>
+  </mat-card>
+</div>

@@ -1,32 +1,72 @@
-<body>
-    <div class="container">
-      <mat-card>
-        <mat-card-title>Días de la semana en inglés</mat-card-title>
-  
-        <table mat-table [dataSource]="dias" class="mat-elevation-z2 antonimos-table">
-  
-          <!-- Día -->
-          <ng-container matColumnDef="dia">
-            <th mat-header-cell *matHeaderCellDef> Día </th>
-            <td mat-cell *matCellDef="let elem"> {{ elem.dia }} </td>
-          </ng-container>
-  
-          <!-- Traducción -->
-          <ng-container matColumnDef="traduccion">
-            <th mat-header-cell *matHeaderCellDef> Traducción </th>
-            <td mat-cell *matCellDef="let elem"> {{ elem.traduccion }} </td>
-          </ng-container>
-  
-          <!-- Ejemplo -->
-          <ng-container matColumnDef="ejemplo">
-            <th mat-header-cell *matHeaderCellDef> Ejemplo </th>
-            <td mat-cell *matCellDef="let elem"> {{ elem.ejemplo }} </td>
-          </ng-container>
-  
-          <tr mat-header-row *matHeaderRowDef="columnas"></tr>
-          <tr mat-row *matRowDef="let row; columns: columnas;"></tr>
-        </table>
-      </mat-card>
+<div class="container">
+  <mat-card class="article-card">
+    <h1>{{ title }}</h1>
+
+  <p class="intro">
+  En esta lección se repasan los días de la semana en inglés con su traducción y tres ejemplos por día en
+  <strong>presente</strong>, <strong>pasado</strong> y <strong>futuro</strong>. Aunque el conjunto es breve, resulta ideal
+  para practicar tiempos verbales en contextos cotidianos: clases, reuniones, actividades deportivas, visitas y clima.
+  Como regla práctica, los días se escriben con mayúscula inicial y se usan habitualmente con la preposición
+  <em>on</em> (<strong>on Monday</strong>, <strong>on Friday</strong>).
+</p>
+
+<p class="intro">
+  Para hablar de fechas relativas, se emplean <em>last</em> y <em>next</em> con el día
+  (<strong>last Tuesday</strong>, <strong>next Sunday</strong>), y para rutinas se usa <em>every</em>
+  (<strong>every Wednesday</strong>). Es común combinar los días con adverbios de frecuencia para matizar la
+  regularidad: <em>always, usually, often, sometimes</em>. Asimismo, conviene distinguir entre <em>weekday(s)</em>
+  (días de semana) y <em>weekend</em> (fin de semana). Nota de variación: en inglés estadounidense se dice
+  <em>on the weekend</em>, mientras que en el británico es frecuente <em>at the weekend</em>.
+</p>
+
+<p class="intro">
+  Se sugiere el siguiente recorrido: (1) leer la lista rápida para reconocimiento; (2) revisar el mini-glosario con
+  ejemplos en tres tiempos; (3) completar la práctica para afianzar la recuperación activa del vocabulario y el uso de
+  estructuras como <em>on + day</em>, <em>last/next + day</em> y <em>every + day</em>. Con este ciclo se fortalece la
+  comprensión y la fluidez al planificar, contar experiencias pasadas y anticipar eventos futuros.
+</p>
+
+
+    <h2>Lista rápida</h2>
+    <mat-divider></mat-divider>
+    <ul class="quick-list">
+      <li *ngFor="let d of esenciales">
+        <span class="en">{{ d.en }}</span>
+        <span class="sep">—</span>
+        <span class="es">{{ d.es }}</span>
+      </li>
+    </ul>
+
+    <h2>Mini-glosario con tiempos (presente · pasado · futuro)</h2>
+    <mat-divider></mat-divider>
+    <div class="glossary">
+      <div class="glossary-item" *ngFor="let d of dias">
+        <div class="term">
+          <span class="en">{{ d.dia }}</span>
+          <span class="sep">·</span>
+          <span class="es">{{ d.traduccion }}</span>
+        </div>
+        <ul class="examples">
+          <li><strong>Presente:</strong> {{ d.ejemplos.present }}</li>
+          <li><strong>Pasado:</strong> {{ d.ejemplos.past }}</li>
+          <li><strong>Futuro:</strong> {{ d.ejemplos.future }}</li>
+        </ul>
+      </div>
     </div>
-  </body>
-  
+
+    <h2>Práctica (complete con el día en inglés)</h2>
+    <mat-divider></mat-divider>
+    <ol class="practice">
+      <li *ngFor="let p of practica">
+        {{ p.frase }}
+        <div class="solution" *ngIf="mostrarSoluciones">
+          ✅ Solución: <strong>{{ p.solucion }}</strong>
+        </div>
+      </li>
+    </ol>
+
+    <button mat-raised-button (click)="mostrarSoluciones = !mostrarSoluciones">
+      {{ mostrarSoluciones ? 'Ocultar soluciones' : 'Mostrar soluciones' }}
+    </button>
+  </mat-card>
+</div>

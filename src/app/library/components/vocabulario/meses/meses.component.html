@@ -1,32 +1,73 @@
-<body>
-    <div class="container">
-      <mat-card>
-        <mat-card-title>Meses del año en inglés</mat-card-title>
-  
-        <table mat-table [dataSource]="meses" class="mat-elevation-z2 antonimos-table">
-  
-          <!-- Mes -->
-          <ng-container matColumnDef="mes">
-            <th mat-header-cell *matHeaderCellDef> Mes </th>
-            <td mat-cell *matCellDef="let elem"> {{ elem.mes }} </td>
-          </ng-container>
-  
-          <!-- Traducción -->
-          <ng-container matColumnDef="traduccion">
-            <th mat-header-cell *matHeaderCellDef> Traducción </th>
-            <td mat-cell *matCellDef="let elem"> {{ elem.traduccion }} </td>
-          </ng-container>
-  
-          <!-- Ejemplo -->
-          <ng-container matColumnDef="ejemplo">
-            <th mat-header-cell *matHeaderCellDef> Ejemplo </th>
-            <td mat-cell *matCellDef="let elem"> {{ elem.ejemplo }} </td>
-          </ng-container>
-  
-          <tr mat-header-row *matHeaderRowDef="columnas"></tr>
-          <tr mat-row *matRowDef="let row; columns: columnas;"></tr>
-        </table>
-      </mat-card>
+<div class="container">
+  <mat-card class="article-card">
+    <h1>{{ title }}</h1>
+
+   <p class="intro">
+  En esta lección se presentan los meses del año en inglés con su traducción y tres ejemplos por mes para practicar
+  <strong>presente</strong>, <strong>pasado</strong> y <strong>futuro</strong>. Es un conjunto ideal para organizar
+  agendas, planificar proyectos y contar experiencias. Como regla práctica, los meses se escriben con mayúscula inicial
+  y suelen combinarse con la preposición <em>in</em> (<strong>in June</strong>, <strong>in December</strong>). Cuando se
+  precisa un mes concreto en pasado o futuro, es común usar <em>last</em> o <em>next</em>
+  (<strong>last July</strong>, <strong>next March</strong>).
+</p>
+
+<p class="intro">
+  Para fechas específicas (día + mes), se usa <em>on</em> (<strong>on March 5th</strong>), y para periodos más largos
+  se emplean expresiones como <em>at the beginning/end of</em> (<strong>at the end of May</strong>) o <em>by</em> para
+  límites de tiempo (<strong>by November</strong>). También es habitual combinar <em>in + month + year</em>
+  (<strong>in April 2026</strong>) o <em>every + month</em> para rutinas (<strong>every January</strong>).
+  Nota cultural: las estaciones del año varían según hemisferio (por ejemplo, <em>summer</em> en
+  el hemisferio sur cae entre diciembre y marzo), lo que puede influir en el uso de los meses en contextos de clima y vacaciones.
+</p>
+
+<p class="intro">
+  Sugerencia de estudio: (1) revisar la lista rápida para reconocimiento; (2) leer el mini-glosario con ejemplos en tres
+  tiempos; (3) realizar la práctica para afianzar estructuras como <em>in + month</em>, <em>on + day</em>, <em>last/next + month</em>
+  y expresiones de planificación (<em>by</em>, <em>at the beginning/end of</em>). Con este ciclo se mejora la fluidez al
+  describir planes, metas y recuerdos a lo largo del año.
+</p>
+
+
+    <h2>Lista rápida</h2>
+    <mat-divider></mat-divider>
+    <ul class="quick-list">
+      <li *ngFor="let m of esenciales">
+        <span class="en">{{ m.en }}</span>
+        <span class="sep">—</span>
+        <span class="es">{{ m.es }}</span>
+      </li>
+    </ul>
+
+    <h2>Mini-glosario con tiempos (presente · pasado · futuro)</h2>
+    <mat-divider></mat-divider>
+    <div class="glossary">
+      <div class="glossary-item" *ngFor="let m of meses">
+        <div class="term">
+          <span class="en">{{ m.mes }}</span>
+          <span class="sep">·</span>
+          <span class="es">{{ m.traduccion }}</span>
+        </div>
+        <ul class="examples">
+          <li><strong>Presente:</strong> {{ m.ejemplos.present }}</li>
+          <li><strong>Pasado:</strong> {{ m.ejemplos.past }}</li>
+          <li><strong>Futuro:</strong> {{ m.ejemplos.future }}</li>
+        </ul>
+      </div>
     </div>
-  </body>
-  
+
+    <h2>Práctica (complete con el mes en inglés)</h2>
+    <mat-divider></mat-divider>
+    <ol class="practice">
+      <li *ngFor="let p of practica">
+        {{ p.frase }}
+        <div class="solution" *ngIf="mostrarSoluciones">
+          ✅ Solución: <strong>{{ p.solucion }}</strong>
+        </div>
+      </li>
+    </ol>
+
+    <button mat-raised-button (click)="mostrarSoluciones = !mostrarSoluciones">
+      {{ mostrarSoluciones ? 'Ocultar soluciones' : 'Mostrar soluciones' }}
+    </button>
+  </mat-card>
+</div>
