@@ -1,21 +1,27 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatTableModule } from '@angular/material/table';
 import { MatCardModule } from '@angular/material/card';
+import { MatListModule } from '@angular/material/list';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDividerModule } from '@angular/material/divider';
+
+interface Entrada {
+  animal: string;
+  traduccion: string;
+  ejemplo: string;
+}
 
 @Component({
   selector: 'app-animales',
   standalone: true,
-  imports: [CommonModule, MatTableModule, MatCardModule],
+  imports: [CommonModule, MatCardModule, MatListModule, MatButtonModule, MatDividerModule],
   templateUrl: './animales.component.html',
   styleUrls: ['./animales.component.scss']
 })
 export class AnimalesComponent {
   title = 'Animales en inglés';
 
-  columnas: string[] = ['animal', 'traduccion', 'ejemplo'];
-
-  animales = [
+  animales: Entrada[] = [
     { animal: 'Cat', traduccion: 'Gato', ejemplo: 'The cat is on the tree.' },
     { animal: 'Dog', traduccion: 'Perro', ejemplo: 'The dog is barking outside.' },
     { animal: 'Bird', traduccion: 'Pájaro', ejemplo: 'The bird is flying.' },
@@ -65,5 +71,28 @@ export class AnimalesComponent {
     { animal: 'Donkey', traduccion: 'Burro', ejemplo: 'The donkey carries heavy things.' },
     { animal: 'Koala', traduccion: 'Koala', ejemplo: 'The koala sleeps a lot.' },
     { animal: 'Kangaroo', traduccion: 'Canguro', ejemplo: 'The kangaroo jumps far.' }
+  ];
+
+  esenciales = this.animales.slice(0, 10);
+
+  mostrarSoluciones = false;
+
+  // 15 ejercicios
+  practica = [
+    { frase: 'The ____ is barking outside.', solucion: 'dog' },
+    { frase: 'The ____ has a long neck.', solucion: 'giraffe' },
+    { frase: 'The ____ is swimming in the pond.', solucion: 'duck' },
+    { frase: 'The ____ is the king of the jungle.', solucion: 'lion' },
+    { frase: 'The ____ makes honey.', solucion: 'bee' },
+    { frase: 'The ____ flies at night.', solucion: 'bat' },
+    { frase: 'The ____ has big ears.', solucion: 'elephant' },
+    { frase: 'The ____ climbs trees.', solucion: 'monkey' },
+    { frase: 'The ____ is long and quiet.', solucion: 'snake' },
+    { frase: 'The ____ is friendly in the ocean.', solucion: 'dolphin' },
+    { frase: 'The ____ eats carrots.', solucion: 'rabbit' },
+    { frase: 'The ____ lives in the jungle and has stripes.', solucion: 'tiger' },
+    { frase: 'The ____ sees in the dark.', solucion: 'owl' },
+    { frase: 'The ____ runs fast.', solucion: 'horse' },
+    { frase: 'The ____ has sharp teeth and hunts in the sea.', solucion: 'shark' }
   ];
 }

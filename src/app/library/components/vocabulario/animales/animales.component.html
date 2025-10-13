@@ -1,33 +1,57 @@
+<div class="container">
+  <mat-card class="article-card">
+    <h1>{{ title }}</h1>
 
+    <p class="intro">
+      En esta lección se abordan nombres de animales en inglés con su traducción al español y un ejemplo breve en contexto.
+      Aunque no se cubre la totalidad del reino animal, se presenta una selección representativa pensada como un primer
+      acercamiento práctico al uso diario del idioma. La idea es reforzar vocabulario frecuente que aparece en cuentos,
+      noticias breves, ejercicios escolares y conversaciones cotidianas. A medida que se avance, se podrán incorporar
+      más especies, clasificar por hábitats (granja, selva, mar) y añadir variantes útiles (cría, sonido, acciones típicas).
+    </p>
 
-<body>
-  <div class="container">
-    <mat-card>
-      <mat-card-title>Animales en inglés – Traducción y ejemplo</mat-card-title>
+    <p class="intro">
+      La recomendación didáctica es: (1) leer la “lista rápida” para reconocimiento; (2) recorrer el mini-glosario con
+      ejemplos; (3) realizar la práctica de completar oraciones. Con este ciclo se fortalece la comprensión lectora y
+      la recuperación activa de términos, lo que facilita recordar el vocabulario en situaciones reales.
+    </p>
 
-      <table mat-table [dataSource]="animales" class="mat-elevation-z2 antonimos-table">
+    <h2>Lista rápida (10 esenciales)</h2>
+    <mat-divider></mat-divider>
+    <ul class="quick-list">
+      <li *ngFor="let e of esenciales">
+        <span class="en">{{ e.animal }}</span>
+        <span class="sep">—</span>
+        <span class="es">{{ e.traduccion }}</span>
+      </li>
+    </ul>
 
-        <!-- Animal -->
-        <ng-container matColumnDef="animal">
-          <th mat-header-cell *matHeaderCellDef> Animal </th>
-          <td mat-cell *matCellDef="let elem"> {{ elem.animal }} </td>
-        </ng-container>
+    <h2>Mini-glosario con ejemplo</h2>
+    <mat-divider></mat-divider>
+    <div class="glossary">
+      <div class="glossary-item" *ngFor="let e of animales">
+        <div class="term">
+          <span class="en">{{ e.animal }}</span>
+          <span class="sep">·</span>
+          <span class="es">{{ e.traduccion }}</span>
+        </div>
+        <div class="ex">“{{ e.ejemplo }}”</div>
+      </div>
+    </div>
 
-        <!-- Traducción -->
-        <ng-container matColumnDef="traduccion">
-          <th mat-header-cell *matHeaderCellDef> Traducción </th>
-          <td mat-cell *matCellDef="let elem"> {{ elem.traduccion }} </td>
-        </ng-container>
+    <h2>Práctica (complete con el animal en inglés)</h2>
+    <mat-divider></mat-divider>
+    <ol class="practice">
+      <li *ngFor="let p of practica; index as i">
+        {{ p.frase }}
+        <div class="solution" *ngIf="mostrarSoluciones">
+          ✅ Solución: <strong>{{ p.solucion }}</strong>
+        </div>
+      </li>
+    </ol>
 
-        <!-- Ejemplo -->
-        <ng-container matColumnDef="ejemplo">
-          <th mat-header-cell *matHeaderCellDef> Ejemplo </th>
-          <td mat-cell *matCellDef="let elem"> {{ elem.ejemplo }} </td>
-        </ng-container>
-
-        <tr mat-header-row *matHeaderRowDef="columnas"></tr>
-        <tr mat-row *matRowDef="let row; columns: columnas;"></tr>
-      </table>
-    </mat-card>
-  </div>
-</body>
+    <button mat-raised-button (click)="mostrarSoluciones = !mostrarSoluciones">
+      {{ mostrarSoluciones ? 'Ocultar soluciones' : 'Mostrar soluciones' }}
+    </button>
+  </mat-card>
+</div>

@@ -1,32 +1,57 @@
-<body>
-    <div class="container">
-      <mat-card>
-        <mat-card-title>Colores en inglés – Traducción y ejemplo</mat-card-title>
-  
-        <table mat-table [dataSource]="colores" class="mat-elevation-z2 antonimos-table">
-  
-          <!-- Color -->
-          <ng-container matColumnDef="color">
-            <th mat-header-cell *matHeaderCellDef> Color </th>
-            <td mat-cell *matCellDef="let elem"> {{ elem.color }} </td>
-          </ng-container>
-  
-          <!-- Traducción -->
-          <ng-container matColumnDef="traduccion">
-            <th mat-header-cell *matHeaderCellDef> Traducción </th>
-            <td mat-cell *matCellDef="let elem"> {{ elem.traduccion }} </td>
-          </ng-container>
-  
-          <!-- Ejemplo -->
-          <ng-container matColumnDef="ejemplo">
-            <th mat-header-cell *matHeaderCellDef> Ejemplo </th>
-            <td mat-cell *matCellDef="let elem"> {{ elem.ejemplo }} </td>
-          </ng-container>
-  
-          <tr mat-header-row *matHeaderRowDef="columnas"></tr>
-          <tr mat-row *matRowDef="let row; columns: columnas;"></tr>
-        </table>
-      </mat-card>
+<div class="container">
+  <mat-card class="article-card">
+    <h1>{{ title }}</h1>
+
+    <p class="intro">
+      En esta lección se presentan colores en inglés con su traducción al español, un ejemplo simple
+      y una muestra visual para favorecer el reconocimiento. Aunque faltan muchos matices y combinaciones,
+      se ofrece un conjunto representativo pensado como primer acercamiento práctico al uso diario del idioma.
+      Este vocabulario aparece con frecuencia en descripciones de objetos, ropa, clima, naturaleza y arte.
+    </p>
+    <p class="intro">
+      Recomendación: (1) revisar la lista rápida para familiarizarse; (2) leer el mini-glosario con ejemplos y
+      observar las muestras de color; (3) completar la práctica. Sugerencia gramatical: en inglés, los adjetivos
+      de color suelen ir <em>antes</em> del sustantivo (<strong>blue</strong> sky, <strong>red</strong> apple).
+    </p>
+
+    <h2>Lista rápida (10 esenciales)</h2>
+    <mat-divider></mat-divider>
+    <ul class="quick-list">
+      <li *ngFor="let e of esenciales">
+        <span class="swatch" [style.backgroundColor]="e.hex || '#ddd'"></span>
+        <span class="en">{{ e.color }}</span>
+        <span class="sep">—</span>
+        <span class="es">{{ e.traduccion }}</span>
+      </li>
+    </ul>
+
+    <h2>Mini-glosario con ejemplo</h2>
+    <mat-divider></mat-divider>
+    <div class="glossary">
+      <div class="glossary-item" *ngFor="let e of colores">
+        <div class="term">
+          <span class="swatch" [style.backgroundColor]="e.hex || '#ddd'"></span>
+          <span class="en">{{ e.color }}</span>
+          <span class="sep">·</span>
+          <span class="es">{{ e.traduccion }}</span>
+        </div>
+        <div class="ex">“{{ e.ejemplo }}”</div>
+      </div>
     </div>
-  </body>
-  
+
+    <h2>Práctica (complete con el color en inglés)</h2>
+    <mat-divider></mat-divider>
+    <ol class="practice">
+      <li *ngFor="let p of practica">
+        {{ p.frase }}
+        <div class="solution" *ngIf="mostrarSoluciones">
+          ✅ Solución: <strong>{{ p.solucion }}</strong>
+        </div>
+      </li>
+    </ol>
+
+    <button mat-raised-button (click)="mostrarSoluciones = !mostrarSoluciones">
+      {{ mostrarSoluciones ? 'Ocultar soluciones' : 'Mostrar soluciones' }}
+    </button>
+  </mat-card>
+</div>

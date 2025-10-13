@@ -1,45 +1,84 @@
+<mat-card class="article-card">
+  <header>
+    <h1>Verbo <em>to have</em>: presente, pasado y usos cotidianos</h1>
+    <p class="lead">
+      El verbo <strong>to have</strong> es esencial en inglés. Además de indicar posesión o relaciones,
+      aparece en expresiones de uso diario (<em>have breakfast</em>, <em>have a meeting</em>, <em>have fun</em>),
+      expresa obligación con <em>have to</em> y funciona como <strong>auxiliar</strong> en los tiempos perfectos
+      (<em>have/has + participio</em>). En presente usa <strong>have/has</strong> y su pasado es <strong>had</strong>.
+      En esta guía verás sus usos clave, estructuras frecuentes, ejemplos y práctica.
+    </p>
+  </header>
 
+  <section>
+    <h2>Conjugación básica: presente y pasado</h2>
+    <p>Lista “tipo tabla” para repasar rápidamente:</p>
+    <ul class="be-list">
+      <li class="be-head">
+        <span>Pronombre</span>
+        <span>Presente</span>
+        <span>Pasado</span>
+      </li>
+      <li *ngFor="let c of conjugaciones">
+        <span class="col-pron">{{ c.pronombre }}</span>
+        <span class="col-pres"><strong>{{ c.presente }}</strong> — <small>{{ c.traduccionPresente }}</small></span>
+        <span class="col-past"><strong>{{ c.pasado }}</strong> — <small>{{ c.traduccionPasado }}</small></span>
+      </li>
+    </ul>
+  </section>
 
-<body>
-  <div class="container">
-    <mat-card>
-      <mat-card-title>Verbo To Have – Presente y Pasado</mat-card-title>
+  <section>
+    <h2>Usos principales</h2>
+    <ul class="bullets">
+      <li *ngFor="let u of usos" [innerHTML]="u"></li>
+    </ul>
+  </section>
 
-      <table mat-table [dataSource]="conjugaciones" class="mat-elevation-z2 antonimos-table">
+  <section>
+    <h2>Estructuras frecuentes</h2>
+    <ul class="bullets">
+      <li *ngFor="let s of estructuras" [innerHTML]="s"></li>
+    </ul>
+  </section>
 
-        <!-- Pronombre -->
-        <ng-container matColumnDef="pronombre">
-          <th mat-header-cell *matHeaderCellDef> Pronombre </th>
-          <td mat-cell *matCellDef="let elem"> {{ elem.pronombre }} </td>
-        </ng-container>
+  <section>
+    <h2>Ejemplos en contexto</h2>
+    <ul class="examples">
+      <li *ngFor="let e of ejemplos">
+        <blockquote><p>“{{ e.en }}”</p></blockquote>
+        <small>Traducción: {{ e.es }}</small>
+      </li>
+    </ul>
+  </section>
 
-        <!-- Presente -->
-        <ng-container matColumnDef="presente">
-          <th mat-header-cell *matHeaderCellDef> Presente </th>
-          <td mat-cell *matCellDef="let elem"> {{ elem.presente }} </td>
-        </ng-container>
-
-        <!-- Traducción presente -->
-        <ng-container matColumnDef="traduccionPresente">
-          <th mat-header-cell *matHeaderCellDef> Traducción presente </th>
-          <td mat-cell *matCellDef="let elem"> {{ elem.traduccionPresente }} </td>
-        </ng-container>
-
-        <!-- Pasado -->
-        <ng-container matColumnDef="pasado">
-          <th mat-header-cell *matHeaderCellDef> Pasado </th>
-          <td mat-cell *matCellDef="let elem"> {{ elem.pasado }} </td>
-        </ng-container>
-
-        <!-- Traducción pasado -->
-        <ng-container matColumnDef="traduccionPasado">
-          <th mat-header-cell *matHeaderCellDef> Traducción pasado </th>
-          <td mat-cell *matCellDef="let elem"> {{ elem.traduccionPasado }} </td>
-        </ng-container>
-
-        <tr mat-header-row *matHeaderRowDef="columnas"></tr>
-        <tr mat-row *matRowDef="let row; columns: columnas;"></tr>
-      </table>
-    </mat-card>
-  </div>
-</body>
+  <section>
+    <h2>Práctica rápida</h2>
+    <ol class="exercise">
+      <li>Complete (presente): “He ____ a new bike.”</li>
+      <li>Complete (pasado): “They ____ dinner at 7 pm.”</li>
+      <li>Obligación: “I ____ to finish this today.”</li>
+      <li>Auxiliar (present perfect): “She ____ already ____ the report.”</li>
+      <li>Auxiliar (past perfect): “We ____ never ____ sushi before.”</li>
+      <li>Variante coloquial: “I ____ ____ a question.” (have got)</li>
+      <li>Negación (presente): “He ____ not ____ enough time.”</li>
+      <li>Pregunta (presente): “____ you ____ any siblings?”</li>
+      <li>Colocación: “Let’s ____ lunch together.”</li>
+      <li>Traducción: “Ellos tuvieron un problema.” → “They ____ a problem.”</li>
+    </ol>
+    <details class="solutions">
+      <summary class="summary">Ver soluciones sugeridas</summary>
+      <ul>
+        <li>1) <em>has</em></li>
+        <li>2) <em>had</em></li>
+        <li>3) <em>have</em></li>
+        <li>4) <em>has</em> already <em>finished</em></li>
+        <li>5) <em>had</em> never <em>tried</em></li>
+        <li>6) <em>have got</em> (“I’ve got a question.”)</li>
+        <li>7) <em>does</em> not <em>have</em> (doesn’t have)</li>
+        <li>8) <em>Do</em> you <em>have</em> any siblings?</li>
+        <li>9) <em>have</em></li>
+        <li>10) <em>had</em></li>
+      </ul>
+    </details>
+  </section>
+</mat-card>

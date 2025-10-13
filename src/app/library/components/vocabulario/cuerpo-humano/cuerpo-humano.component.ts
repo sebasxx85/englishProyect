@@ -1,19 +1,27 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatTableModule } from '@angular/material/table';
 import { MatCardModule } from '@angular/material/card';
+import { MatListModule } from '@angular/material/list';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDividerModule } from '@angular/material/divider';
+
+interface EntradaParte {
+  parte: string;
+  traduccion: string;
+  ejemplo: string;
+}
 
 @Component({
   selector: 'app-cuerpo',
   standalone: true,
-  imports: [CommonModule, MatTableModule, MatCardModule],
+  imports: [CommonModule, MatCardModule, MatListModule, MatButtonModule, MatDividerModule],
   templateUrl: './cuerpo-humano.component.html',
-  styleUrl: './cuerpo-humano.component.scss'
+  styleUrls: ['./cuerpo-humano.component.scss']
 })
 export class PartesCuerpoComponent {
-  columnas: string[] = ['parte', 'traduccion', 'ejemplo'];
+  title = 'Partes del cuerpo en inglés';
 
-  partes = [
+  partes: EntradaParte[] = [
     { parte: 'Head', traduccion: 'Cabeza', ejemplo: 'He has a headache.' },
     { parte: 'Hair', traduccion: 'Cabello', ejemplo: 'Her hair is long and curly.' },
     { parte: 'Face', traduccion: 'Cara', ejemplo: 'He has a friendly face.' },
@@ -30,9 +38,35 @@ export class PartesCuerpoComponent {
     { parte: 'Finger', traduccion: 'Dedo (mano)', ejemplo: 'He cut his finger.' },
     { parte: 'Chest', traduccion: 'Pecho', ejemplo: 'He felt pain in his chest.' },
     { parte: 'Stomach', traduccion: 'Estómago', ejemplo: 'My stomach hurts.' },
+    { parte: 'Back', traduccion: 'Espalda', ejemplo: 'My back is sore today.' },
     { parte: 'Leg', traduccion: 'Pierna', ejemplo: 'She injured her leg.' },
     { parte: 'Knee', traduccion: 'Rodilla', ejemplo: 'He bent his knee.' },
     { parte: 'Foot', traduccion: 'Pie', ejemplo: 'My foot is sore.' },
     { parte: 'Toe', traduccion: 'Dedo (pie)', ejemplo: 'He stubbed his toe.' }
+  ];
+
+  esenciales = [
+    'Head','Face','Eye','Ear','Nose','Mouth','Hand','Arm','Leg','Foot'
+  ].map(en => this.partes.find(p => p.parte === en)!).filter(Boolean) as EntradaParte[];
+
+  mostrarSoluciones = false;
+
+  // 15 ejercicios (complete con la parte del cuerpo en inglés)
+  practica = [
+    { frase: 'Brush your ____ every day.', solucion: 'teeth' },
+    { frase: 'Raise your ____ to ask a question.', solucion: 'hand' },
+    { frase: 'He broke his ____ playing football.', solucion: 'arm' },
+    { frase: 'She has green ____.', solucion: 'eyes' },
+    { frase: 'I have a pain in my ____.', solucion: 'back' },
+    { frase: 'Open your ____ wide.', solucion: 'mouth' },
+    { frase: 'He bent his ____ carefully.', solucion: 'knee' },
+    { frase: 'My ____ is stuffy today.', solucion: 'nose' },
+    { frase: 'Her ____ is long and curly.', solucion: 'hair' },
+    { frase: 'He cut his ____ while cooking.', solucion: 'finger' },
+    { frase: 'I have an ____ache.', solucion: 'ear' },
+    { frase: 'She hurt her ____ at the gym.', solucion: 'shoulder' },
+    { frase: 'My ____ hurts after lunch.', solucion: 'stomach' },
+    { frase: 'Be careful, don’t hit your ____.', solucion: 'head' },
+    { frase: 'He stubbed his ____ on the table.', solucion: 'toe' }
   ];
 }
