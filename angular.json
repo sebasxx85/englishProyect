@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/english-proyect",
+            "outputPath": "dist/englishProyect/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -116,6 +116,73 @@
             ],
             "scripts": []
           }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/englishProyect/server",
+            "main": "server.ts",
+            "tsConfig": "tsconfig.server.json",
+            "inlineStyleLanguage": "scss"
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media",
+              "fileReplacements": [
+                {
+                  "replace": "src/app/environments/environment.ts",
+                  "with": "src/app/environments/environment.prod.ts"
+                }
+              ]
+            },
+            "development": {
+              "buildOptimizer": false,
+              "fileReplacements": [
+                {
+                  "replace": "src/app/environments/environment.prod.ts",
+                  "with": "src/app/environments/environment.ts"
+                }
+              ],
+              "optimization": false,
+              "sourceMap": true,
+              "extractLicenses": false,
+              "vendorChunk": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve-ssr": {
+          "builder": "@angular-devkit/build-angular:ssr-dev-server",
+          "configurations": {
+            "development": {
+              "browserTarget": "englishProyect:build:development",
+              "serverTarget": "englishProyect:server:development"
+            },
+            "production": {
+              "browserTarget": "englishProyect:build:production",
+              "serverTarget": "englishProyect:server:production"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "prerender": {
+          "builder": "@angular-devkit/build-angular:prerender",
+          "options": {
+            "routes": [
+              "/"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "englishProyect:build:production",
+              "serverTarget": "englishProyect:server:production"
+            },
+            "development": {
+              "browserTarget": "englishProyect:build:development",
+              "serverTarget": "englishProyect:server:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }
