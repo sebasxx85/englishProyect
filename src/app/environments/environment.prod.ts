@@ -7,3 +7,5 @@ export const environment = {
   };
 
   //Usar ng build --configuration=production 
+  //npm run build:ssr
+  //ng run englishProyect:prerender:production
