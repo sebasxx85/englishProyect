@@ -91,7 +91,7 @@ export class TableErrorsComponent implements OnInit {
     this.intercambioDatosService.setCantidadRespIncorrectas(0)
 
     setTimeout(() => {
-      this.router.navigate(['']);
+      this.router.navigate(['/practicar']);
     }, 1000);
 
   }
