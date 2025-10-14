@@ -17,7 +17,7 @@ export class ToBeComponent implements OnInit {
   private meta = inject(Meta);
 
   ngOnInit(): void {
-    this.title.setTitle('Verbo TO BE en inglés: presente y pasado con ejemplos | Biblioteca');
+    this.title.setTitle('Como Aprender Inglés Rápido | Biblioteca');
     this.meta.updateTag({
       name: 'description',
       content:

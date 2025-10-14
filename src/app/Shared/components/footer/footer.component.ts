@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent {
-  title = 'Free Language Tests'
+  title = 'Como Aprender Inglés Rápido'
 
 }
