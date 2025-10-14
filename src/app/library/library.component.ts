@@ -31,11 +31,13 @@ export class LibraryComponent {
     [/^\/?library\/?$/, 'Biblioteca'],
     [/vocabulario\/animales/, 'Vocabulario · Animales'],
     [/vocabulario\/colores/, 'Vocabulario · Colores'],
+     [/vocabulario\/compras/, 'Vocabulario · Compras'],
     [/vocabulario\/cuerpo/, 'Vocabulario · Partes del cuerpo'],
     [/vocabulario\/dias/, 'Vocabulario · Días'],
     [/vocabulario\/frutas/, 'Vocabulario · Frutas'],
     [/vocabulario\/meses/, 'Vocabulario · Meses'],
     [/vocabulario\/ropa/, 'Vocabulario · Ropa'],
+     [/vocabulario\/viajes/, 'Vocabulario · Viajes'],
     [/verbos\/to-be/, 'Verbos · To Be'],
     [/verbos\/to-do/, 'Verbos · To Do'],
     [/verbos\/to-get/, 'Verbos · To Get'],
@@ -49,8 +51,8 @@ export class LibraryComponent {
     [/frases\/compras/, 'Frases · Compras'],
     [/frases\/saludos/, 'Frases · Saludos'],
     [/frases\/viajes/, 'Frases · Viajes'],
-    [/avanzado\/antonimos/, 'Avanzado · Antónimos'],
-    [/avanzado\/sinonimos/, 'Avanzado · Sinónimos'],
+    [/otros\/antonimos/, 'Otros · Antónimos'],
+    [/otros\/sinonimos/, 'Otros · Sinónimos'],
   ];
 
   ngOnInit() {

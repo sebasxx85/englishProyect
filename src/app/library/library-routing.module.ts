@@ -35,9 +35,9 @@ const routes: Routes = [
       { path: 'gramatica/presente-simple',  loadComponent: () => import('./components/gramatica/presente-simple/presente-simple.component').then(m => m.PresenteSimpleComponent) },
       { path: 'gramatica/preposiciones',    loadComponent: () => import('./components/gramatica/preposiciones/preposiciones.component').then(m => m.PreposicionesComponent) },
  
-      // AVANZADO
-      { path: 'avanzado/antonimos', loadComponent: () => import('./components/avanzado/antonimos/antonimos.component').then(m => m.AntonimosComponent) },
-      { path: 'avanzado/sinonimos', loadComponent: () => import('./components/avanzado/sinonimos/sinonimos.component').then(m => m.SinonimosComponent) },
+      // OTROS
+      { path: 'otros/antonimos', loadComponent: () => import('./components/avanzado/antonimos/antonimos.component').then(m => m.AntonimosComponent) },
+      { path: 'otros/sinonimos', loadComponent: () => import('./components/avanzado/sinonimos/sinonimos.component').then(m => m.SinonimosComponent) },
     ]
   }
 ];

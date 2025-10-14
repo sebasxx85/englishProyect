@@ -19,7 +19,7 @@ interface Prenda {
   styleUrls: ['./ropa.component.scss']
 })
 export class RopaComponent {
-  title = 'Ropa en inglés';
+  title = 'Vocabulario de Ropa en inglés';
 
   prendas: Prenda[] = [
     { prenda: 'Shirt', traduccion: 'Camisa', ejemplo: 'He is wearing a blue shirt.' },
