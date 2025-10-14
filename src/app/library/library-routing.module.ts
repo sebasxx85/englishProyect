@@ -18,6 +18,8 @@ const routes: Routes = [
       { path: 'vocabulario/frutas',   loadComponent: () => import('./components/vocabulario/frutas/frutas.component').then(m => m.FrutasComponent) },
       { path: 'vocabulario/meses',    loadComponent: () => import('./components/vocabulario/meses/meses.component').then(m => m.MesesComponent) },
       { path: 'vocabulario/ropa',     loadComponent: () => import('./components/vocabulario/ropa/ropa.component').then(m => m.RopaComponent) },
+      { path: 'vocabulario/compras', loadComponent: () => import('./components/vocabulario/compras/compras.component').then(m => m.ComprasComponent) },
+      { path: 'vocabulario/viajes',  loadComponent: () => import('./components/vocabulario/viajes/viajes.component').then(m => m.ViajesComponent) },
 
       // VERBOS
       { path: 'verbos/to-be',   loadComponent: () => import('./components/verbos/to-be/to-be.component').then(m => m.ToBeComponent) },
@@ -32,12 +34,7 @@ const routes: Routes = [
       { path: 'gramatica/pronombres',       loadComponent: () => import('./components/gramatica/pronombres/pronombres.component').then(m => m.PronombresComponent) },
       { path: 'gramatica/presente-simple',  loadComponent: () => import('./components/gramatica/presente-simple/presente-simple.component').then(m => m.PresenteSimpleComponent) },
       { path: 'gramatica/preposiciones',    loadComponent: () => import('./components/gramatica/preposiciones/preposiciones.component').then(m => m.PreposicionesComponent) },
-
-      // FRASES
-      { path: 'frases/compras', loadComponent: () => import('./components/frases/compras/compras.component').then(m => m.ComprasComponent) },
-      { path: 'frases/saludos', loadComponent: () => import('./components/frases/saludos/saludos.component').then(m => m.SaludosComponent) },
-      { path: 'frases/viajes',  loadComponent: () => import('./components/frases/viajes/viajes.component').then(m => m.ViajesComponent) },
-
+ 
       // AVANZADO
       { path: 'avanzado/antonimos', loadComponent: () => import('./components/avanzado/antonimos/antonimos.component').then(m => m.AntonimosComponent) },
       { path: 'avanzado/sinonimos', loadComponent: () => import('./components/avanzado/sinonimos/sinonimos.component').then(m => m.SinonimosComponent) },

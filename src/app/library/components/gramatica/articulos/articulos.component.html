@@ -1,39 +1,68 @@
-<body>
-    <div class="container">
-      <mat-card>
-        <mat-card-title>Artículos en inglés – Uso y ejemplos</mat-card-title>
-  
-        <table mat-table [dataSource]="articulos" class="mat-elevation-z2 antonimos-table">
-  
-          <!-- Artículo -->
-          <ng-container matColumnDef="articulo">
-            <th mat-header-cell *matHeaderCellDef> Artículo </th>
-            <td mat-cell *matCellDef="let elem"> {{ elem.articulo }} </td>
-          </ng-container>
-  
-          <!-- Tipo -->
-          <ng-container matColumnDef="tipo">
-            <th mat-header-cell *matHeaderCellDef> Tipo </th>
-            <td mat-cell *matCellDef="let elem"> {{ elem.tipo }} </td>
-          </ng-container>
-  
-          <!-- Uso -->
-          <ng-container matColumnDef="uso">
-            <th mat-header-cell *matHeaderCellDef> Uso </th>
-            <td mat-cell *matCellDef="let elem"> {{ elem.uso }} </td>
-          </ng-container>
-  
-          <!-- Ejemplo -->
-          <ng-container matColumnDef="ejemplo">
-            <th mat-header-cell *matHeaderCellDef> Ejemplo </th>
-            <td mat-cell *matCellDef="let elem"> {{ elem.ejemplo }} </td>
-          </ng-container>
-  
-          <tr mat-header-row *matHeaderRowDef="columnas"></tr>
-          <tr mat-row *matRowDef="let row; columns: columnas;"></tr>
-  
-        </table>
-      </mat-card>
-    </div>
-  </body>
-  
+<!-- Sin container. Card blanco centrado con 97% de ancho -->
+<mat-card class="article-card">
+  <h1>Artículos en inglés</h1>
+ <p class="lead">
+  En este artículo se explican los artículos en inglés: los <strong>indefinidos</strong> (<strong>a</strong> y <strong>an</strong>)
+  y el <strong>definido</strong> (<strong>the</strong>). También se revisan los casos en que <em>no</em> se usa artículo,
+  como cuando se habla en sentido general. A través de reglas claras, ejemplos y ejercicios,
+  se busca que el uso de los artículos resulte más natural y fácil de recordar.
+</p>
+
+
+  <h2>Lista rápida (10 esenciales)</h2>
+  <mat-divider></mat-divider>
+  <ul class="bullets two-cols">
+    <li *ngFor="let item of quickList">
+      <strong>{{ item.en }}</strong> — {{ item.es }}
+    </li>
+  </ul>
+
+  <h2>Mini-glosario con ejemplo</h2>
+  <mat-divider></mat-divider>
+  <ul class="examples">
+    <li *ngFor="let g of glossary">
+      <strong>{{ g.term }}</strong> · <small>{{ g.tr }}</small>
+      <blockquote [innerHTML]="g.ex"></blockquote>
+    </li>
+  </ul>
+
+  <h2>Práctica</h2>
+  <mat-divider></mat-divider>
+  <div *ngFor="let p of practice; index as i" class="exercise">
+    {{ i + 1 }}. {{ p.q }}
+    <span *ngIf="showSolutions"> — <strong>{{ p.a }}</strong></span>
+  </div>
+  <details class="solutions">
+    <summary class="summary" (click)="$event.preventDefault(); showSolutions = !showSolutions">
+      {{ showSolutions ? 'Ocultar soluciones' : 'Mostrar soluciones' }}
+    </summary>
+    <ul *ngIf="showSolutions">
+      <li *ngFor="let p of practice">{{ p.a }}</li>
+    </ul>
+  </details>
+
+  <h2>FAQ</h2>
+  <mat-divider></mat-divider>
+  <details class="faq">
+    <summary>¿Cuándo uso <em>a</em> vs <em>an</em>?</summary>
+    <p>Por sonido inicial: <em>an</em> antes de sonido vocálico (an apple, an hour), <em>a</em> antes de consonántico (a user, a university).</p>
+  </details>
+  <details class="faq">
+    <summary>¿Cuándo no se usa artículo?</summary>
+    <p>Plural o incontable en sentido general: <em>Cats are cute</em>, <em>Water is essential</em>.</p>
+  </details>
+  <details class="faq">
+    <summary>¿El superlativo lleva artículo?</summary>
+    <p>Casi siempre: <em>the best</em>, <em>the most useful</em>, por referencia única en el grupo.</p>
+  </details>
+
+  <nav class="related">
+    <span>También te puede interesar: </span>
+    <a href="/library/gramatica/pronombres">Pronombres</a> ·
+    <a href="/library/gramatica/presente-simple">Presente simple</a> ·
+    <a href="/library/verbos/to-be">To be</a>
+  </nav>
+</mat-card>
+
+<!-- JSON-LD -->
+<div [innerHTML]="jsonLd" aria-hidden="true"></div>

@@ -1,0 +1,60 @@
+<div class="container">
+    <mat-card class="article-card">
+        <h1>{{ title }}</h1>
+
+        <p class="intro">
+            En este artículo se presentan palabras y expresiones útiles para desenvolverse en tiendas, centros
+            comerciales y supermercados.
+            El objetivo es facilitar situaciones comunes como preguntar precios, elegir tallas, pagar o solicitar un
+            cambio de producto.
+            Con este vocabulario será más sencillo comunicarse durante compras tanto en el extranjero como en entornos
+            turísticos.
+        </p>
+
+        <p class="intro">
+            Para aprovechar mejor el contenido, se recomienda comenzar con la <strong>lista rápida</strong> para
+            familiarizarse con los términos
+            esenciales, continuar con el <strong>mini-glosario</strong> acompañado de ejemplos breves y finalizar con la
+            <strong>práctica</strong> de oraciones para reforzar el aprendizaje.
+        </p>
+
+
+        <h2>Lista rápida (12 esenciales)</h2>
+        <mat-divider></mat-divider>
+        <ul class="quick-list">
+            <li *ngFor="let e of esenciales">
+                <span class="en">{{ e.termino }}</span>
+                <span class="sep">—</span>
+                <span class="es">{{ e.traduccion }}</span>
+            </li>
+        </ul>
+
+        <h2>Mini-glosario con ejemplo</h2>
+        <mat-divider></mat-divider>
+        <div class="glossary">
+            <div class="glossary-item" *ngFor="let e of vocabulario">
+                <div class="term">
+                    <span class="en">{{ e.termino }}</span>
+                    <span class="sep">·</span>
+                    <span class="es">{{ e.traduccion }}</span>
+                </div>
+                <div class="ex">“{{ e.ejemplo }}”</div>
+            </div>
+        </div>
+
+        <h2>Práctica (complete con la palabra en inglés)</h2>
+        <mat-divider></mat-divider>
+        <ol class="practice">
+            <li *ngFor="let p of practica">
+                {{ p.frase }}
+                <div class="solution" *ngIf="mostrarSoluciones">
+                    ✅ Solución: <strong>{{ p.solucion }}</strong>
+                </div>
+            </li>
+        </ol>
+
+        <button mat-raised-button (click)="mostrarSoluciones = !mostrarSoluciones">
+            {{ mostrarSoluciones ? 'Ocultar soluciones' : 'Mostrar soluciones' }}
+        </button>
+    </mat-card>
+</div>

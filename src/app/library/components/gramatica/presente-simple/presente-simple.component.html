@@ -1,44 +1,84 @@
-<body>
-    <div class="container">
-      <mat-card>
-        <mat-card-title>Presente Simple – Conjugación y ejemplos</mat-card-title>
-  
-        <table mat-table [dataSource]="oraciones" class="mat-elevation-z2 antonimos-table">
-  
-          <!-- Pronombre -->
-          <ng-container matColumnDef="pronombre">
-            <th mat-header-cell *matHeaderCellDef> Pronombre </th>
-            <td mat-cell *matCellDef="let elem"> {{ elem.pronombre }} </td>
-          </ng-container>
-  
-          <!-- Verbo base -->
-          <ng-container matColumnDef="verboBase">
-            <th mat-header-cell *matHeaderCellDef> Verbo base </th>
-            <td mat-cell *matCellDef="let elem"> {{ elem.verboBase }} </td>
-          </ng-container>
-  
-          <!-- Verbo presente -->
-          <ng-container matColumnDef="verboPresente">
-            <th mat-header-cell *matHeaderCellDef> Verbo presente </th>
-            <td mat-cell *matCellDef="let elem"> {{ elem.verboPresente }} </td>
-          </ng-container>
-  
-          <!-- Tipo -->
-          <ng-container matColumnDef="tipo">
-            <th mat-header-cell *matHeaderCellDef> Tipo </th>
-            <td mat-cell *matCellDef="let elem"> {{ elem.tipo }} </td>
-          </ng-container>
-  
-          <!-- Ejemplo -->
-          <ng-container matColumnDef="ejemplo">
-            <th mat-header-cell *matHeaderCellDef> Ejemplo </th>
-            <td mat-cell *matCellDef="let elem"> {{ elem.ejemplo }} </td>
-          </ng-container>
-  
-          <tr mat-header-row *matHeaderRowDef="columnas"></tr>
-          <tr mat-row *matRowDef="let row; columns: columnas;"></tr>
-        </table>
-      </mat-card>
-    </div>
-  </body>
-  
+<mat-card class="article-card">
+  <h1>Presente Simple en inglés</h1>
+ <p class="lead">
+  En este artículo se explica el uso del <strong>presente simple</strong> en inglés, un tiempo verbal que se emplea
+  para hablar de <strong>hábitos</strong>, <strong>hechos</strong> y <strong>horarios</strong>. 
+  Se revisa cómo cambia la forma en <em>he / she / it</em> y cómo se forman las oraciones negativas y preguntas
+  con <em>do</em> y <em>does</em>.
+</p>
+
+
+  <h2>Lista rápida</h2>
+  <mat-divider></mat-divider>
+  <ul class="bullets two-cols">
+    <li *ngFor="let it of quickList"><strong>{{ it.en }}</strong> — {{ it.es }}</li>
+  </ul>
+
+  <h2>Mini-glosario</h2>
+  <mat-divider></mat-divider>
+  <ul class="examples">
+    <li *ngFor="let g of glossary">
+      <blockquote>{{ g.def }}</blockquote>
+      <small><strong>{{ g.term }}</strong></small>
+    </li>
+  </ul>
+
+  <h2>Reglas de 3ª persona (he/she/it)</h2>
+  <mat-divider></mat-divider>
+  <ul class="be-list">
+    <li class="be-head">
+      <span class="col-pron">Regla</span>
+      <span class="col-pres"><strong>Ejemplos</strong></span>
+      <span class="col-past"><strong>Nota</strong></span>
+    </li>
+    <li *ngFor="let r of rules">
+      <span class="col-pron">{{ r.head }}</span>
+      <span class="col-pres"><strong>{{ r.body }}</strong></span>
+      <span class="col-past"><small>Aplica solo a he/she/it.</small></span>
+    </li>
+  </ul>
+
+  <h2>Ejemplos útiles</h2>
+  <mat-divider></mat-divider>
+  <ul class="be-list">
+    <li class="be-head">
+      <span class="col-pron">Pronombre</span>
+      <span class="col-pres"><strong>Verbo (base → presente)</strong></span>
+      <span class="col-past"><strong>Ejemplo</strong></span>
+    </li>
+    <li *ngFor="let s of sentences">
+      <span class="col-pron">{{ s.pron }}</span>
+      <span class="col-pres"><strong>{{ s.base }}</strong> → <strong>{{ s.pres }}</strong> <small>({{ s.tipo }})</small></span>
+      <span class="col-past">{{ s.ex }}</span>
+    </li>
+  </ul>
+
+  <h2>Negativas y preguntas</h2>
+  <mat-divider></mat-divider>
+  <ul class="bullets">
+    <li><strong>Negativa:</strong> I/you/we/they <em>don’t</em> + base. He/she/it <em>doesn’t</em> + base.</li>
+    <li><strong>Pregunta:</strong> <em>Do</em> + I/you/we/they + base? <em>Does</em> + he/she/it + base?</li>
+    <li><strong>Short answers:</strong> Yes, I do. / No, he doesn’t.</li>
+    <li><strong>Adverbios de frecuencia:</strong> always, usually, often, sometimes, never. 
+      Posición: antes del verbo principal (She <em>often</em> reads) y después de “be” (He is <em>usually</em> late).</li>
+  </ul>
+
+  <h2>Práctica rápida</h2>
+  <mat-divider></mat-divider>
+  <div class="exercise" *ngFor="let p of practice; let i = index">
+    {{ i + 1 }}. {{ p.q }}
+  </div>
+
+  <details class="solutions">
+    <summary class="summary">Mostrar soluciones</summary>
+    <ul>
+      <li *ngFor="let p of practice; let i = index"><strong>{{ i + 1 }}.</strong> {{ p.a }}</li>
+    </ul>
+  </details>
+
+  <h2>FAQ</h2>
+  <mat-divider></mat-divider>
+  <ul class="bullets">
+    <li *ngFor="let f of faq"><strong>{{ f.q }}</strong> — {{ f.a }}</li>
+  </ul>
+</mat-card>

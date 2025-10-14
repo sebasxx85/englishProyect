@@ -1,38 +1,76 @@
-<body>
-    <div class="container">
-      <mat-card>
-        <mat-card-title>Preposiciones en inglés – Uso y ejemplos</mat-card-title>
-  
-        <table mat-table [dataSource]="preposiciones" class="mat-elevation-z2 antonimos-table">
-  
-          <!-- Preposición -->
-          <ng-container matColumnDef="preposicion">
-            <th mat-header-cell *matHeaderCellDef> Preposición </th>
-            <td mat-cell *matCellDef="let elem"> {{ elem.preposicion }} </td>
-          </ng-container>
-  
-          <!-- Traducción -->
-          <ng-container matColumnDef="traduccion">
-            <th mat-header-cell *matHeaderCellDef> Traducción </th>
-            <td mat-cell *matCellDef="let elem"> {{ elem.traduccion }} </td>
-          </ng-container>
-  
-          <!-- Uso -->
-          <ng-container matColumnDef="uso">
-            <th mat-header-cell *matHeaderCellDef> Uso </th>
-            <td mat-cell *matCellDef="let elem"> {{ elem.uso }} </td>
-          </ng-container>
-  
-          <!-- Ejemplo -->
-          <ng-container matColumnDef="ejemplo">
-            <th mat-header-cell *matHeaderCellDef> Ejemplo </th>
-            <td mat-cell *matCellDef="let elem"> {{ elem.ejemplo }} </td>
-          </ng-container>
-  
-          <tr mat-header-row *matHeaderRowDef="columnas"></tr>
-          <tr mat-row *matRowDef="let row; columns: columnas;"></tr>
-        </table>
-      </mat-card>
-    </div>
-  </body>
-  
+<!-- Card blanco 97%, sin container -->
+<mat-card class="article-card">
+  <h1>Preposiciones en inglés</h1>
+<p class="lead">
+  En este artículo se explican las preposiciones más comunes del inglés, como <strong>in</strong>, <strong>on</strong> y <strong>at</strong>.
+  A través de reglas breves y ejemplos claros, se muestran sus principales usos en expresiones de lugar, tiempo, movimiento y medio.
+  El objetivo es facilitar su comprensión y práctica de manera sencilla y directa.
+</p>
+
+
+  <h2>Lista rápida (10 esenciales)</h2>
+  <mat-divider></mat-divider>
+  <ul class="bullets two-cols">
+    <li *ngFor="let item of quickList">
+      <strong>{{ item.en }}</strong> — {{ item.es }}
+    </li>
+  </ul>
+
+  <h2>Mini-glosario con ejemplo</h2>
+  <mat-divider></mat-divider>
+  <ul class="examples">
+    <li *ngFor="let g of glossary">
+      <strong>{{ g.term }}</strong> · <small>{{ g.tr }}</small>
+      <blockquote [innerHTML]="g.ex"></blockquote>
+    </li>
+  </ul>
+
+  <h2>Reglas rápidas: in / on / at</h2>
+  <mat-divider></mat-divider>
+  <ul class="bullets">
+    <li><strong>Lugar</strong>: <em>in</em> (áreas grandes/espacios cerrados), <em>on</em> (superficie), <em>at</em> (punto exacto).</li>
+    <li><strong>Tiempo</strong>: <em>in</em> (meses/años/parte del día), <em>on</em> (días/fechas), <em>at</em> (horas/festividades puntuales).</li>
+    <li><strong>Movimiento</strong>: <em>to</em> (dirección), <em>into</em> (hacia dentro), <em>onto</em> (hacia la superficie), <em>out of</em>/<em>off</em> (salida).</li>
+  </ul>
+
+  <h2>Práctica</h2>
+  <mat-divider></mat-divider>
+  <div *ngFor="let p of practice; index as i" class="exercise">
+    {{ i + 1 }}. {{ p.q }}
+    <span *ngIf="showSolutions"> — <strong>{{ p.a }}</strong></span>
+  </div>
+
+  <details class="solutions">
+    <summary class="summary" (click)="$event.preventDefault(); showSolutions = !showSolutions">
+      {{ showSolutions ? 'Ocultar soluciones' : 'Mostrar soluciones' }}
+    </summary>
+    <ul *ngIf="showSolutions">
+      <li *ngFor="let p of practice">{{ p.a }}</li>
+    </ul>
+  </details>
+
+  <h2>FAQ</h2>
+  <mat-divider></mat-divider>
+  <details class="faq">
+    <summary>¿“in the morning” o “at the morning”?</summary>
+    <p><em>In</em> the morning/afternoon/evening; <em>at</em> night; <em>at</em> 7 a.m.</p>
+  </details>
+  <details class="faq">
+    <summary>¿“on the weekend” o “at the weekend”?</summary>
+    <p>Ambas existen: <em>on the weekend</em> (EE. UU.) y <em>at the weekend</em> (UK).</p>
+  </details>
+  <details class="faq">
+    <summary>¿Cuándo uso “by” vs “with”?</summary>
+    <p><em>by</em> para autor/medio: “written by…”, “travel by train”; <em>with</em> para instrumento/compañía: “cut with scissors”.</p>
+  </details>
+
+  <nav class="related">
+    <span>También te puede interesar: </span>
+    <a href="/library/gramatica/articulos">Artículos</a> ·
+    <a href="/library/gramatica/pronombres">Pronombres</a> ·
+    <a href="/library/gramatica/presente-simple">Presente simple</a>
+  </nav>
+</mat-card>
+
+<!-- JSON-LD -->
+<div [innerHTML]="jsonLd" aria-hidden="true"></div>
