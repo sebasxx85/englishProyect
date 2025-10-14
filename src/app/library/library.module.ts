@@ -1,13 +1,8 @@
-// library.module.ts
+// src/app/library/library.module.ts
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { LibraryComponent } from './library.component';
-
+import { LibraryRoutingModule } from './library-routing.module';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    LibraryComponent, // ✅ Standalone
-  ]
+  imports: [LibraryRoutingModule],
 })
 export class LibraryModule {}

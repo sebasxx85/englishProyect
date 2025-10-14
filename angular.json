@@ -27,7 +27,8 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/.htaccess"
             ],
             "styles": [
               "node_modules/quill/dist/quill.core.css",
@@ -36,7 +37,9 @@
               "src/styles.scss"
             ],
             "scripts": [],
-            "allowedCommonJsDependencies": ["quill-delta"]
+            "allowedCommonJsDependencies": [
+              "quill-delta"
+            ]
           },
           "configurations": {
             "production": {
@@ -169,7 +172,30 @@
           "builder": "@angular-devkit/build-angular:prerender",
           "options": {
             "routes": [
-              "/"
+              "/",
+              "/library",
+              "/library/vocabulario/animales",
+              "/library/vocabulario/colores",
+              "/library/vocabulario/cuerpo",
+              "/library/vocabulario/dias",
+              "/library/vocabulario/frutas",
+              "/library/vocabulario/meses",
+              "/library/vocabulario/ropa",
+              "/library/verbos/to-be",
+              "/library/verbos/to-do",
+              "/library/verbos/to-get",
+              "/library/verbos/to-go",
+              "/library/verbos/to-have",
+              "/library/verbos/to-make",
+              "/library/gramatica/articulos",
+              "/library/gramatica/pronombres",
+              "/library/gramatica/presente-simple",
+              "/library/gramatica/preposiciones",
+              "/library/frases/compras",
+              "/library/frases/saludos",
+              "/library/frases/viajes",
+              "/library/avanzado/antonimos",
+              "/library/avanzado/sinonimos"
             ]
           },
           "configurations": {

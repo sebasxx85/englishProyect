@@ -1,97 +1,64 @@
 <app-header [title]="title">{{ title }}</app-header>
 
-<body>
-  <div class="container">
-    <mat-sidenav-container class="sidenav-container">
-      <mat-sidenav mode="side" opened class="sidenav">
-        <mat-nav-list class="navegacion">
+<div class="container">
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav mode="side" opened class="sidenav">
+      <mat-nav-list class="navegacion">
 
-          <!-- Verbos -->
-          <mat-expansion-panel [expanded]="true">
-            <mat-expansion-panel-header>
-              <mat-panel-title>Verbos principales</mat-panel-title>
-            </mat-expansion-panel-header>
-            <button mat-button (click)="selectTopic('to-be')">To Be</button>
-            <button mat-button (click)="selectTopic('to-do')">To Do</button>
-            <button mat-button (click)="selectTopic('to-get')">To Get</button>
-            <button mat-button (click)="selectTopic('to-go')">To Go</button>
-            <button mat-button (click)="selectTopic('to-have')">To Have</button>
-            <button mat-button (click)="selectTopic('to-make')">To Make</button>
-          </mat-expansion-panel>
+        <!-- Verbos -->
+        <mat-expansion-panel [expanded]="true">
+          <mat-expansion-panel-header>
+            <mat-panel-title>Verbos principales</mat-panel-title>
+          </mat-expansion-panel-header>
+          <a mat-button routerLink="verbos/to-be"   routerLinkActive="active">To Be</a>
+          <a mat-button routerLink="verbos/to-do"   routerLinkActive="active">To Do</a>
+          <a mat-button routerLink="verbos/to-get"  routerLinkActive="active">To Get</a>
+          <a mat-button routerLink="verbos/to-go"   routerLinkActive="active">To Go</a>
+          <a mat-button routerLink="verbos/to-have" routerLinkActive="active">To Have</a>
+          <a mat-button routerLink="verbos/to-make" routerLinkActive="active">To Make</a>
+        </mat-expansion-panel>
 
-          <!-- Vocabulario -->
-          <mat-expansion-panel [expanded]="true">
-            <mat-expansion-panel-header>
-              <mat-panel-title>Vocabulario</mat-panel-title>
-            </mat-expansion-panel-header>
-            <button mat-button (click)="selectTopic('animales')">Animales</button>
-            <button mat-button (click)="selectTopic('colores')">Colores</button>
-            <button mat-button (click)="selectTopic('cuerpo')">Partes del cuerpo</button>
-            <button mat-button (click)="selectTopic('dias')">Días</button>
-            <button mat-button (click)="selectTopic('frutas')">Frutas</button>
-            <button mat-button (click)="selectTopic('meses')">Meses</button>
-            <button mat-button (click)="selectTopic('ropa')">Ropa</button>
-          </mat-expansion-panel>
+        <!-- Vocabulario -->
+        <mat-expansion-panel [expanded]="true">
+          <mat-expansion-panel-header>
+            <mat-panel-title>Vocabulario</mat-panel-title>
+          </mat-expansion-panel-header>
+          <a mat-button routerLink="vocabulario/animales" routerLinkActive="active">Animales</a>
+          <a mat-button routerLink="vocabulario/colores"  routerLinkActive="active">Colores</a>
+          <a mat-button routerLink="vocabulario/cuerpo"   routerLinkActive="active">Partes del cuerpo</a>
+          <a mat-button routerLink="vocabulario/dias"     routerLinkActive="active">Días</a>
+          <a mat-button routerLink="vocabulario/frutas"   routerLinkActive="active">Frutas</a>
+          <a mat-button routerLink="vocabulario/meses"    routerLinkActive="active">Meses</a>
+          <a mat-button routerLink="vocabulario/ropa"     routerLinkActive="active">Ropa</a>
+        </mat-expansion-panel>
 
-          <!-- Gramática -->
-          <mat-expansion-panel [expanded]="true">
-            <mat-expansion-panel-header>
-              <mat-panel-title>Gramática</mat-panel-title>
-            </mat-expansion-panel-header>
-            <button mat-button (click)="selectTopic('articulos')">Artículos</button>
-            <button mat-button (click)="selectTopic('pronombres')">Pronombres</button>
-            <button mat-button (click)="selectTopic('presente-simple')">Presente Simple</button>
-            <button mat-button (click)="selectTopic('preposiciones')">Preposiciones</button>
-          </mat-expansion-panel>
+        <!-- Gramática -->
+        <mat-expansion-panel [expanded]="true">
+          <mat-expansion-panel-header>
+            <mat-panel-title>Gramática</mat-panel-title>
+          </mat-expansion-panel-header>
+          <a mat-button routerLink="gramatica/articulos"       routerLinkActive="active">Artículos</a>
+          <a mat-button routerLink="gramatica/pronombres"      routerLinkActive="active">Pronombres</a>
+          <a mat-button routerLink="gramatica/presente-simple" routerLinkActive="active">Presente Simple</a>
+          <a mat-button routerLink="gramatica/preposiciones"   routerLinkActive="active">Preposiciones</a>
+        </mat-expansion-panel>
 
-          <!-- Otros -->
-          <mat-expansion-panel [expanded]="true">
-            <mat-expansion-panel-header>
-              <mat-panel-title>Otros</mat-panel-title>
-            </mat-expansion-panel-header>
-            <button mat-button (click)="selectTopic('antonimos')">Antónimos</button>
-            <button mat-button (click)="selectTopic('sinonimos')">Sinónimos</button>
-          </mat-expansion-panel>
+        <!-- Otros -->
+        <mat-expansion-panel [expanded]="true">
+          <mat-expansion-panel-header>
+            <mat-panel-title>Otros</mat-panel-title>
+          </mat-expansion-panel-header>
+          <a mat-button routerLink="avanzado/antonimos" routerLinkActive="active">Antónimos</a>
+          <a mat-button routerLink="avanzado/sinonimos" routerLinkActive="active">Sinónimos</a>
+        </mat-expansion-panel>
 
-        </mat-nav-list>
-      </mat-sidenav>
+      </mat-nav-list>
+    </mat-sidenav>
 
-      <mat-sidenav-content class="content">
-        <ng-container [ngSwitch]="selectedTopic">
-
-          <!-- Verbos -->
-          <app-to-be *ngSwitchCase="'to-be'"></app-to-be>
-          <app-to-have *ngSwitchCase="'to-have'"></app-to-have>
-          <app-to-do *ngSwitchCase="'to-do'"></app-to-do>
-          <app-to-get *ngSwitchCase="'to-get'"></app-to-get>
-          <app-to-make *ngSwitchCase="'to-make'"></app-to-make>
-          <app-to-go *ngSwitchCase="'to-go'"></app-to-go>
-
-          <!-- Vocabulario -->
-          <app-animales *ngSwitchCase="'animales'"></app-animales>
-          <app-colores *ngSwitchCase="'colores'"></app-colores>
-          <app-cuerpo *ngSwitchCase="'cuerpo'"></app-cuerpo>
-          <app-dias *ngSwitchCase="'dias'"></app-dias>
-          <app-frutas *ngSwitchCase="'frutas'"></app-frutas>
-          <app-meses *ngSwitchCase="'meses'"></app-meses>
-          <app-ropa *ngSwitchCase="'ropa'"></app-ropa>
-
-          <!-- Gramática -->
-          <app-articulos *ngSwitchCase="'articulos'"></app-articulos>
-          <app-pronombres *ngSwitchCase="'pronombres'"></app-pronombres>
-          <app-presente-simple *ngSwitchCase="'presente-simple'"></app-presente-simple>
-          <app-preposiciones *ngSwitchCase="'preposiciones'"></app-preposiciones>
-
-          <!-- Avanzado -->
-          <app-antonimos *ngSwitchCase="'antonimos'"></app-antonimos>
-          <app-sinonimos *ngSwitchCase="'sinonimos'"></app-sinonimos>
-
-
-          <div *ngSwitchDefault>Selecciona una sección del menú.</div>
-        </ng-container>
-      </mat-sidenav-content>
-    </mat-sidenav-container>
-  </div>
-</body>
+    <mat-sidenav-content class="content">
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
 
 <app-footer></app-footer>
