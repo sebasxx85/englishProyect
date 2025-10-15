@@ -2,7 +2,14 @@
 
 <div class="container">
   <mat-sidenav-container class="sidenav-container">
-    <mat-sidenav mode="side" opened class="sidenav">
+    <!-- Sidenav sin backdrop, controlado por [(opened)] -->
+    <mat-sidenav
+      mode="side"
+      [(opened)]="opened"
+      [disableClose]="true"
+      [autoFocus]="false"
+      class="sidenav"
+    >
       <mat-nav-list class="navegacion">
 
         <!-- Verbos -->
@@ -25,13 +32,13 @@
           </mat-expansion-panel-header>
           <a mat-button routerLink="vocabulario/animales" routerLinkActive="active">Animales</a>
           <a mat-button routerLink="vocabulario/colores"  routerLinkActive="active">Colores</a>
-            <a mat-button routerLink="vocabulario/compras"  routerLinkActive="active">Compras</a>
+          <a mat-button routerLink="vocabulario/compras"  routerLinkActive="active">Compras</a>
           <a mat-button routerLink="vocabulario/cuerpo"   routerLinkActive="active">El Cuerpo</a>
           <a mat-button routerLink="vocabulario/dias"     routerLinkActive="active">Días</a>
           <a mat-button routerLink="vocabulario/frutas"   routerLinkActive="active">Frutas</a>
           <a mat-button routerLink="vocabulario/meses"    routerLinkActive="active">Meses</a>
           <a mat-button routerLink="vocabulario/ropa"     routerLinkActive="active">Ropa</a>
-          <a mat-button routerLink="vocabulario/viajes"     routerLinkActive="active">Viajes</a>
+          <a mat-button routerLink="vocabulario/viajes"   routerLinkActive="active">Viajes</a>
         </mat-expansion-panel>
 
         <!-- Gramática -->
@@ -58,6 +65,18 @@
     </mat-sidenav>
 
     <mat-sidenav-content class="content">
+      <!-- Botoncito/handle SIEMPRE visible; mueve su posición según opened -->
+      <button
+        class="sidenav-handle"
+        type="button"
+        (click)="toggleSidenav()"
+        [style.left.px]="opened ? 260 : 0"
+        aria-label="Mostrar/ocultar menú"
+        title="Mostrar/ocultar menú"
+      >
+        {{ opened ? '«' : '»' }}
+      </button>
+
       <router-outlet></router-outlet>
     </mat-sidenav-content>
   </mat-sidenav-container>

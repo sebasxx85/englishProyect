@@ -26,18 +26,22 @@ import { SharedModule } from '../Shared/shared.module';
 export class LibraryComponent {
   title = 'Biblioteca';
 
+  // Control explícito del sidenav (abierto por defecto)
+  opened = this.readOpenedFromStorage();
+
   private router = inject(Router);
+
   private titleMap: Array<[RegExp, string]> = [
     [/^\/?library\/?$/, 'Biblioteca'],
     [/vocabulario\/animales/, 'Vocabulario · Animales'],
     [/vocabulario\/colores/, 'Vocabulario · Colores'],
-     [/vocabulario\/compras/, 'Vocabulario · Compras'],
+    [/vocabulario\/compras/, 'Vocabulario · Compras'],
     [/vocabulario\/cuerpo/, 'Vocabulario · Partes del cuerpo'],
     [/vocabulario\/dias/, 'Vocabulario · Días'],
     [/vocabulario\/frutas/, 'Vocabulario · Frutas'],
     [/vocabulario\/meses/, 'Vocabulario · Meses'],
     [/vocabulario\/ropa/, 'Vocabulario · Ropa'],
-     [/vocabulario\/viajes/, 'Vocabulario · Viajes'],
+    [/vocabulario\/viajes/, 'Vocabulario · Viajes'],
     [/verbos\/to-be/, 'Verbos · To Be'],
     [/verbos\/to-do/, 'Verbos · To Do'],
     [/verbos\/to-get/, 'Verbos · To Get'],
@@ -63,5 +67,16 @@ export class LibraryComponent {
         const hit = this.titleMap.find(([re]) => re.test(url));
         this.title = hit?.[1] ?? 'Biblioteca';
       });
+  }
+
+  toggleSidenav() {
+    this.opened = !this.opened;
+    localStorage.setItem('library.sidenav.opened', String(this.opened));
+  }
+
+  private readOpenedFromStorage(): boolean {
+    const raw = localStorage.getItem('library.sidenav.opened');
+    if (raw === null) return true; // abierto por defecto
+    return raw === 'true';
   }
 }
