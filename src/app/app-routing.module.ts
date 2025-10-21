@@ -11,6 +11,7 @@ import { RankingComponent } from './components/ranking/ranking.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { LibraryComponent } from './library/library.component';
 import { adminGuard } from './guards/admin.guard';
+import { AcercaComponent } from './components/acerca/acerca.component';
 
 const routes: Routes = [
   // Home -> /library
@@ -31,6 +32,7 @@ const routes: Routes = [
   { path: 'practicar', component: HomeComponent },
   { path: 'cursos', component: CursosComponent },
   { path: 'ranking', component: RankingComponent },
+  { path: 'acerca', component: AcercaComponent },
 
   // Ejercicios
   { path: 'ejercicios', component: EjercicioComponent },
