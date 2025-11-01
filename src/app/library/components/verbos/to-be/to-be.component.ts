@@ -3,12 +3,14 @@ import { Component, OnInit, inject } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { Title, Meta } from '@angular/platform-browser';
 import { SharedModule } from 'src/app/Shared/shared.module';
+import { AdsenseInArticleComponent } from '../../adsense-in-article/adsense-in-article.component';
+import { AdsenseFooterComponent } from '../../adsense-footer/adsense-footer.component';
 
 @Component({
   selector: 'app-to-be',
   standalone: true,
   // Quitamos MatTableModule (ya no hay tabla)
-  imports: [CommonModule, SharedModule, MatCardModule],
+  imports: [CommonModule, SharedModule, MatCardModule, AdsenseInArticleComponent, AdsenseFooterComponent],
   templateUrl: './to-be.component.html',
   styleUrl: './to-be.component.scss'
 })
