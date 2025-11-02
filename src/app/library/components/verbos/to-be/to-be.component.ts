@@ -9,7 +9,6 @@ import { AdsenseFooterComponent } from '../../adsense-footer/adsense-footer.comp
 @Component({
   selector: 'app-to-be',
   standalone: true,
-  // Quitamos MatTableModule (ya no hay tabla)
   imports: [CommonModule, SharedModule, MatCardModule, AdsenseInArticleComponent, AdsenseFooterComponent],
   templateUrl: './to-be.component.html',
   styleUrl: './to-be.component.scss'

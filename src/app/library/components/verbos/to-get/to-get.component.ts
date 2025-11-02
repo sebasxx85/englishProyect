@@ -2,12 +2,14 @@ import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { Title, Meta } from '@angular/platform-browser';
+import { SharedModule } from 'src/app/Shared/shared.module';
+import { AdsenseInArticleComponent } from '../../adsense-in-article/adsense-in-article.component';
+import { AdsenseFooterComponent } from '../../adsense-footer/adsense-footer.component';
 
 @Component({
   selector: 'app-to-get',
   standalone: true,
-  // Quitamos MatTableModule: ya no usamos tabla
-  imports: [CommonModule, MatCardModule],
+  imports: [CommonModule, SharedModule, MatCardModule, AdsenseInArticleComponent, AdsenseFooterComponent],
   templateUrl: './to-get.component.html',
   styleUrls: ['./to-get.component.scss']
 })

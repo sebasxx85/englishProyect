@@ -3,11 +3,14 @@ import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { AdsenseInArticleComponent } from '../../adsense-in-article/adsense-in-article.component';
+import { AdsenseFooterComponent } from '../../adsense-footer/adsense-footer.component';
 
 @Component({
   selector: 'app-pronombres',
   standalone: true,
-  imports: [CommonModule, MatCardModule, MatDividerModule],
+  imports: [CommonModule, MatCardModule, MatDividerModule,
+                 AdsenseInArticleComponent, AdsenseFooterComponent], 
   templateUrl: './pronombres.component.html',
   styleUrls: ['./pronombres.component.scss']
 })

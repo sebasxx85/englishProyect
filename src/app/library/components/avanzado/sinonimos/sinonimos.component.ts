@@ -1,13 +1,17 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit, inject } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
+import { MatDividerModule } from '@angular/material/divider';
 import { Title, Meta } from '@angular/platform-browser';
 import { SharedModule } from 'src/app/Shared/shared.module';
+import { AdsenseInArticleComponent } from '../../adsense-in-article/adsense-in-article.component';
+import { AdsenseFooterComponent } from '../../adsense-footer/adsense-footer.component';
 
 @Component({
   selector: 'app-sinonimos',
   standalone: true,
-  imports: [CommonModule, SharedModule, MatCardModule],
+  imports: [CommonModule, MatCardModule, MatDividerModule,
+                     AdsenseInArticleComponent, AdsenseFooterComponent], 
   templateUrl: './sinonimos.component.html',
   styleUrl: './sinonimos.component.scss'
 })

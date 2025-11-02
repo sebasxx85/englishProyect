@@ -3,11 +3,14 @@ import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { Title, Meta, DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { AdsenseInArticleComponent } from '../../adsense-in-article/adsense-in-article.component';
+import { AdsenseFooterComponent } from '../../adsense-footer/adsense-footer.component';
 
 @Component({
   selector: 'app-preposiciones',
   standalone: true,
-  imports: [CommonModule, MatCardModule, MatDividerModule],
+    imports: [CommonModule, MatCardModule, MatDividerModule,
+             AdsenseInArticleComponent, AdsenseFooterComponent], 
   templateUrl: './preposiciones.component.html',
   styleUrls: ['./preposiciones.component.scss']
 })

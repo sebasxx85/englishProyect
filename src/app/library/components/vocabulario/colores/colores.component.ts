@@ -4,6 +4,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
+import { AdsenseInArticleComponent } from '../../adsense-in-article/adsense-in-article.component';
+import { AdsenseFooterComponent } from '../../adsense-footer/adsense-footer.component';
 
 interface EntradaColor {
   color: string;
@@ -15,7 +17,8 @@ interface EntradaColor {
 @Component({
   selector: 'app-colores',
   standalone: true,
-  imports: [CommonModule, MatCardModule, MatListModule, MatButtonModule, MatDividerModule],
+   imports: [CommonModule, MatCardModule, MatListModule, MatButtonModule, 
+      MatDividerModule, AdsenseInArticleComponent, AdsenseFooterComponent],
   templateUrl: './colores.component.html',
   styleUrls: ['./colores.component.scss']
 })

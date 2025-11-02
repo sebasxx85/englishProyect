@@ -3,11 +3,14 @@ import { CommonModule, DOCUMENT } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { Title, Meta } from '@angular/platform-browser';
+import { AdsenseInArticleComponent } from '../../adsense-in-article/adsense-in-article.component';
+import { AdsenseFooterComponent } from '../../adsense-footer/adsense-footer.component';
 
 @Component({
   selector: 'app-presente-simple',
   standalone: true,
-  imports: [CommonModule, MatCardModule, MatDividerModule],
+   imports: [CommonModule, MatCardModule, MatDividerModule,
+               AdsenseInArticleComponent, AdsenseFooterComponent], 
   templateUrl: './presente-simple.component.html',
   styleUrls: ['./presente-simple.component.scss']
 })

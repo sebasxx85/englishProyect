@@ -4,6 +4,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
+import { AdsenseInArticleComponent } from '../../adsense-in-article/adsense-in-article.component';
+import { AdsenseFooterComponent } from '../../adsense-footer/adsense-footer.component';
 
 interface Prenda {
   prenda: string;
@@ -14,7 +16,8 @@ interface Prenda {
 @Component({
   selector: 'app-ropa',
   standalone: true,
-  imports: [CommonModule, MatCardModule, MatListModule, MatButtonModule, MatDividerModule],
+   imports: [CommonModule, MatCardModule, MatListModule, MatButtonModule, 
+                  MatDividerModule, AdsenseInArticleComponent, AdsenseFooterComponent],
   templateUrl: './ropa.component.html',
   styleUrls: ['./ropa.component.scss']
 })

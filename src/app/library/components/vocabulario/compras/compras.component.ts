@@ -3,6 +3,9 @@ import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
+import { MatListModule } from '@angular/material/list';
+import { AdsenseInArticleComponent } from '../../adsense-in-article/adsense-in-article.component';
+import { AdsenseFooterComponent } from '../../adsense-footer/adsense-footer.component';
 
 interface Entrada {
   termino: string;
@@ -13,7 +16,8 @@ interface Entrada {
 @Component({
   selector: 'app-compras',
   standalone: true,
-  imports: [CommonModule, MatCardModule, MatDividerModule, MatButtonModule],
+  imports: [CommonModule, MatCardModule, MatListModule, MatButtonModule, 
+        MatDividerModule, AdsenseInArticleComponent, AdsenseFooterComponent],
   templateUrl: './compras.component.html',
   styleUrls: ['./compras.component.scss']
 })

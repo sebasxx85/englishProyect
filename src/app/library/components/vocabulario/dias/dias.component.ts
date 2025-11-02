@@ -4,6 +4,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
+import { AdsenseInArticleComponent } from '../../adsense-in-article/adsense-in-article.component';
+import { AdsenseFooterComponent } from '../../adsense-footer/adsense-footer.component';
 
 interface DiaItem {
   dia: string;
@@ -18,7 +20,8 @@ interface DiaItem {
 @Component({
   selector: 'app-dias',
   standalone: true,
-  imports: [CommonModule, MatCardModule, MatListModule, MatButtonModule, MatDividerModule],
+    imports: [CommonModule, MatCardModule, MatListModule, MatButtonModule, 
+            MatDividerModule, AdsenseInArticleComponent, AdsenseFooterComponent],
   templateUrl: './dias.component.html',
   styleUrls: ['./dias.component.scss']
 })
