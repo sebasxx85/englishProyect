@@ -16,6 +16,7 @@ import { DataEnglish1Service } from 'src/app/services/data-english1.service';
 import { IntercambioDatosService } from 'src/app/services/intercambio-datos.service';
 import { HeaderComponent } from 'src/app/Shared/components/header/header.component';
 import { SharedModule } from 'src/app/Shared/shared.module';
+import { AdsensePracticaComponent } from '../adsense-practica/adsense-practica.component';
 
 @Component({
   selector: 'app-result',
@@ -32,6 +33,7 @@ import { SharedModule } from 'src/app/Shared/shared.module';
     MatDatepickerModule,
     MatFormFieldModule,
     MatSelectModule,
+    AdsensePracticaComponent,
     MatNativeDateModule],
   templateUrl: './result.component.html',
   styleUrls: ['./result.component.scss'],

@@ -5,11 +5,13 @@ import { Type1Component } from '../EnglishType/type1/type1.component';
 import { Type1ItaComponent } from '../ItalianType/type1-ita/type1-ita.component';
 import { Type1PorComponent } from '../PortuguesType/type1-por/type1-por.component';
 import { CommonModule } from '@angular/common';
+import { AdsensePracticaComponent } from '../adsense-practica/adsense-practica.component';
 
 @Component({
   selector: 'app-ejercicio',
   standalone: true,
-  imports: [CommonModule, Type1Component, Type1ItaComponent, Type1PorComponent ],
+  imports: [CommonModule, Type1Component, Type1ItaComponent, 
+    Type1PorComponent ],
   templateUrl: './ejercicio.component.html',
   styleUrl: './ejercicio.component.scss'
 })

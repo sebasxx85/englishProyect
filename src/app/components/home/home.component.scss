@@ -1,8 +1,27 @@
+/* ====== Offset general para que nada quede debajo del header ====== */
+:root { --header-h: 72px; } /* altura aprox. del header (ajústala si es necesario) */
+@media (max-width: 600px) { :root { --header-h: 64px; } }
 
+.page {
+  margin-top: var(--header-h); /* empuja todo el contenido bajo la cabecera */
+}
+
+/* Anuncio centrado bajo la cabecera */
+.ad-banner-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 0 8px;
+  /* reservar altura mínima por CLS cuando AdSense tarda */
+  min-height: 96px;
+  margin-top: 47px;               /* separa del header */
+}
+
+/* =================== TUS ESTILOS ORIGINALES (con ajustes) =================== */
 form {
-    border: solid rgb(223, 223, 133);
-    padding: 7px;
-    margin-bottom: 7px;
+  border: solid rgb(223, 223, 133);
+  padding: 7px;
+  margin-bottom: 7px;
 }
 
 label {
@@ -40,15 +59,16 @@ input, select {
   min-width: 90vh;
   width: 100%;
   padding: 0 10px; /* Márgenes laterales para evitar que el card toque los bordes */
-
+  margin-top: -67px;             /* eleva el card sin tapar el anuncio */
+  transition: margin-top 0.3s ease;
 }
 
 .custom-card {
   color: rgb(248, 241, 232);
   border: 4px solid rgb(223, 223, 133);
-  width: 97%; /* Ocupará el 50% del ancho en pantallas grandes */
-  max-width: 500px; /* No crecerá más allá de 500px */
-  min-width: 350px; /* No será más pequeño que 320px */
+  width: 97%;                    /* Ocupará el 50% del ancho en pantallas grandes */
+  max-width: 500px;              /* No crecerá más allá de 500px */
+  min-width: 350px;              /* No será más pequeño que 320px */
   margin-right: 77px;
   padding: 1rem;
   box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.7);
@@ -57,13 +77,17 @@ input, select {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: 37px;
+  margin-top: -97px;             /* sube el card para quedar cerca del banner */
+  transition: margin-top 0.3s ease;
 }
 
+/* Radios */
 .form-group input[type="radio"] {
-  width: 16px;
-  height: 16px;
-  margin-left: 10px;
+  width: 7px;    /* Tamaño reducido */
+  height: 14px;
+  transform: scale(1.2); /* reduce tamaño sin afectar layout */
+  margin-left: 5px;      /* menos espacio entre label y radio */
+  margin-right: 5px;     /* menos espacio entre radio y la etiqueta siguiente */
 }
 
 .form-group label.time {
@@ -71,9 +95,10 @@ input, select {
   margin-left: 5px;
 }
 
+/* Campo cantidad */
 .cantidadinput {
   height: 19px; /* Misma altura que los otros inputs */
-  width: 30%; /* La mitad del ancho de los otros inputs */
+  width: 30%;   /* La mitad del ancho de los otros inputs */
   max-width: 80px; /* Controla que no crezca demasiado en pantallas grandes */
 }
 
@@ -83,43 +108,66 @@ input, select {
   margin-right: 10px;
 }
 
-  /* Pantallas entre 726px y 926px */
-  @media (max-width: 926px) and (min-width: 726px) {
-  .custom-card {
-    width: 80%; /* Aumenta el ancho en pantallas pequeñas */
-    max-width: 420px; /* Ajusta el límite superior */
+/* ====== Breakpoints (se ajustan los márgenes negativos para no solapar) ====== */
 
+/* Tablets/desktop medianos (<= 1024px) */
+@media (max-width: 1024px) {
+  .card-container { margin-top: -35px; }
+  .custom-card    { margin-top: -60px; }
+}
+
+/* Móviles grandes (<= 767px) */
+@media (max-width: 767px) {
+  .card-container { margin-top: -25px; }
+  .custom-card    { margin-top: -40px; }
+}
+
+/* Tablet chica / móvil mediano (<= 560px) */
+@media (max-width: 560px) {
+  .ad-banner-top  { margin-top: 32px; } /* un poco menos de separación */
+  .card-container { margin-top: 0; }
+  .custom-card    { margin-top: 0; }
+}
+
+/* Pantallas entre 726px y 926px */
+@media (max-width: 926px) and (min-width: 726px) {
+  .custom-card {
+    width: 80%;      /* Aumenta el ancho en pantallas pequeñas */
+    max-width: 420px;/* Ajusta el límite superior */
   }
 }
 
 /* Pantallas entre 560px y 725px */
 @media (max-width: 725px) and (min-width: 560px) {
   .custom-card {
-    width: 80%; /* Aumenta el ancho en pantallas pequeñas */
-    max-width: 420px; /* Ajusta el límite superior */
+    width: 80%;      /* Aumenta el ancho en pantallas pequeñas */
+    max-width: 420px;/* Ajusta el límite superior */
   }
 }
 
+/* Móviles medianos */
 @media (max-width: 560px) and (min-width: 425px) {
   .custom-card {
-    width: 97%; /* Ocupa casi todo el ancho en móviles */
+    width: 97%;      /* Ocupa casi todo el ancho en móviles */
     max-width: 390px;
   }
 }
 
+/* Móviles pequeños */
 @media (max-width: 425px) {
   .custom-card {
-    width: 97%; /* Ocupa casi todo el ancho en móviles */
+    width: 97%;      /* Ocupa casi todo el ancho en móviles */
     max-width: 437px;
     min-width: 437px;
     margin-left: 127px;
   }
-  .card-container{
+  .card-container {
     max-width: 437px;
     min-width: 437px;
   }
 }
 
+/* Botón enviar */
 .button-container {
   display: flex;
   align-items: start;
@@ -137,7 +185,7 @@ input, select {
   margin-bottom: 17px;
   width: 100px;
   border-radius: 9px; /* Esquinas más redondeadas */
-  font-family: 'Roboto', sans-serif; 
+  font-family: 'Roboto', sans-serif;
   transition: background-color 0.3s ease; /* Transición suave del color de fondo */
   padding: 12px 20px; /* Aumenta el padding para hacer el botón más alto */
   border: 1px solid rgba(0, 0, 0, 0.4); /* Borde ligero */
@@ -148,21 +196,15 @@ input, select {
   cursor: pointer;
 }
 
-
-.form-group input[type="radio"] {
-  width: 7px; /* Tamaño reducido */
-  height: 14px;
-  transform: scale(1.2); /* Alternativa para reducir tamaño sin afectar layout */
-  margin-left: 5px; /* Reduce el espacio entre el label y el radio button */
-  margin-right: 5px; /* Reduce el espacio entre el radio button y la etiqueta siguiente */
-}
-
+/* Etiqueta para radios (versión final, evita duplicados) */
 .form-group label.time {
-  width: auto; 
+  width: auto;
   margin-top: 3px;
-  margin-right: 10px; 
+  margin-right: 10px;
   margin-left: -107px;
 }
+
+/* =================== (fin de tus estilos) =================== */
 
 ////////////////////////////////* Cookie banner privacy *//////////////////////////////////
 

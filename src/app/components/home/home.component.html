@@ -1,21 +1,25 @@
 <app-header [title]="title"></app-header>
 
-<!-- Aceptar cookies -->
-<div id="cookie-banner" class="cookie-banner" *ngIf="!cookiesAccepted">
-  <p>
-    Usamos cookies para mejorar tu experiencia. Al continuar navegando, aceptas
-    el uso de cookies y nuestras <a href="/privacy-policy" target="_blank">políticas de privacidad</a>.
-  </p>
-  <button mat-button color="primary" (click)="acceptCookies()">Aceptar</button>
-</div>
+<main class="page">
+  <!-- Anuncio centrado debajo de la cabecera -->
+  <div class="ad-banner-top">
+    <app-adsense-practica [adSlot]="'8316643750'"></app-adsense-practica>
+  </div>
 
-<body>
+  <!-- Aceptar cookies -->
+  <div id="cookie-banner" class="cookie-banner" *ngIf="!cookiesAccepted">
+    <p>
+      Usamos cookies para mejorar tu experiencia. Al continuar navegando, aceptas
+      el uso de cookies y nuestras
+      <a href="/privacy-policy" target="_blank">políticas de privacidad</a>.
+    </p>
+    <button mat-button color="primary" (click)="acceptCookies()">Aceptar</button>
+  </div>
+
   <div class="card-container">
-    
     <!-- Tarjeta de formulario -->
     <mat-card class="custom-card">
       <form [formGroup]="form" (ngSubmit)="empezar()">
-        
         <!-- Selección de idioma -->
         <div class="form-group">
           <label for="cliente" class="idioma">Elige tu idioma:</label>
@@ -30,14 +34,12 @@
         <div class="form-group">
           <label for="nivel" class="level">Nivel:</label>
           <select name="nivel" formControlName="nivel" (click)="mostrarMensajeBloqueo($event)">
-            
             <!-- Inglés -->
             <ng-container *ngIf="form.get('idioma')?.value === 'Ingles'">
               <option value="principiante">Principiante (A0)</option>
               <option value="basico">Básico (A1)</option>
               <option value="basico-alto">Básico-Alto (A2)</option>
               <option value="intermedio">Intermedio (B1)</option>
-            
               <!-- Opciones avanzadas (no se bloquean directamente, se interceptan) -->
               <option value="intermedio-alto" [disabled]="!login">Intermedio-Alto (B2)</option>
               <option value="avanzado" [disabled]="!login">Avanzado (C1)</option>
@@ -52,7 +54,6 @@
             <ng-container *ngIf="form.get('idioma')?.value === 'Portugues'">
               <option value="portugues-principiante">Portugués Principiante</option>
             </ng-container>
-
           </select>
         </div>
 
@@ -93,7 +94,6 @@
             {{ mensajeBloqueo }}
           </div>
         </div>
-
       </form>
 
       <!-- Spinner -->
@@ -101,9 +101,7 @@
         <div class="custom-spinner"></div>
       </div>
     </mat-card>
-   
-
   </div>
-</body>
+</main>
 
 <app-footer></app-footer>

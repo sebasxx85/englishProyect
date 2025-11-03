@@ -25,6 +25,7 @@ import { Type1Component } from './components/EnglishType/type1/type1.component';
 import { Type2Component } from './components/EnglishType/type2/type2.component';
 import { Type3Component } from './components/EnglishType/type3/type3.component';
 import { ShufflePipe } from './pipes/shuffle.pipe';
+import { AdsensePracticaComponent } from './components/adsense-practica/adsense-practica.component';
 
 
 @NgModule({ declarations: [
@@ -48,6 +49,7 @@ import { ShufflePipe } from './pipes/shuffle.pipe';
         MatSelectModule,
         MatNativeDateModule,
         ReactiveFormsModule,
+        AdsensePracticaComponent,
         MatProgressSpinnerModule], providers: [
         provideHttpClient(withInterceptorsFromDi()),
         provideClientHydration()

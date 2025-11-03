@@ -1,152 +1,173 @@
+/* ====== Offset general para que nada quede debajo del header ====== */
+:root { --header-h: 72px; } /* altura aprox. del header (ajústala si es necesario) */
+@media (max-width: 600px) { :root { --header-h: 64px; } }
 
+.page {
+  margin-top: var(--header-h); /* empuja todo el contenido bajo la cabecera */
+}
+
+/* Anuncio centrado bajo la cabecera */
+.ad-banner-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 0 8px;
+  /* reservar altura mínima por CLS cuando AdSense tarda */
+  min-height: 96px;
+  margin-top: 47px; /* separación respecto al header */
+}
+
+/* =================== TUS ESTILOS ORIGINALES =================== */
 form {
-    border: solid rgb(223, 223, 133);
-    padding: 7px;
-    margin-bottom: 7px;
+  border: solid rgb(223, 223, 133);
+  padding: 7px;
+  margin-bottom: 7px;
 }
 
 label{
-    font-size: 14px;
-    margin-bottom: 27px;
-    margin-right: 27px;
+  font-size: 14px;
+  margin-bottom: 27px;
+  margin-right: 27px;
 }
 
 input{
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 
 select {
-    margin-bottom: 7px;
+  margin-bottom: 7px;
 }
 
 .card-container {
-    border-radius: 49px;
-    display: flex;
-    justify-content: center;
-    align-items: center; /* Centra verticalmente si el contenedor tiene una altura fija */
-    min-height: 97vh; 
-    min-width: 90vh;
-    padding: 0 10px; /* Márgenes laterales para evitar que el card toque los bordes */
-  }
-  
+  border-radius: 49px;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Centra verticalmente si el contenedor tiene una altura fija */
+  min-height: 97vh;
+  min-width: 90vh;
+  padding: 0 10px; /* Márgenes laterales para evitar que el card toque los bordes */
+  margin-top: -67px;             /* eleva el card sin tapar el anuncio */
+  transition: margin-top 0.3s ease;
+}
+
+.custom-card {
+  color: rgb(248, 241, 232);
+  border: 4px solid rgb(223, 223, 133);
+  width: 87%;            /* Ocupará el 50% del ancho en pantallas grandes */
+  max-width: 500px;      /* No crecerá más allá de 500px */
+  min-width: 200px;      /* No será más pequeño que 320px */
+  margin-top: 7px;
+  padding: 1rem;
+  box-shadow: 8px 8px 8px rgba(0.0, 0.0, 0.7, 0.7); /* Añade sombra */
+  min-height: 55vh;
+  min-width: 15vh;
+  background-color: rgb(18, 13, 13);
+  position: relative;    /* Posiciona el contenedor como relativo */
+  margin-top: -97px;             /* sube el card para quedar cerca del banner */
+  transition: margin-top 0.3s ease;
+}
+
+/* Pantallas entre 726px y 926px */
+@media (max-width: 926px) and (min-width: 726px) {
   .custom-card {
-    color: rgb(248, 241, 232);
-    border: 4px solid rgb(223, 223, 133);
-    width: 87%; /* Ocupará el 50% del ancho en pantallas grandes */
-    max-width: 500px; /* No crecerá más allá de 500px */
-    min-width: 200px; /* No será más pequeño que 320px */
-    margin-top: 7px;
-    padding: 1rem; 
-    box-shadow: 8px 8px 8px rgba(0.0, 0.0, 0.7, 0.7); /* Añade sombra */
-    min-height: 55vh;
-    min-width: 15vh;
-    background-color: rgb(18, 13, 13);
-    position: relative; /* Posiciona el contenedor como relativo */
+    width: 90%; /* Aumenta el ancho en pantallas pequeñas */
+    max-width: 420px; /* Ajusta el límite superior */
   }
+}
 
-   /* Pantallas entre 726px y 926px */
-   @media (max-width: 926px) and (min-width: 726px) {
-    .custom-card {
-      width: 90%; /* Aumenta el ancho en pantallas pequeñas */
-      max-width: 420px; /* Ajusta el límite superior */
-  
-    }
+/* Pantallas entre 560px y 725px */
+@media (max-width: 725px) and (min-width: 560px) {
+  .custom-card {
+    width: 90%; /* Aumenta el ancho en pantallas pequeñas */
+    max-width: 420px; /* Ajusta el límite superior */
+    margin-right: 77px;
   }
-  
-  /* Pantallas entre 560px y 725px */
-  @media (max-width: 725px) and (min-width: 560px) {
-    .custom-card {
-      width: 90%; /* Aumenta el ancho en pantallas pequeñas */
-      max-width: 420px; /* Ajusta el límite superior */
-      margin-right: 77px;
-    }
-  }
-  
-  @media (max-width: 525px) and (min-width: 110px) {
-    .custom-card {
-      width: 97%; /* Ocupa casi todo el ancho en móviles */
-      max-width: 390px;
-      margin-right: 77px;
-    }
-  }
+}
 
-
-  .button-container {
-    position: absolute;
-    bottom: 10px;
-    left: 17px;
-    right: 17px; /* Extiende el contenedor hasta la derecha */
-    display: flex;
-    justify-content: space-between; /* Distribuye los botones a los extremos */
-    gap: 10px; /* Espacio entre los botones */
-    margin-top: 17px;
+@media (max-width: 525px) and (min-width: 110px) {
+  .custom-card {
+    width: 97%; /* Ocupa casi todo el ancho en móviles */
+    max-width: 390px;
+    margin-right: 77px;
   }
+}
 
-  .boton {
-    color: black;
-    background-color: rgb(223, 223, 133);
-    margin-top: 10px;
-    margin-bottom: 17px;
-    width: auto; /* Ajusta el ancho del botón al contenido */
-    border-radius: 9px; 
-    font-family: 'Roboto', sans-serif; 
-    transition: background-color 0.3s ease; /* Transición suave del color de fondo */
-    padding: 12px 20px; /* Aumenta el padding para hacer el botón más alto */
-    border: 1px solid rgba(0, 0, 0, 0.4); 
-  }
+.button-container {
+  position: absolute;
+  bottom: 10px;
+  left: 17px;
+  right: 17px; /* Extiende el contenedor hasta la derecha */
+  display: flex;
+  justify-content: space-between; /* Distribuye los botones a los extremos */
+  gap: 10px; /* Espacio entre los botones */
+  margin-top: 17px;
+}
 
-  .boton-reset {
-    color: black;
-    background-color: rgb(237, 61, 22);
-    margin-top: 10px;
-    margin-bottom: 17px;
-    width: auto; /* Ajusta el ancho del botón al contenido */
-    border-radius: 9px; 
-    font-family: 'Roboto', sans-serif; 
-    transition: background-color 0.3s ease; /* Transición suave del color de fondo */
-    padding: 12px 20px; /* Aumenta el padding para hacer el botón más alto */
-    border: 1px solid rgba(0, 0, 0, 0.4); 
-  }
-  
-  .boton:hover {
-    background-color: rgb(240, 240, 190); 
-    cursor: pointer; /* Cambia el cursor a una mano */
-  }
+.boton {
+  color: black;
+  background-color: rgb(223, 223, 133);
+  margin-top: 10px;
+  margin-bottom: 17px;
+  width: auto; /* Ajusta el ancho del botón al contenido */
+  border-radius: 9px;
+  font-family: 'Roboto', sans-serif;
+  transition: background-color 0.3s ease; /* Transición suave del color de fondo */
+  padding: 12px 20px; /* Aumenta el padding para hacer el botón más alto */
+  border: 1px solid rgba(0, 0, 0, 0.4);
+}
 
-  .boton-reset:hover {
-    background-color: rgb(184, 52, 12); 
-    cursor: pointer; /* Cambia el cursor a una mano */
-  }
+.boton-reset {
+  color: black;
+  background-color: rgb(237, 61, 22);
+  margin-top: 10px;
+  margin-bottom: 17px;
+  width: auto; /* Ajusta el ancho del botón al contenido */
+  border-radius: 9px;
+  font-family: 'Roboto', sans-serif;
+  transition: background-color 0.3s ease; /* Transición suave del color de fondo */
+  padding: 12px 20px; /* Aumenta el padding para hacer el botón más alto */
+  border: 1px solid rgba(0, 0, 0, 0.4);
+}
 
-  //Labels
-  .cantidad{
-    max-width: 20.7%;
-    margin-right: 86px;
-  }
+.boton:hover {
+  background-color: rgb(240, 240, 190);
+  cursor: pointer; /* Cambia el cursor a una mano */
+}
 
-  .cantidadinput{
-    max-width: 21.5%;
-  }
+.boton-reset:hover {
+  background-color: rgb(184, 52, 12);
+  cursor: pointer; /* Cambia el cursor a una mano */
+}
 
-  .level{
-    margin-right: 147px;
-  }
+// Labels
+.cantidad{
+  max-width: 20.7%;
+  margin-right: 86px;
+}
 
-  .idioma{
-    margin-right: 117px;
-  }
+.cantidadinput{
+  max-width: 21.5%;
+}
 
-  .timetag{
-    margin-right: 112px;
-  }
+.level{
+  margin-right: 147px;
+}
 
-  .progreso {
-    max-width: 50%;
-    display: flex;
-    justify-content: center;
-  }
+.idioma{
+  margin-right: 117px;
+}
 
-  //radio button
+.timetag{
+  margin-right: 112px;
+}
+
+.progreso {
+  max-width: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+// radio button
 .form-group input[type="radio"] {
   width: auto; /* Ajusta el tamaño según el contenido */
   height: auto; /* Ajusta el tamaño según el contenido */
@@ -165,6 +186,7 @@ select {
   opacity: 0.5; /* Reduce visibilidad */
   cursor: not-allowed;
 }
+
 ////////////////////////////////* Contenedor del spinner *//////////////////////////////////
 .spinner-container {
   position: fixed;

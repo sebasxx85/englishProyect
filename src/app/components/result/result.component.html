@@ -1,48 +1,60 @@
 <app-header [title]="title"></app-header>
 
-<body>
+<main class="page">
+  <!-- Anuncio centrado bajo la cabecera -->
+  <div class="ad-banner-top">
+    <app-adsense-practica [adSlot]="'8316643750'"></app-adsense-practica>
+  </div>
 
   <div class="card-container">
     <!--Card 1-->
     <mat-card class="custom-card">
       <mat-card-title>Resultados de la Prueba</mat-card-title>
+
       <mat-card-content>
         <p>Respuestas Correctas: {{ respuestasCorrectas }}</p>
         <p>
           Respuestas Incorrectas: {{ respuestasIncorrectas }}
           <mat-icon color="warn" class="red-icon">close</mat-icon>
         </p>
+
         <p *ngIf="respuestasIncorrectas > 0">
-          
-          <a 
-          href="#" 
-          class="error-link"
-          (click)="verErrores($event)"
-          [class.disabled]="loading">Ver Errores</a>
+          <a
+            href="#"
+            class="error-link"
+            (click)="verErrores($event)"
+            [class.disabled]="loading"
+            >Ver Errores</a
+          >
         </p>
-     
-        <p>Puntaje Obtenido: <span [innerHTML]="Puntaje | ColorPuntajePipe"></span></p>
+
+        <p>
+          Puntaje Obtenido:
+          <span [innerHTML]="Puntaje | ColorPuntajePipe"></span>
+        </p>
       </mat-card-content>
 
       <div class="espacio"></div>
+
       <mat-card-title>Mis últimos puntajes</mat-card-title>
       <mat-card-content>
         <p [innerHTML]="ultimosPuntajes | ColorPuntajePipe"></p>
       </mat-card-content>
 
       <div class="button-container">
-        <button mat-flat-button color="primary" class="boton" (click)="volver()">Volver</button>
-        <button mat-flat-button color="primary" class="boton-reset" (click)="reset()">Reset</button>
+        <button mat-flat-button color="primary" class="boton" (click)="volver()">
+          Volver
+        </button>
+        <button mat-flat-button color="primary" class="boton-reset" (click)="reset()">
+          Reset
+        </button>
       </div>
-      
+
       <div *ngIf="loading" class="spinner-container">
         <div class="custom-spinner"></div>
       </div>
-
     </mat-card>
-
   </div>
-
-</body>
+</main>
 
 <app-footer></app-footer>
