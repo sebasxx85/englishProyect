@@ -15,14 +15,14 @@ import { AcercaComponent } from './components/acerca/acerca.component';
 
 const routes: Routes = [
   // Home -> /library
-  { path: '', pathMatch: 'full', redirectTo: 'library' },
+  { path: '', pathMatch: 'full', redirectTo: 'practicar' },
   {
     path: 'library',
     loadChildren: () => import('./library/library.module').then(m => m.LibraryModule)
   },
 
   // Ruta opcional para "home" que renderiza LibraryComponent directamente
-  { path: 'home', component: LibraryComponent },
+  { path: 'home', component: HomeComponent },
 
   // Otras rutas existentes
   { path: 'table-errors', redirectTo: '/corrections', pathMatch: 'full' },
@@ -51,7 +51,7 @@ const routes: Routes = [
   },
 
   // Fallback
- { path: '**', redirectTo: 'library' }
+ { path: '**', redirectTo: 'home' }
 ];
 
 @NgModule({
