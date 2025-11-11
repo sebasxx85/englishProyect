@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, HostListener, OnInit, inject } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { Title, Meta } from '@angular/platform-browser';
@@ -32,6 +32,7 @@ export class AntonimosComponent implements OnInit {
       content: 'antónimos en inglés, antonyms, vocabulario inglés, opuestos en inglés, ejercicios'
     });
   }
+
 
   // Mantengo tu data para reutilizarla como lista (ya no tabla)
   antonimos = [
