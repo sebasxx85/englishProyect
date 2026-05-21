@@ -8,12 +8,11 @@ import { AdsenseInArticleComponent } from '../../adsense-in-article/adsense-in-a
 import { AdsenseFooterComponent } from '../../adsense-footer/adsense-footer.component';
 
 @Component({
-  selector: 'app-antonimos',
-  standalone: true,
-  imports: [CommonModule, MatCardModule, MatDividerModule,
-                   AdsenseInArticleComponent, AdsenseFooterComponent], 
-  templateUrl: './antonimos.component.html',
-  styleUrl: './antonimos.component.scss'
+    selector: 'app-antonimos',
+    imports: [CommonModule, MatCardModule, MatDividerModule,
+        AdsenseInArticleComponent, AdsenseFooterComponent],
+    templateUrl: './antonimos.component.html',
+    styleUrl: './antonimos.component.scss'
 })
 export class AntonimosComponent implements OnInit {
   private title = inject(Title);

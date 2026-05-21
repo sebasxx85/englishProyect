@@ -9,19 +9,18 @@ import { filter } from 'rxjs/operators';
 import { SharedModule } from '../Shared/shared.module';
 
 @Component({
-  selector: 'app-library',
-  standalone: true,
-  imports: [
-    CommonModule,
-    RouterModule,
-    MatSidenavModule,
-    MatListModule,
-    MatExpansionModule,
-    MatButtonModule,
-    SharedModule
-  ],
-  templateUrl: './library.component.html',
-  styleUrl: './library.component.scss'
+    selector: 'app-library',
+    imports: [
+        CommonModule,
+        RouterModule,
+        MatSidenavModule,
+        MatListModule,
+        MatExpansionModule,
+        MatButtonModule,
+        SharedModule
+    ],
+    templateUrl: './library.component.html',
+    styleUrl: './library.component.scss'
 })
 export class LibraryComponent {
   title = 'Biblioteca';

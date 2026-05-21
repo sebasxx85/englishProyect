@@ -5,9 +5,10 @@ import { RegisteredUseService } from 'src/app/services/registered-use.service';
 import { DashboardComponent } from '../dashboard/dashboard.component';
 
 @Component({
-  selector: 'app-user',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+    selector: 'app-user',
+    templateUrl: './login.component.html',
+    styleUrls: ['./login.component.scss'],
+    standalone: false
 })
 export class LoginComponent {
 

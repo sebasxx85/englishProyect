@@ -15,12 +15,11 @@ interface EntradaParte {
 }
 
 @Component({
-  selector: 'app-cuerpo',
-  standalone: true,
-  imports: [CommonModule, MatCardModule, MatListModule, MatButtonModule, 
-          MatDividerModule, AdsenseInArticleComponent, AdsenseFooterComponent],
-  templateUrl: './cuerpo-humano.component.html',
-  styleUrls: ['./cuerpo-humano.component.scss']
+    selector: 'app-cuerpo',
+    imports: [CommonModule, MatCardModule, MatListModule, MatButtonModule,
+        MatDividerModule, AdsenseInArticleComponent, AdsenseFooterComponent],
+    templateUrl: './cuerpo-humano.component.html',
+    styleUrls: ['./cuerpo-humano.component.scss']
 })
 export class PartesCuerpoComponent {
   title = 'Partes del cuerpo en inglés';

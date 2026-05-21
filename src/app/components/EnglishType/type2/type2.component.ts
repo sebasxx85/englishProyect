@@ -9,11 +9,10 @@ import { IntercambioDatosService } from 'src/app/services/intercambio-datos.serv
 import { SharedModule } from 'src/app/Shared/shared.module';
 
 @Component({
-  selector: 'app-type2',
-  standalone: true,
-  imports: [CommonModule, MatCardModule, ReactiveFormsModule, SharedModule, MatProgressBarModule],
-  templateUrl: './type2.component.html',
-  styleUrls: ['./type2.component.scss']
+    selector: 'app-type2',
+    imports: [CommonModule, MatCardModule, ReactiveFormsModule, SharedModule, MatProgressBarModule],
+    templateUrl: './type2.component.html',
+    styleUrls: ['./type2.component.scss']
 })
 export class Type2Component {
 

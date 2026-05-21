@@ -14,12 +14,11 @@ interface Entrada {
 }
 
 @Component({
-  selector: 'app-animales',
-  standalone: true,
-  imports: [CommonModule, MatCardModule, MatListModule, MatButtonModule, 
-    MatDividerModule, AdsenseInArticleComponent, AdsenseFooterComponent],
-  templateUrl: './animales.component.html',
-  styleUrls: ['./animales.component.scss']
+    selector: 'app-animales',
+    imports: [CommonModule, MatCardModule, MatListModule, MatButtonModule,
+        MatDividerModule, AdsenseInArticleComponent, AdsenseFooterComponent],
+    templateUrl: './animales.component.html',
+    styleUrls: ['./animales.component.scss']
 })
 export class AnimalesComponent {
   title = 'Animales en inglés';

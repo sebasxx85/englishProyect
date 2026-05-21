@@ -4,14 +4,14 @@ import { MatCardModule } from '@angular/material/card';
 import { Title, Meta } from '@angular/platform-browser';
 import { SharedModule } from 'src/app/Shared/shared.module';
 import { AdsenseInArticleComponent } from '../../adsense-in-article/adsense-in-article.component';
-import { AdsenseFooterComponent } from '../../adsense-footer/adsense-footer.component';
+
 
 @Component({
-  selector: 'app-to-make',
-  standalone: true,
-  imports: [CommonModule, SharedModule, MatCardModule, AdsenseInArticleComponent, AdsenseFooterComponent],
-  templateUrl: './to-make.component.html',
-  styleUrls: ['./to-make.component.scss']
+    selector: 'app-to-make',
+    standalone: true,
+    imports: [CommonModule, SharedModule, MatCardModule, AdsenseInArticleComponent],
+    templateUrl: './to-make.component.html',
+    styleUrls: ['./to-make.component.scss']
 })
 export class ToMakeComponent implements OnInit {
   private title = inject(Title);

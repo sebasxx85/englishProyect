@@ -14,12 +14,11 @@ interface EntradaFruta {
 }
 
 @Component({
-  selector: 'app-frutas',
-  standalone: true,
-  imports: [CommonModule, MatCardModule, MatListModule, MatButtonModule, 
-              MatDividerModule, AdsenseInArticleComponent, AdsenseFooterComponent],
-  templateUrl: './frutas.component.html',
-  styleUrls: ['./frutas.component.scss']
+    selector: 'app-frutas',
+    imports: [CommonModule, MatCardModule, MatListModule, MatButtonModule,
+        MatDividerModule, AdsenseInArticleComponent, AdsenseFooterComponent],
+    templateUrl: './frutas.component.html',
+    styleUrls: ['./frutas.component.scss']
 })
 export class FrutasComponent {
   title = 'Frutas en inglés';

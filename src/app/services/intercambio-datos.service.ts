@@ -1,10 +1,13 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class IntercambioDatosService {
+
+  private platformId = inject(PLATFORM_ID);
 
   private cantidad: number = 0;
   private nivel: string = '';
@@ -37,7 +40,10 @@ export class IntercambioDatosService {
 
   constructor() {
     // Cargar los puntajes desde localStorage al iniciar el servicio
-    this.getPuntajes();
+    // SOLO ejecutar en browser
+    if (isPlatformBrowser(this.platformId)) {
+      this.getPuntajes();
+    }
   }
 
 
@@ -105,7 +111,7 @@ export class IntercambioDatosService {
   setIdioma(idioma: string) {
     this.idiomaSeleccionado = idioma;
   }
-  
+
   getIdioma(): string {
     return this.idiomaSeleccionado;
   }
@@ -114,7 +120,7 @@ export class IntercambioDatosService {
   setRespuestasIncorrectasArray(value: { pregunta: string, respuestaUsuario: string, respuestaCorrecta: string }[]) {
     console.log("📌 Respuestas incorrectas guardadas:", value);
     this.respuestasIncorrectasArraySubject.next(value);
-}
+  }
 
 
   // Método para obtener las respuestas incorrectas actuales
@@ -131,24 +137,36 @@ export class IntercambioDatosService {
     this.puntajes.push(puntaje);
 
     // Guardar en localStorage y actualizar el BehaviorSubject
-    localStorage.setItem('puntajes', JSON.stringify(this.puntajes));
+    if (isPlatformBrowser(this.platformId)) {
+      localStorage.setItem('puntajes', JSON.stringify(this.puntajes));
+    }
     this.puntajesSubject.next(this.puntajes); // Emitir el nuevo estado
   }
 
   // Método para obtener el arreglo de puntajes desde localStorage
   getPuntajes(): void {
+
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
+
     const storedPuntajes = localStorage.getItem('puntajes');
+
     if (storedPuntajes) {
       this.puntajes = JSON.parse(storedPuntajes);
     }
-    this.puntajesSubject.next(this.puntajes); // Emitir el estado inicial
+
+    this.puntajesSubject.next(this.puntajes);
+
   }
 
 
   resetPuntajes() {
     this.puntajes = [];
-
-    localStorage.removeItem('puntajes');// Eliminar los datos de puntajes en localStorage
+    // Eliminar los datos de puntajes en localStorage
+    if (isPlatformBrowser(this.platformId)) {
+      localStorage.removeItem('puntajes');
+    }
     this.puntajesSubject.next(this.puntajes); // Emitir el estado vacío
   }
 

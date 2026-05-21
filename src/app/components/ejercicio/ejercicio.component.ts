@@ -8,12 +8,11 @@ import { CommonModule } from '@angular/common';
 import { AdsensePracticaComponent } from '../adsense-practica/adsense-practica.component';
 
 @Component({
-  selector: 'app-ejercicio',
-  standalone: true,
-  imports: [CommonModule, Type1Component, Type1ItaComponent, 
-    Type1PorComponent ],
-  templateUrl: './ejercicio.component.html',
-  styleUrl: './ejercicio.component.scss'
+    selector: 'app-ejercicio',
+    imports: [CommonModule, Type1Component, Type1ItaComponent,
+        Type1PorComponent],
+    templateUrl: './ejercicio.component.html',
+    styleUrl: './ejercicio.component.scss'
 })
 export class EjercicioComponent implements OnInit {
   idioma: string = '';

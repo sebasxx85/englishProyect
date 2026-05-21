@@ -9,17 +9,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //Angular Material
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
-import {MatTableModule} from '@angular/material/table';
+import { MatTableModule } from '@angular/material/table';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import {MAT_FORM_FIELD_DEFAULT_OPTIONS, MatFormFieldModule} from '@angular/material/form-field';
-import {MatSelectModule} from '@angular/material/select';
+import { MAT_FORM_FIELD_DEFAULT_OPTIONS, MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
 import { MatNativeDateModule } from '@angular/material/core';
 import { SharedModule } from './Shared/shared.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './components/user/login.component';
 import { CrearUsuarioComponent } from './components/crear-usuario/crear-usuario.component';
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi, withFetch } from '@angular/common/http';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { Type1Component } from './components/EnglishType/type1/type1.component';
 import { Type2Component } from './components/EnglishType/type2/type2.component';
@@ -28,7 +28,8 @@ import { ShufflePipe } from './pipes/shuffle.pipe';
 import { AdsensePracticaComponent } from './components/adsense-practica/adsense-practica.component';
 
 
-@NgModule({ declarations: [
+@NgModule({
+    declarations: [
         // recordar que si uso lazyload no poner componentes aca ni los standalone ni tradicionales
         AppComponent,
         HomeComponent,
@@ -51,7 +52,11 @@ import { AdsensePracticaComponent } from './components/adsense-practica/adsense-
         ReactiveFormsModule,
         AdsensePracticaComponent,
         MatProgressSpinnerModule], providers: [
-        provideHttpClient(withInterceptorsFromDi()),
-        provideClientHydration()
-    ] })
+            provideHttpClient(
+                withFetch(),
+                withInterceptorsFromDi()
+            ),
+            provideClientHydration()
+        ]
+})
 export class AppModule { }

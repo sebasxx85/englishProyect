@@ -14,12 +14,11 @@ interface Entrada {
 }
 
 @Component({
-  selector: 'app-viajes',
-  standalone: true,
-  imports: [CommonModule, MatCardModule, MatListModule, MatButtonModule, 
-                    MatDividerModule, AdsenseInArticleComponent, AdsenseFooterComponent],
-  templateUrl: './viajes.component.html',
-  styleUrls: ['./viajes.component.scss']
+    selector: 'app-viajes',
+    imports: [CommonModule, MatCardModule, MatListModule, MatButtonModule,
+        MatDividerModule, AdsenseInArticleComponent, AdsenseFooterComponent],
+    templateUrl: './viajes.component.html',
+    styleUrls: ['./viajes.component.scss']
 })
 export class ViajesComponent {
   title = 'Vocabulario de viajes en inglés';

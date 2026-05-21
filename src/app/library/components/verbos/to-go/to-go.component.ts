@@ -7,11 +7,10 @@ import { AdsenseInArticleComponent } from '../../adsense-in-article/adsense-in-a
 import { AdsenseFooterComponent } from '../../adsense-footer/adsense-footer.component';
 
 @Component({
-  selector: 'app-to-go',
-  standalone: true,
-  imports: [CommonModule, SharedModule, MatCardModule, AdsenseInArticleComponent, AdsenseFooterComponent],
-  templateUrl: './to-go.component.html',
-  styleUrls: ['./to-go.component.scss']
+    selector: 'app-to-go',
+    imports: [CommonModule, SharedModule, MatCardModule, AdsenseInArticleComponent, AdsenseFooterComponent],
+    templateUrl: './to-go.component.html',
+    styleUrls: ['./to-go.component.scss']
 })
 export class ToGoComponent implements OnInit {
   private title = inject(Title);

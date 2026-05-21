@@ -18,12 +18,11 @@ interface MesItem {
 }
 
 @Component({
-  selector: 'app-meses',
-  standalone: true,
-    imports: [CommonModule, MatCardModule, MatListModule, MatButtonModule, 
-                MatDividerModule, AdsenseInArticleComponent, AdsenseFooterComponent],
-  templateUrl: './meses.component.html',
-  styleUrls: ['./meses.component.scss']
+    selector: 'app-meses',
+    imports: [CommonModule, MatCardModule, MatListModule, MatButtonModule,
+        MatDividerModule, AdsenseInArticleComponent, AdsenseFooterComponent],
+    templateUrl: './meses.component.html',
+    styleUrls: ['./meses.component.scss']
 })
 export class MesesComponent {
   title = 'Meses del año en inglés';

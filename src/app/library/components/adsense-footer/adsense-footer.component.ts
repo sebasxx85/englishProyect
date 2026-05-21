@@ -6,10 +6,9 @@ import { CommonModule, isPlatformBrowser } from '@angular/common';
 declare global { interface Window { adsbygoogle: any[] } }
 
 @Component({
-  selector: 'app-adsense-footer',
-  standalone: true,
-  imports: [CommonModule],
-  template: `
+    selector: 'app-adsense-footer',
+    imports: [CommonModule],
+    template: `
     <div *ngIf="!hidden" class="ad-wrapper">
       <ins class="adsbygoogle"
            [ngStyle]="insStyle"
@@ -20,7 +19,7 @@ declare global { interface Window { adsbygoogle: any[] } }
            [attr.data-adtest]="adTest ? 'on' : null"></ins>
     </div>
   `,
-  styles: [`.ad-wrapper{margin:18px 0}`]
+    styles: [`.ad-wrapper{margin:18px 0}`]
 })
 export class AdsenseFooterComponent implements AfterViewInit, OnDestroy {
   /** Slot por defecto (footer/auto) */

@@ -10,11 +10,10 @@ import { IntercambioDatosService } from 'src/app/services/intercambio-datos.serv
 import { SharedModule } from 'src/app/Shared/shared.module';
 
 @Component({
-  selector: 'app-type1-por',
-  standalone: true,
-   imports: [CommonModule, ShufflePipe2, MatCardModule, ReactiveFormsModule, SharedModule],
-  templateUrl: './type1-por.component.html',
-  styleUrl: './type1-por.component.scss'
+    selector: 'app-type1-por',
+    imports: [CommonModule, ShufflePipe2, MatCardModule, ReactiveFormsModule, SharedModule],
+    templateUrl: './type1-por.component.html',
+    styleUrl: './type1-por.component.scss'
 })
 export class Type1PorComponent implements OnInit {
   

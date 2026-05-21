@@ -14,12 +14,11 @@ interface Prenda {
 }
 
 @Component({
-  selector: 'app-ropa',
-  standalone: true,
-   imports: [CommonModule, MatCardModule, MatListModule, MatButtonModule, 
-                  MatDividerModule, AdsenseInArticleComponent, AdsenseFooterComponent],
-  templateUrl: './ropa.component.html',
-  styleUrls: ['./ropa.component.scss']
+    selector: 'app-ropa',
+    imports: [CommonModule, MatCardModule, MatListModule, MatButtonModule,
+        MatDividerModule, AdsenseInArticleComponent, AdsenseFooterComponent],
+    templateUrl: './ropa.component.html',
+    styleUrls: ['./ropa.component.scss']
 })
 export class RopaComponent {
   title = 'Vocabulario de Ropa en inglés';

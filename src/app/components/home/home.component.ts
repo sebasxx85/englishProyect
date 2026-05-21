@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnDestroy, OnInit, inject } from '@angular/core';
+import { Component, OnDestroy, OnInit, inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { IntercambioDatosService } from 'src/app/services/intercambio-datos.service';
@@ -8,7 +9,8 @@ import { RegisteredUseService } from 'src/app/services/registered-use.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
+  standalone: false
 })
 export class HomeComponent implements OnInit {
 
@@ -39,6 +41,7 @@ export class HomeComponent implements OnInit {
   private router = inject(Router)
   private intercambioDatosService = inject(IntercambioDatosService);
   private registeredUseService = inject(RegisteredUseService);
+  private platformId = inject(PLATFORM_ID);
 
 
   ngOnInit() {
@@ -58,18 +61,21 @@ export class HomeComponent implements OnInit {
     });
 
     // Verificar si el usuario ya aceptó las cookies
-    const cookiesStatus = localStorage.getItem('cookiesAccepted');
-    this.cookiesAccepted = cookiesStatus === 'true';
+    if (isPlatformBrowser(this.platformId)) {
 
-    this.login = this.registeredUseService.usuario() !== null;
+      const cookiesStatus = localStorage.getItem('cookiesAccepted');
+      this.cookiesAccepted = cookiesStatus === 'true';
+
+      this.login = this.registeredUseService.usuario() !== null;
+
+      const usuarioGuardado = localStorage.getItem('usuarioLogueado');
+      this.login = usuarioGuardado !== null;
+
+    }
 
     this.form.get('nivel')?.valueChanges.subscribe(() => {
       this.mensajeBloqueo = '';
     });
-    
-    //variable login localStorage
-    const usuarioGuardado = localStorage.getItem('usuarioLogueado');
-    this.login = usuarioGuardado !== null;
 
   }
 
@@ -106,7 +112,9 @@ export class HomeComponent implements OnInit {
 
   acceptCookies() {
     // Marcar las cookies como aceptadas
-    localStorage.setItem('cookiesAccepted', 'true');
+    if (isPlatformBrowser(this.platformId)) {
+      localStorage.setItem('cookiesAccepted', 'true');
+    }
     this.cookiesAccepted = true;
   }
 
@@ -117,18 +125,18 @@ export class HomeComponent implements OnInit {
     if (cantidadControl) {
       let valor = cantidadControl.value;
 
-     // Establece el límite máximo según si el usuario está logueado o no
-    const limiteMaximo = this.login ? 36 : 18;
+      // Establece el límite máximo según si el usuario está logueado o no
+      const limiteMaximo = this.login ? 36 : 18;
 
-    if (valor > limiteMaximo) {
-      cantidadControl.setValue(limiteMaximo);
-    } else if (valor == null || valor === '') {
-      cantidadControl.setValue(0);
-    } else if (valor < 0) {
-      cantidadControl.setValue(3);
+      if (valor > limiteMaximo) {
+        cantidadControl.setValue(limiteMaximo);
+      } else if (valor == null || valor === '') {
+        cantidadControl.setValue(0);
+      } else if (valor < 0) {
+        cantidadControl.setValue(3);
+      }
     }
   }
-}
 
   //Mensaje loguearse
   mostrarMensajeBloqueo(event: Event) {

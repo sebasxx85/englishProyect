@@ -13,20 +13,19 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { IntercambioDatosService } from '../../services/intercambio-datos.service';
 
 @Component({
-  selector: 'app-table-errors',
-  standalone: true,
-  imports: [CommonModule, RouterModule, SharedModule,   //nota se trae SharedModule para usar header y foot que no son standalone
-    //Angular Material
-    MatIconModule,
-    MatCardModule,
-    MatTableModule,
-    MatProgressBarModule,
-    MatDatepickerModule,
-    MatFormFieldModule,
-    MatSelectModule,
-    MatNativeDateModule],
-  templateUrl: './table-errors.component.html',
-  styleUrl: './table-errors.component.scss'
+    selector: 'app-table-errors',
+    imports: [CommonModule, RouterModule, SharedModule, //nota se trae SharedModule para usar header y foot que no son standalone
+        //Angular Material
+        MatIconModule,
+        MatCardModule,
+        MatTableModule,
+        MatProgressBarModule,
+        MatDatepickerModule,
+        MatFormFieldModule,
+        MatSelectModule,
+        MatNativeDateModule],
+    templateUrl: './table-errors.component.html',
+    styleUrl: './table-errors.component.scss'
 })
 export class TableErrorsComponent implements OnInit {
 

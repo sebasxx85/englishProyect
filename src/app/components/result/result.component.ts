@@ -19,25 +19,23 @@ import { SharedModule } from 'src/app/Shared/shared.module';
 import { AdsensePracticaComponent } from '../adsense-practica/adsense-practica.component';
 
 @Component({
-  selector: 'app-result',
-  standalone: true,
-  imports: [CommonModule, 
-    RouterModule, 
-    SharedModule,  
-    ColorPuntajePipe, 
-    //Angular Material
-    MatIconModule,
-    MatCardModule,
-    MatTableModule,
-    MatProgressBarModule,
-    MatDatepickerModule,
-    MatFormFieldModule,
-    MatSelectModule,
-    AdsensePracticaComponent,
-    MatNativeDateModule],
-  templateUrl: './result.component.html',
-  styleUrls: ['./result.component.scss'],
-
+    selector: 'app-result',
+    imports: [CommonModule,
+        RouterModule,
+        SharedModule,
+        ColorPuntajePipe,
+        //Angular Material
+        MatIconModule,
+        MatCardModule,
+        MatTableModule,
+        MatProgressBarModule,
+        MatDatepickerModule,
+        MatFormFieldModule,
+        MatSelectModule,
+        AdsensePracticaComponent,
+        MatNativeDateModule],
+    templateUrl: './result.component.html',
+    styleUrls: ['./result.component.scss']
 })
 export class ResultComponent implements OnInit {
 

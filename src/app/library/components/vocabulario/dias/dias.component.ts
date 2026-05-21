@@ -18,12 +18,11 @@ interface DiaItem {
 }
 
 @Component({
-  selector: 'app-dias',
-  standalone: true,
-    imports: [CommonModule, MatCardModule, MatListModule, MatButtonModule, 
-            MatDividerModule, AdsenseInArticleComponent, AdsenseFooterComponent],
-  templateUrl: './dias.component.html',
-  styleUrls: ['./dias.component.scss']
+    selector: 'app-dias',
+    imports: [CommonModule, MatCardModule, MatListModule, MatButtonModule,
+        MatDividerModule, AdsenseInArticleComponent, AdsenseFooterComponent],
+    templateUrl: './dias.component.html',
+    styleUrls: ['./dias.component.scss']
 })
 export class DiasComponent {
   title = 'Días de la semana en inglés';

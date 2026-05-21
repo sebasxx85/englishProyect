@@ -7,12 +7,11 @@ import { AdsenseInArticleComponent } from '../../adsense-in-article/adsense-in-a
 import { AdsenseFooterComponent } from '../../adsense-footer/adsense-footer.component';
 
 @Component({
-  selector: 'app-presente-simple',
-  standalone: true,
-   imports: [CommonModule, MatCardModule, MatDividerModule,
-               AdsenseInArticleComponent, AdsenseFooterComponent], 
-  templateUrl: './presente-simple.component.html',
-  styleUrls: ['./presente-simple.component.scss']
+    selector: 'app-presente-simple',
+    imports: [CommonModule, MatCardModule, MatDividerModule,
+        AdsenseInArticleComponent, AdsenseFooterComponent],
+    templateUrl: './presente-simple.component.html',
+    styleUrls: ['./presente-simple.component.scss']
 })
 export class PresenteSimpleComponent {
   // Listas rápidas y glosario

@@ -15,12 +15,11 @@ interface EntradaColor {
 }
 
 @Component({
-  selector: 'app-colores',
-  standalone: true,
-   imports: [CommonModule, MatCardModule, MatListModule, MatButtonModule, 
-      MatDividerModule, AdsenseInArticleComponent, AdsenseFooterComponent],
-  templateUrl: './colores.component.html',
-  styleUrls: ['./colores.component.scss']
+    selector: 'app-colores',
+    imports: [CommonModule, MatCardModule, MatListModule, MatButtonModule,
+        MatDividerModule, AdsenseInArticleComponent, AdsenseFooterComponent],
+    templateUrl: './colores.component.html',
+    styleUrls: ['./colores.component.scss']
 })
 export class ColoresComponent {
   title = 'Colores en inglés';

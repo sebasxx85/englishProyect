@@ -12,20 +12,19 @@ import { CrearUsuarioService } from 'src/app/services/crear-usuario.service';
 import { SharedModule } from 'src/app/Shared/shared.module';
 
 @Component({
-  selector: 'app-crear-usuario',
-  standalone: true,
+    selector: 'app-crear-usuario',
     imports: [
-      CommonModule,
-      SharedModule,
-      MatTableModule,
-      MatIconModule,
-      MatCardModule,
-      MatTableModule,
-      ReactiveFormsModule,
-      MatProgressBarModule
+        CommonModule,
+        SharedModule,
+        MatTableModule,
+        MatIconModule,
+        MatCardModule,
+        MatTableModule,
+        ReactiveFormsModule,
+        MatProgressBarModule
     ],
-  templateUrl: './crear-usuario.component.html',
-  styleUrls: ['./crear-usuario.component.scss']
+    templateUrl: './crear-usuario.component.html',
+    styleUrls: ['./crear-usuario.component.scss']
 })
 export class CrearUsuarioComponent {
 

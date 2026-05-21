@@ -6,11 +6,10 @@ import { CursosService } from 'src/app/services/cursos.service';
 import { SharedModule } from 'src/app/Shared/shared.module';
 
 @Component({
-  selector: 'app-cursos',
-  standalone: true,
-  imports: [CommonModule, SharedModule, MatCardModule, FormsModule],
-  templateUrl: './cursos.component.html',
-  styleUrl: './cursos.component.scss'
+    selector: 'app-cursos',
+    imports: [CommonModule, SharedModule, MatCardModule, FormsModule],
+    templateUrl: './cursos.component.html',
+    styleUrl: './cursos.component.scss'
 })
 export class CursosComponent {
   

@@ -8,12 +8,11 @@ import { AdsenseInArticleComponent } from '../../adsense-in-article/adsense-in-a
 import { AdsenseFooterComponent } from '../../adsense-footer/adsense-footer.component';
 
 @Component({
-  selector: 'app-sinonimos',
-  standalone: true,
-  imports: [CommonModule, MatCardModule, MatDividerModule,
-                     AdsenseInArticleComponent, AdsenseFooterComponent], 
-  templateUrl: './sinonimos.component.html',
-  styleUrl: './sinonimos.component.scss'
+    selector: 'app-sinonimos',
+    imports: [CommonModule, MatCardModule, MatDividerModule,
+        AdsenseInArticleComponent, AdsenseFooterComponent],
+    templateUrl: './sinonimos.component.html',
+    styleUrl: './sinonimos.component.scss'
 })
 export class SinonimosComponent implements OnInit {
   private title = inject(Title);

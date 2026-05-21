@@ -7,11 +7,10 @@ import { AdsenseInArticleComponent } from '../../adsense-in-article/adsense-in-a
 import { AdsenseFooterComponent } from '../../adsense-footer/adsense-footer.component';
 
 @Component({
-  selector: 'app-to-get',
-  standalone: true,
-  imports: [CommonModule, SharedModule, MatCardModule, AdsenseInArticleComponent, AdsenseFooterComponent],
-  templateUrl: './to-get.component.html',
-  styleUrls: ['./to-get.component.scss']
+    selector: 'app-to-get',
+    imports: [CommonModule, SharedModule, MatCardModule, AdsenseInArticleComponent, AdsenseFooterComponent],
+    templateUrl: './to-get.component.html',
+    styleUrls: ['./to-get.component.scss']
 })
 export class ToGetComponent implements OnInit {
   private title = inject(Title);

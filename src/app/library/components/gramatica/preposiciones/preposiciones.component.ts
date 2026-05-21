@@ -7,12 +7,11 @@ import { AdsenseInArticleComponent } from '../../adsense-in-article/adsense-in-a
 import { AdsenseFooterComponent } from '../../adsense-footer/adsense-footer.component';
 
 @Component({
-  selector: 'app-preposiciones',
-  standalone: true,
+    selector: 'app-preposiciones',
     imports: [CommonModule, MatCardModule, MatDividerModule,
-             AdsenseInArticleComponent, AdsenseFooterComponent], 
-  templateUrl: './preposiciones.component.html',
-  styleUrls: ['./preposiciones.component.scss']
+        AdsenseInArticleComponent, AdsenseFooterComponent],
+    templateUrl: './preposiciones.component.html',
+    styleUrls: ['./preposiciones.component.scss']
 })
 export class PreposicionesComponent implements OnInit {
   showSolutions = false;

@@ -15,11 +15,12 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/englishProyect/browser",
+            "outputPath": {
+              "base": "dist/englishProyect"
+            },
             "index": "src/index.html",
-            "main": "src/main.ts",
             "polyfills": [
               "zone.js"
             ],
@@ -39,7 +40,16 @@
             "scripts": [],
             "allowedCommonJsDependencies": [
               "quill-delta"
-            ]
+            ],
+            "browser": "src/main.ts",
+            "server": "src/main.server.ts",
+            "security": {
+              "allowedHosts": []
+            },
+            "prerender": true,
+            "ssr": {
+              "entry": "src/server.ts"
+            }
           },
           "configurations": {
             "production": {
@@ -70,9 +80,7 @@
                   "with": "src/app/environments/environment.ts"
                 }
               ],
-              "buildOptimizer": false,
               "optimization": false,
-              "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
@@ -119,96 +127,6 @@
             ],
             "scripts": []
           }
-        },
-        "server": {
-          "builder": "@angular-devkit/build-angular:server",
-          "options": {
-            "outputPath": "dist/englishProyect/server",
-            "main": "server.ts",
-            "tsConfig": "tsconfig.server.json",
-            "inlineStyleLanguage": "scss"
-          },
-          "configurations": {
-            "production": {
-              "outputHashing": "media",
-              "fileReplacements": [
-                {
-                  "replace": "src/app/environments/environment.ts",
-                  "with": "src/app/environments/environment.prod.ts"
-                }
-              ]
-            },
-            "development": {
-              "buildOptimizer": false,
-              "fileReplacements": [
-                {
-                  "replace": "src/app/environments/environment.prod.ts",
-                  "with": "src/app/environments/environment.ts"
-                }
-              ],
-              "optimization": false,
-              "sourceMap": true,
-              "extractLicenses": false,
-              "vendorChunk": true
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "serve-ssr": {
-          "builder": "@angular-devkit/build-angular:ssr-dev-server",
-          "configurations": {
-            "development": {
-              "browserTarget": "englishProyect:build:development",
-              "serverTarget": "englishProyect:server:development"
-            },
-            "production": {
-              "browserTarget": "englishProyect:build:production",
-              "serverTarget": "englishProyect:server:production"
-            }
-          },
-          "defaultConfiguration": "development"
-        },
-        "prerender": {
-          "builder": "@angular-devkit/build-angular:prerender",
-          "options": {
-            "routes": [
-              "/",
-              "/library",
-              "/library/vocabulario/animales",
-              "/library/vocabulario/colores",
-              "/library/vocabulario/cuerpo",
-              "/library/vocabulario/dias",
-              "/library/vocabulario/frutas",
-              "/library/vocabulario/meses",
-              "/library/vocabulario/ropa",
-              "/library/verbos/to-be",
-              "/library/verbos/to-do",
-              "/library/verbos/to-get",
-              "/library/verbos/to-go",
-              "/library/verbos/to-have",
-              "/library/verbos/to-make",
-              "/library/gramatica/articulos",
-              "/library/gramatica/pronombres",
-              "/library/gramatica/presente-simple",
-              "/library/gramatica/preposiciones",
-              "/library/frases/compras",
-              "/library/frases/saludos",
-              "/library/frases/viajes",
-              "/library/avanzado/antonimos",
-              "/library/avanzado/sinonimos"
-            ]
-          },
-          "configurations": {
-            "production": {
-              "browserTarget": "englishProyect:build:production",
-              "serverTarget": "englishProyect:server:production"
-            },
-            "development": {
-              "browserTarget": "englishProyect:build:development",
-              "serverTarget": "englishProyect:server:development"
-            }
-          },
-          "defaultConfiguration": "production"
         }
       }
     }

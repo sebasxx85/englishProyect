@@ -10,11 +10,10 @@ import { IntercambioDatosService } from 'src/app/services/intercambio-datos.serv
 import { SharedModule } from 'src/app/Shared/shared.module';
 
 @Component({
-  selector: 'app-type3',
-  standalone: true,
-  imports: [CommonModule, MatCardModule, ReactiveFormsModule, SharedModule, MatProgressBarModule],
-  templateUrl: './type3.component.html',
-  styleUrls: ['./type3.component.scss']
+    selector: 'app-type3',
+    imports: [CommonModule, MatCardModule, ReactiveFormsModule, SharedModule, MatProgressBarModule],
+    templateUrl: './type3.component.html',
+    styleUrls: ['./type3.component.scss']
 })
 export class Type3Component {
 

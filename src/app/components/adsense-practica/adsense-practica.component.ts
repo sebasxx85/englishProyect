@@ -4,10 +4,9 @@ import { CommonModule, isPlatformBrowser } from '@angular/common';
 declare global { interface Window { adsbygoogle: any[] } }
 
 @Component({
-  selector: 'app-adsense-practica',
-  standalone: true,
-  imports: [CommonModule],
-  template: `
+    selector: 'app-adsense-practica',
+    imports: [CommonModule],
+    template: `
     <div class="ad-wrapper">
       <ins class="adsbygoogle"
            style="display:inline-block; width:728px; height:90px;"
@@ -16,7 +15,7 @@ declare global { interface Window { adsbygoogle: any[] } }
            [attr.data-adtest]="isDev ? 'on' : null"></ins>
     </div>
   `,
-  styles: [`
+    styles: [`
     .ad-wrapper {
       margin: 18px auto;
       text-align: center;

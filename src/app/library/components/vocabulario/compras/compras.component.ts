@@ -14,12 +14,11 @@ interface Entrada {
 }
 
 @Component({
-  selector: 'app-compras',
-  standalone: true,
-  imports: [CommonModule, MatCardModule, MatListModule, MatButtonModule, 
+    selector: 'app-compras',
+    imports: [CommonModule, MatCardModule, MatListModule, MatButtonModule,
         MatDividerModule, AdsenseInArticleComponent, AdsenseFooterComponent],
-  templateUrl: './compras.component.html',
-  styleUrls: ['./compras.component.scss']
+    templateUrl: './compras.component.html',
+    styleUrls: ['./compras.component.scss']
 })
 export class ComprasComponent {
   title = 'Vocabulario de compras en inglés';

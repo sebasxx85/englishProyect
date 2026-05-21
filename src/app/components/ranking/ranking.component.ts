@@ -7,17 +7,16 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 
 @Component({
-  selector: 'app-ranking',
-  standalone: true,
-  imports: [
-    CommonModule,
-    SharedModule,
-    MatTableModule,
-    MatIconModule,
-    MatCardModule
-  ],
-  templateUrl: './ranking.component.html',
-  styleUrls: ['./ranking.component.scss']
+    selector: 'app-ranking',
+    imports: [
+        CommonModule,
+        SharedModule,
+        MatTableModule,
+        MatIconModule,
+        MatCardModule
+    ],
+    templateUrl: './ranking.component.html',
+    styleUrls: ['./ranking.component.scss']
 })
 export class RankingComponent implements OnInit {
   title = "Nuestro Ranking";

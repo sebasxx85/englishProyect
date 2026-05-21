@@ -7,12 +7,11 @@ import { AdsenseInArticleComponent } from '../../adsense-in-article/adsense-in-a
 import { AdsenseFooterComponent } from '../../adsense-footer/adsense-footer.component';
 
 @Component({
-  selector: 'app-articulos',
-  standalone: true,
-  imports: [CommonModule, MatCardModule, MatDividerModule,
-           AdsenseInArticleComponent, AdsenseFooterComponent], 
-  templateUrl: './articulos.component.html',
-  styleUrls: ['./articulos.component.scss']
+    selector: 'app-articulos',
+    imports: [CommonModule, MatCardModule, MatDividerModule,
+        AdsenseInArticleComponent, AdsenseFooterComponent],
+    templateUrl: './articulos.component.html',
+    styleUrls: ['./articulos.component.scss']
 })
 export class ArticulosComponent implements OnInit {
   showSolutions = false;

@@ -7,11 +7,10 @@ import { AdsenseInArticleComponent } from '../../adsense-in-article/adsense-in-a
 import { AdsenseFooterComponent } from '../../adsense-footer/adsense-footer.component';
 
 @Component({
-  selector: 'app-to-do',
-  standalone: true,
-  imports: [CommonModule, SharedModule, MatCardModule, AdsenseInArticleComponent, AdsenseFooterComponent],
-  templateUrl: './to-do.component.html',
-  styleUrls: ['./to-do.component.scss']
+    selector: 'app-to-do',
+    imports: [CommonModule, SharedModule, MatCardModule, AdsenseInArticleComponent, AdsenseFooterComponent],
+    templateUrl: './to-do.component.html',
+    styleUrls: ['./to-do.component.scss']
 })
 export class ToDoComponent implements OnInit {
   private title = inject(Title);

@@ -7,12 +7,11 @@ import { AdsenseInArticleComponent } from '../../adsense-in-article/adsense-in-a
 import { AdsenseFooterComponent } from '../../adsense-footer/adsense-footer.component';
 
 @Component({
-  selector: 'app-pronombres',
-  standalone: true,
-  imports: [CommonModule, MatCardModule, MatDividerModule,
-                 AdsenseInArticleComponent, AdsenseFooterComponent], 
-  templateUrl: './pronombres.component.html',
-  styleUrls: ['./pronombres.component.scss']
+    selector: 'app-pronombres',
+    imports: [CommonModule, MatCardModule, MatDividerModule,
+        AdsenseInArticleComponent, AdsenseFooterComponent],
+    templateUrl: './pronombres.component.html',
+    styleUrls: ['./pronombres.component.scss']
 })
 export class PronombresComponent {
   constructor(private s: DomSanitizer) {

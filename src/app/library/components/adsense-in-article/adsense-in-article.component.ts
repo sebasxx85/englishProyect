@@ -6,10 +6,9 @@ import { CommonModule, isPlatformBrowser } from '@angular/common';
 declare global { interface Window { adsbygoogle: any[] } }
 
 @Component({
-  selector: 'app-adsense-in-article',
-  standalone: true,
-  imports: [CommonModule],
-  template: `
+    selector: 'app-adsense-in-article',
+    imports: [CommonModule],
+    template: `
     <div *ngIf="!hidden" class="ad-wrapper">
       <ins class="adsbygoogle"
            style="display:block; text-align:center; min-height:120px;"
@@ -21,7 +20,7 @@ declare global { interface Window { adsbygoogle: any[] } }
            [attr.data-adtest]="adTest ? 'on' : null"></ins>
     </div>
   `,
-  styles: [`.ad-wrapper{margin:18px 0}`]
+    styles: [`.ad-wrapper{margin:18px 0}`]
 })
 export class AdsenseInArticleComponent implements AfterViewInit, OnDestroy {
   /** Slot por defecto (in-article) */
